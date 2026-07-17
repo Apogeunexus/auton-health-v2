@@ -1,0 +1,27 @@
+# Backups manuais (não pertencem ao produto)
+**/*.bak_*
+**/*.bak-*
+
+# SQLite journals
+**/*.db-shm
+**/*.db-wal
+**/*.db-journal
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Git (não precisa em prod)
+.git
+.gitattributes
+
+# DB hospedado em GitHub Release (grande demais pro Vercel)
+data/auton.db
+
+# Editor
+.vscode
+.idea
+*.swp
+
+# Docs opcionais em prod (equipe lê no repo GitHub)
+# docs/
