@@ -1244,7 +1244,7 @@
  background: var(--h2-surface);
  border: 1px solid var(--h2-border);
  border-radius: var(--h2-radius);
- width: 100%; max-width: 720px; max-height: 85vh;
+ width: 100%; max-width: 960px; max-height: 85vh;
  display: flex; flex-direction: column;
  box-shadow: var(--h2-shadow-xl);
  animation: portalScaleIn .25s var(--h2-ease) forwards;
@@ -10291,7 +10291,7 @@ function _rmItemRowHtml(it, idx) {
   <div style="position:relative;">
    <input class="input rm_item_nome" placeholder="Buscar alimento (TACO)…" value="${(al?.nome || it.alimento_nome || '').replace(/"/g,'&quot;')}" oninput="_rmSearchAlimento(${idx}, this.value)" onfocus="_rmSearchAlimento(${idx}, this.value)" autocomplete="off">
    <div class="ac-list rm_ac_list" id="rm_ac_${idx}" style="position:absolute; top:100%; left:0; right:0; background:var(--h2-surface, #fff); border:1px solid var(--color-border); border-radius:6px; max-height:220px; overflow-y:auto; z-index:100; display:none;"></div>
-   ${al ? `<div class="small muted" style="margin-top:2px;">✓ TACO · ${al.grupo || ''}</div>` : `<div class="small muted" style="margin-top:2px;">Digite para buscar</div>`}
+   <div class="rm_item_meta" style="margin-top:2px;">${al ? `<span class="small muted">✓ TACO · ${al.grupo || ''}</span>` : `<span class="small muted">Digite para buscar</span>`}</div>
   </div>
   <input class="input rm_item_gramas" type="number" min="0" step="1" value="${it.gramas||100}" placeholder="gramas" oninput="_rmRecalcTotal()">
   <div class="rm_item_kcal small mono" style="text-align:right; padding:0 6px;">${kcalItem} kcal</div>
@@ -10324,6 +10324,9 @@ function _rmSelecionarAlimento(idx, alId) {
  if (!row) return;
  row.dataset.alimentoId = alId;
  row.querySelector('.rm_item_nome').value = al.nome;
+ // Atualiza meta abaixo do input
+ const meta = row.querySelector('.rm_item_meta');
+ if (meta) meta.innerHTML = `<span class="small muted">✓ TACO · ${al.grupo || ''}</span>`;
  const mc = medidaCaseira(al);
  const gramasEl = row.querySelector('.rm_item_gramas');
  if (!gramasEl.value || gramasEl.value === '100') gramasEl.value = (mc && mc.g) || 100;
@@ -10334,8 +10337,13 @@ function _rmSelecionarAlimento(idx, alId) {
 
 function _rmAddItem() {
  const cont = document.getElementById('rm_itens_container');
+ // Remove placeholder "Nenhum alimento adicionado" se ainda existir
+ const empty = cont.querySelector('.rm-empty-placeholder');
+ if (empty) empty.remove();
  const idx = cont.querySelectorAll('.rm-item-row').length;
  cont.insertAdjacentHTML('beforeend', _rmItemRowHtml({ alimentoId:'', gramas:100, obs:'' }, idx));
+ const newRow = cont.querySelector(`.rm-item-row[data-idx="${idx}"] .rm_item_nome`);
+ if (newRow) newRow.focus();
 }
 
 function _rmRemoveItem(idx) {
@@ -10371,7 +10379,7 @@ function refeicaoModeloEditorHtml(r) {
    <div class="field"><label class="field-label">Categoria</label><select class="select" id="rm_cat">${['cafe','lanche','almoco','jantar','ceia','pre_treino','pos_treino'].map(c => `<option value="${c}" ${r.categoria===c?'selected':''}>${c}</option>`).join('')}</select></div>
   </div>
   <div class="mb-8" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Alimentos da refeição</div>
-  <div id="rm_itens_container" style="margin-bottom:8px;">${itens.map((it,i) => _rmItemRowHtml(it, i)).join('') || '<div class="muted small" style="padding:12px; text-align:center; border:1px dashed var(--color-border); border-radius:6px;">Nenhum alimento adicionado. Use o botão abaixo.</div>'}</div>
+  <div id="rm_itens_container" style="margin-bottom:8px;">${itens.map((it,i) => _rmItemRowHtml(it, i)).join('') || '<div class="rm-empty-placeholder muted small" style="padding:12px; text-align:center; border:1px dashed var(--color-border); border-radius:6px;">Nenhum alimento adicionado. Use o botão abaixo.</div>'}</div>
   <button class="btn" onclick="_rmAddItem()">+ Adicionar alimento</button>
   <div id="rm_total" class="mt-16 p-8 small" style="padding:10px; background:var(--h2-bg-tinted, #f5f5f5); border-radius:6px;">Total: 0 alimentos</div>
  `;
@@ -11357,7 +11365,7 @@ function _tmExRowHtml(it, idx) {
   <div style="position:relative;">
    <input class="input tm_ex_nome" placeholder="Buscar exercício…" value="${(ex?.nome || it.exercicio_nome || '').replace(/"/g,'&quot;')}" oninput="_tmSearchExercicio(${idx}, this.value)" onfocus="_tmSearchExercicio(${idx}, this.value)" autocomplete="off">
    <div class="ac-list tm_ac_list" id="tm_ac_${idx}" style="position:absolute; top:100%; left:0; right:0; background:var(--h2-surface, #fff); border:1px solid var(--color-border); border-radius:6px; max-height:220px; overflow-y:auto; z-index:100; display:none;"></div>
-   ${ex ? `<div class="small muted" style="margin-top:2px; display:flex; gap:4px; align-items:center;">${chips} <span class="badge" style="font-size:9px;">${ex.nivel||''}</span></div>` : `<div class="small muted" style="margin-top:2px;">Digite para buscar</div>`}
+   <div class="tm_ex_meta" style="margin-top:2px;">${ex ? `<span class="small muted" style="display:inline-flex; gap:4px; align-items:center;">${chips} <span class="badge" style="font-size:9px;">${ex.nivel||''}</span></span>` : `<span class="small muted">Digite para buscar</span>`}</div>
   </div>
   <input class="input tm_ex_series" type="number" min="1" step="1" value="${it.series||3}" title="Séries" oninput="_tmRecalcTotal()">
   <input class="input tm_ex_reps" value="${it.reps||'8-12'}" title="Repetições" placeholder="8-12">
@@ -11393,6 +11401,12 @@ function _tmSelecionarEx(idx, exId) {
  if (!row) return;
  row.dataset.exercicioId = exId;
  row.querySelector('.tm_ex_nome').value = ex.nome;
+ // Atualiza meta abaixo do input
+ const meta = row.querySelector('.tm_ex_meta');
+ if (meta) {
+  const chips = (ex.primario||[]).slice(0,3).map(g => grupoMuscTag(g)).join(' ');
+  meta.innerHTML = `<span class="small muted" style="display:inline-flex; gap:4px; align-items:center;">${chips} <span class="badge" style="font-size:9px;">${ex.nivel||''}</span></span>`;
+ }
  const list = document.getElementById('tm_ac_' + idx);
  if (list) { list.style.display = 'none'; list.innerHTML = ''; }
  _tmRecalcTotal();
@@ -11400,8 +11414,12 @@ function _tmSelecionarEx(idx, exId) {
 
 function _tmAddEx() {
  const cont = document.getElementById('tm_ex_container');
+ const empty = cont.querySelector('.tm-empty-placeholder');
+ if (empty) empty.remove();
  const idx = cont.querySelectorAll('.tm-ex-row').length;
  cont.insertAdjacentHTML('beforeend', _tmExRowHtml({ exercicioId:'', series:3, reps:'8-12', carga:0, descanso:60, tecnica:'normal' }, idx));
+ const newRow = cont.querySelector(`.tm-ex-row[data-idx="${idx}"] .tm_ex_nome`);
+ if (newRow) newRow.focus();
 }
 
 function _tmRemoveEx(idx) {
@@ -11445,7 +11463,7 @@ function treinoModeloEditorHtml(t) {
   <div style="display:grid; grid-template-columns: 2fr 60px 80px 70px 70px 90px auto; gap:6px; padding:0 8px 4px; font-size:11px; color:var(--color-muted); text-transform:uppercase; letter-spacing:.3px;">
    <div>Exercício</div><div>Séries</div><div>Reps</div><div>Carga</div><div>Desc.</div><div>Técnica</div><div></div>
   </div>
-  <div id="tm_ex_container">${itens.map((it,i) => _tmExRowHtml(it, i)).join('') || '<div class="muted small" style="padding:12px; text-align:center; border:1px dashed var(--color-border); border-radius:6px;">Nenhum exercício adicionado.</div>'}</div>
+  <div id="tm_ex_container">${itens.map((it,i) => _tmExRowHtml(it, i)).join('') || '<div class="tm-empty-placeholder muted small" style="padding:12px; text-align:center; border:1px dashed var(--color-border); border-radius:6px;">Nenhum exercício adicionado.</div>'}</div>
   <button class="btn mt-8" onclick="_tmAddEx()">+ Adicionar exercício</button>
   <div id="tm_total" class="mt-16" style="padding:10px; background:var(--h2-bg-tinted, #f5f5f5); border-radius:6px; font-size:13px;">Total: 0 exercícios</div>
   <div class="field mt-16"><label class="field-label">Grupos musculares (override manual)</label><div class="row gap-8" style="flex-wrap:wrap;">
