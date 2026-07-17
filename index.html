@@ -11208,44 +11208,185 @@ function verTemplatePlano(id) {
  `;
  openModal(t.nome, body, `<button class="btn" onclick="closeModal()">Fechar</button>`);
 }
+/* ---- Editor Template de Plano: metadados + agenda diária ---- */
+function _tpAgendaRowHtml(item, idx, refeicoes) {
+ const opts = refeicoes.map(rm => `<option value="${rm.id}" ${item.refeicaoModeloId===rm.id?'selected':''}>${rm.nome} (${rm.categoria})</option>`).join('');
+ return `<div class="tp-agenda-row" data-idx="${idx}" style="display:grid; grid-template-columns: 40px 90px 1fr 80px 90px auto; gap:8px; align-items:center; padding:8px; border:1px solid var(--color-border); border-radius:6px; margin-bottom:6px;">
+  <div class="small muted mono" style="text-align:center;">${idx+1}</div>
+  <input class="input tp_horario" type="time" value="${item.horario||''}" title="Horário">
+  <select class="select tp_ref">
+   <option value="">— escolher refeição —</option>
+   ${opts}
+  </select>
+  <input class="input tp_pct" type="number" min="0" max="100" step="1" value="${item.pctVet||0}" title="% VET" oninput="_tpRecalcAgenda()">
+  <div class="tp_kcal small mono" style="text-align:right; padding:0 6px;">— kcal</div>
+  <button class="btn btn-icon btn-ghost btn-danger" onclick="_tpRemoveRow(${idx})" title="Remover">×</button>
+ </div>`;
+}
+
+function _tpAddRow() {
+ const cont = document.getElementById('tp_agenda_container');
+ const empty = cont.querySelector('.tp-empty-placeholder');
+ if (empty) empty.remove();
+ const idx = cont.querySelectorAll('.tp-agenda-row').length;
+ // Sugere horário sequencial
+ const horaSugerida = ['07:00','10:00','13:00','16:00','20:00'][idx] || '';
+ cont.insertAdjacentHTML('beforeend', _tpAgendaRowHtml({ horario:horaSugerida, refeicaoModeloId:'', pctVet:0 }, idx, allRefeicoesModelo()));
+ _tpRecalcAgenda();
+}
+
+function _tpRemoveRow(idx) {
+ const row = document.querySelector(`.tp-agenda-row[data-idx="${idx}"]`);
+ if (row) row.remove();
+ _tpRecalcAgenda();
+}
+
+function _tpRecalcAgenda() {
+ const vet = +document.getElementById('tp_vet')?.value || 0;
+ const rows = [...document.querySelectorAll('.tp-agenda-row')];
+ let soma = 0;
+ rows.forEach(row => {
+  const pct = +row.querySelector('.tp_pct').value || 0;
+  soma += pct;
+  const kcal = vet * pct / 100;
+  row.querySelector('.tp_kcal').textContent = Math.round(kcal) + ' kcal';
+ });
+ const badge = document.getElementById('tp_soma_badge');
+ if (badge) {
+  const okSoma = Math.abs(soma - 100) < 0.5;
+  const empty = rows.length === 0;
+  badge.innerHTML = empty
+   ? `<span class="muted small">Sem refeições · 0% de ${vet} kcal</span>`
+   : `Soma: <strong class="mono">${soma}%</strong> ${okSoma ? '<span class="badge badge-success" style="margin-left:6px;">✓ 100%</span>' : `<span class="badge badge-error" style="margin-left:6px;">≠ 100%</span>`} · <strong class="mono">${Math.round(vet * soma / 100)}</strong> kcal / ${vet} kcal`;
+ }
+}
+
+function _tpDistribuirIgual() {
+ const rows = [...document.querySelectorAll('.tp-agenda-row')];
+ const n = rows.length;
+ if (!n) return;
+ // Distribuição corrigida (fecha 100%): base + resto nos primeiros
+ const base = Math.floor(100 / n);
+ const resto = 100 - (base * n);
+ rows.forEach((row, i) => {
+  row.querySelector('.tp_pct').value = base + (i < resto ? 1 : 0);
+ });
+ _tpRecalcAgenda();
+}
+
+const CATEGORIAS_TEMPLATE_PLANO = ['Check-ups','Emagrecimento','Ganho de massa','Metabolismo','Saúde intestinal','Saúde hormonal','Jejum','Longevidade','Performance','Pediatria','Gestação','Outros'];
+
 function templatePlanoEditorHtml(t) {
+ // Backward compat: refeicoesModeloIds[] antigo vira agenda_diaria
+ let agenda = t.agenda_diaria;
+ if (!agenda && Array.isArray(t.refeicoesModeloIds) && t.refeicoesModeloIds.length) {
+  const n = t.refeicoesModeloIds.length;
+  const base = Math.floor(100 / n);
+  const resto = 100 - (base * n);
+  agenda = t.refeicoesModeloIds.map((rid, i) => ({
+   ordem: i + 1, horario: null, refeicaoModeloId: rid, pctVet: base + (i < resto ? 1 : 0),
+  }));
+ }
+ agenda = agenda || [];
+ const refeicoes = allRefeicoesModelo();
+ const tagsStr = (t.tags || []).join(', ');
  return `
- <div class="field mb-16"><label class="field-label field-required">Nome</label><input class="input" id="tp_nome" value="${t.nome||''}"></div><div class="grid grid-2 mb-16"><div class="field"><label class="field-label">Objetivo</label><select class="select" id="tp_obj">${OBJETIVOS.map(o => `<option value="${o.key}" ${t.objetivo===o.key?'selected':''}>${o.label}</option>`).join('')}</select></div><div class="field"><label class="field-label">VET alvo (kcal)</label><input class="input" type="number" id="tp_vet" value="${t.vet_alvo||1800}"></div></div><div class="grid grid-3 mb-16"><div class="field"><label class="field-label">P %</label><input class="input" type="number" id="tp_p" value="${t.macros&&t.macros.p||30}"></div><div class="field"><label class="field-label">C %</label><input class="input" type="number" id="tp_c" value="${t.macros&&t.macros.c||45}"></div><div class="field"><label class="field-label">G %</label><input class="input" type="number" id="tp_g" value="${t.macros&&t.macros.g||25}"></div></div><div class="field mb-16"><label class="field-label">Refeições-modelo (Ctrl+click para múltiplos)</label><select class="select" id="tp_refs" multiple size="6">${allRefeicoesModelo().map(rm => `<option value="${rm.id}" ${(t.refeicoesModeloIds||[]).includes(rm.id)?'selected':''}>${rm.nome} (${rm.categoria})</option>`).join('')}</select></div><div class="field"><label class="field-label">Observação clínica</label><textarea class="textarea" id="tp_obs">${t.observacao||''}</textarea></div>
+  <!-- Identidade -->
+  <div class="mb-16" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Identidade</div>
+  <div class="field mb-16"><label class="field-label field-required">Nome</label><input class="input" id="tp_nome" value="${(t.nome||'').replace(/"/g,'&quot;')}"></div>
+  <div class="grid grid-2 mb-16">
+   <div class="field"><label class="field-label">Categoria</label><select class="select" id="tp_categoria"><option value="">—</option>${CATEGORIAS_TEMPLATE_PLANO.map(c => `<option value="${c}" ${t.categoria===c?'selected':''}>${c}</option>`).join('')}</select></div>
+   <div class="field"><label class="field-label">Especialidade</label><input class="input" id="tp_especialidade" value="${(t.especialidade||'').replace(/"/g,'&quot;')}" placeholder="ex: endocrinologia, nutrição funcional"></div>
+  </div>
+  <div class="field mb-16"><label class="field-label">Descrição curta</label><input class="input" id="tp_descricao" value="${(t.descricao||'').replace(/"/g,'&quot;')}" placeholder="Racional em 1 linha"></div>
+  <div class="grid grid-2 mb-16">
+   <div class="field"><label class="field-label">Tags (separadas por vírgula)</label><input class="input" id="tp_tags" value="${tagsStr.replace(/"/g,'&quot;')}" placeholder="low-carb, sop, jejum..."></div>
+   <div class="field"><label class="field-label">Visibilidade</label><select class="select" id="tp_visibilidade">${['privado','equipe','padrão'].map(v => `<option value="${v}" ${(t.visibilidade||'privado')===v?'selected':''}>${v}</option>`).join('')}</select></div>
+  </div>
+
+  <!-- Meta calórica -->
+  <div class="mb-8" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Meta calórica e macros</div>
+  <div class="grid grid-2 mb-16">
+   <div class="field"><label class="field-label">Objetivo</label><select class="select" id="tp_obj">${OBJETIVOS.map(o => `<option value="${o.key}" ${t.objetivo===o.key?'selected':''}>${o.label}</option>`).join('')}</select></div>
+   <div class="field"><label class="field-label">VET alvo (kcal)</label><input class="input" type="number" id="tp_vet" value="${t.vet_alvo||1800}" oninput="_tpRecalcAgenda()"></div>
+  </div>
+  <div class="grid grid-3 mb-16">
+   <div class="field"><label class="field-label">P %</label><input class="input" type="number" id="tp_p" value="${t.macros&&t.macros.p||30}"></div>
+   <div class="field"><label class="field-label">C %</label><input class="input" type="number" id="tp_c" value="${t.macros&&t.macros.c||45}"></div>
+   <div class="field"><label class="field-label">G %</label><input class="input" type="number" id="tp_g" value="${t.macros&&t.macros.g||25}"></div>
+  </div>
+
+  <!-- Agenda diária -->
+  <div class="mb-8" style="display:flex; align-items:center; justify-content:space-between;">
+   <span style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Agenda diária</span>
+   <div>
+    <button class="btn btn-sm btn-ghost" onclick="_tpDistribuirIgual()" title="Distribuir % igualmente">Distribuir igual</button>
+   </div>
+  </div>
+  <div style="display:grid; grid-template-columns: 40px 90px 1fr 80px 90px auto; gap:8px; padding:0 8px 4px; font-size:11px; color:var(--color-muted); text-transform:uppercase; letter-spacing:.3px;">
+   <div>#</div><div>Horário</div><div>Refeição-modelo</div><div>% VET</div><div>kcal</div><div></div>
+  </div>
+  <div id="tp_agenda_container">${agenda.map((it,i) => _tpAgendaRowHtml(it, i, refeicoes)).join('') || '<div class="tp-empty-placeholder muted small" style="padding:12px; text-align:center; border:1px dashed var(--color-border); border-radius:6px;">Sem refeições. Use o botão abaixo.</div>'}</div>
+  <button class="btn mt-8" onclick="_tpAddRow()">+ Adicionar refeição</button>
+  <div id="tp_soma_badge" class="mt-16" style="padding:10px; background:var(--h2-bg-tinted, #f5f5f5); border-radius:6px; font-size:13px;">Soma: 0%</div>
+
+  <!-- Observação -->
+  <div class="mb-8 mt-16" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Racional clínico</div>
+  <div class="field"><label class="field-label">Observação (aceita markdown)</label><textarea class="textarea" id="tp_obs" rows="8" style="font-family: var(--h2-font-mono, monospace); font-size:13px;">${(t.observacao||'').replace(/</g,'&lt;')}</textarea><div class="field-hint">Suporta ## títulos, - listas, **negrito**. Renderizado no visualizador.</div></div>
+
+  ${(t.refeicoesModeloIds && t.refeicoesModeloIds.length && !t.agenda_diaria) ? `<div class="mt-16 alert alert-warning" style="padding:8px 12px; border-radius:6px; background:#fef3c7; color:#92400e; font-size:12px;">Template migrado de refeicoesModeloIds → agenda_diaria (${t.refeicoesModeloIds.length} itens distribuídos igualmente).</div>` : ''}
  `;
 }
+
 function novoTemplatePlano() {
- const t = { nome:'', objetivo:'emagrecimento', vet_alvo:1800, macros:{p:30,c:45,g:25}, refeicoesModeloIds:[], observacao:'' };
+ const t = { nome:'', objetivo:'emagrecimento', vet_alvo:1800, macros:{p:30,c:45,g:25}, agenda_diaria:[], observacao:'', visibilidade:'privado', tags:[] };
  openModal('Novo template de plano', templatePlanoEditorHtml(t),
  `<button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="salvarTemplatePlano(null)">Salvar</button>`);
+ setTimeout(_tpRecalcAgenda, 30);
 }
 function editTemplatePlano(id) {
  const t = allTemplatesPlano().find(x => x.id === id);
  if (!t) return;
  openModal(`Editar: ${t.nome}`, templatePlanoEditorHtml(t),
  `<button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="salvarTemplatePlano('${id}')">Salvar</button>`);
+ setTimeout(_tpRecalcAgenda, 30);
 }
 function salvarTemplatePlano(id) {
+ const v = k => document.getElementById(k)?.value;
+ const agenda = [...document.querySelectorAll('.tp-agenda-row')].map((row, i) => ({
+  ordem: i + 1,
+  horario: row.querySelector('.tp_horario').value || null,
+  refeicaoModeloId: row.querySelector('.tp_ref').value || null,
+  pctVet: +row.querySelector('.tp_pct').value || 0,
+ })).filter(x => x.refeicaoModeloId);
+ const soma = agenda.reduce((s, r) => s + r.pctVet, 0);
+ if (agenda.length && Math.abs(soma - 100) > 0.5) {
+  if (!confirm(`Soma dos % é ${soma}, não 100. Salvar mesmo assim?`)) return;
+ }
  const data = {
- nome: document.getElementById('tp_nome').value.trim(),
- objetivo: document.getElementById('tp_obj').value,
- vet_alvo: +document.getElementById('tp_vet').value,
- macros: {
- p: +document.getElementById('tp_p').value,
- c: +document.getElementById('tp_c').value,
- g: +document.getElementById('tp_g').value,
- },
- refeicoesModeloIds: [...document.getElementById('tp_refs').selectedOptions].map(o => o.value),
- observacao: document.getElementById('tp_obs').value,
+  nome: v('tp_nome').trim(),
+  categoria: v('tp_categoria') || null,
+  especialidade: v('tp_especialidade') || null,
+  descricao: v('tp_descricao') || null,
+  tags: (v('tp_tags') || '').split(',').map(x => x.trim()).filter(Boolean),
+  visibilidade: v('tp_visibilidade') || 'privado',
+  objetivo: v('tp_obj'),
+  vet_alvo: +v('tp_vet'),
+  macros: { p: +v('tp_p'), c: +v('tp_c'), g: +v('tp_g') },
+  agenda_diaria: agenda,
+  // Mantém refeicoesModeloIds sincronizado por compat com aplicarTemplate legado
+  refeicoesModeloIds: agenda.map(x => x.refeicaoModeloId),
+  observacao: v('tp_obs') || '',
  };
  if (!data.nome) { toast('Nome é obrigatório'); return; }
  if (id) {
- const t = allTemplatesPlano().find(x => x.id === id);
- Object.assign(t, data);
- toast('Template atualizado');
+  const t = allTemplatesPlano().find(x => x.id === id);
+  Object.assign(t, data);
+  toast('Template atualizado');
  } else {
- data.id = 'tpn_' + Math.random().toString(36).slice(2,8);
- allTemplatesPlano().push(data);
- toast('Template criado');
+  data.id = 'tpn_' + Math.random().toString(36).slice(2,8);
+  allTemplatesPlano().push(data);
+  toast('Template criado');
  }
  scheduleSave();
  closeModal();
@@ -11604,13 +11745,111 @@ function verTemplatePrograma(id) {
  ${idsFaltantes.length > 0 ? `<div class="alert alert-warning mt-8" style="padding:8px 12px; border-radius:8px; background:#fef3c7; border:1px solid #f59e0b; color:#92400e; font-size:12px;">! ${idsFaltantes.length} referência(s) quebrada(s): ${idsFaltantes.join(', ')}</div>` : ''}`;
  openModal(t.nome, body, `<button class="btn" onclick="closeModal()">Fechar</button>`);
 }
+/* ---- Editor Template de Programa: metadados + agenda semanal ---- */
+const _DIAS_SEMANA = [
+ {key:'seg', label:'Segunda'},
+ {key:'ter', label:'Terça'},
+ {key:'qua', label:'Quarta'},
+ {key:'qui', label:'Quinta'},
+ {key:'sex', label:'Sexta'},
+ {key:'sab', label:'Sábado'},
+ {key:'dom', label:'Domingo'},
+];
+
+function _tppDiaRowHtml(diaKey, diaLabel, slot, treinos) {
+ const tipo = slot?.tipo || 'descanso';
+ const treinoId = slot?.treinoModeloId || '';
+ const notas = slot?.notas || '';
+ return `<div class="tpp-dia-row" data-dia="${diaKey}" style="display:grid; grid-template-columns: 90px 130px 1fr auto; gap:8px; align-items:center; padding:8px; border:1px solid var(--color-border); border-radius:6px; margin-bottom:6px;">
+  <div class="mono" style="font-weight:600;">${diaLabel}</div>
+  <select class="select tpp_tipo" onchange="_tppOnTipoChange(this, '${diaKey}')">
+   ${['descanso','treino','cardio','ativa'].map(t => `<option value="${t}" ${tipo===t?'selected':''}>${t}</option>`).join('')}
+  </select>
+  <div class="tpp_slot_body">
+   ${tipo === 'treino'
+    ? `<select class="select tpp_treino_id"><option value="">— escolher treino-modelo —</option>${treinos.map(tm => `<option value="${tm.id}" ${treinoId===tm.id?'selected':''}>${tm.nome}${tm.itens?` · ${tm.itens.length} ex`:''}</option>`).join('')}</select>`
+    : tipo === 'cardio' || tipo === 'ativa'
+    ? `<input class="input tpp_notas" placeholder="ex: 30 min esteira zona 2" value="${(notas||'').replace(/"/g,'&quot;')}">`
+    : `<span class="small muted">Dia de descanso</span>`
+   }
+  </div>
+  <div style="width:24px;"></div>
+ </div>`;
+}
+
+function _tppOnTipoChange(sel, diaKey) {
+ const row = sel.closest('.tpp-dia-row');
+ const body = row.querySelector('.tpp_slot_body');
+ const tipo = sel.value;
+ const treinos = allTreinosModelo();
+ if (tipo === 'treino') {
+  body.innerHTML = `<select class="select tpp_treino_id"><option value="">— escolher treino-modelo —</option>${treinos.map(tm => `<option value="${tm.id}">${tm.nome}${tm.itens?` · ${tm.itens.length} ex`:''}</option>`).join('')}</select>`;
+ } else if (tipo === 'cardio' || tipo === 'ativa') {
+  body.innerHTML = `<input class="input tpp_notas" placeholder="ex: 30 min esteira zona 2">`;
+ } else {
+  body.innerHTML = `<span class="small muted">Dia de descanso</span>`;
+ }
+}
+
+const CATEGORIAS_TEMPLATE_PROGRAMA = ['Hipertrofia','Emagrecimento','Força','Condicionamento','Reabilitação','Saúde geral','Performance','Outros'];
+
 function templatePrgEditorHtml(t) {
+ // Backward compat: treinosModeloIds[] antigo vira agenda_semanal
+ let agenda = t.agenda_semanal;
+ if (!agenda && Array.isArray(t.treinosModeloIds) && t.treinosModeloIds.length) {
+  agenda = {};
+  _DIAS_SEMANA.forEach((d, i) => {
+   agenda[d.key] = i < t.treinosModeloIds.length
+    ? { tipo:'treino', treinoModeloId: t.treinosModeloIds[i] }
+    : { tipo:'descanso' };
+  });
+ }
+ agenda = agenda || {};
+ const treinos = allTreinosModelo();
+ const tagsStr = (t.tags || []).join(', ');
  return `
- <div class="field mb-16"><label class="field-label field-required">Nome</label><input class="input" id="tpp_nome" value="${t.nome||''}"></div><div class="grid grid-2 mb-16"><div class="field"><label class="field-label">Objetivo</label><select class="select" id="tpp_obj">${Object.entries(OBJETIVOS_LABELS_PT).map(([k,v]) => `<option value="${k}" ${t.objetivo===k?'selected':''}>${v}</option>`).join('')}</select></div><div class="field"><label class="field-label">Fase</label><select class="select" id="tpp_fase">${Object.entries(FASES_LABELS).map(([k,v]) => `<option value="${k}" ${t.fase===k?'selected':''}>${v}</option>`).join('')}</select></div><div class="field"><label class="field-label">Duração (semanas)</label><input class="input" type="number" id="tpp_dur" value="${t.duracao_semanas||8}"></div><div class="field"><label class="field-label">Nível</label><select class="select" id="tpp_nivel">${['iniciante','intermediario','avancado'].map(n => `<option value="${n}" ${t.nivel===n?'selected':''}>${n}</option>`).join('')}</select></div><div class="field"><label class="field-label">Split</label><select class="select" id="tpp_split">${Object.entries(SPLITS_LABELS).map(([k,v]) => `<option value="${k}" ${t.split===k?'selected':''}>${v}</option>`).join('')}</select></div></div><div class="field mb-16"><label class="field-label">Treinos-modelo (Ctrl+click múltiplos)</label><select class="select" id="tpp_treinos" multiple size="6">${allTreinosModelo().map(tm => `<option value="${tm.id}" ${(t.treinosModeloIds||[]).includes(tm.id)?'selected':''}>${tm.nome}</option>`).join('')}</select></div><div class="field"><label class="field-label">Observação</label><textarea class="textarea" id="tpp_obs">${t.observacao||''}</textarea></div>
+  <!-- Identidade -->
+  <div class="mb-16" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Identidade</div>
+  <div class="field mb-16"><label class="field-label field-required">Nome</label><input class="input" id="tpp_nome" value="${(t.nome||'').replace(/"/g,'&quot;')}"></div>
+  <div class="grid grid-2 mb-16">
+   <div class="field"><label class="field-label">Categoria</label><select class="select" id="tpp_categoria"><option value="">—</option>${CATEGORIAS_TEMPLATE_PROGRAMA.map(c => `<option value="${c}" ${t.categoria===c?'selected':''}>${c}</option>`).join('')}</select></div>
+   <div class="field"><label class="field-label">Visibilidade</label><select class="select" id="tpp_visibilidade">${['privado','equipe','padrão'].map(v => `<option value="${v}" ${(t.visibilidade||'privado')===v?'selected':''}>${v}</option>`).join('')}</select></div>
+  </div>
+  <div class="field mb-16"><label class="field-label">Descrição curta</label><input class="input" id="tpp_descricao" value="${(t.descricao||'').replace(/"/g,'&quot;')}" placeholder="Racional em 1 linha"></div>
+  <div class="field mb-16"><label class="field-label">Tags (vírgula)</label><input class="input" id="tpp_tags" value="${tagsStr.replace(/"/g,'&quot;')}" placeholder="ex: hipertrofia, iniciante, casa"></div>
+
+  <!-- Programa -->
+  <div class="mb-8" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Programa</div>
+  <div class="grid grid-3 mb-16">
+   <div class="field"><label class="field-label">Objetivo</label><select class="select" id="tpp_obj">${Object.entries(OBJETIVOS_LABELS_PT).map(([k,v]) => `<option value="${k}" ${t.objetivo===k?'selected':''}>${v}</option>`).join('')}</select></div>
+   <div class="field"><label class="field-label">Fase</label><select class="select" id="tpp_fase">${Object.entries(FASES_LABELS).map(([k,v]) => `<option value="${k}" ${t.fase===k?'selected':''}>${v}</option>`).join('')}</select></div>
+   <div class="field"><label class="field-label">Nível</label><select class="select" id="tpp_nivel">${['iniciante','intermediario','avancado'].map(n => `<option value="${n}" ${t.nivel===n?'selected':''}>${n}</option>`).join('')}</select></div>
+  </div>
+  <div class="grid grid-2 mb-16">
+   <div class="field"><label class="field-label">Duração (semanas)</label><input class="input" type="number" id="tpp_dur" value="${t.duracao_semanas||8}"></div>
+   <div class="field"><label class="field-label">Split</label><select class="select" id="tpp_split">${Object.entries(SPLITS_LABELS).map(([k,v]) => `<option value="${k}" ${t.split===k?'selected':''}>${v}</option>`).join('')}</select></div>
+  </div>
+
+  <!-- Agenda semanal -->
+  <div class="mb-8" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Agenda semanal</div>
+  <div style="display:grid; grid-template-columns: 90px 130px 1fr auto; gap:8px; padding:0 8px 4px; font-size:11px; color:var(--color-muted); text-transform:uppercase; letter-spacing:.3px;">
+   <div>Dia</div><div>Tipo</div><div>Conteúdo</div><div></div>
+  </div>
+  <div id="tpp_agenda_container">
+   ${_DIAS_SEMANA.map(d => _tppDiaRowHtml(d.key, d.label, agenda[d.key], treinos)).join('')}
+  </div>
+  <div class="mt-16" style="padding:10px; background:var(--h2-bg-tinted, #f5f5f5); border-radius:6px; font-size:12px;" class="small">Preencha cada dia. Repetir o mesmo treino em vários dias é OK.</div>
+
+  <!-- Observação -->
+  <div class="mb-8 mt-16" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Observação</div>
+  <div class="field"><label class="field-label">Racional / progressão (markdown)</label><textarea class="textarea" id="tpp_obs" rows="6" style="font-family: var(--h2-font-mono, monospace); font-size:13px;">${(t.observacao||'').replace(/</g,'&lt;')}</textarea></div>
+
+  ${(t.treinosModeloIds && t.treinosModeloIds.length && !t.agenda_semanal) ? `<div class="mt-16 alert alert-warning" style="padding:8px 12px; border-radius:6px; background:#fef3c7; color:#92400e; font-size:12px;">Template migrado de treinosModeloIds → agenda_semanal (${t.treinosModeloIds.length} treinos distribuídos seg-dom).</div>` : ''}
  `;
 }
+
 function novoTemplatePrograma() {
- openModal('Novo template de programa', templatePrgEditorHtml({ nome:'', objetivo:'hipertrofia', fase:'hipertrofia', duracao_semanas:8, nivel:'intermediario', split:'ABC', treinosModeloIds:[], observacao:'' }),
+ openModal('Novo template de programa', templatePrgEditorHtml({ nome:'', objetivo:'hipertrofia', fase:'hipertrofia', duracao_semanas:8, nivel:'intermediario', split:'ABC', agenda_semanal:{}, observacao:'', visibilidade:'privado', tags:[] }),
  `<button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="salvarTemplatePrograma(null)">Salvar</button>`);
 }
 function editTemplatePrograma(id) {
@@ -11619,15 +11858,37 @@ function editTemplatePrograma(id) {
  `<button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="salvarTemplatePrograma('${id}')">Salvar</button>`);
 }
 function salvarTemplatePrograma(id) {
+ const v = k => document.getElementById(k)?.value;
+ const agenda = {};
+ const treinosSelecionados = [];
+ [...document.querySelectorAll('.tpp-dia-row')].forEach(row => {
+  const dia = row.dataset.dia;
+  const tipo = row.querySelector('.tpp_tipo').value;
+  if (tipo === 'treino') {
+   const tid = row.querySelector('.tpp_treino_id')?.value || '';
+   agenda[dia] = { tipo, treinoModeloId: tid };
+   if (tid) treinosSelecionados.push(tid);
+  } else if (tipo === 'cardio' || tipo === 'ativa') {
+   agenda[dia] = { tipo, notas: row.querySelector('.tpp_notas')?.value || '' };
+  } else {
+   agenda[dia] = { tipo: 'descanso' };
+  }
+ });
  const data = {
- nome: document.getElementById('tpp_nome').value.trim(),
- objetivo: document.getElementById('tpp_obj').value,
- fase: document.getElementById('tpp_fase').value,
- duracao_semanas: +document.getElementById('tpp_dur').value,
- nivel: document.getElementById('tpp_nivel').value,
- split: document.getElementById('tpp_split').value,
- treinosModeloIds: [...document.getElementById('tpp_treinos').selectedOptions].map(o => o.value),
- observacao: document.getElementById('tpp_obs').value,
+  nome: v('tpp_nome').trim(),
+  categoria: v('tpp_categoria') || null,
+  visibilidade: v('tpp_visibilidade') || 'privado',
+  descricao: v('tpp_descricao') || null,
+  tags: (v('tpp_tags') || '').split(',').map(x => x.trim()).filter(Boolean),
+  objetivo: v('tpp_obj'),
+  fase: v('tpp_fase'),
+  duracao_semanas: +v('tpp_dur') || 8,
+  nivel: v('tpp_nivel'),
+  split: v('tpp_split'),
+  agenda_semanal: agenda,
+  // Compat: mantém treinosModeloIds sincronizado
+  treinosModeloIds: [...new Set(treinosSelecionados)],
+  observacao: v('tpp_obs') || '',
  };
  if (!data.nome) { toast('Nome é obrigatório'); return; }
  if (id) { Object.assign(allTemplatesPrograma().find(x => x.id === id), data); toast('Atualizado'); }
@@ -12717,9 +12978,55 @@ function modeloExamesEditorHtml(m) {
 function grupoModeloHtml(g, gi) {
  return `<div class="card mb-12" style="padding:12px;" data-grupo="${gi}" data-gid="${g.id||'g'+gi}"><div class="row gap-8 mb-8" style="align-items:center;"><span style="font-weight:600; color:var(--color-muted); font-size:12px;">Grupo ${gi+1}</span><input class="input me_grupo_nome" value="${(g.nome||'').replace(/"/g,'&quot;')}" placeholder="ex: Metabolismo glicêmico" style="flex:1;"><button class="btn btn-icon btn-ghost btn-danger" onclick="this.closest('[data-grupo]').remove(); return false;" title="Remover grupo">×</button></div><div class="me_exames_container">
  ${(g.exames||[]).map(item => exameModeloRowHtml(item)).join('')}
- </div><div class="row gap-8 mt-8"><select class="select me_add_exame_select" style="flex:1;"><option value="">+ Adicionar exame ao grupo…</option>
- ${allExames().filter(e => e.status === 'ativo').map(e => `<option value="${e.id}">${e.nome}${e.sigla?' ('+e.sigla+')':''} · ${catExameInfo(e.categoria).label}</option>`).join('')}
- </select><button class="btn" onclick="addExameAoGrupo(this); return false;">Adicionar</button></div></div>`;
+ </div><div class="mt-8" style="position:relative;"><div class="row gap-8"><input class="input me_add_exame_input" placeholder="Buscar exame (LOINC/TUSS/CBHPM)…" oninput="_meSearchExame(this)" onfocus="_meSearchExame(this)" autocomplete="off" style="flex:1;"></div><div class="ac-list me_ac_list" style="position:absolute; top:100%; left:0; right:0; background:var(--h2-surface, #fff); border:1px solid var(--color-border); border-radius:6px; max-height:240px; overflow-y:auto; z-index:100; display:none;"></div></div></div>`;
+}
+
+function _meSearchExame(inputEl) {
+ const grupo = inputEl.closest('[data-grupo]');
+ const list = grupo.querySelector('.me_ac_list');
+ const q = inputEl.value.trim();
+ if (!q || q.length < 2) { list.style.display = 'none'; list.innerHTML = ''; return; }
+ const qL = q.toLowerCase();
+ // Busca via AutonDB (SQLite ~98k) se disponível, senão local
+ let results = [];
+ if (window.AutonDB && window.AutonDB.isReady && window.AutonDB.isReady()) {
+  try { results = window.AutonDB.buscarExames(q, { limit: 20 }); } catch(e){ results = []; }
+ }
+ if (!results.length) {
+  results = allExames().filter(e => (e.nome||'').toLowerCase().includes(qL) || (e.sigla||'').toLowerCase().includes(qL)).slice(0, 20);
+ }
+ if (results.length === 0) {
+  list.innerHTML = `<div class="ac-item muted small" style="padding:6px 10px;">Nenhum exame encontrado.</div>`;
+ } else {
+  list.innerHTML = results.map(e => {
+   const cat = (catExameInfo && catExameInfo(e.categoria)?.label) || e.categoria || '';
+   return `<div class="ac-item" style="padding:8px 10px; cursor:pointer; border-bottom:1px solid var(--color-border-subtle,#eee);" onmousedown="_meAddExame(this, '${e.id.replace(/'/g,"\\'")}')"><div><strong>${e.nome}</strong>${e.sigla?` <span class="mono muted small">(${e.sigla})</span>`:''}</div><div class="small muted">${cat}${e.material?` · ${e.material}`:''}${e.codigo_loinc?` · LOINC ${e.codigo_loinc}`:''}</div></div>`;
+  }).join('');
+ }
+ list.style.display = 'block';
+}
+
+function _meAddExame(clickEl, exId) {
+ const grupo = clickEl.closest('[data-grupo]');
+ const jaTem = [...grupo.querySelectorAll('[data-exame-item]')].some(el => el.dataset.exameItem === exId);
+ if (jaTem) { toast('Exame já está neste grupo'); return; }
+ // Garante que o exame esteja no state.cadastros.exames (se veio do SQLite)
+ let e = allExames().find(x => x.id === exId);
+ if (!e && window.AutonDB && window.AutonDB.getExame) {
+  const dbEx = window.AutonDB.getExame(exId);
+  if (dbEx) {
+   state.cadastros.exames = state.cadastros.exames || [];
+   state.cadastros.exames.push(dbEx);
+   e = dbEx;
+  }
+ }
+ if (!e) { toast('Exame não encontrado'); return; }
+ const container = grupo.querySelector('.me_exames_container');
+ container.insertAdjacentHTML('beforeend', exameModeloRowHtml({ exameId: exId, obrigatorio:true }));
+ // limpa input e dropdown
+ grupo.querySelector('.me_add_exame_input').value = '';
+ grupo.querySelector('.me_ac_list').style.display = 'none';
+ grupo.querySelector('.me_ac_list').innerHTML = '';
 }
 function exameModeloRowHtml(item) {
  const e = allExames().find(x => x.id === item.exameId);
