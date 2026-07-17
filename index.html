@@ -1948,14 +1948,11 @@ window.AutonDB = (function () {
  const SQL = await window.initSqlJs({
  locateFile: (f) => 'lib/' + f
  });
- // Local (start.command / start.bat) usa arquivo no diretório;
- // Deploy Vercel busca do GitHub Release (arquivo grande demais pro Vercel).
- const isLocal = ['localhost', '127.0.0.1', ''].includes(window.location.hostname);
- const dbUrl = isLocal
-   ? 'data/auton.db'
-   : 'https://github.com/Apogeunexus/auton-health-v2/releases/download/v1.0.0/auton.db';
- const resp = await fetch(dbUrl);
- if (!resp.ok) throw new Error('auton.db não encontrado em ' + dbUrl);
+ // Local: arquivo servido pelo Python http.server.
+ // Vercel: rewrite em vercel.json faz proxy para o GitHub Release
+ // (evita CORS e mantém same-origin do ponto de vista do browser).
+ const resp = await fetch('data/auton.db');
+ if (!resp.ok) throw new Error('auton.db não encontrado em data/');
  const buf = new Uint8Array(await resp.arrayBuffer());
  db = new SQL.Database(buf);
  console.log('[AutonDB] carregado — %d MB', Math.round(buf.byteLength / 1024 / 1024));

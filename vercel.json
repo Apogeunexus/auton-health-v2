@@ -25,6 +25,7 @@
     }
   ],
   "rewrites": [
-    { "source": "/", "destination": "/index.html" }
+    { "source": "/", "destination": "/index.html" },
+    { "source": "/data/auton.db", "destination": "https://github.com/Apogeunexus/auton-health-v2/releases/download/v1.0.0/auton.db" }
   ]
 }
