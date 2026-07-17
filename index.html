@@ -10379,6 +10379,9 @@ function refeicaoModeloEditorHtml(r) {
    <div class="field"><label class="field-label">Categoria</label><select class="select" id="rm_cat">${['cafe','lanche','almoco','jantar','ceia','pre_treino','pos_treino'].map(c => `<option value="${c}" ${r.categoria===c?'selected':''}>${c}</option>`).join('')}</select></div>
   </div>
   <div class="mb-8" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Alimentos da refeição</div>
+  <div style="display:grid; grid-template-columns: 2fr 90px 100px 1fr auto; gap:8px; padding:0 8px 4px; font-size:11px; color:var(--color-muted); text-transform:uppercase; letter-spacing:.3px;">
+   <div>Alimento</div><div>Gramas</div><div style="text-align:right;">Kcal</div><div>Observação</div><div></div>
+  </div>
   <div id="rm_itens_container" style="margin-bottom:8px;">${itens.map((it,i) => _rmItemRowHtml(it, i)).join('') || '<div class="rm-empty-placeholder muted small" style="padding:12px; text-align:center; border:1px dashed var(--color-border); border-radius:6px;">Nenhum alimento adicionado. Use o botão abaixo.</div>'}</div>
   <button class="btn" onclick="_rmAddItem()">+ Adicionar alimento</button>
   <div id="rm_total" class="mt-16 p-8 small" style="padding:10px; background:var(--h2-bg-tinted, #f5f5f5); border-radius:6px;">Total: 0 alimentos</div>
