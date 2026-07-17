@@ -5903,56 +5903,10 @@ RENDERERS.t_sucesso = function() {
 
 
 /* ---------- Nível 1 · CADASTRO DE EXERCÍCIOS ---------- */
-RENDERERS.cadastroExercicios = function() {
- const list = allExercicios().filter(e => passesFilter(e.nome + ' ' + e.primario.join(' ')));
- document.getElementById('screen-cadastroExercicios').innerHTML = `
- ${crudHeader({
- titulo: 'Exercícios',
- subtitulo: 'Nível 1 · Atoms. Blocos atômicos reutilizáveis em treinos e programas.',
- count: allExercicios().length,
- onNew: 'novoExercicio', novoLabel: '+ Novo exercício'
- })}
- <div class="card" style="padding:0;"><table class="table cadastro-table"><thead><tr><th>Nome</th><th>Grupos</th><th>Padrão</th><th>Equipamento</th><th>Nível</th><th>Tipo</th><th></th></tr></thead><tbody>
- ${list.length === 0 ? `<tr><td colspan="7" class="cadastro-empty">Nenhum exercício encontrado.</td></tr>` :
- list.map(e => `<tr><td><strong>${e.nome}</strong></td><td><div class="row gap-8" style="flex-wrap:wrap;">${e.primario.map(g => grupoMuscTag(g)).join('')}</div></td><td class="small muted">${e.padrao}</td><td class="small">${e.equip.map(isEquipamentoLabel).join(', ')}</td><td><span class="badge">${e.nivel}</span></td><td><span class="badge ${e.tipo==='composto'?'badge-info':''}">${e.tipo}</span></td><td><div class="actions"><button class="btn btn small btn-ghost" title="Editar" onclick="editExercicio('${e.id}')">Editar</button><button class="btn btn small btn-ghost" title="Duplicar" onclick="duplicarExercicio('${e.id}')">Copiar</button><button class="btn btn-icon btn-ghost btn-danger" title="Excluir" onclick="excluirExercicio('${e.id}')">×</button></div></td></tr>`).join('')}
- </tbody></table></div>
- `;
-};
-
-
-/* ---------- Nível 2 · CADASTRO DE TREINOS-MODELO ---------- */
-RENDERERS.cadastroTreinos = function() {
- const list = allTreinosModelo().filter(t => passesFilter(t.nome + ' ' + t.grupos.join(' ')));
- document.getElementById('screen-cadastroTreinos').innerHTML = `
- ${crudHeader({
- titulo: 'Treinos-modelo',
- subtitulo: 'Nível 2 · Compostos. Treinos completos (N exercícios + parâmetros) reutilizáveis em programas.',
- count: allTreinosModelo().length,
- onNew: 'novoTreinoModelo', novoLabel: '+ Novo treino-modelo'
- })}
- <div class="card" style="padding:0;"><table class="table cadastro-table"><thead><tr><th>Nome</th><th>Grupos</th><th>Nível</th><th>Exercícios</th><th></th></tr></thead><tbody>
- ${list.length === 0 ? `<tr><td colspan="5" class="cadastro-empty">Nenhum treino-modelo. <a href="#" onclick="novoTreinoModelo();return false;" style="color:var(--color-accent)">Criar primeiro</a></td></tr>` :
- list.map(t => `<tr><td><strong>${t.nome}</strong></td><td><div class="row gap-8" style="flex-wrap:wrap;">${t.grupos.map(g => grupoMuscTag(g)).join('')}</div></td><td><span class="badge">${t.nivel}</span></td><td class="num">${t.itens.length}</td><td><div class="actions"><button class="btn btn small btn-ghost" title="Ver" onclick="verTreinoModelo('${t.id}')">Ver</button><button class="btn btn small btn-ghost" title="Editar" onclick="editTreinoModelo('${t.id}')">Editar</button><button class="btn btn small btn-ghost" title="Duplicar" onclick="duplicarTreinoModelo('${t.id}')">Copiar</button><button class="btn btn-icon btn-ghost btn-danger" title="Excluir" onclick="excluirTreinoModelo('${t.id}')">×</button></div></td></tr>`).join('')}
- </tbody></table></div>
- `;
-};
-
-/* ---------- Nível 3 · CADASTRO DE TEMPLATES DE PROGRAMA ---------- */
-RENDERERS.cadastroTemplatesPrograma = function() {
- const list = allTemplatesPrograma().filter(t => passesFilter(t.nome + ' ' + t.objetivo));
- document.getElementById('screen-cadastroTemplatesPrograma').innerHTML = `
- ${crudHeader({
- titulo: 'Templates de Programa',
- subtitulo: 'Nível 3 · Prescrição completa (objetivo + duração + split + treinos-modelo) reutilizável. Aplique em qualquer aluno.',
- count: allTemplatesPrograma().length,
- onNew: 'novoTemplatePrograma', novoLabel: '+ Novo template'
- })}
- <div class="card" style="padding:0;"><table class="table cadastro-table"><thead><tr><th>Nome</th><th>Objetivo</th><th>Fase</th><th>Duração</th><th>Nível</th><th>Split</th><th>Treinos</th><th></th></tr></thead><tbody>
- ${list.length === 0 ? `<tr><td colspan="8" class="cadastro-empty">Nenhum template.</td></tr>` :
- list.map(t => `<tr><td><strong>${t.nome}</strong></td><td><span class="badge">${OBJETIVOS_TREINO.find(o=>o.key===t.objetivo)?.label || t.objetivo}</span></td><td class="small muted">${FASES_PERIODIZACAO.find(f=>f.key===t.fase)?.label || t.fase}</td><td class="num">${t.duracao_semanas} sem</td><td><span class="badge">${t.nivel}</span></td><td><span class="badge">${SPLITS.find(s=>s.key===t.split)?.label || t.split}</span></td><td class="num">${(t.treinosModeloIds||[]).length}</td><td><div class="actions"><button class="btn btn small btn-ghost" title="Ver" onclick="verTemplatePrograma('${t.id}')">Ver</button><button class="btn btn small btn-ghost" title="Editar" onclick="editTemplatePrograma('${t.id}')">Editar</button><button class="btn btn small btn-ghost" title="Duplicar" onclick="duplicarTemplatePrograma('${t.id}')">Copiar</button><button class="btn btn-icon btn-ghost btn-danger" title="Excluir" onclick="excluirTemplatePrograma('${t.id}')">×</button></div></td></tr>`).join('')}
- </tbody></table></div>
- `;
-};
+/* Renderers cadastroExercicios, cadastroTreinos, cadastroTemplatesPrograma
+ * foram removidos daqui. As versões canônicas vivem em ~L11211/11278/11339.
+ * (Antes havia duplicação: a versão de cima era sobrescrita silenciosamente
+ * pela de baixo, tornando qualquer edição aqui invisível.) */
 
 /* ================================================================
  8. INIT
@@ -10328,37 +10282,138 @@ function verRefeicaoModelo(id) {
  `;
  openModal(r.nome, body, `<button class="btn" onclick="closeModal()">Fechar</button>`);
 }
+/* ---- Editor Refeição-modelo: cabeçalho + itens de alimento ---- */
+function _rmItemRowHtml(it, idx) {
+ const al = it.alimentoId ? acharAlimento(it.alimentoId) : null;
+ const n100 = al ? nutrPor100g(al) : null;
+ const kcalItem = n100 ? Math.round(n100.kcal * (it.gramas||0) / 100) : 0;
+ return `<div class="rm-item-row" data-idx="${idx}" data-alimento-id="${it.alimentoId||''}" style="display:grid; grid-template-columns: 2fr 90px 100px 1fr auto; gap:8px; align-items:center; padding:8px; border:1px solid var(--color-border); border-radius:6px; margin-bottom:6px; position:relative;">
+  <div style="position:relative;">
+   <input class="input rm_item_nome" placeholder="Buscar alimento (TACO)…" value="${(al?.nome || it.alimento_nome || '').replace(/"/g,'&quot;')}" oninput="_rmSearchAlimento(${idx}, this.value)" onfocus="_rmSearchAlimento(${idx}, this.value)" autocomplete="off">
+   <div class="ac-list rm_ac_list" id="rm_ac_${idx}" style="position:absolute; top:100%; left:0; right:0; background:var(--h2-surface, #fff); border:1px solid var(--color-border); border-radius:6px; max-height:220px; overflow-y:auto; z-index:100; display:none;"></div>
+   ${al ? `<div class="small muted" style="margin-top:2px;">✓ TACO · ${al.grupo || ''}</div>` : `<div class="small muted" style="margin-top:2px;">Digite para buscar</div>`}
+  </div>
+  <input class="input rm_item_gramas" type="number" min="0" step="1" value="${it.gramas||100}" placeholder="gramas" oninput="_rmRecalcTotal()">
+  <div class="rm_item_kcal small mono" style="text-align:right; padding:0 6px;">${kcalItem} kcal</div>
+  <input class="input rm_item_obs" value="${(it.obs||'').replace(/"/g,'&quot;')}" placeholder="obs (opcional)">
+  <button class="btn btn-icon btn-ghost btn-danger" onclick="_rmRemoveItem(${idx})" title="Remover">×</button>
+ </div>`;
+}
+
+function _rmSearchAlimento(idx, q) {
+ const list = document.getElementById('rm_ac_' + idx);
+ if (!list) return;
+ if (!q || q.length < 2) { list.style.display = 'none'; list.innerHTML = ''; return; }
+ const results = allAlimentos().filter(a => (a.nome||'').toLowerCase().includes(q.toLowerCase())).slice(0, 15);
+ if (results.length === 0) {
+  list.innerHTML = `<div class="ac-item muted small" style="padding:6px 10px;">Nenhum alimento encontrado.</div>`;
+ } else {
+  list.innerHTML = results.map(a => {
+   const mc = medidaCaseira(a);
+   const kcal = Math.round((a.energia_kcal ?? a.kcal ?? 0));
+   return `<div class="ac-item" style="padding:8px 10px; cursor:pointer; border-bottom:1px solid var(--color-border-subtle,#eee);" onmousedown="_rmSelecionarAlimento(${idx}, '${a.id}')"><div><strong>${a.nome}</strong></div><div class="small muted">${a.grupo||''} ${mc?`· ${mc.q} ${mc.u} = ${mc.g}g`:''} · ${kcal} kcal/100g</div></div>`;
+  }).join('');
+ }
+ list.style.display = 'block';
+}
+
+function _rmSelecionarAlimento(idx, alId) {
+ const al = acharAlimento(alId);
+ if (!al) return;
+ const row = document.querySelector(`.rm-item-row[data-idx="${idx}"]`);
+ if (!row) return;
+ row.dataset.alimentoId = alId;
+ row.querySelector('.rm_item_nome').value = al.nome;
+ const mc = medidaCaseira(al);
+ const gramasEl = row.querySelector('.rm_item_gramas');
+ if (!gramasEl.value || gramasEl.value === '100') gramasEl.value = (mc && mc.g) || 100;
+ const list = document.getElementById('rm_ac_' + idx);
+ if (list) { list.style.display = 'none'; list.innerHTML = ''; }
+ _rmRecalcTotal();
+}
+
+function _rmAddItem() {
+ const cont = document.getElementById('rm_itens_container');
+ const idx = cont.querySelectorAll('.rm-item-row').length;
+ cont.insertAdjacentHTML('beforeend', _rmItemRowHtml({ alimentoId:'', gramas:100, obs:'' }, idx));
+}
+
+function _rmRemoveItem(idx) {
+ const row = document.querySelector(`.rm-item-row[data-idx="${idx}"]`);
+ if (row) row.remove();
+ _rmRecalcTotal();
+}
+
+function _rmRecalcTotal() {
+ const rows = [...document.querySelectorAll('.rm-item-row')];
+ let kcal=0, p=0, c=0, g=0, fibra=0, sodio=0;
+ rows.forEach(row => {
+  const alId = row.dataset.alimentoId;
+  const gramas = +row.querySelector('.rm_item_gramas').value || 0;
+  const al = alId ? acharAlimento(alId) : null;
+  if (!al) { row.querySelector('.rm_item_kcal').textContent = '— kcal'; return; }
+  const n = nutrPor100g(al);
+  const f = gramas / 100;
+  const k = (n.kcal||0) * f;
+  kcal += k; p += (n.p||0) * f; c += (n.c||0) * f; g += (n.g||0) * f;
+  fibra += (al.fibra_g||0) * f; sodio += (al.sodio_mg||0) * f;
+  row.querySelector('.rm_item_kcal').textContent = Math.round(k) + ' kcal';
+ });
+ const tot = document.getElementById('rm_total');
+ if (tot) tot.innerHTML = `Total: <strong>${rows.length}</strong> alimento(s) · <strong>${Math.round(kcal)}</strong> kcal · P <strong>${p.toFixed(1)}</strong>g · C <strong>${c.toFixed(1)}</strong>g · G <strong>${g.toFixed(1)}</strong>g · Fibra ${fibra.toFixed(1)}g · Sódio ${Math.round(sodio)}mg`;
+}
+
 function refeicaoModeloEditorHtml(r) {
+ const itens = (r.itens && r.itens.length) ? r.itens : [];
  return `
- <div class="field mb-16"><label class="field-label field-required">Nome</label><input class="input" id="rm_nome" value="${r.nome||''}"></div><div class="field mb-16"><label class="field-label">Categoria</label><select class="select" id="rm_cat">${['cafe','lanche','almoco','jantar','ceia','pre_treino','pos_treino'].map(c => `<option value="${c}" ${r.categoria===c?'selected':''}>${c}</option>`).join('')}</select></div><div class="field-hint">Após salvar, os itens de alimento serão editáveis (feature em desenvolvimento — hoje edita apenas cabeçalho).</div><div class="ai-panel"><div class="ai-icon">i</div><div><div class="ai-title">Este é o cadastro base</div><div class="ai-text">A montagem completa (alimentos + quantidades) é feita usando esta refeição-modelo dentro de um Plano Alimentar. Aqui você define apenas o cabeçalho reutilizável.</div></div></div>
+  <div class="grid grid-2 mb-16">
+   <div class="field"><label class="field-label field-required">Nome</label><input class="input" id="rm_nome" value="${(r.nome||'').replace(/"/g,'&quot;')}"></div>
+   <div class="field"><label class="field-label">Categoria</label><select class="select" id="rm_cat">${['cafe','lanche','almoco','jantar','ceia','pre_treino','pos_treino'].map(c => `<option value="${c}" ${r.categoria===c?'selected':''}>${c}</option>`).join('')}</select></div>
+  </div>
+  <div class="mb-8" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Alimentos da refeição</div>
+  <div id="rm_itens_container" style="margin-bottom:8px;">${itens.map((it,i) => _rmItemRowHtml(it, i)).join('') || '<div class="muted small" style="padding:12px; text-align:center; border:1px dashed var(--color-border); border-radius:6px;">Nenhum alimento adicionado. Use o botão abaixo.</div>'}</div>
+  <button class="btn" onclick="_rmAddItem()">+ Adicionar alimento</button>
+  <div id="rm_total" class="mt-16 p-8 small" style="padding:10px; background:var(--h2-bg-tinted, #f5f5f5); border-radius:6px;">Total: 0 alimentos</div>
  `;
 }
+
 function novoRefeicaoModelo() {
  const r = { nome:'', categoria:'cafe', itens:[] };
  openModal('Nova refeição-modelo', refeicaoModeloEditorHtml(r),
  `<button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="salvarRefeicaoModelo(null)">Salvar</button>`);
+ setTimeout(_rmRecalcTotal, 30);
 }
 function editRefeicaoModelo(id) {
  const r = allRefeicoesModelo().find(x => x.id === id);
  if (!r) return;
  openModal(`Editar: ${r.nome}`, refeicaoModeloEditorHtml(r),
  `<button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="salvarRefeicaoModelo('${id}')">Salvar</button>`);
+ setTimeout(_rmRecalcTotal, 30);
 }
 function salvarRefeicaoModelo(id) {
  const data = {
- nome: document.getElementById('rm_nome').value.trim(),
- categoria: document.getElementById('rm_cat').value,
+  nome: document.getElementById('rm_nome').value.trim(),
+  categoria: document.getElementById('rm_cat').value,
+  itens: [...document.querySelectorAll('.rm-item-row')].map(row => {
+   const alId = row.dataset.alimentoId || null;
+   const al = alId ? acharAlimento(alId) : null;
+   return {
+    alimentoId: alId,
+    alimento_nome: al ? al.nome : (row.querySelector('.rm_item_nome').value || ''),
+    gramas: +row.querySelector('.rm_item_gramas').value || 0,
+    obs: row.querySelector('.rm_item_obs').value || '',
+   };
+  }).filter(it => it.alimentoId || it.alimento_nome),
  };
  if (!data.nome) { toast('Nome é obrigatório'); return; }
  if (id) {
- const r = allRefeicoesModelo().find(x => x.id === id);
- Object.assign(r, data);
- toast('Refeição-modelo atualizada');
+  const r = allRefeicoesModelo().find(x => x.id === id);
+  Object.assign(r, data);
+  toast('Refeição-modelo atualizada');
  } else {
- data.id = 'rm_' + Math.random().toString(36).slice(2,8);
- data.itens = [];
- allRefeicoesModelo().push(data);
- toast('Refeição-modelo criada');
+  data.id = 'rm_' + Math.random().toString(36).slice(2,8);
+  allRefeicoesModelo().push(data);
+  toast('Refeição-modelo criada');
  }
  scheduleSave();
  closeModal();
@@ -11294,31 +11349,146 @@ function verTreinoModelo(id) {
  }).join('')}</tbody></table>`;
  openModal(t.nome, body, `<button class="btn" onclick="closeModal()">Fechar</button>`);
 }
+/* ---- Editor Treino-modelo: cabeçalho + itens de exercício ---- */
+function _tmExRowHtml(it, idx) {
+ const ex = it.exercicioId ? allExercicios().find(x => x.id === it.exercicioId) : null;
+ const chips = ex ? (ex.primario||[]).slice(0,3).map(g => grupoMuscTag(g)).join(' ') : '';
+ return `<div class="tm-ex-row" data-idx="${idx}" data-exercicio-id="${it.exercicioId||''}" style="display:grid; grid-template-columns: 2fr 60px 80px 70px 70px 90px auto; gap:6px; align-items:center; padding:8px; border:1px solid var(--color-border); border-radius:6px; margin-bottom:6px; position:relative;">
+  <div style="position:relative;">
+   <input class="input tm_ex_nome" placeholder="Buscar exercício…" value="${(ex?.nome || it.exercicio_nome || '').replace(/"/g,'&quot;')}" oninput="_tmSearchExercicio(${idx}, this.value)" onfocus="_tmSearchExercicio(${idx}, this.value)" autocomplete="off">
+   <div class="ac-list tm_ac_list" id="tm_ac_${idx}" style="position:absolute; top:100%; left:0; right:0; background:var(--h2-surface, #fff); border:1px solid var(--color-border); border-radius:6px; max-height:220px; overflow-y:auto; z-index:100; display:none;"></div>
+   ${ex ? `<div class="small muted" style="margin-top:2px; display:flex; gap:4px; align-items:center;">${chips} <span class="badge" style="font-size:9px;">${ex.nivel||''}</span></div>` : `<div class="small muted" style="margin-top:2px;">Digite para buscar</div>`}
+  </div>
+  <input class="input tm_ex_series" type="number" min="1" step="1" value="${it.series||3}" title="Séries" oninput="_tmRecalcTotal()">
+  <input class="input tm_ex_reps" value="${it.reps||'8-12'}" title="Repetições" placeholder="8-12">
+  <input class="input tm_ex_carga" type="number" min="0" step="1" value="${it.carga||0}" title="Carga (kg)" oninput="_tmRecalcTotal()">
+  <input class="input tm_ex_descanso" type="number" min="0" step="15" value="${it.descanso||60}" title="Descanso (s)">
+  <select class="select tm_ex_tecnica" title="Técnica">${['normal','biset','triset','drop','rest_pause','isometrica'].map(t => `<option value="${t}" ${it.tecnica===t?'selected':''}>${t}</option>`).join('')}</select>
+  <button class="btn btn-icon btn-ghost btn-danger" onclick="_tmRemoveEx(${idx})" title="Remover">×</button>
+ </div>`;
+}
+
+function _tmSearchExercicio(idx, q) {
+ const list = document.getElementById('tm_ac_' + idx);
+ if (!list) return;
+ if (!q || q.length < 2) { list.style.display = 'none'; list.innerHTML = ''; return; }
+ const qL = q.toLowerCase();
+ const results = allExercicios().filter(e => (e.nome||'').toLowerCase().includes(qL) || (e.nome_en||'').toLowerCase().includes(qL)).slice(0, 15);
+ if (results.length === 0) {
+  list.innerHTML = `<div class="ac-item muted small" style="padding:6px 10px;">Nenhum exercício encontrado.</div>`;
+ } else {
+  list.innerHTML = results.map(e => {
+   const chips = (e.primario||[]).slice(0,2).map(g => grupoMuscTag(g)).join(' ');
+   const equip = (e.equip||[]).slice(0,2).map(isEquipamentoLabel).join(', ');
+   return `<div class="ac-item" style="padding:8px 10px; cursor:pointer; border-bottom:1px solid var(--color-border-subtle,#eee);" onmousedown="_tmSelecionarEx(${idx}, '${e.id}')"><div><strong>${e.nome}</strong> <span class="badge" style="font-size:9px;">${e.nivel||''}</span> <span class="badge" style="font-size:9px;">${e.tipo||''}</span></div><div class="small muted" style="display:flex; gap:4px; align-items:center; margin-top:2px;">${chips} · ${equip}</div></div>`;
+  }).join('');
+ }
+ list.style.display = 'block';
+}
+
+function _tmSelecionarEx(idx, exId) {
+ const ex = allExercicios().find(x => x.id === exId);
+ if (!ex) return;
+ const row = document.querySelector(`.tm-ex-row[data-idx="${idx}"]`);
+ if (!row) return;
+ row.dataset.exercicioId = exId;
+ row.querySelector('.tm_ex_nome').value = ex.nome;
+ const list = document.getElementById('tm_ac_' + idx);
+ if (list) { list.style.display = 'none'; list.innerHTML = ''; }
+ _tmRecalcTotal();
+}
+
+function _tmAddEx() {
+ const cont = document.getElementById('tm_ex_container');
+ const idx = cont.querySelectorAll('.tm-ex-row').length;
+ cont.insertAdjacentHTML('beforeend', _tmExRowHtml({ exercicioId:'', series:3, reps:'8-12', carga:0, descanso:60, tecnica:'normal' }, idx));
+}
+
+function _tmRemoveEx(idx) {
+ const row = document.querySelector(`.tm-ex-row[data-idx="${idx}"]`);
+ if (row) row.remove();
+ _tmRecalcTotal();
+}
+
+function _tmRecalcTotal() {
+ const rows = [...document.querySelectorAll('.tm-ex-row')];
+ let series = 0, volume = 0;
+ const gruposSet = new Set();
+ rows.forEach(row => {
+  const s = +row.querySelector('.tm_ex_series').value || 0;
+  const reps = row.querySelector('.tm_ex_reps').value || '';
+  const carga = +row.querySelector('.tm_ex_carga').value || 0;
+  const repsN = parseFirstNumber ? parseFirstNumber(reps) : (parseInt(reps, 10) || 0);
+  series += s;
+  volume += s * repsN * carga;
+  const exId = row.dataset.exercicioId;
+  if (exId) {
+   const ex = allExercicios().find(x => x.id === exId);
+   if (ex && ex.primario) ex.primario.forEach(g => gruposSet.add(g));
+  }
+ });
+ const tot = document.getElementById('tm_total');
+ if (tot) {
+  const chips = [...gruposSet].map(g => grupoMuscTag(g)).join(' ');
+  tot.innerHTML = `<div>Total: <strong>${rows.length}</strong> exercícios · <strong>${series}</strong> séries · <strong>${Math.round(volume)} kg</strong> volume estimado</div><div style="margin-top:4px; display:flex; gap:4px; align-items:center; flex-wrap:wrap;"><span class="small muted">Grupos derivados:</span> ${chips || '<span class="small muted">nenhum</span>'}</div>`;
+ }
+}
+
 function treinoModeloEditorHtml(t) {
+ const itens = (t.itens && t.itens.length) ? t.itens : [];
  return `
- <div class="field mb-16"><label class="field-label field-required">Nome</label><input class="input" id="tm_nome" value="${t.nome||''}"></div><div class="field mb-16"><label class="field-label">Nível</label><select class="select" id="tm_nivel">${['iniciante','intermediario','avancado'].map(n => `<option value="${n}" ${t.nivel===n?'selected':''}>${n}</option>`).join('')}</select></div><div class="field mb-16"><label class="field-label">Grupos musculares</label><div class="row gap-8" style="flex-wrap:wrap;">
- ${Object.entries(GRUPOS_MUSCULARES).map(([k,v]) => `<label class="row gap-8 small" style="cursor:pointer; padding:6px 10px; border:1px solid var(--color-border); border-radius:6px;"><input type="checkbox" class="tm_grupo_cb" data-grupo="${k}" ${(t.grupos||[]).includes(k)?'checked':''}> ${v.label}</label>`).join('')}
- </div></div><div class="field-hint">Após salvar, adicione exercícios editando individualmente ou usando este treino-modelo dentro de um programa.</div>
+  <div class="grid grid-2 mb-16">
+   <div class="field"><label class="field-label field-required">Nome</label><input class="input" id="tm_nome" value="${(t.nome||'').replace(/"/g,'&quot;')}"></div>
+   <div class="field"><label class="field-label">Nível</label><select class="select" id="tm_nivel">${['iniciante','intermediario','avancado'].map(n => `<option value="${n}" ${t.nivel===n?'selected':''}>${n}</option>`).join('')}</select></div>
+  </div>
+  <div class="mb-8" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Exercícios do treino</div>
+  <div style="display:grid; grid-template-columns: 2fr 60px 80px 70px 70px 90px auto; gap:6px; padding:0 8px 4px; font-size:11px; color:var(--color-muted); text-transform:uppercase; letter-spacing:.3px;">
+   <div>Exercício</div><div>Séries</div><div>Reps</div><div>Carga</div><div>Desc.</div><div>Técnica</div><div></div>
+  </div>
+  <div id="tm_ex_container">${itens.map((it,i) => _tmExRowHtml(it, i)).join('') || '<div class="muted small" style="padding:12px; text-align:center; border:1px dashed var(--color-border); border-radius:6px;">Nenhum exercício adicionado.</div>'}</div>
+  <button class="btn mt-8" onclick="_tmAddEx()">+ Adicionar exercício</button>
+  <div id="tm_total" class="mt-16" style="padding:10px; background:var(--h2-bg-tinted, #f5f5f5); border-radius:6px; font-size:13px;">Total: 0 exercícios</div>
+  <div class="field mt-16"><label class="field-label">Grupos musculares (override manual)</label><div class="row gap-8" style="flex-wrap:wrap;">
+   ${Object.entries(GRUPOS_MUSCULARES).map(([k,v]) => `<label class="row gap-8 small" style="cursor:pointer; padding:4px 10px; border:1px solid var(--color-border); border-radius:6px;"><input type="checkbox" class="tm_grupo_cb" data-grupo="${k}" ${(t.grupos||[]).includes(k)?'checked':''}> ${v.label}</label>`).join('')}
+  </div><div class="field-hint">Grupos ficam derivados dos exercícios acima. Marque aqui só para adicionar grupos extras.</div></div>
  `;
 }
 function novoTreinoModelo() {
- openModal('Novo treino-modelo', treinoModeloEditorHtml({ nome:'', grupos:[], nivel:'intermediario' }),
+ openModal('Novo treino-modelo', treinoModeloEditorHtml({ nome:'', grupos:[], nivel:'intermediario', itens:[] }),
  `<button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="salvarTreinoModelo(null)">Salvar</button>`);
+ setTimeout(_tmRecalcTotal, 30);
 }
 function editTreinoModelo(id) {
  const t = allTreinosModelo().find(x => x.id === id); if (!t) return;
  openModal(`Editar: ${t.nome}`, treinoModeloEditorHtml(t),
  `<button class="btn" onclick="closeModal()">Cancelar</button><button class="btn btn-primary" onclick="salvarTreinoModelo('${id}')">Salvar</button>`);
+ setTimeout(_tmRecalcTotal, 30);
 }
 function salvarTreinoModelo(id) {
+ const itens = [...document.querySelectorAll('.tm-ex-row')].map(row => ({
+  exercicioId: row.dataset.exercicioId || null,
+  series: +row.querySelector('.tm_ex_series').value || 3,
+  reps: row.querySelector('.tm_ex_reps').value || '8-12',
+  carga: +row.querySelector('.tm_ex_carga').value || 0,
+  descanso: +row.querySelector('.tm_ex_descanso').value || 60,
+  tecnica: row.querySelector('.tm_ex_tecnica').value || 'normal',
+ })).filter(it => it.exercicioId);
+ // Grupos: derivar dos exercícios + override manual
+ const derivados = new Set();
+ itens.forEach(it => {
+  const ex = allExercicios().find(x => x.id === it.exercicioId);
+  if (ex && ex.primario) ex.primario.forEach(g => derivados.add(g));
+ });
+ const override = [...document.querySelectorAll('.tm_grupo_cb:checked')].map(cb => cb.dataset.grupo);
  const data = {
- nome: document.getElementById('tm_nome').value.trim(),
- nivel: document.getElementById('tm_nivel').value,
- grupos: [...document.querySelectorAll('.tm_grupo_cb:checked')].map(cb => cb.dataset.grupo),
+  nome: document.getElementById('tm_nome').value.trim(),
+  nivel: document.getElementById('tm_nivel').value,
+  grupos: [...new Set([...derivados, ...override])],
+  itens,
  };
  if (!data.nome) { toast('Nome é obrigatório'); return; }
  if (id) { Object.assign(allTreinosModelo().find(x => x.id === id), data); toast('Atualizado'); }
- else { data.id = 'tm_' + Math.random().toString(36).slice(2,8); data.itens = []; allTreinosModelo().push(data); toast('Criado'); }
+ else { data.id = 'tm_' + Math.random().toString(36).slice(2,8); allTreinosModelo().push(data); toast('Criado'); }
  scheduleSave(); closeModal(); RENDERERS.cadastros();
 }
 function duplicarTreinoModelo(id) {
