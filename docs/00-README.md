@@ -29,6 +29,12 @@ Ordem recomendada:
    estado, motor de cálculo, "IA", design system, walkthrough do boot,
    dívidas técnicas.
 
+5. **[05 · Correções](05-CORRECOES.md)** — plano de correção dos
+   editores de Cadastros (Níveis 2 e 3) para respeitar a ontologia
+   composicional. Nenhum código pronto — instruções para o dev
+   implementar. Ver antes de mexer em Refeição-modelo, Treino-modelo,
+   Template de Plano ou Template de Programa.
+
 Também na raiz do projeto (não neste diretório):
 
 - **[AUTON-DESIGN-SYSTEM.md](../../AUTON-DESIGN-SYSTEM.md)** — catálogo
