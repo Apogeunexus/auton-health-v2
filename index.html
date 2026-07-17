@@ -11214,17 +11214,67 @@ function verTemplatePlano(id) {
 /* ---- Editor Template de Plano: metadados + agenda diária ---- */
 function _tpAgendaRowHtml(item, idx, refeicoes) {
  const opts = refeicoes.map(rm => `<option value="${rm.id}" ${item.refeicaoModeloId===rm.id?'selected':''}>${rm.nome} (${rm.categoria})</option>`).join('');
- return `<div class="tp-agenda-row" data-idx="${idx}" style="display:grid; grid-template-columns: 40px 90px 1fr 80px 90px auto; gap:8px; align-items:center; padding:8px; border:1px solid var(--color-border); border-radius:6px; margin-bottom:6px;">
-  <div class="small muted mono" style="text-align:center;">${idx+1}</div>
-  <input class="input tp_horario" type="time" value="${item.horario||''}" title="Horário">
-  <select class="select tp_ref">
-   <option value="">— escolher refeição —</option>
-   ${opts}
-  </select>
-  <input class="input tp_pct" type="number" min="0" max="100" step="1" value="${item.pctVet||0}" title="% VET" oninput="_tpRecalcAgenda()">
-  <div class="tp_kcal small mono" style="text-align:right; padding:0 6px;">— kcal</div>
-  <button class="btn btn-icon btn-ghost btn-danger" onclick="_tpRemoveRow(${idx})" title="Remover">×</button>
+ return `<div class="tp-agenda-wrapper" data-idx="${idx}" style="margin-bottom:6px;">
+  <div class="tp-agenda-row" style="display:grid; grid-template-columns: 60px 90px 1fr 80px 90px auto; gap:8px; align-items:center; padding:8px; border:1px solid var(--color-border); border-radius:6px;">
+   <div style="display:flex; align-items:center; gap:4px;">
+    <button class="btn btn-icon btn-ghost tp_toggle_btn" onclick="_tpToggleExpand(${idx})" title="Expandir para ver alimentos" style="width:22px; height:22px; padding:0;"><span class="tp_toggle_icon">▸</span></button>
+    <span class="small muted mono">${idx+1}</span>
+   </div>
+   <input class="input tp_horario" type="time" value="${item.horario||''}" title="Horário">
+   <select class="select tp_ref" onchange="_tpOnRefChange(${idx})">
+    <option value="">— escolher refeição —</option>
+    ${opts}
+   </select>
+   <input class="input tp_pct" type="number" min="0" max="100" step="1" value="${item.pctVet||0}" title="% VET" oninput="_tpRecalcAgenda()">
+   <div class="tp_kcal small mono" style="text-align:right; padding:0 6px;">— kcal</div>
+   <button class="btn btn-icon btn-ghost btn-danger" onclick="_tpRemoveRow(${idx})" title="Remover">×</button>
+  </div>
+  <div class="tp-agenda-details" id="tp_details_${idx}" style="display:none; padding:10px 12px; margin-top:-1px; border:1px solid var(--color-border); border-top:0; border-radius:0 0 6px 6px; background:var(--h2-bg-tinted, #f5f5f5); font-size:12px;"></div>
  </div>`;
+}
+
+function _tpRenderDetalhesRefeicao(refId) {
+ if (!refId) return '<div class="muted">Nenhuma refeição escolhida.</div>';
+ const r = allRefeicoesModelo().find(x => x.id === refId);
+ if (!r) return '<div class="muted">Refeição não encontrada.</div>';
+ const itens = r.itens || [];
+ if (itens.length === 0) return `<div class="muted"><strong>${r.nome}</strong> · nenhum alimento cadastrado nessa refeição-modelo.</div>`;
+ const calc = calcularRefeicao(r);
+ return `<div style="margin-bottom:6px;"><strong>${r.nome}</strong> <span class="muted">· ${r.categoria}</span></div>
+  <table style="width:100%; border-collapse:collapse; font-size:12px;">
+   <thead><tr style="color:var(--color-muted); font-size:10px; text-transform:uppercase;"><th style="text-align:left; padding:4px 6px;">Alimento</th><th style="text-align:right; padding:4px 6px;">Gramas</th><th style="text-align:right; padding:4px 6px;">Kcal</th><th style="text-align:right; padding:4px 6px;">P</th><th style="text-align:right; padding:4px 6px;">C</th><th style="text-align:right; padding:4px 6px;">G</th></tr></thead>
+   <tbody>${calc.linhas.map(l => `<tr><td style="padding:4px 6px;">${l.nome}</td><td style="text-align:right; padding:4px 6px;" class="mono">${l.gramas}g</td><td style="text-align:right; padding:4px 6px;" class="mono">${Math.round(l.kcal)}</td><td style="text-align:right; padding:4px 6px;" class="mono">${l.p.toFixed(1)}</td><td style="text-align:right; padding:4px 6px;" class="mono">${l.c.toFixed(1)}</td><td style="text-align:right; padding:4px 6px;" class="mono">${l.g.toFixed(1)}</td></tr>`).join('')}
+    <tr style="border-top:1px solid var(--color-border); font-weight:600;"><td style="padding:6px;">Total</td><td style="text-align:right; padding:6px;" class="mono">—</td><td style="text-align:right; padding:6px;" class="mono">${Math.round(calc.kcal)}</td><td style="text-align:right; padding:6px;" class="mono">${calc.p.toFixed(1)}</td><td style="text-align:right; padding:6px;" class="mono">${calc.c.toFixed(1)}</td><td style="text-align:right; padding:6px;" class="mono">${calc.g.toFixed(1)}</td></tr>
+   </tbody>
+  </table>`;
+}
+
+function _tpToggleExpand(idx) {
+ const wrapper = document.querySelector(`.tp-agenda-wrapper[data-idx="${idx}"]`);
+ if (!wrapper) return;
+ const details = wrapper.querySelector('.tp-agenda-details');
+ const icon = wrapper.querySelector('.tp_toggle_icon');
+ const isOpen = details.style.display !== 'none';
+ if (isOpen) {
+  details.style.display = 'none';
+  if (icon) icon.textContent = '▸';
+ } else {
+  const refId = wrapper.querySelector('.tp_ref').value;
+  details.innerHTML = _tpRenderDetalhesRefeicao(refId);
+  details.style.display = 'block';
+  if (icon) icon.textContent = '▾';
+ }
+}
+
+function _tpOnRefChange(idx) {
+ // Se detalhes estiverem abertos, re-renderiza com nova refeição
+ const wrapper = document.querySelector(`.tp-agenda-wrapper[data-idx="${idx}"]`);
+ if (!wrapper) return;
+ const details = wrapper.querySelector('.tp-agenda-details');
+ if (details && details.style.display !== 'none') {
+  const refId = wrapper.querySelector('.tp_ref').value;
+  details.innerHTML = _tpRenderDetalhesRefeicao(refId);
+ }
 }
 
 function _tpAddRow() {
@@ -11326,8 +11376,8 @@ function templatePlanoEditorHtml(t) {
     <button class="btn btn-sm btn-ghost" onclick="_tpDistribuirIgual()" title="Distribuir % igualmente">Distribuir igual</button>
    </div>
   </div>
-  <div style="display:grid; grid-template-columns: 40px 90px 1fr 80px 90px auto; gap:8px; padding:0 8px 4px; font-size:11px; color:var(--color-muted); text-transform:uppercase; letter-spacing:.3px;">
-   <div>#</div><div>Horário</div><div>Refeição-modelo</div><div>% VET</div><div>kcal</div><div></div>
+  <div style="display:grid; grid-template-columns: 60px 90px 1fr 80px 90px auto; gap:8px; padding:0 8px 4px; font-size:11px; color:var(--color-muted); text-transform:uppercase; letter-spacing:.3px;">
+   <div>#</div><div>Horário</div><div>Refeição-modelo</div><div>% VET</div><div style="text-align:right;">Kcal</div><div></div>
   </div>
   <div id="tp_agenda_container">${agenda.map((it,i) => _tpAgendaRowHtml(it, i, refeicoes)).join('') || '<div class="tp-empty-placeholder muted small" style="padding:12px; text-align:center; border:1px dashed var(--color-border); border-radius:6px;">Sem refeições. Use o botão abaixo.</div>'}</div>
   <button class="btn mt-8" onclick="_tpAddRow()">+ Adicionar refeição</button>
@@ -11763,34 +11813,101 @@ function _tppDiaRowHtml(diaKey, diaLabel, slot, treinos) {
  const tipo = slot?.tipo || 'descanso';
  const treinoId = slot?.treinoModeloId || '';
  const notas = slot?.notas || '';
- return `<div class="tpp-dia-row" data-dia="${diaKey}" style="display:grid; grid-template-columns: 90px 130px 1fr auto; gap:8px; align-items:center; padding:8px; border:1px solid var(--color-border); border-radius:6px; margin-bottom:6px;">
-  <div class="mono" style="font-weight:600;">${diaLabel}</div>
-  <select class="select tpp_tipo" onchange="_tppOnTipoChange(this, '${diaKey}')">
-   ${['descanso','treino','cardio','ativa'].map(t => `<option value="${t}" ${tipo===t?'selected':''}>${t}</option>`).join('')}
-  </select>
-  <div class="tpp_slot_body">
-   ${tipo === 'treino'
-    ? `<select class="select tpp_treino_id"><option value="">— escolher treino-modelo —</option>${treinos.map(tm => `<option value="${tm.id}" ${treinoId===tm.id?'selected':''}>${tm.nome}${tm.itens?` · ${tm.itens.length} ex`:''}</option>`).join('')}</select>`
-    : tipo === 'cardio' || tipo === 'ativa'
-    ? `<input class="input tpp_notas" placeholder="ex: 30 min esteira zona 2" value="${(notas||'').replace(/"/g,'&quot;')}">`
-    : `<span class="small muted">Dia de descanso</span>`
-   }
+ return `<div class="tpp-dia-wrapper" data-dia="${diaKey}" style="margin-bottom:6px;">
+  <div class="tpp-dia-row" style="display:grid; grid-template-columns: 30px 90px 130px 1fr auto; gap:8px; align-items:center; padding:8px; border:1px solid var(--color-border); border-radius:6px;">
+   <button class="btn btn-icon btn-ghost tpp_toggle_btn" onclick="_tppToggleExpand('${diaKey}')" title="Expandir para ver exercícios" style="width:22px; height:22px; padding:0; ${tipo!=='treino'?'opacity:.3; pointer-events:none;':''}"><span class="tpp_toggle_icon">▸</span></button>
+   <div class="mono" style="font-weight:600;">${diaLabel}</div>
+   <select class="select tpp_tipo" onchange="_tppOnTipoChange(this, '${diaKey}')">
+    ${['descanso','treino','cardio','ativa'].map(t => `<option value="${t}" ${tipo===t?'selected':''}>${t}</option>`).join('')}
+   </select>
+   <div class="tpp_slot_body">
+    ${tipo === 'treino'
+     ? `<select class="select tpp_treino_id" onchange="_tppOnTreinoChange('${diaKey}')"><option value="">— escolher treino-modelo —</option>${treinos.map(tm => `<option value="${tm.id}" ${treinoId===tm.id?'selected':''}>${tm.nome}${tm.itens?` · ${tm.itens.length} ex`:''}</option>`).join('')}</select>`
+     : tipo === 'cardio' || tipo === 'ativa'
+     ? `<input class="input tpp_notas" placeholder="ex: 30 min esteira zona 2" value="${(notas||'').replace(/"/g,'&quot;')}">`
+     : `<span class="small muted">Dia de descanso</span>`
+    }
+   </div>
+   <div style="width:24px;"></div>
   </div>
-  <div style="width:24px;"></div>
+  <div class="tpp-dia-details" id="tpp_details_${diaKey}" style="display:none; padding:10px 12px; margin-top:-1px; border:1px solid var(--color-border); border-top:0; border-radius:0 0 6px 6px; background:var(--h2-bg-tinted, #f5f5f5); font-size:12px;"></div>
  </div>`;
+}
+
+function _tppRenderDetalhesTreino(treinoId) {
+ if (!treinoId) return '<div class="muted">Nenhum treino escolhido.</div>';
+ const tm = allTreinosModelo().find(x => x.id === treinoId);
+ if (!tm) return '<div class="muted">Treino não encontrado.</div>';
+ const itens = tm.itens || [];
+ if (itens.length === 0) return `<div class="muted"><strong>${tm.nome}</strong> · nenhum exercício cadastrado nesse treino-modelo.</div>`;
+ let series = 0, volume = 0;
+ return `<div style="margin-bottom:6px;"><strong>${tm.nome}</strong> <span class="muted">· ${(tm.grupos||[]).join(', ') || 'sem grupos'}</span></div>
+  <table style="width:100%; border-collapse:collapse; font-size:12px;">
+   <thead><tr style="color:var(--color-muted); font-size:10px; text-transform:uppercase;"><th style="text-align:left; padding:4px 6px;">Exercício</th><th style="text-align:right; padding:4px 6px;">Séries</th><th style="text-align:right; padding:4px 6px;">Reps</th><th style="text-align:right; padding:4px 6px;">Carga</th><th style="text-align:right; padding:4px 6px;">Descanso</th></tr></thead>
+   <tbody>${itens.map(it => {
+    const ex = allExercicios().find(x => x.id === it.exercicioId);
+    const repsN = parseFirstNumber ? parseFirstNumber(it.reps) : (parseInt(it.reps,10)||0);
+    series += it.series; volume += it.series * repsN * (it.carga||0);
+    return `<tr><td style="padding:4px 6px;">${ex ? ex.nome : '?'}</td><td style="text-align:right; padding:4px 6px;" class="mono">${it.series}</td><td style="text-align:right; padding:4px 6px;" class="mono">${it.reps}</td><td style="text-align:right; padding:4px 6px;" class="mono">${it.carga||'—'} kg</td><td style="text-align:right; padding:4px 6px;" class="mono">${it.descanso}s</td></tr>`;
+   }).join('')}
+    <tr style="border-top:1px solid var(--color-border); font-weight:600;"><td style="padding:6px;">Total</td><td style="text-align:right; padding:6px;" class="mono">${series}</td><td style="text-align:right; padding:6px;" class="mono">—</td><td style="text-align:right; padding:6px;" class="mono">${Math.round(volume)} kg vol.</td><td></td></tr>
+   </tbody>
+  </table>`;
+}
+
+function _tppToggleExpand(diaKey) {
+ const wrapper = document.querySelector(`.tpp-dia-wrapper[data-dia="${diaKey}"]`);
+ if (!wrapper) return;
+ const details = wrapper.querySelector('.tpp-dia-details');
+ const icon = wrapper.querySelector('.tpp_toggle_icon');
+ const tipo = wrapper.querySelector('.tpp_tipo').value;
+ if (tipo !== 'treino') return;
+ const isOpen = details.style.display !== 'none';
+ if (isOpen) {
+  details.style.display = 'none';
+  if (icon) icon.textContent = '▸';
+ } else {
+  const treinoId = wrapper.querySelector('.tpp_treino_id')?.value || '';
+  details.innerHTML = _tppRenderDetalhesTreino(treinoId);
+  details.style.display = 'block';
+  if (icon) icon.textContent = '▾';
+ }
+}
+
+function _tppOnTreinoChange(diaKey) {
+ // Se detalhes estiverem abertos, re-renderiza com novo treino
+ const wrapper = document.querySelector(`.tpp-dia-wrapper[data-dia="${diaKey}"]`);
+ if (!wrapper) return;
+ const details = wrapper.querySelector('.tpp-dia-details');
+ if (details && details.style.display !== 'none') {
+  const treinoId = wrapper.querySelector('.tpp_treino_id')?.value || '';
+  details.innerHTML = _tppRenderDetalhesTreino(treinoId);
+ }
 }
 
 function _tppOnTipoChange(sel, diaKey) {
  const row = sel.closest('.tpp-dia-row');
+ const wrapper = sel.closest('.tpp-dia-wrapper');
  const body = row.querySelector('.tpp_slot_body');
  const tipo = sel.value;
  const treinos = allTreinosModelo();
+ const toggleBtn = row.querySelector('.tpp_toggle_btn');
  if (tipo === 'treino') {
-  body.innerHTML = `<select class="select tpp_treino_id"><option value="">— escolher treino-modelo —</option>${treinos.map(tm => `<option value="${tm.id}">${tm.nome}${tm.itens?` · ${tm.itens.length} ex`:''}</option>`).join('')}</select>`;
+  body.innerHTML = `<select class="select tpp_treino_id" onchange="_tppOnTreinoChange('${diaKey}')"><option value="">— escolher treino-modelo —</option>${treinos.map(tm => `<option value="${tm.id}">${tm.nome}${tm.itens?` · ${tm.itens.length} ex`:''}</option>`).join('')}</select>`;
+  if (toggleBtn) { toggleBtn.style.opacity = ''; toggleBtn.style.pointerEvents = ''; }
  } else if (tipo === 'cardio' || tipo === 'ativa') {
   body.innerHTML = `<input class="input tpp_notas" placeholder="ex: 30 min esteira zona 2">`;
+  if (toggleBtn) { toggleBtn.style.opacity = '.3'; toggleBtn.style.pointerEvents = 'none'; }
  } else {
   body.innerHTML = `<span class="small muted">Dia de descanso</span>`;
+  if (toggleBtn) { toggleBtn.style.opacity = '.3'; toggleBtn.style.pointerEvents = 'none'; }
+ }
+ // Fecha detalhes se estava aberto
+ if (wrapper) {
+  const details = wrapper.querySelector('.tpp-dia-details');
+  if (details) { details.style.display = 'none'; details.innerHTML = ''; }
+  const icon = row.querySelector('.tpp_toggle_icon');
+  if (icon) icon.textContent = '▸';
  }
 }
 
@@ -11835,8 +11952,8 @@ function templatePrgEditorHtml(t) {
 
   <!-- Agenda semanal -->
   <div class="mb-8" style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:.4px; color:var(--color-muted);">Agenda semanal</div>
-  <div style="display:grid; grid-template-columns: 90px 130px 1fr auto; gap:8px; padding:0 8px 4px; font-size:11px; color:var(--color-muted); text-transform:uppercase; letter-spacing:.3px;">
-   <div>Dia</div><div>Tipo</div><div>Conteúdo</div><div></div>
+  <div style="display:grid; grid-template-columns: 30px 90px 130px 1fr auto; gap:8px; padding:0 8px 4px; font-size:11px; color:var(--color-muted); text-transform:uppercase; letter-spacing:.3px;">
+   <div></div><div>Dia</div><div>Tipo</div><div>Conteúdo</div><div></div>
   </div>
   <div id="tpp_agenda_container">
    ${_DIAS_SEMANA.map(d => _tppDiaRowHtml(d.key, d.label, agenda[d.key], treinos)).join('')}
