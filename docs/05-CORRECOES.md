@@ -1,284 +1,495 @@
-# 05 · Correções — Composição Ontológica dos Cadastros
+# 05 · Correções — Tela **Cadastros**
 
-> **Problema-raiz:** os editores dos Níveis 2 e 3 dos 4 domínios não
-> respeitam a ontologia. Regra que precisa valer em todos:
+> **Escopo estrito:** correções nos **11 sub-cadastros** da rota
+> `data-route="cadastros"`. Nada de wizard, nada de fluxo clínico, nada
+> de tela de paciente. Só a **biblioteca de conhecimento reutilizável**
+> do profissional.
 >
-> **Cada Nível N precisa ter UI para selecionar itens do Nível N−1 —
-> e preservar 100% dos metadados que o schema já suporta.**
->
-> Hoje isso só acontece corretamente em **Prescrição → Fórmula**. Os
-> outros editores ou coletam só o cabeçalho, ou usam `<select multiple>`
-> HTML nativo, ou **destroem metadados clínicos ricos** ao editar
-> templates populados por seeds.
->
-> Este documento é o **plano de correção**. Nada é código pronto — são
-> instruções para o dev implementar. A maior parte das mudanças é
-> UI-only; algumas exigem evolução do schema com migration (agenda
-> semanal/diária, ver §5).
+> **Fora de escopo:** correções em `aplicarTemplate`, `salvarInstrumentoNoPaciente`,
+> renderers do wizard (`RENDERERS.inicio/anamnese/t_split/rx_itens/ex_selecao`).
+> Bugs desses arquivos citados aqui são **notas correlatas**, não itens
+> deste plano. Eles vão para `06-CORRECOES-FLUXO.md` (a criar).
 
 ---
 
 ## Sumário
 
-- [1. Diagnóstico — matriz atual](#1-diagnóstico--matriz-atual-4-domínios--3-níveis)
-- [2. Bloqueadores prévios (fazer PRIMEIRO)](#2-bloqueadores-prévios-fazer-primeiro)
-- [3. Padrão de referência — Fórmula](#3-padrão-de-referência--editor-de-fórmula-manipulada)
-- [4. Instruções por editor — Níveis 2](#4-instruções-por-editor--níveis-2-composição-de-itens)
-- [5. Instruções por editor — Níveis 3](#5-instruções-por-editor--níveis-3-templates-com-agenda-e-metadados)
-- [6. Integridade referencial](#6-integridade-referencial-cross-cadastro)
-- [7. Padronização visual](#7-padronização-visual)
-- [8. Discussão ontológica pendente](#8-discussão-ontológica-pendente)
-- [9. Ordem final de implementação](#9-ordem-final-de-implementação)
-- [10. Checklist de aceitação](#10-checklist-de-aceitação-por-editor)
+- [1. Escopo — os 11 sub-cadastros](#1-escopo--os-11-sub-cadastros)
+- [2. Diagnóstico](#2-diagnóstico-11-sub-cadastros--6-critérios)
+- [3. Bloqueadores prévios](#3-bloqueadores-prévios-fazer-primeiro)
+- [4. Padrão de referência](#4-padrão-de-referência--editor-de-fórmula)
+- [5. Arquitetura de componentes reutilizáveis](#5-arquitetura-de-componentes-reutilizáveis)
+- [6. Correções por sub-cadastro](#6-correções-por-sub-cadastro)
+- [7. Integridade referencial](#7-integridade-referencial-entre-cadastros)
+- [8. Padronização visual](#8-padronização-visual)
+- [9. Migrações de schema](#9-migrações-de-schema)
+- [10. Ordem de implementação e Definition of Done](#10-ordem-de-implementação-e-definition-of-done)
+- [Anexos](#anexo-a--comandos-úteis-para-o-dev)
 
 ---
 
-## 1. Diagnóstico — matriz atual (4 domínios × 3 níveis)
+## 1. Escopo — os 11 sub-cadastros
 
-| Domínio | Nível 1 · Átomo | Nível 2 · Composto | Nível 3 · Template |
-|---|---|---|---|
-| **Alimentação** | Alimento — CRUD ✅ | Refeição-modelo — ❌ **só cabeçalho** | Template de Plano — 🔴 **múltiplos problemas** (ver §5.1) |
-| **Treino** | Exercício — CRUD ✅ | Treino-modelo — ❌ **só cabeçalho** | Template de Programa — 🔴 **lista solta em vez de agenda semanal** |
-| **Prescrição** | Produto — CRUD ✅ | Fórmula — ✅ **CORRETO** (padrão de referência) | Template de Prescrição — N/A (é template textual, não composição — ver §8.2) |
-| **Exames** | Exame — CRUD ✅ | (Painel não existe — ver §8.1) | Modelo de Solicitação — ⚠️ tem grupos, mas `<select>` HTML com 500+ opções |
+Registrados em `CADASTRO_TABS` ([index.html:8736–8772](../index.html#L8736)).
+Rota entra por `goTo('cadastros')` → `RENDERERS.cadastros`
+([10124](../index.html#L10124)) → delega para o sub-renderer da sub-tab
+ativa em `#cadastroSubContent`.
 
-**Legenda:** ✅ ok · ⚠️ funciona mas UI ruim · 🔴 bug ou perda de dados · ❌ falta composição inteira
+| # | Top-tab | Sub-tab (`key`) | Nível | Renderer | Editor `*EditorHtml` |
+|:-:|---|---|:-:|---|---|
+| 1 | Alimentação | `alimentos` | 1 | `cadastroAlimentos` @10171 | `alimentoEditorHtml` @10214 |
+| 2 | Alimentação | `refeicoes` | 2 | `cadastroRefeicoes` @10280 | `refeicaoModeloEditorHtml` @10331 |
+| 3 | Alimentação | `templates_plano` | 3 | `cadastroTemplatesPlano` @10382 | `templatePlanoEditorHtml` @11148 |
+| 4 | Treino | `exercicios` | 1 | `cadastroExercicios` @11211 ⚠ | `exercicioEditorHtml` @11220 |
+| 5 | Treino | `treinos` | 2 | `cadastroTreinos` @11278 ⚠ | `treinoModeloEditorHtml` @11297 |
+| 6 | Treino | `templates_programa` | 3 | `cadastroTemplatesPrograma` @11339 ⚠ | `templatePrgEditorHtml` @11419 |
+| 7 | Prescrição | `produtos` | 1 | `cadastroProdutos` @11460 | `produtoEditorHtml` @11591 |
+| 8 | Prescrição | `formulas` | 2 | `cadastroFormulas` @11689 | `formulaEditorHtml` @11715 ★ |
+| 9 | Prescrição | `templates_prescricao` | 3 | `cadastroTemplatesPrescricao` @11835 | `templatePrescricaoEditorHtml` @12081 |
+| 10 | Exames | `exames_lista` | 1 | `cadastroExames` @12215 | `exameEditorHtml` @12280 |
+| 11 | Exames | `modelos_exames` | 3 | `cadastroModelosExames` @12427 | `modeloExamesEditorHtml` @12520 |
 
-**Impacto para o usuário:**
-- **Impossível** criar Refeição-modelo ou Treino-modelo funcional pela UI. Só os que vieram no seed têm itens.
-- **Editar** um Template de Plano pela UI **destrói metadados clínicos ricos** (categoria, especialidade, tags, markdown estruturado com 12 seções clínicas populado por workflow).
-- **Bug do 33+33+33=99** em `aplicarTemplate` (linha 7247) trava validação da Etapa 6 (Estrutura) do wizard de plano — ver §2.2.
-- **Renderers duplicados** significam que editar um deles pode não ter efeito (a segunda definição sobrescreve a primeira) — ver §2.1.
+**Marcadores:** ★ = padrão de referência ontológico · ⚠ = renderer duplicado (§3.1)
+
+**Ausente:** não há sub-cadastro de **Painel de Exames** (Nível 2 do
+domínio Exames). Ver `01-ONTOLOGIA.md` §2.4.2 — implementação atual usa
+`tipo_exame='composto'` (LOINC) ou grupo dentro de Modelo de Solicitação.
 
 ---
 
-## 2. Bloqueadores prévios (fazer PRIMEIRO)
+## 2. Diagnóstico — 11 sub-cadastros × 6 critérios
 
-Antes de tocar em qualquer editor, resolver esses dois itens — senão
-correções serão invisíveis ou introduzirão novos bugs.
+| # | Sub-cadastro | Cabeçalho | Composição N−1 | Metadados ricos | Preview ao editar | Integridade | Padrão UI |
+|:-:|---|:-:|:-:|:-:|:-:|:-:|:-:|
+| 1 | Alimentos | ✅ | (é átomo) | ✅ | — | ⚠ | ✅ |
+| 2 | Refeições-modelo | ✅ | ❌ **falta** | ⚠ falta `perfil` tags | ❌ | ⚠ | ⚠ |
+| 3 | Templates de Plano | ✅ | 🔴 `<select multiple>` | 🔴 **destrói** | ❌ | ⚠ | 🔴 |
+| 4 | Exercícios | ✅ | (é átomo) | ⚠ só 1 grupo/equip | — | ⚠ | ✅ |
+| 5 | Treinos-modelo | ✅ | ❌ **falta** | ✅ | ❌ | ⚠ | ⚠ |
+| 6 | Templates de Programa | ✅ | 🔴 `<select multiple>` | ⚠ falta agenda | ❌ | ⚠ | 🔴 |
+| 7 | Produtos | ✅ | (é átomo) | ✅ | ✅ (`verProduto`) | ⚠ | ✅ |
+| 8 | Fórmulas | ✅ | ✅ autocomplete | ✅ | ⚠ básico | ⚠ | ✅ ★ |
+| 9 | Templates de Prescrição | ✅ | N/A (§8.2 disc.) | ✅ | ⚠ básico | — | ✅ |
+| 10 | Exames | ✅ | (é átomo) | ✅ | ✅ (`verExame`) | ⚠ | ✅ |
+| 11 | Modelos de Solicitação | ✅ | ⚠ `<select>` 500+ | ✅ | ✅ (`verModelo…`) | ⚠ | ⚠ |
 
-### 2.1. Deduplicar renderers
+**Legenda:** ✅ ok · ⚠ funciona mas melhorável · 🔴 quebrado/perigoso · ❌ ausente
 
-**3 pares confirmados** por grep. Como o JS avalia em ordem, a segunda
-sobrescreve a primeira — editar a versão que aparece antes no arquivo
-**não tem efeito nenhum**.
+**Padrões identificados:**
 
-| Renderer | Definição 1 (obsoleta, remover) | Definição 2 (canônica, manter) |
+- **6 dos 11** editores estão inteiramente ok ou têm pequenas melhorias (1, 4, 7, 8, 9, 10).
+- **2 editores** (Refeição-modelo, Treino-modelo) estão **inteiramente quebrados** — só cabeçalho, sem composição. Impossível criar via UI.
+- **2 editores** (Templates de Plano e Programa) usam **`<select multiple>` HTML nativo**, destroem metadados clínicos ricos e não têm agenda temporal.
+- **1 editor** (Modelo de Solicitação) está quase certo — só o `<select>` de "adicionar exame" precisa virar autocomplete.
+
+---
+
+## 3. Bloqueadores prévios (fazer PRIMEIRO)
+
+### 3.1. Deduplicar 3 renderers do domínio Treino
+
+Confirmado por grep: as três funções abaixo são declaradas **duas
+vezes** no mesmo arquivo. Como o JS avalia em ordem, a segunda
+declaração **sobrescreve silenciosamente** a primeira — qualquer
+correção feita na versão de cima não tem efeito.
+
+| Renderer | Definição obsoleta (remover) | Definição canônica (manter) |
 |---|---|---|
 | `RENDERERS.cadastroExercicios` | [index.html:5906](../index.html#L5906) | [index.html:11211](../index.html#L11211) |
 | `RENDERERS.cadastroTreinos` | [index.html:5924](../index.html#L5924) | [index.html:11278](../index.html#L11278) |
 | `RENDERERS.cadastroTemplatesPrograma` | [index.html:5941](../index.html#L5941) | [index.html:11339](../index.html#L11339) |
 
-**Ação:** deletar as versões 5906/5924/5941. Verificar (grep) se há
-outras funções relacionadas duplicadas (`verTemplatePrograma`,
-`treinoModeloEditorHtml`, `templatePrgEditorHtml`, editores de exercício
-etc.) — se sim, aplicar o mesmo tratamento.
+**Ação:** deletar as 3 funções obsoletas (as de linha 59xx). Verificar
+com o grep do §A.
 
-**Custo:** ~30 min. Ganho: elimina fonte silenciosa de bugs futuros.
+**Custo:** ~30 min. Ganho: sanidade para tudo que vem depois.
 
-### 2.2. Bug crítico em `aplicarTemplate` — distribuição de `pctVet`
+### 3.2. Nota correlata (fora de escopo — só menção)
 
-**Local:** [index.html:7247](../index.html#L7247).
-
-```js
-const pctPorRefeicao = Math.round(100 / refs.length);
-```
-
-Distribui uniformemente com arredondamento simples. Resultado:
-
-| N refeições | `Math.round(100/N)` | Total | Problema |
-|:-:|:-:|:-:|---|
-| 3 | 33 | **99** | Trava `canNext` na Etapa 6 (validação exige 100%) |
-| 4 | 25 | 100 | OK |
-| 5 | 20 | 100 | OK |
-| 6 | 17 | **102** | Estoura |
-| 7 | 14 | **98** | Trava |
-
-**Correção:** distribuir com resto para fechar 100 exatamente:
-
-```js
-const base = Math.floor(100 / refs.length);
-const resto = 100 - (base * refs.length);
-// primeiras `resto` refeições ganham +1
-refs.forEach((r, i) => r.pctVet = base + (i < resto ? 1 : 0));
-```
-
-**Melhor ainda:** template salvar `pctVet` explícito por refeição (§5.1)
-para respeitar rateio clínico (ex: café 25% / almoço 40% / jantar 30% /
-ceia 5%). Aí não precisa distribuir na aplicação.
-
-**Custo:** 15 min. Ganho: destrava o wizard para templates de 3 ou
-6-7 refeições.
+Existe bug em `aplicarTemplate` (fluxo do wizard, linha 7247) que
+distribui `pctVet` com `Math.round(100/N)` — dá 99% para 3 refeições,
+102% para 6, 98% para 7. **Não é bug de cadastro**, mas fica
+**contornado** se a correção do §6.3 (Template de Plano com
+`agenda_diaria[]` explícito) for feita — o `aplicarTemplate` deixa de
+precisar distribuir. Correção do bug em si pertence ao próximo doc de
+correções de wizard.
 
 ---
 
-## 3. Padrão de referência — Editor de Fórmula Manipulada
+## 4. Padrão de referência — Editor de Fórmula
 
-Este editor **já implementa o padrão ontológico correto** e serve de
-referência para todos os outros editores de Nível 2.
+**Função:** `formulaEditorHtml` ([index.html:11715](../index.html#L11715)).
 
-**Local:** `index.html` linhas 11715–11794 (função `formulaEditorHtml`).
+É o único editor de Nível 2 que compõe corretamente do Nível 1. Serve
+de blueprint para os editores 2 e 5 (Refeição-modelo e Treino-modelo)
+e para os pickers dentro dos editores 3 e 6 (Templates).
 
-### 3.1. Estrutura
+### 4.1. Anatomia
 
 ```
-Cabeçalho (nome, tipo farmacêutico, duração, posologia geral, observação)
-└── Lista de Componentes (Nível 1 = Produto)
-    ├── Linha 1: [autocomplete Produto] [dose] [obs] [×]
-    │             └── vinculação com produto_id (hidden)
-    │             └── indicador de vínculo (vinculado ao catálogo | texto livre)
-    ├── Linha 2: ...
-    └── [+ Adicionar componente]
+┌─ Cabeçalho ────────────────────────────────┐
+│ Nome*, tipo farmacêutico, duração,        │
+│ posologia geral, observação                │
+└────────────────────────────────────────────┘
+┌─ Lista de componentes (Nível 1 = Produto) ─┐
+│ ┌─ Linha 1 ──────────────────────────────┐ │
+│ │ [autocomplete Produto ▼] [dose] [obs] × │ │
+│ │  ↳ dropdown flutuante  8 primeiros      │ │
+│ │  ↳ hidden .fm_cmp_pid = produto_id      │ │
+│ │  ↳ badge: 🟢 vinculado / ⚪ texto livre │ │
+│ ├─ Linha 2 ──────────────────────────────┤ │
+│ │ ...                                     │ │
+│ └─────────────────────────────────────────┘ │
+│ [+ Adicionar componente]                   │
+└────────────────────────────────────────────┘
 ```
 
-### 3.2. Peças-chave a reutilizar
+### 4.2. Peças-chave
 
 | Função | Linha | O que faz |
 |---|---|---|
-| `componenteRowHtml(c, i)` | 11725 | Renderiza cada linha de componente com input+dose+obs+botão remover |
-| `buscarProdutoParaComponente(inputEl, idx)` | 11743 | Autocomplete via `AutonDB.buscarProdutos(q, {limit:8})` — dropdown flutuante |
-| `selecionarProdutoComponente(prod, idx)` | 11757 | Preenche `pid` hidden, nome, auto-fill de dose com `prod.concentracao` |
-| Listener de desvincular | 11768 | Se usuário edita o nome depois de vincular → remove o vínculo |
-| `addComponente()` | 11737 | Adiciona nova linha vazia |
+| `componenteRowHtml(c, i)` | 11725 | HTML de uma linha de componente |
+| `buscarProdutoParaComponente(inputEl, idx)` | 11743 | Autocomplete via `AutonDB.buscarProdutos(q, {limit:8})` |
+| `selecionarProdutoComponente(prod, idx)` | 11757 | Vincula: preenche pid, snapshot do nome, auto-fill de dose com `prod.concentracao` |
+| Listener de desvincular | 11768 | Se usuário edita nome depois de vincular → remove vínculo |
+| `addComponente()` | 11737 | Adiciona linha vazia |
 
-### 3.3. Regras invioláveis do padrão
+### 4.3. Regras invioláveis do padrão
 
-1. **Autocomplete sempre que o Nível N−1 for grande** (>50 itens) — nunca `<select>` HTML nativo.
-2. **Vinculação por id** — cada linha carrega hidden com `<nivel1>_id`. Preserva referência ao catálogo oficial mesmo quando o nome é editado.
-3. **Fallback texto livre** — se o profissional edita o nome depois de vincular, o vínculo cai e vira "item em texto livre". Nunca perde o que foi digitado.
-4. **Auto-fill inteligente** — quando vincula, preenche defaults derivados do item (dose = `concentracao`, gramas = medida caseira padrão, séries/reps = últimos usados).
-5. **Indicador visual do vínculo** — badge verde ("vinculado ao catálogo") ou cinza ("texto livre").
-6. **Contexto isolado** — editor de cadastro NUNCA toca em `state.plano`/`state.treino`/etc. Usa `tm.itens`/`rm.itens` locais.
+1. **Autocomplete quando N−1 é grande** (>50 itens) — nunca `<select>` HTML.
+2. **Vinculação por id** — cada linha carrega hidden com `<nivel1>_id`. Preserva referência ao catálogo mesmo quando o nome é editado.
+3. **Fallback texto livre** — editar o nome depois de vincular remove o vínculo silenciosamente; nada é perdido.
+4. **Auto-fill inteligente** — ao vincular, preenche defaults derivados do item.
+5. **Indicador visual do vínculo** — badge verde ou cinza; profissional sempre sabe o estado.
+6. **Contexto isolado** — editor de cadastro NUNCA lê/escreve em `state.plano/treino/rx/ex`. Escreve só em `state.cadastros.<tipo>[]`.
 
 ---
 
-## 4. Instruções por editor — Níveis 2 (composição de itens)
+## 5. Arquitetura de componentes reutilizáveis
 
-### 4.1. 🍽️ Alimentação → Refeição-modelo
+Antes de mexer nos editores, **extrair 8 componentes utilitários**. O
+mesmo padrão vai ser aplicado várias vezes; extrair uma vez economiza
+retrabalho e evita divergência entre editores.
 
-**Editor atual** ([linhas 10331–10346](../index.html#L10331), função `refeicaoModeloEditorHtml`):
+| # | Componente | Assinatura sugerida | Usado em |
+|:-:|---|---|---|
+| C1 | Autocomplete de Alimento | `_pickAlimento(container, onSelect, {excluirIds})` | Refeição-modelo, wizard Montagem |
+| C2 | Autocomplete de Exercício | `_pickExercicio(container, onSelect, {grupoFiltro})` | Treino-modelo, wizard Split |
+| C3 | Autocomplete de Refeição-modelo | `_pickRefeicaoModelo(container, onSelect)` | Template de Plano |
+| C4 | Autocomplete de Treino-modelo | `_pickTreinoModelo(container, onSelect, {grupoFiltro})` | Template de Programa |
+| C5 | Autocomplete de Exame | `_pickExame(container, onSelect, {categoriaFiltro})` | Modelo de Solicitação, wizard `ex_selecao` |
+| C6 | Editor de Agenda Diária | `_editorAgendaDiaria(tp, containerId)` | Template de Plano |
+| C7 | Editor de Agenda Semanal | `_editorAgendaSemanal(tpp, containerId)` | Template de Programa |
+| C8 | Preview lateral ao vivo | `_previewLateral(tipo, dataRef)` | Refeição-modelo, Treino-modelo, ambos Templates |
 
-```html
-<input id="rm_nome">              [OK]
-<select id="rm_cat">              [OK]
-<div>Após salvar, os itens de alimento serão editáveis
-     (feature em desenvolvimento — hoje edita apenas cabeçalho).</div>
+**Já existem** (não precisa criar, só refatorar para aceitar contexto):
+
+- `searchFoodInline` @7852 → base de C1.
+- `searchExercicioParaTreino` @5245 → base de C2.
+- `exSearchExec` @13005 → base de C5.
+
+**Novos** (não têm equivalente): C3, C4, C6, C7, C8.
+
+Regra de assinatura: **todo componente recebe um container-alvo e um
+callback `onSelect`. Nunca escreve em `state.*` diretamente** — o
+editor pai decide o que fazer com a seleção.
+
+---
+
+## 6. Correções por sub-cadastro
+
+Cada sub-seção segue o mesmo formato: **Estado atual → Mudança
+necessária → Mockup → Snippet de salvar → Definition of Done**.
+
+### 6.1. ❶ Alimentos — ✅ ok, ajustes menores
+
+**Estado atual:** editor completo ([alimentoEditorHtml @10214](../index.html#L10214)).
+Cobre nome, grupo, kcal, P/C/G/100g, porção padrão, alergenos.
+
+**Ajustes propostos:**
+- Adicionar campo `fibra_g` no editor (schema já tem, editor ignora).
+- Adicionar campo `sodio_mg` idem.
+- Botão "importar do catálogo TACO" apontando para
+  `renderPainelCatalogoOficial('alimentos')` — já existe para
+  Produtos e Exames, replicar para Alimentos.
+
+**DoD:** editor grava todos os campos que o schema `alimentos` suporta
+(ver `03-DADOS.md` §2.4).
+
+---
+
+### 6.2. ❷ Refeições-modelo — ❌ SÓ CABEÇALHO (crítico)
+
+**Estado atual:** [refeicaoModeloEditorHtml @10331](../index.html#L10331).
+Coleta só `nome` + `categoria`. O código admite:
+
+> *"Após salvar, os itens de alimento serão editáveis (feature em
+> desenvolvimento — hoje edita apenas cabeçalho)."*
+
+Impossível criar refeição funcional pela UI. Só as ~116 vindas de seed
+têm `itens[]`.
+
+**Mudança necessária:**
+
+```
+┌─ Cabeçalho ────────────────────────────────────────────┐
+│ Nome*, categoria (café/lanche/almoço/…)                │
+│ Perfil clínico: [+ tag] low-carb ⊗  jejum ⊗  sop ⊗    │
+└────────────────────────────────────────────────────────┘
+┌─ Alimentos da refeição ────────────────────────────────┐
+│ ┌─ Linha ─────────────────────────────────────────────┐│
+│ │ [autocomplete Alimento▼] [100g] [1 xíc ▾] [obs]  × ││
+│ │  🟢 TACO 132 · Arroz integral cozido                ││
+│ │                                          115 kcal   ││
+│ ├─────────────────────────────────────────────────────┤│
+│ │ ...                                                 ││
+│ └─────────────────────────────────────────────────────┘│
+│ [+ Adicionar alimento]                                 │
+├────────────────────────────────────────────────────────┤
+│ Total: 3 alimentos · 425 kcal · P22 C55 G14           │
+│                       Fibra 8g · Sódio 320 mg          │
+└────────────────────────────────────────────────────────┘
 ```
 
-**Precisa virar:**
+**Componentes:** C1 (autocomplete alimento), C8 (preview lateral opcional).
 
-```
-Cabeçalho: nome, categoria [MANTÉM]
-Perfil clínico: chip-input [low-carb, cetogênica, sop, jejum, ...]
-                (vocabulário controlado — mesma lista dos templates de plano)
+**Reaproveitar:**
+- `MEDIDAS_CASEIRAS` @10425 — dropdown de medida caseira por alimento.
+- `calcularRefeicao(r)` @11054 — total agregado ao vivo.
+- `nutriPorGramas(alimento, gramas)` @6635 — por-item ao vivo.
 
-── Alimentos da refeição ──
-[+ Adicionar alimento]
-Linha por item:
-  [autocomplete Alimento] [gramas: 100] [medida caseira: 1 xíc ▾] [obs] [×]
-  └── indicadores: vínculo TACO | badge alergeno (se contexto paciente) | kcal calculado
-
-Rodapé (calculado ao vivo):
-  Total: N alimentos · X kcal · Pg · Cg · Gg · Fibra g · Sódio mg
-```
-
-**Peças a reutilizar:**
-
-- `searchFoodInline(refId, q)` ([7852](../index.html#L7852)) — autocomplete de alimento já usado na Etapa 7 do wizard. **Extrair como componente reutilizável** `_editorAlimentoAutocomplete(contexto, onSelect)` que serve tanto no wizard quanto no cadastro.
-- `MEDIDAS_CASEIRAS` ([10425+](../index.html#L10425)) — mapa `taco_N → {q, u, g}` para dropdown de medida caseira.
-- `calcularRefeicao(r)` ([11054](../index.html#L11054)) — cálculo agregado.
-- `isAlergenoBlocked(alimentoId)` ([7902](../index.html#L7902)) — só ativa no contexto paciente (`state.contextoInstrumento`).
-
-**Regra de contexto:** o cadastro NÃO tem paciente ativo → alergeno-block
-não se aplica. Apenas mostra composição bruta do alimento.
-
-**Salvar:**
+**Snippet salvar:**
 
 ```js
 function salvarRefeicaoModelo(id) {
+  const v = k => document.getElementById(k).value.trim();
   const data = {
     nome: v('rm_nome'),
     categoria: v('rm_cat'),
     perfil: [...document.querySelectorAll('.rm_perfil_chip')].map(c => c.dataset.tag),
     itens: [...document.querySelectorAll('.rm_item_row')].map(row => ({
       alimentoId: row.dataset.alimentoId || null,
-      alimento_nome: row.querySelector('.rm_item_nome').value,  // snapshot
+      alimento_nome: row.querySelector('.rm_item_nome').value,
       gramas: +row.querySelector('.rm_item_gramas').value || 0,
       medidaCaseira: row.querySelector('.rm_item_medida')?.value || null,
       obs: row.querySelector('.rm_item_obs').value,
     })).filter(it => it.alimentoId || it.alimento_nome),
   };
-  // ... resto igual
+  if (!data.nome) { toast('Nome é obrigatório'); return; }
+  if (id) Object.assign(allRefeicoesModelo().find(x => x.id === id), data);
+  else { data.id = 'rm_' + rand6(); allRefeicoesModelo().push(data); }
+  scheduleSave(); closeModal(); RENDERERS.cadastroRefeicoes();
 }
 ```
 
-**Ganho no viewer** `verRefeicaoModelo` ([10298](../index.html#L10298)): já
-suporta `t.itens` com cálculo — só passa a ter dados reais.
-
-**Remover:** o `<div class="field-hint">` apologético e o `<div class="ai-panel">` "Este é o cadastro base".
+**DoD:**
+- [ ] Adicionar alimento por autocomplete funciona
+- [ ] Preencher gramas atualiza kcal do item ao vivo
+- [ ] Total agregado (kcal/P/C/G/fibra/sódio) recalculado ao vivo
+- [ ] Remover linha funciona
+- [ ] Ao salvar, `itens[]` é populado no state
+- [ ] Ao reabrir, os itens salvos aparecem
+- [ ] `verRefeicaoModelo` @10298 mostra os itens (já preparado)
+- [ ] Remover a mensagem "feature em desenvolvimento"
+- [ ] Remover o `ai-panel` "Este é o cadastro base"
 
 ---
 
-### 4.2. 💪 Treino → Treino-modelo
+### 6.3. ❸ Templates de Plano — 🔴 múltiplos problemas críticos
 
-**Editor atual** ([linhas 11297–11322](../index.html#L11297), função `treinoModeloEditorHtml`):
+**Estado atual:** [templatePlanoEditorHtml @11148](../index.html#L11148).
+6 campos secos: nome, objetivo, VET, macros P/C/G%, `<select multiple>`
+de refeições, textarea de observação.
 
-```html
-<input id="tm_nome">              [OK]
-<select id="tm_nivel">            [OK]
-<checkboxes grupos musculares>    [DERIVAR — permitir override]
-<div>Após salvar, adicione exercícios editando individualmente...</div>
-```
+**Problemas:**
 
-**Precisa virar:**
+| # | Problema | Gravidade |
+|:-:|---|:-:|
+| 1 | **Perda de metadados** — editor ignora `categoria`, `especialidade`, `descricao`, `tags`, `visibilidade`, e o `observacao` com 12 seções clínicas markdown que os workflows populam | 🔴 Perda de dados silenciosa ao editar |
+| 2 | **`<select multiple>` HTML** — sem preview de kcal/macros, sem reordenar, sem repetir refeição | 🔴 UX inutilizável para plano real |
+| 3 | **Falta `pctVet` por refeição** — schema atual é `refeicoesModeloIds:[]` (lista solta); ao aplicar, `aplicarTemplate` distribui uniformemente com bug (§3.2) | 🔴 Trava wizard |
+| 4 | **Editor de observação é `<textarea>` cru** — viewer renderiza markdown mas editor destrói formatação | 🟡 Regressão ao editar |
+| 5 | **Estrutura de jejum não é campo** — os 21 templates de jejum têm `n_refeicoes_alvo` que hoje só vive no texto | 🟡 Metadado semanticamente perdido |
+| 6 | **Sem preview clínico ao editar** — viewer tem tudo, editor tem nada | 🟡 UX pobre |
 
-```
-Cabeçalho: nome, nível [MANTÉM]
+**Mudança necessária — schema:**
 
-── Exercícios do treino ──
-[+ Adicionar exercício]  [🤖 Sugerir com IA]
-
-Linha por item:
-  [autocomplete Exercício]
-  [séries: 3] [reps: 8-12] [carga: 20 kg] [descanso: 60s] [técnica ▾] [obs] [×]
-  └── indicadores: grupo primário (chip colorido) | thumb da imagem
-      | ⚠ lesão (só em contexto paciente)
-
-Rodapé:
-  Total: N exercícios · S séries · V kg volume estimado
-  Grupos musculares (derivados): [chips]  [override manual ▾]
-```
-
-**Peças a reutilizar:**
-
-- `searchExercicioParaTreino(treinoId, value)` ([5245](../index.html#L5245)) — autocomplete da Etapa 8. **Extrair como componente** `_editorExercicioAutocomplete(contexto)`.
-- `iaSugerirExerciciosParaTreino(treinoId)` ([5251](../index.html#L5251)) — heurística de composto+isolado por grupo.
-- `renderExItem(treinoId, item, idx)` ([5392](../index.html#L5392)) — inputs inline já prontos. **Precisa aceitar `contexto='cadastro'` para não mexer em `state.treino.montagem`**.
-- `alertaLesao(ex)` ([5406](../index.html#L5406)) — só ativa em contexto paciente.
-- `_deriveGrupos(tm)` ([4730](../index.html#L4730)) — deriva grupos automaticamente dos `primario` dos exercícios.
-- `calcVolumeTreino(treinoId)` ([4526](../index.html#L4526)) — volume total.
-
-**Refatoração necessária** (contexto):
-
-Hoje `renderExItem`, `searchExercicioParaTreino`, etc. leem/escrevem direto em `state.treino.montagem.itens[treinoId]`. Precisa parametrizar:
+Introduzir `agenda_diaria[]` substituindo `refeicoesModeloIds[]`.
+Manter suporte a `refeicoesModeloIds[]` durante migração (§9).
 
 ```js
-// Antes:
-function renderExItem(treinoId, item, idx) { /* usa state.treino.montagem */ }
+// Antigo
+{
+  refeicoesModeloIds: ['rmn1', 'rmn5', 'rmn12']
+}
 
-// Depois:
-function renderExItem(contexto, item, idx) {
-  // contexto = { source, containerId, onChange }
-  // source = state.treino.montagem.itens[treinoId] OU tm.itens
+// Novo
+{
+  agenda_diaria: [
+    { ordem: 1, horario: '07:00', refeicaoModeloId: 'rmn1',  pctVet: 25 },
+    { ordem: 2, horario: '10:00', refeicaoModeloId: 'rmn5',  pctVet: 10 },
+    { ordem: 3, horario: '13:00', refeicaoModeloId: 'rmn12', pctVet: 40 },
+    { ordem: 4, horario: '16:00', refeicaoModeloId: 'rmn5',  pctVet: 10 },  // repetido OK
+    { ordem: 5, horario: '20:00', refeicaoModeloId: 'rmn8',  pctVet: 15 },
+  ]
 }
 ```
 
-**Salvar:**
+Regras:
+- `Σ pctVet === 100` — validação visual no editor (badge verde/vermelho).
+- Repetição permitida (mesmo `refeicaoModeloId` em ordens diferentes).
+- `horario` opcional; se presente, ordena automaticamente.
+
+**Mudança necessária — UI:**
+
+```
+┌─ Identidade ──────────────────────────────────────────┐
+│ Nome*                                                  │
+│ Categoria [Check-ups ▾]  Especialidade [nutrição ▾]   │
+│ Descrição curta [textarea]                             │
+│ Tags: [+] emagrecimento ⊗  low-carb ⊗                 │
+│ Visibilidade: (○) privado  (●) equipe  (○) padrão     │
+├─ Meta calórica ──────────────────────────────────────┤
+│ VET alvo [1800] kcal   Macros P[30] C[45] G[25]       │
+├─ Agenda diária ──────────────────────────────────────┤
+│ ┌─┬───────┬────────────────────┬──────┬───────┬────┐  │
+│ │↕│ 07:00 │ Café mediterrâneo ▾│  25% │ 450   │ ×  │  │
+│ │↕│ 10:00 │ Lanche pré-treino ▾│  10% │ 180   │ ×  │  │
+│ │↕│ 13:00 │ Almoço tradicional▾│  40% │ 720   │ ×  │  │
+│ │↕│ 16:00 │ Lanche pré-treino ▾│  10% │ 180   │ ×  │  │
+│ │↕│ 20:00 │ Jantar leve       ▾│  15% │ 270   │ ×  │  │
+│ └─┴───────┴────────────────────┴──────┴───────┴────┘  │
+│                              Total: 100% · 1800 kcal ✓ │
+│ [+ Adicionar refeição]                                 │
+├─ Estrutura de jejum (opcional) ──────────────────────┤
+│ Nº refeições alvo do protocolo: [3 ▾]                  │
+│ Janela alimentar: [08:00 → 20:00]                      │
+├─ Racional clínico ───────────────────────────────────┤
+│ [editor 2 painéis: markdown | preview lado a lado]     │
+│ Botão: [Preencher 12 seções padrão]                    │
+└────────────────────────────────────────────────────────┘
+```
+
+**Componentes:** C3 (autocomplete refeição-modelo) + C6 (agenda diária).
+
+**Preview lateral (opcional, ganho grande):** painel direito com
+"soma real vs alvo" (kcal, macros, distribuição por categoria de
+refeição).
+
+**Snippet salvar:**
+
+```js
+function salvarTemplatePlano(id) {
+  const v = k => document.getElementById(k).value;
+  const data = {
+    nome: v('tp_nome').trim(),
+    categoria: v('tp_categoria') || null,
+    especialidade: v('tp_especialidade') || null,
+    descricao: v('tp_descricao') || null,
+    tags: [...document.querySelectorAll('.tp_tag_chip')].map(c => c.dataset.tag),
+    visibilidade: v('tp_visibilidade') || 'privado',
+    objetivo: v('tp_obj'),
+    vet_alvo: +v('tp_vet'),
+    macros: { p: +v('tp_p'), c: +v('tp_c'), g: +v('tp_g') },
+    agenda_diaria: [...document.querySelectorAll('.tp_row')].map((row, i) => ({
+      ordem: i + 1,
+      horario: row.querySelector('.tp_horario').value || null,
+      refeicaoModeloId: row.dataset.refId,
+      pctVet: +row.querySelector('.tp_pct').value || 0,
+    })).filter(x => x.refeicaoModeloId),
+    n_refeicoes_alvo: +v('tp_n_refs_alvo') || null,
+    janela_alimentar: v('tp_janela') || null,
+    observacao: v('tp_obs'),  // markdown
+  };
+  // Validação soma pctVet
+  const soma = data.agenda_diaria.reduce((s, r) => s + r.pctVet, 0);
+  if (data.agenda_diaria.length && soma !== 100) {
+    toast(`Soma dos % deve ser 100 (atual: ${soma})`); return;
+  }
+  // ...
+}
+```
+
+**DoD:**
+- [ ] Todos os 12+ campos do schema são coletados e persistidos
+- [ ] Agenda diária editável (adicionar, reordenar, repetir, remover)
+- [ ] Soma de pctVet validada = 100
+- [ ] `n_refeicoes_alvo` coletado quando categoria/tags de jejum
+- [ ] Markdown editor com preview lado a lado
+- [ ] Preview clínico ao vivo com kcal/macros total (opcional mas recomendado)
+- [ ] Backward compat: se template legado tem `refeicoesModeloIds[]`, migração (§9) para `agenda_diaria[]`
+- [ ] `verTemplatePlano` @11068 continua funcionando
+
+---
+
+### 6.4. ❹ Exercícios — ✅ ok, um ajuste
+
+**Estado atual:** editor completo ([exercicioEditorHtml @11220](../index.html#L11220)).
+
+**Ajuste único:** hoje editor aceita **1 grupo primário** e **1
+equipamento**, mesmo que o modelo permita arrays (`primario[]`,
+`equip[]`). Sem-cerimônia: converter os dois campos em checkboxes
+(igual grupos musculares do Treino-modelo) para permitir múltiplos.
+
+**DoD:** editor grava arrays em `primario[]` e `equip[]`; freedb-loaded
+exercícios continuam com múltiplos primários (não regressão).
+
+---
+
+### 6.5. ❺ Treinos-modelo — ❌ SÓ CABEÇALHO (crítico)
+
+**Estado atual:** [treinoModeloEditorHtml @11297](../index.html#L11297).
+Coleta `nome`, `nivel`, checkboxes de `grupos`. Sem itens de exercício.
+Código admite:
+
+> *"Após salvar, adicione exercícios editando individualmente ou usando
+> este treino-modelo dentro de um programa."*
+
+**Mudança necessária:**
+
+```
+┌─ Cabeçalho ────────────────────────────────────────────┐
+│ Nome*   Nível [intermediário ▾]                        │
+└────────────────────────────────────────────────────────┘
+┌─ Exercícios do treino ────────────────────────────────┐
+│ [+ Adicionar exercício]  [🤖 Sugerir com IA]           │
+│ ┌─ Linha ─────────────────────────────────────────────┐│
+│ │ [autocomplete Exercício▼]                           ││
+│ │ 🖼️ Supino reto com barra                            ││
+│ │ [3 séries][8-12 reps][40 kg][60s][normal ▾][obs] × ││
+│ │ Chips: peito · tríceps                              ││
+│ ├─────────────────────────────────────────────────────┤│
+│ │ ...                                                 ││
+│ └─────────────────────────────────────────────────────┘│
+├────────────────────────────────────────────────────────┤
+│ Total: 5 exercícios · 15 séries · ~2200 kg volume     │
+│ Grupos derivados: peito · costas · tríceps            │
+│ Override manual: [+ core] [+ ombros]                  │
+└────────────────────────────────────────────────────────┘
+```
+
+**Componentes:** C2 (autocomplete exercício).
+
+**Reaproveitar (com refactor para contexto isolado):**
+- `renderExItem(contexto, item, idx)` @5392 — inputs inline. **Precisa
+  aceitar `contexto={source, container, onChange}` em vez de `treinoId`
+  hardcoded**, para não tocar em `state.treino.montagem`.
+- `iaSugerirExerciciosParaTreino(contexto)` @5251 — mesma refatoração.
+- `_deriveGrupos(tm)` @4730 — grupos automáticos.
+- `calcVolumeTreino(source)` @4526 — precisa aceitar source em vez de treinoId.
+
+**Regra de contexto (importante):** o editor de cadastro escreve em
+`tm.itens[]` local do modelo, **nunca** em `state.treino.montagem.itens`.
+Alerta de lesão (`alertaLesao` @5406) só ativa em contexto paciente —
+no cadastro é dispensado.
+
+**Snippet salvar:**
 
 ```js
 function salvarTreinoModelo(id) {
+  const v = k => document.getElementById(k).value;
   const data = {
-    nome: v('tm_nome'),
+    nome: v('tm_nome').trim(),
     nivel: v('tm_nivel'),
     itens: [...document.querySelectorAll('.tm_ex_row')].map(row => ({
       exercicioId: row.dataset.exercicioId,
@@ -290,392 +501,390 @@ function salvarTreinoModelo(id) {
       obs: row.querySelector('.tm_ex_obs').value,
     })).filter(it => it.exercicioId),
   };
-  // grupos derivados dos exercícios (+ override manual)
-  data.grupos = _deriveGrupos(data)
-    .concat([...document.querySelectorAll('.tm_grupo_cb_override:checked')].map(cb => cb.dataset.grupo));
-  data.grupos = [...new Set(data.grupos)];
+  // grupos = derivados + override
+  const derivados = _deriveGrupos(data);
+  const override = [...document.querySelectorAll('.tm_grupo_override:checked')].map(cb => cb.dataset.grupo);
+  data.grupos = [...new Set([...derivados, ...override])];
   // ...
 }
 ```
 
-**Ganho no viewer** `verTreinoModelo` ([11285](../index.html#L11285)): já mostra
-`#/Exercício/Séries/Reps/Carga/Descanso` — só passa a ter dados reais.
-
-**Remover:** o `<div class="field-hint">` apologético.
-
----
-
-## 5. Instruções por editor — Níveis 3 (templates com agenda e metadados)
-
-### 5.1. 🍽️ Alimentação → Template de Plano
-
-**Editor atual** ([linhas 11148–11151](../index.html#L11148), função `templatePlanoEditorHtml`):
-
-6 campos secos: nome, objetivo, VET, macros P/C/G%, `<select multiple>` de refeições, textarea de observação.
-
-**Problemas encontrados:**
-
-#### 5.1.a — Perda de metadados clínicos ricos
-
-Os 89 templates atuais têm no schema (populados via workflow):
-
-- `categoria` — Check-ups / Emagrecimento / Metabolismo / Saúde intestinal / etc.
-- `especialidade` — clínica geral, endocrinologia, nutrição funcional, etc.
-- `descricao` — racional curto
-- `tags` — array de palavras-chave
-- `visibilidade` — padrão / privado / equipe
-- `observacao` — **markdown estruturado com 12 seções clínicas**: nome, objetivo, estratégia, distribuição, opções, recomendados, proibidos, opcionais, substituições, orientações, observações, fundamentação
-
-**O editor ignora todos esses campos.** Editar um template pela UI destrói metadados ricos.
-
-**Correção:** expor todos os campos. Manter mesma nomenclatura do schema.
-
-#### 5.1.b — Multi-select de refeições é UX pobre
-
-Hoje `<select multiple size=6>`:
-- Não mostra kcal/macros de cada refeição.
-- Não permite reordenar.
-- Não permite repetir refeição (ex: mesmo lanche 2× no dia).
-- Não mostra soma total × VET alvo.
-
-**Correção:** virar **agenda diária** (§5.1.c) — resolve todos esses pontos.
-
-#### 5.1.c — Falta `pctVet` por refeição (agenda diária)
-
-O schema atual armazena `refeicoesModeloIds: [rmn1, rmn5, rmn12]` — lista solta, sem horário nem % calórico. Ao aplicar, `aplicarTemplate` distribui com `Math.round(100/N)` (bug §2.2).
-
-**Evolução ontológica:** substituir por **agenda diária**:
-
-```js
-// Schema antigo (deprecar mas manter suporte durante migração):
-refeicoesModeloIds: ['rmn1', 'rmn5', 'rmn12']
-
-// Schema novo:
-agenda_diaria: [
-  { ordem: 1, horario: '07:00', refeicaoModeloId: 'rmn1',  pctVet: 25 },
-  { ordem: 2, horario: '10:00', refeicaoModeloId: 'rmn5',  pctVet: 10 },
-  { ordem: 3, horario: '13:00', refeicaoModeloId: 'rmn12', pctVet: 40 },
-  { ordem: 4, horario: '16:00', refeicaoModeloId: 'rmn5',  pctVet: 10 },  // repetido OK
-  { ordem: 5, horario: '20:00', refeicaoModeloId: 'rmn8',  pctVet: 15 },
-]
-```
-
-**Regras:**
-- `Σ pctVet === 100`, com validação visual no editor.
-- Repetição permitida (mesmo `refeicaoModeloId` em ordens diferentes).
-- `horario` opcional; se presente ordena por ele automaticamente.
-- Migration: converter `refeicoesModeloIds[]` existente em `agenda_diaria[]` com `pctVet` distribuído via §2.2 (versão corrigida).
-
-**UI proposta:** tabela editável com drag-to-reorder e picker de refeição por linha:
-
-```
-── Agenda diária ──
-┌────┬────────┬─────────────────────┬────────┬────────┬─────┐
-│ ↕  │ 07:00  │ Café mediterrâneo ▾ │  25 %  │ 450 kcal│ ×  │
-│ ↕  │ 10:00  │ Lanche pré-treino ▾ │  10 %  │ 180 kcal│ ×  │
-│ ↕  │ 13:00  │ Almoço tradicional▾ │  40 %  │ 720 kcal│ ×  │
-│ ↕  │ 16:00  │ Lanche pré-treino ▾ │  10 %  │ 180 kcal│ ×  │
-│ ↕  │ 20:00  │ Jantar leve       ▾ │  15 %  │ 270 kcal│ ×  │
-└────┴────────┴─────────────────────┴────────┴────────┴─────┘
-                              Total: 100% · 1800 kcal ✓
-[+ Adicionar refeição]
-```
-
-O picker `▾` é um autocomplete de refeições-modelo com preview (categoria, kcal, macros) — não `<select>`.
-
-#### 5.1.d — Editor de markdown para `observacao`
-
-Viewer (`verTemplatePlano`) já renderiza via `renderMarkdownClinico` ([10399](../index.html#L10399)) as 12 seções clínicas. Editor volta a `<textarea>` cru — profissional edita, salva, e perde formatação estruturada.
-
-**Correção mínima:** manter `<textarea>`, mas oferecer **template pré-preenchido** com as 12 seções vazias ao criar template novo, e **preview lateral** renderizado ao vivo enquanto edita.
-
-**Correção maior:** editor rich-text simples (h2, listas, negrito). Não precisa de dependência externa — o parser markdown atual (`renderMarkdownClinico`) já cobre.
-
-#### 5.1.e — Estrutura de jejum
-
-Os 21 templates de jejum têm `n_refeicoes_alvo` (1/2/3/4/6/7) intrínseco ao protocolo. Hoje isso vive só na `observacao` textual, não como campo. Formulário precisa expor `n_refeicoes_alvo` quando `categoria === 'jejum'` (ou tag `jejum` presente).
-
-#### 5.1.f — Preview clínico ao editar
-
-Painel lateral direito, sempre visível durante edição:
-
-- Soma de kcal das refeições selecionadas × VET alvo (badge verde/vermelho).
-- Distribuição real de macros × macros alvo (barras comparativas).
-- Alergênicos presentes (chips).
-- Nº de opções por categoria (café / almoço / jantar / etc.).
-
-Reutilizar componentes do modal `verTemplatePlano` ([11068](../index.html#L11068)) — já tem tudo isso implementado; só faltar exibir em modo edit.
-
-#### 5.1.g — Padrão modal ≠ padrão single-page do fluxo
-
-O fluxo do plano é single-page-scroll (sidebar + seções empilhadas). O
-editor de template é modal com formulário compacto — inconsistência de
-linguagem visual.
-
-**Direção sugerida:** reaproveitar a mesma tela do plano com uma flag
-`templateMode: true` que:
-- Não exige paciente ativo.
-- Substitui "Publicar plano" por "Salvar template".
-- Omite anamnese/avaliação/objetivo/estratégia (não fazem sentido em template).
-- Renderiza apenas: nome + metadados + Estrutura (agenda diária) + Montagem (refeições populadas) + Observação markdown.
-
-**Custo:** alto (refactor grande). **Decisão para depois** dos passos críticos.
+**DoD:**
+- [ ] Autocomplete de exercício funciona
+- [ ] Séries/reps/carga/descanso/técnica editáveis inline
+- [ ] Volume total recalculado ao vivo
+- [ ] Grupos derivados dos exercícios automaticamente + override manual
+- [ ] Botão IA de sugestão funciona (sem tocar em state.treino)
+- [ ] `verTreinoModelo` @11285 mostra os itens (já preparado)
+- [ ] Remover mensagem "feature em desenvolvimento"
 
 ---
 
-### 5.2. 💪 Treino → Template de Programa
+### 6.6. ❻ Templates de Programa — 🔴 lista solta em vez de agenda
 
-**Editor atual** ([linhas 11419–11423](../index.html#L11419)):
+**Estado atual:** [templatePrgEditorHtml @11419](../index.html#L11419).
+Nome, objetivo, fase, duração, nível, split, `<select multiple>` de
+treinos-modelo, observação.
 
-Nome, objetivo, fase, duração, nível, split, `<select multiple>` de treinos-modelo, observação.
+**Problemas:**
 
-**Mesmos problemas do §5.1**, adaptados:
+| # | Problema | Gravidade |
+|:-:|---|:-:|
+| 1 | **Lista solta** — `treinosModeloIds:[]` sem ordem semântica. Não representa "segunda=A, terça=B, quarta=descanso" | 🔴 Modelo não bate com realidade |
+| 2 | **`<select multiple>` HTML** — sem preview | 🔴 UX pobre |
+| 3 | **Perda de metadados** — mesmos ignorados do Template de Plano (categoria, tags, etc.) | ⚠ |
+| 4 | **Sem visualização de volume/frequência estimada** | ⚠ |
 
-#### 5.2.a — Agenda semanal em vez de lista solta
-
-**Evolução ontológica:** substituir `treinosModeloIds: []` por:
+**Mudança necessária — schema:**
 
 ```js
-agenda_semanal: {
-  seg: { tipo: 'treino', treinoModeloId: 'tm3', nome_display: 'A · Peito+Tríceps' },
-  ter: { tipo: 'treino', treinoModeloId: 'tm7', nome_display: 'B · Costas+Bíceps' },
-  qua: { tipo: 'descanso' },
-  qui: { tipo: 'treino', treinoModeloId: 'tm5', nome_display: 'C · Pernas' },
-  sex: { tipo: 'treino', treinoModeloId: 'tm3', nome_display: 'A · Peito+Tríceps' },  // repetido
-  sab: { tipo: 'cardio', notas: '30 min esteira' },
-  dom: { tipo: 'descanso' },
+// Antigo
+{
+  treinosModeloIds: ['tm3', 'tm7', 'tm5']
+}
+
+// Novo
+{
+  agenda_semanal: {
+    seg: { tipo: 'treino', treinoModeloId: 'tm3', nome_display: 'A · Peito+Tríceps' },
+    ter: { tipo: 'treino', treinoModeloId: 'tm7', nome_display: 'B · Costas+Bíceps' },
+    qua: { tipo: 'descanso' },
+    qui: { tipo: 'treino', treinoModeloId: 'tm5', nome_display: 'C · Pernas' },
+    sex: { tipo: 'treino', treinoModeloId: 'tm3', nome_display: 'A · Peito+Tríceps' },
+    sab: { tipo: 'cardio', notas: '30 min esteira zona 2' },
+    dom: { tipo: 'descanso' },
+  }
 }
 ```
 
-**UI proposta:** grid 7×1 (segunda a domingo), cada célula com dropdown:
-`[Descanso ▾]` · `[Treino A/B/C ▾]` · `[Cardio ▾]`.
+Tipos aceitos: `treino | descanso | cardio | ativa` (recuperação ativa).
 
-Migration: converter `treinosModeloIds[]` existente distribuindo pelos
-dias na ordem (Descanso nos dias sobrando).
+**Mudança necessária — UI:**
 
-#### 5.2.b — Preservar metadados
+```
+┌─ Identidade ──────────────────────────────────────────┐
+│ Nome*   Categoria [hipertrofia ▾]                     │
+│ Descrição   Tags   Visibilidade                       │
+├─ Programa ───────────────────────────────────────────┤
+│ Objetivo, Fase, Duração (semanas), Nível, Split       │
+├─ Agenda semanal ─────────────────────────────────────┤
+│ ┌───┬──────────────────────────┐                      │
+│ │Seg│ Treino A · Peito+Tríceps▾│ 5 ex · 15 séries    │
+│ │Ter│ Treino B · Costas+Bíceps▾│ 4 ex · 12 séries    │
+│ │Qua│ Descanso ▾                │                     │
+│ │Qui│ Treino C · Pernas       ▾│ 6 ex · 18 séries    │
+│ │Sex│ Treino A · Peito+Tríceps▾│ 5 ex · 15 séries    │
+│ │Sáb│ Cardio · 30 min zona 2  ▾│                     │
+│ │Dom│ Descanso ▾                │                     │
+│ └───┴──────────────────────────┘                      │
+│ Frequência: 4× semana treino · 2× descanso · 1× cardio│
+│ Volume estimado semana: ~8400 kg                       │
+├─ Racional clínico ───────────────────────────────────┤
+│ [editor markdown com preview]                          │
+└────────────────────────────────────────────────────────┘
+```
 
-Mesmo tratamento do §5.1.a — expor `categoria`, `descricao`, `tags`,
-`visibilidade`, `observacao` como markdown.
+**Componentes:** C4 (autocomplete treino-modelo), C7 (agenda semanal).
 
-#### 5.2.c — Preview + progressão
-
-Painel lateral: volume estimado por semana, distribuição por grupo,
-progressão sugerida (se houver `progressao_semanas[]`).
+**DoD:**
+- [ ] Agenda por dia da semana com dropdown de tipo
+- [ ] Ao escolher `tipo=treino`, dropdown adicional de treino-modelo
+- [ ] Preview de exercícios/séries por dia
+- [ ] Volume semanal calculado
+- [ ] Backward compat com `treinosModeloIds[]` legado
+- [ ] `verTemplatePrograma` @11404 continua funcionando
 
 ---
 
-### 5.3. 🩺 Exames → Modelo de Solicitação (só melhorar)
+### 6.7. ❼ Produtos — ✅ ok
 
-**Editor atual** ([linhas 12520–12557](../index.html#L12520)):
+Editor completo com 4 blocos ([produtoEditorHtml @11591](../index.html#L11591)):
+Identidade / Clínica / Segurança / Códigos avançados (accordion).
+Visualizador esconde campos vazios. Sem correções necessárias no
+editor em si.
 
-Este é o **único do Nível 3 que já tem estrutura correta** (grupos +
-itens). **Problema único**: `<select>` HTML nativo com 500+ opções trava
-o browser.
+**Ajuste (opcional):** botão "importar do catálogo ANVISA" já existe
+via `renderPainelCatalogoOficial('produtos')` — só verificar
+descoberta pelo usuário.
 
-**Correção:** trocar o `<select>` de "Adicionar exame ao grupo" por
-autocomplete similar ao `exSearchExec(q)` do wizard `ex_selecao`
-([13005](../index.html#L13005)):
+---
+
+### 6.8. ❽ Fórmulas — ✅ padrão de referência
+
+Não modificar. É o blueprint dos outros editores de Nível 2 (§4).
+
+---
+
+### 6.9. ❾ Templates de Prescrição — decisão pendente
+
+**Estado atual:** [templatePrescricaoEditorHtml @12081](../index.html#L12081).
+Editor rico com 6 seções (identificação, prescrição base, campos
+específicos, segurança, acompanhamento, observações). Mas é **template
+textual** — não compõe Produtos/Fórmulas como itens.
+
+**Decisão de produto pendente** (§8.2 do doc anterior):
+
+- **Opção A** — manter textual. Fica coerente com "protocolo de
+  referência". Sem mudança neste doc.
+- **Opção B** — evoluir para composicional (`itens: [{tipo:'produto|
+  formula', ref_id, ...posologia}]`). Fica coerente com os outros
+  Níveis 3. Precisa nova seção neste doc e migration.
+
+**Ação recomendada:** decidir com o time clínico antes de qualquer
+mudança. Se opção B, refinar este doc com seção 6.9 completa.
+
+---
+
+### 6.10. ❿ Exames — ✅ ok
+
+Editor completo com 5 blocos ([exameEditorHtml @12280](../index.html#L12280)):
+principais, coleta/preparo, resultado, componentes, referências.
+Sem correções necessárias no editor em si.
+
+**Ajuste único:** LOINC/TUSS/CBHPM não são expostos no editor manual
+(só via import). Se profissional quiser adicionar manualmente, precisa
+adicionar os 4 campos no bloco "Interoperabilidade" (opcional, ver
+`03-DADOS.md` §2.3).
+
+---
+
+### 6.11. ⓫ Modelos de Solicitação — ⚠ trocar 1 `<select>`
+
+**Estado atual:** [modeloExamesEditorHtml @12520](../index.html#L12520).
+Editor CORRETO em quase tudo — grupos + itens com obrigatório/opcional
++ observação. **Único problema:** ao adicionar exame ao grupo, o widget
+é `<select>` HTML com 500+ opções ativas (`grupoModeloHtml @12529`).
+Trava o browser em cadastros grandes.
+
+**Mudança necessária:** trocar o `<select>` por autocomplete
+(componente **C5**).
 
 ```
 ── Grupo 1: Metabolismo glicêmico ──
-[✓ obrig] Glicemia de jejum         (soro) [obs...] [×]
-[✓ obrig] Insulina                  (soro) [obs...] [×]
-[  opc ] HbA1c                      (sangue total) [obs...] [×]
+[✓ obrig] Glicemia de jejum  (soro)     [obs...] ×
+[✓ obrig] Insulina           (soro)     [obs...] ×
+[  opc ] HbA1c              (sangue T.) [obs...] ×
 
 + Adicionar exame ao grupo:
 [autocomplete via AutonDB.buscarExames(q, {limit:20})]  [+ Adicionar]
 ```
 
-**Peças a reutilizar:**
-- `AutonDB.buscarExames(q, {limit: 20})` ([2013](../index.html#L2013))
-- Padrão do modal `ex_selecao` ([13022](../index.html#L13022))
+**Reaproveitar:** padrão do modal `ex_selecao` @13022.
 
-Adicional (opcional): botão "Importar exames de outro modelo" para
-compor entre modelos.
-
----
-
-## 6. Integridade referencial (cross-cadastro)
-
-Hoje o app não protege as referências entre cadastros:
-
-- **Excluir uma Refeição-modelo** em uso por N Templates de Plano →
-  templates ficam com `refeicoesModeloIds` órfãos silenciosamente.
-- **Excluir um Treino-modelo** em uso por N Templates de Programa → idem.
-- **Excluir um Exercício** em uso por N Treinos-modelo → idem.
-- **Excluir um Alimento** em uso por N Refeições-modelo → idem.
-- **Excluir um Produto** em uso por N Fórmulas → idem.
-
-**Padrão que já existe:** limpeza de "templates zumbi" no
-`__carregarSeedsTreino` ([4461+](../index.html#L4461)) — remove templates
-cujos `treinosModeloIds` não existem mais. Replicar para todos os
-cadastros.
-
-**Ações necessárias:**
-
-1. **Aviso ao excluir** — antes de confirmar, mostrar quantos consumidores
-   existem:
-   ```
-   Excluir "Café mediterrâneo"?
-   ⚠ Esta refeição é usada por 3 Templates de Plano:
-     - Emagrecimento 1800 kcal
-     - SOP protocolo A
-     - Jejum 16:8 padrão
-   ```
-2. **3 opções:** [Cancelar] · [Excluir e limpar refs órfãs] · [Excluir mantendo refs órfãs (marcar como "removido")]
-3. **Job de limpeza** no boot, opcional: percorrer cadastros e reportar
-   refs órfãs para o profissional decidir.
-4. **Aliases de nome preservados**: quando um item é removido mas ainda
-   referenciado, mostrar `nome_snapshot` no lugar de "REMOVIDO".
+**DoD:**
+- [ ] Autocomplete substitui o `<select>` em `grupoModeloHtml`
+- [ ] `addExameAoGrupo` @12547 aceita o novo widget
+- [ ] Comportamento de dedup (§ "jaTem") preservado
 
 ---
 
-## 7. Padronização visual
+## 7. Integridade referencial entre cadastros
 
-Regras que valem para todos os editores corrigidos:
+Hoje excluir um item de Nível N−1 deixa refs órfãs silenciosas nos
+consumidores de Nível N. Precisa proteção.
 
-1. **Sem emojis** — os `ai-panel` dos cadastros ainda têm emojis
-   herdados; remover para consistência com o resto do app.
-2. **Sem modal aninhado** — se uma escolha secundária aparece dentro
-   de um modal (ex: buscar alimento dentro do modal de refeição), fazer
-   **inline com dropdown flutuante**, não abrir segunda camada modal.
-3. **`<select multiple>` proibido** — sempre autocomplete ou grid de
-   cards clicáveis.
-4. **Reordenar via drag** (nice-to-have) ou setas ↑↓ (obrigatório) em
-   qualquer lista ordenada.
-5. **Preview lateral quando útil** — kcal/volume/macros ao vivo no
-   canto direito enquanto edita.
-6. **Remover mensagens apologéticas** — `field-hint`s com "feature em
-   desenvolvimento" ou "por enquanto edita só cabeçalho" saem quando o
-   editor for completo.
-
----
-
-## 8. Discussão ontológica pendente
-
-Enquanto o dev trabalha nos editores, valem três discussões estratégicas.
-
-### 8.1. "Painel de Exames" deve existir como Nível 2 formal?
-
-Hoje o cadastro de Exames tem só 2 níveis (Exame + Modelo de Solicitação).
-O que o brief original chamava de "Painel" hoje aparece como:
-
-- Exame com `tipo_exame='composto'` (ex: Hemograma agrupando HB, HT, leucócitos como `componentes[]`) — LOINC oficial.
-- Grupo dentro de um Modelo de Solicitação (ex: "Metabolismo glicêmico" agrupando 4 exames).
-
-**Pergunta:** ganharíamos algo criando um cadastro separado "Painel"
-como Nível 2? Prós: reutilização entre modelos ("Perfil lipídico" pode
-aparecer em vários modelos). Contras: mais uma entidade pra manter e
-duplicação parcial com "composto" LOINC.
-
-**Sugestão:** manter 2 níveis por enquanto. Se aparecer necessidade
-real (mesmo painel em N modelos), promove.
-
-### 8.2. Template de Prescrição vs Fórmula — quando usar cada um?
-
-A Fórmula (Nível 2) já compõe Produtos. O Template de Prescrição
-(Nível 3) **não compõe Fórmulas nem Produtos** hoje — ele é um
-"protocolo de prescrição" texto com metadados clínicos.
-
-**Isso é intencional?** Ou o Template de Prescrição deveria também
-poder referenciar Produtos/Fórmulas como itens (do jeito que o wizard
-`rx_itens` faz)?
-
-**Cenário ideal:**
+**Relações a proteger:**
 
 ```
-Template "Tratamento SIBO — 4 semanas"
-├── Item 1: Fórmula "Berberina + Alicina 500 mg" · 1 cáp 2×dia · 30d
-├── Item 2: Produto "Rifaximina 550mg" · 1 comp 3×dia · 14d
-├── Item 3: Fórmula "Enzimas digestivas plus" · 1 cáp antes das refeições · 30d
-└── Instruções ao paciente: [texto]
+Alimento              → Refeição-modelo (via itens[].alimentoId)
+Refeição-modelo       → Template de Plano (via agenda_diaria[].refeicaoModeloId)
+Exercício             → Treino-modelo (via itens[].exercicioId)
+Treino-modelo         → Template de Programa (via agenda_semanal.{dia}.treinoModeloId)
+Produto               → Fórmula (via componentes[].produto_id)
+Exame                 → Modelo de Solicitação (via grupos[].exames[].exameId)
 ```
 
-Se o time endossar, o Template de Prescrição vira o **Nível 3
-composicional** do domínio Prescrição, coerente com os outros 3
-domínios. Pergunta clínica/de produto.
+**Ação para cada `excluirX(id)`:**
 
-### 8.3. "Aluno" ainda vai virar entidade separada?
+```js
+function excluirRefeicaoModelo(id) {
+  const consumidores = allTemplatesPlano()
+    .filter(tp => (tp.agenda_diaria || []).some(r => r.refeicaoModeloId === id)
+               || (tp.refeicoesModeloIds || []).includes(id));
+  if (consumidores.length) {
+    const msg = `Esta refeição é usada em ${consumidores.length} template(s):\n`
+              + consumidores.map(c => `  · ${c.nome}`).join('\n')
+              + `\n\nO que deseja fazer?`;
+    const ok = confirm(msg + '\n\nOK = excluir e limpar refs / Cancel = manter');
+    if (!ok) return;
+    // limpar refs órfãs
+    consumidores.forEach(tp => {
+      tp.agenda_diaria = (tp.agenda_diaria || []).filter(r => r.refeicaoModeloId !== id);
+      tp.refeicoesModeloIds = (tp.refeicoesModeloIds || []).filter(rid => rid !== id);
+    });
+  }
+  state.cadastros.refeicoes_modelo = allRefeicoesModelo().filter(x => x.id !== id);
+  scheduleSave(); RENDERERS.cadastroRefeicoes();
+}
+```
 
-Documentado em `01-ONTOLOGIA.md` §2.1 — hoje "Aluno" é só label para
-Paciente no contexto de Treino. Se o produto expandir para
-academias/estúdios (onde aluno ≠ paciente), precisa evoluir o modelo
-ontológico. Pergunta para o time de produto.
+Aplicar o mesmo padrão a: `excluirAlimento`, `excluirExercicio`,
+`excluirTreinoModelo`, `excluirProduto`, `excluirExame`.
 
----
-
-## 9. Ordem final de implementação
-
-Prioridade recalibrada considerando bloqueadores, bugs críticos e
-esforço:
-
-| # | Item | Impacto | Esforço | Tipo |
-|:-:|---|:-:|:-:|---|
-| **0a** | Deduplicar 3 renderers (§2.1) | 🟡 Prevenção | 🟢 30 min | Dívida técnica |
-| **0b** | Corrigir bug 33+33+33 em `aplicarTemplate` (§2.2) | 🔥 Alto | 🟢 15 min | Bug crítico |
-| **1** | Refeição-modelo — editor de itens (§4.1) | 🔥 Alto | 🟡 2h | Feature quebrada |
-| **2** | Treino-modelo — editor de itens (§4.2) | 🔥 Alto | 🟡 2h + refactor `renderExItem` p/ contexto | Feature quebrada |
-| **3** | Template de Plano — metadados + agenda diária + migration (§5.1a-c-f) | 🔥 Alto | 🔴 3-4h | Perda de dados |
-| **4** | Template de Programa — agenda semanal + migration (§5.2) | 🔥 Alto | 🟡 2h | Feature |
-| **5** | Editor markdown + estrutura de jejum (§5.1d,e) | 🟡 Médio | 🟡 2h | Preservação clínica |
-| **6** | Modelo de Solicitação — trocar `<select>` (§5.3) | 🟡 Médio | 🟢 1h | UX |
-| **7** | Integridade referencial (§6) | 🟡 Médio | 🟡 2-3h | Confiabilidade |
-| **8** | Padronização visual (§7) | 🟢 Baixo | 🟢 1h | Consistência |
-| **9** | (opcional) `templateMode` single-page (§5.1g) | 🟢 Baixo | 🔴 6-8h | Refactor arquitetural |
-
-**Estimativa realista para 0–8:** ~2.5 a 3 dias de dev experiente.
-Item 9 (opcional) fica para depois.
-
-**Ordem sugerida:** exatamente na ordem da tabela. Passos 0a e 0b são
-obrigatórios antes de qualquer outro (0a evita bugs invisíveis; 0b
-destrava wizard).
+**Padrão-guia já existe:** `__carregarSeedsTreino` @4461+ remove
+templates de programa cujos `treinosModeloIds` não existem mais no
+boot. Extrair a lógica como `_limparRefsOrfas()` global e chamar em
+todos os excluires.
 
 ---
 
-## 10. Checklist de aceitação por editor
+## 8. Padronização visual
 
-Todo editor corrigido precisa passar por:
+Regras válidas em **todos** os editores de cadastro:
 
-- [ ] Editor coleta itens do Nível N−1 (não só cabeçalho)
-- [ ] Autocomplete usa a base oficial correspondente (TACO / freedb / ANVISA / LOINC)
-- [ ] Cada item é vinculado por `id` (não só nome), com fallback texto livre
-- [ ] Cada item guarda os campos do relacionamento (gramas / séries+reps+carga+técnica / dose)
-- [ ] Cálculo agregado ao vivo (kcal total / volume total / % VET / etc.)
-- [ ] Preview visual do que já foi adicionado (não lista texto)
-- [ ] Botão remover por item e reordenar (setas ↑↓ no mínimo)
-- [ ] Ao salvar, escreve em `itens[]` / `agenda_*[]` no schema (já existe ou migration §5)
-- [ ] Viewer (`verX`) mostra o conteúdo real (já preparado — só precisa dados)
-- [ ] Nenhum uso de `<select multiple>` HTML nativo — sempre autocomplete ou grid de cards
-- [ ] Metadados clínicos do seed preservados (categoria, especialidade, tags, visibilidade, markdown estruturado)
-- [ ] Aviso ao excluir item em uso por N consumidores (§6)
-- [ ] Nenhuma mensagem apologética "feature em desenvolvimento" restante
-- [ ] Sem emojis nos ai-panels
-- [ ] Sem modal aninhado (subordinação inline)
+1. **Sem emojis** nos `ai-panel` (herdados do design antigo — remover).
+2. **Sem modal aninhado** — busca secundária vira dropdown flutuante inline (padrão C1-C5), nunca segundo modal.
+3. **`<select multiple>` HTML nativo proibido**.
+4. **Reordenar via setas ↑↓** no mínimo (drag opcional).
+5. **Preview lateral quando útil** — kcal/volume/macros à direita.
+6. **Nenhuma mensagem apologética** ("feature em desenvolvimento", "por enquanto edita só cabeçalho") — remover conforme cada editor for completado.
+7. **Botões-padrão:** `[Cancelar]` (secundário) + `[Salvar]` (primário) no rodapé do modal, alinhados à direita.
+8. **Salvar** sempre com `scheduleSave()` + `closeModal()` + `RENDERERS.<sub-cadastro>()`.
+
+---
+
+## 9. Migrações de schema
+
+Duas evoluções de schema exigem migração de dados existentes no
+`localStorage['autonState_v1']` dos usuários que já usaram o app.
+
+Adicionar no boot, junto das migrações existentes ([index.html:6248+](../index.html#L6248)).
+
+### 9.1. Template de Plano: `refeicoesModeloIds[]` → `agenda_diaria[]`
+
+```js
+allTemplatesPlano().forEach(tp => {
+  if (!tp.agenda_diaria && Array.isArray(tp.refeicoesModeloIds) && tp.refeicoesModeloIds.length) {
+    const n = tp.refeicoesModeloIds.length;
+    // distribuição corrigida (fecha 100 exatamente)
+    const base = Math.floor(100 / n);
+    const resto = 100 - (base * n);
+    tp.agenda_diaria = tp.refeicoesModeloIds.map((rid, i) => ({
+      ordem: i + 1,
+      horario: null,
+      refeicaoModeloId: rid,
+      pctVet: base + (i < resto ? 1 : 0),
+    }));
+    // mantém refeicoesModeloIds por compat, mas app novo usa agenda_diaria
+  }
+});
+```
+
+### 9.2. Template de Programa: `treinosModeloIds[]` → `agenda_semanal{}`
+
+```js
+allTemplatesPrograma().forEach(tpp => {
+  if (!tpp.agenda_semanal && Array.isArray(tpp.treinosModeloIds) && tpp.treinosModeloIds.length) {
+    const dias = ['seg','ter','qua','qui','sex','sab','dom'];
+    const tms = tpp.treinosModeloIds;
+    tpp.agenda_semanal = {};
+    // distribui treinos, preenche resto com descanso
+    dias.forEach((d, i) => {
+      tpp.agenda_semanal[d] = i < tms.length
+        ? { tipo: 'treino', treinoModeloId: tms[i] }
+        : { tipo: 'descanso' };
+    });
+  }
+});
+```
+
+**Nota:** rodar essas migrações uma única vez por versão do seed
+(incrementar `SEED_VERSION` ou adicionar `_seed_alimentacao_v` /
+`_seed_treino_v` — padrão já em uso em §6.3 de `03-DADOS.md`).
+
+---
+
+## 10. Ordem de implementação e Definition of Done
+
+### 10.1. Ordem obrigatória
+
+| # | Passo | §  | Esforço | Depende |
+|:-:|---|:-:|:-:|:-:|
+| 0 | Deduplicar 3 renderers | §3.1 | 🟢 30 min | — |
+| 1 | Extrair 8 componentes reutilizáveis (esqueleto) | §5 | 🟡 4h | 0 |
+| 2 | Refeição-modelo — editor completo | §6.2 | 🟡 2h | 1 (C1, C8) |
+| 3 | Treino-modelo — editor completo + refactor contexto | §6.5 | 🟡 3h | 1 (C2) |
+| 4 | Template de Plano — metadados + agenda diária | §6.3 | 🔴 4h | 1 (C3, C6, C8), 9.1 |
+| 5 | Template de Programa — agenda semanal | §6.6 | 🟡 2h | 1 (C4, C7), 9.2 |
+| 6 | Modelo de Solicitação — autocomplete no add exame | §6.11 | 🟢 1h | 1 (C5) |
+| 7 | Integridade referencial em todos os excluires | §7 | 🟡 2h | 2,3,4,5,6 |
+| 8 | Migrations no boot | §9 | 🟢 30 min | 4,5 |
+| 9 | Padronização visual em todos os editores | §8 | 🟢 1h | tudo |
+| 10 | Ajustes menores (Alimentos, Exercícios, Produtos, Exames) | §6.1/6.4/6.7/6.10 | 🟢 1h | 9 |
+
+**Total estimado:** ~21h (~2,5 dias de dev experiente).
+
+### 10.2. DoD global
+
+- [ ] `grep -c 'RENDERERS\..\+ = function' index.html` retorna 0 duplicações.
+- [ ] Nenhum `<select multiple>` HTML em nenhum editor.
+- [ ] Nenhuma mensagem "feature em desenvolvimento" restante.
+- [ ] Todos os 11 sub-cadastros abrem, editam, salvam sem console.error.
+- [ ] Cada editor de Nível 2 permite criar item com composição completa via UI.
+- [ ] Cada editor de Nível 3 preserva metadados clínicos ricos ao salvar.
+- [ ] Migrações rodam idempotentemente no boot.
+- [ ] Excluir Nível N−1 avisa consumidores no Nível N.
+- [ ] Testes de fumaça: criar Refeição → usar em Template de Plano → aplicar em Paciente → Instrumento emitido corretamente.
 
 ---
 
 ## Anexo A · Comandos úteis para o dev
 
-Grep de duplicações (para o passo 0a e para achar mais dívidas):
+### Detectar duplicações restantes
 
 ```sh
-grep -n 'RENDERERS\.\w\+ = function' auton-v2/index.html \
-  | awk -F: '{print $NF}' | awk '{print $1}' | sort | uniq -d
+grep -oE 'RENDERERS\.[a-zA-Z_]+' auton-v2/index.html | sort | uniq -c | sort -rn | awk '$1 > 1'
 ```
 
-Rodar após deduplicar para confirmar zero:
+Também para editores/renderers auxiliares:
 
 ```sh
-grep -c 'RENDERERS\.cadastroTreinos = function' auton-v2/index.html      # esperado: 1
-grep -c 'RENDERERS\.cadastroExercicios = function' auton-v2/index.html   # esperado: 1
-grep -c 'RENDERERS\.cadastroTemplatesPrograma = function' auton-v2/index.html # esperado: 1
+grep -c 'function verTemplatePrograma' auton-v2/index.html
+grep -c 'function treinoModeloEditorHtml' auton-v2/index.html
+grep -c 'function templatePrgEditorHtml' auton-v2/index.html
 ```
 
-Verificar migrations (após implementar §5.1 e §5.2):
+### Validar contagens do state após migração
 
-```sh
-sqlite3 data/auton.db ".dump" | grep -E 'agenda_diaria|agenda_semanal' | head
-# (essas colunas moram no localStorage do state, não no SQLite —
-#  mas se algum dia migrar cadastros para o SQLite, aqui é o hook)
+Abrir DevTools no app e rodar:
+
+```js
+console.table({
+  refeicoes: allRefeicoesModelo().length,
+  templates_plano: allTemplatesPlano().length,
+  com_agenda_diaria: allTemplatesPlano().filter(t => t.agenda_diaria?.length).length,
+  treinos_modelo: allTreinosModelo().length,
+  templates_programa: allTemplatesPrograma().length,
+  com_agenda_semanal: allTemplatesPrograma().filter(t => t.agenda_semanal).length,
+});
 ```
+
+### Detectar refs órfãs (executar antes/depois do §7)
+
+```js
+const refIds = new Set(allRefeicoesModelo().map(r => r.id));
+const orfas = allTemplatesPlano().flatMap(t =>
+  (t.agenda_diaria || []).filter(r => !refIds.has(r.refeicaoModeloId)).map(r => ({
+    template: t.nome, refIdOrfa: r.refeicaoModeloId
+  }))
+);
+console.table(orfas);
+```
+
+### Preview do editor antes de commitar
+
+O ideal é ter um Storybook simples — se não tiver, criar página HTML
+isolada `docs/_previews/editor-refeicao-modelo.html` que só carrega
+sql.js + o snippet do editor, isolado do resto do app. Facilita
+iteração sem passar pelo boot inteiro.
+
+---
+
+## Anexo B · Fora deste doc (para próximas correções)
+
+Itens correlatos que ficam para outros docs:
+
+- Bug `Math.round(100/N)` em `aplicarTemplate` @7247 → **`06-CORRECOES-FLUXO.md`** (a criar). Fica **contornado** pelo §6.3 (agenda_diaria com pctVet explícito) mas não corrigido.
+- `RENDERERS.cadastros` chamando `RENDERERS.cadastros()` ao invés do sub-renderer específico (padrão de re-render largo demais) → performance, próximo doc.
+- Botão "importar do catálogo oficial" ausente para Alimentos → conjunto de melhorias de importação, próximo doc.
+- Discussão ontológica de Painel de Exames, Template de Prescrição composicional, Aluno como entidade → mantidas em `01-ONTOLOGIA.md`.
