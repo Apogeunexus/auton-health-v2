@@ -1,0 +1,1108 @@
+[
+  {
+    "nome": "Adaptacao Neuromuscular Full Body para Sedentarios",
+    "objetivo": "saude",
+    "fase": "adaptacao",
+    "duracao_semanas": 6,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_iniciante_a",
+      "tm_full_body_iniciante_b"
+    ],
+    "observacao": "Programa de adaptacao neuromuscular voltado a individuos sedentarios ou em retomada apos longo periodo de inatividade, com duracao de 6 semanas em split full body A/B rotacionado. FREQUENCIA: 2 a 3 sessoes semanais em dias nao consecutivos (sugestao: seg/qui na semana 1-2, evoluindo para seg/qua/sex nas semanas 3-6), alternando Treino A (peso livre basico) e Treino B (maquinas guiadas) para reduzir risco tecnico e acelerar aprendizado motor. OBJETIVO FUNCIONAL: criar base de condicionamento geral, melhorar padroes de movimento (agachar, empurrar, puxar, quadril), estabilizar core, elevar densidade mineral ossea e preparar tecido conjuntivo para futuras cargas hipertroficas. PROGRESSAO: semanas 1-2 focar exclusivamente em tecnica com RIR 4-5, 2 series por exercicio; semanas 3-4 subir para 3 series mantendo RIR 3-4 e aumentar carga em 5-10% quando executar reps-alvo com boa forma; semanas 5-6 introduzir progressao dupla (fechar faixa de reps antes de subir carga) chegando a RIR 2. SINAIS DE SOBRECARGA: dor articular persistente >48h, insonia, queda de disposicao por 3 dias seguidos, FC de repouso elevada — nestes casos reduzir 1 serie e voltar RIR 4. CONTRAINDICACOES: hipertensao descompensada, lesao musculoesqueletica aguda, cardiopatia sem liberacao medica (exigir PAR-Q e/ou atestado). SINERGIA: combinar com caminhada leve de 20-30 min em 2-3 dias off para aumentar gasto calorico sem interferir na recuperacao; hidratacao 35 ml/kg/dia e sono 7-8h sao inegociaveis nesta fase. REAVALIACAO: ao final da semana 6 reavaliar composicao corporal, resistencia muscular localizada (teste de flexao e agachamento em 60s) e progredir para programa intermediario full body ou upper/lower conforme aderencia.",
+    "id": "tpl_adaptacao_neuromuscular_full_body_para_sedentarios"
+  },
+  {
+    "nome": "Emagrecimento Iniciante Full Body com Cardio 4x Semana",
+    "objetivo": "emagrecimento",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_iniciante_a",
+      "tm_full_body_iniciante_b",
+      "tm_cardio_liss_baixa_intensidade"
+    ],
+    "observacao": "PROGRAMA: 4 sessoes por semana distribuidas em seg/ter/qui/sex, alternando Full Body A (segunda e quinta) e Full Body B em maquinas (terca e sexta), com sessoes de cardio LISS de 30-40min integradas ao final de 2-3 treinos ou realizadas em dias avulsos (sabado opcional). OBJETIVO FUNCIONAL: gerar deficit calorico consistente atraves de gasto energetico total elevado (EPOC + termogenese muscular), preservar massa magra durante o processo de emagrecimento e criar base neuromotora solida no aluno iniciante que nunca treinou ou esta retomando apos longo periodo sedentario. Nas primeiras 2 semanas foco em aprendizado de padrao motor com cargas leves (RIR 4-5), semanas 3-5 progressao gradual de carga mantendo repeticoes 12-15 (RIR 2-3), semanas 6-8 aumentar densidade reduzindo descanso para 45-60s entre series e incluir 1 finalizador metabolico. PROGRESSAO: adicionar 1kg ou 1 repeticao por semana quando completar todas as series com folga; cardio comeca em 25min a 60-65% FCmax e progride ate 45min a 70-75% FCmax. SINAIS DE SOBRECARGA: dor articular persistente, insonia, fadiga acumulada que impede execucao com tecnica, reducao de desempenho por 2 sessoes seguidas — nestes casos reduzir volume em 30% por 5-7 dias (deload). CONTRAINDICACOES: se houver hipertensao descompensada, lesao articular ativa ou IMC acima de 35 substituir agachamento livre por leg press e evitar impacto no cardio (preferir bike ou eliptico). SINERGIA: combinar com plano alimentar em deficit moderado de 300-500kcal, ingestao proteica de 1.6-2.0g/kg, hidratacao 35ml/kg e minimo 7h de sono. REAVALIACAO: a cada 4 semanas rever composicao corporal (bioimpedancia ou circunferencias), progressao de cargas e adesao — se perda de peso menor que 0.5kg/semana ajustar cardio ou dieta antes de aumentar volume de forca.",
+    "id": "tpl_emagrecimento_iniciante_full_body_com_cardio_4x_semana"
+  },
+  {
+    "nome": "Hipertrofia Iniciante Full Body 3x Semana Adaptacao Neural",
+    "objetivo": "hipertrofia",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_iniciante_a",
+      "tm_full_body_iniciante_b"
+    ],
+    "observacao": "PROTOCOLO CLINICO: Programa de 8 semanas para iniciantes absolutos ou retomada apos mais de 6 meses sem treino, com objetivo de hipertrofia sarcoplasmica leve associada a forte componente de adaptacao neural, aprendizado motor e condicionamento tecidual (tendoes, ligamentos, fascia). ESTRUTURA SEMANAL: 3 sessoes nao consecutivas — Segunda (Treino A - livres), Quarta (Treino B - maquinas), Sexta (Treino A novamente na semana 1, alternando A/B/A e B/A/B nas semanas seguintes). Duracao por sessao: 45-60 minutos incluindo aquecimento articular de 8 minutos. OBJETIVO FUNCIONAL: dominar padroes motores fundamentais (agachar, empurrar, puxar, dobradica de quadril) com carga progressiva, criar base muscular para fase de hipertrofia classica subsequente e estabelecer aderencia ao habito. PROGRESSAO (dupla progressao): semanas 1-2 focar 100% em tecnica com RIR 3-4 (3-4 repeticoes na reserva) e cargas conservadoras; semanas 3-4 aumentar carga 2,5-5% quando completar todas as series no topo da faixa de repeticoes com boa tecnica; semanas 5-6 acrescentar 1 serie extra em compostos principais (agachamento, remada, supino); semanas 7-8 testar cargas maximas em 8-10 reps para benchmark antes da proxima fase. SINAIS DE SOBRECARGA: dor articular persistente por mais de 48h, queda de forca superior a 10% entre sessoes, insonia, irritabilidade, perda de apetite — reduzir carga em 20% e volume pela metade por 1 semana (deload). CONTRAINDICACOES: patologias osteoarticulares nao liberadas pelo medico, hipertensao descontrolada, gestacao (usar template especifico). SINERGIA: combinar com ingestao proteica de 1,6-2,0 g/kg/dia, hidratacao 35 ml/kg, sono 7-9h e caminhada leve 20-30 min nos dias off para recuperacao ativa. Evitar deficit calorico agressivo — priorizar manutencao ou leve superavit de 200-300 kcal. REAVALIACAO: a cada 4 semanas medir circunferencias (braco, coxa, cintura), fotos padronizadas, forca em 3 exercicios-chave (agachamento, supino, remada) e questionario de fadiga/aderencia. Ao final das 8 semanas, migrar para programa de hipertrofia intermediario upper_lower 4x semana.",
+    "id": "tpl_hipertrofia_iniciante_full_body_3x_semana_adaptacao_neural"
+  },
+  {
+    "nome": "Longevidade 60+ Full Body Adaptado Forca e Equilibrio",
+    "objetivo": "saude",
+    "fase": "adaptacao",
+    "duracao_semanas": 12,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_idoso_funcional",
+      "tm_idoso_forca_equilibrio",
+      "tm_idoso_mobilidade_articular"
+    ],
+    "observacao": "Programa de 12 semanas dedicado ao publico idoso (60+) iniciante em musculacao, com foco em preservacao de massa magra, prevencao de sarcopenia, ganho de forca funcional, melhora do equilibrio e reducao do risco de quedas. FREQUENCIA: 2 a 3 sessoes semanais em dias nao consecutivos (ex: seg/qua/sex OU ter/qui), com 48h de recuperacao entre sessoes. Alternar os tres treinos-modelo em rotacao ABC (Funcional Adaptado, Forca e Equilibrio, Mobilidade Articular), garantindo que a sessao de mobilidade seja sempre a mais leve da semana. AQUECIMENTO obrigatorio de 8-10 min (bicicleta ou caminhada leve) antes de cada sessao e desaquecimento com alongamento estatico suave. OBJETIVO FUNCIONAL: melhorar tarefas do cotidiano (sentar/levantar da cadeira, subir escadas, carregar sacolas, agachar para pegar objeto no chao, marcha estavel). PROGRESSAO CONSERVADORA: semanas 1-2 aprendizado do padrao motor com carga muito leve (RPE 4-5) e 2 series de 10-12 repeticoes; semanas 3-6 adicionar 1 serie por exercicio chave (chegando a 3 series) e progredir carga em ~5% quando o aluno completar todas as reps com tecnica perfeita e RPE ate 6; semanas 7-10 introduzir variacoes unipodais suaves (afundo apoiado, apoio unipodal com apoio), aumentar tempo sob tensao na fase excentrica (3 segundos descendo); semanas 11-12 reavaliacao funcional (teste de sentar-levantar em 30s, TUG - Timed Up and Go, forca de preensao). SINAIS DE ALERTA PARA REDUZIR: dor articular persistente >24h apos treino, tontura, alteracao pressorica, fadiga excessiva no dia seguinte, insonia, dor toracica ou dispneia desproporcional — nesses casos suspender e reencaminhar ao medico. CONTRAINDICACOES/ADAPTACOES: em hipertensao controlada evitar apneia (Valsalva) e cargas acima de RPE 7; em osteoartrose de joelho reduzir amplitude no agachamento e priorizar cadeia posterior; em osteoporose priorizar carga axial controlada e evitar flexao lombar com carga; usar apoio (barra, parede, cadeira) sempre que houver duvida de equilibrio. SINERGIA: combinar com caminhada leve 20-30 min nos dias sem musculacao, ingestao proteica de 1.2-1.6 g/kg/dia distribuida em 3-4 refeicoes, suplementacao de vitamina D e calcio conforme prescricao medica, e sono de qualidade 7-8h. REAVALIACAO a cada 4 semanas: revisar tecnica, aplicar teste de sentar-levantar 30s, TUG, forca de preensao manual e escala de percepcao subjetiva; ao final das 12 semanas, se evolucao boa, migrar para programa de manutencao ou progredir para intermediario adaptado.",
+    "id": "tpl_longevidade_60_full_body_adaptado_forca_e_equilibrio"
+  },
+  {
+    "nome": "Base Motora Adolescente Iniciante Full Body 3x Semana",
+    "objetivo": "saude",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_iniciante_a",
+      "tm_full_body_iniciante_b",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "Programa de 8 semanas voltado ao adolescente iniciante (13-17 anos) em fase de adaptação neuromuscular, construção de base motora, alfabetização técnica dos padrões fundamentais (agachar, empurrar, puxar, articular quadril, core) e criação de aderência ao treino resistido. FREQUÊNCIA: 3x/semana em dias alternados (seg/qua/sex), rotacionando Treino A e Treino B ao longo das semanas (S1: A-B-A / S2: B-A-B) e utilizando o bloco de mobilidade como aquecimento articular de 8-10min antes de cada sessão e/ou como sessão leve extra em dia livre. OBJETIVO FUNCIONAL: dominar padrões básicos com técnica limpa antes de progredir carga, desenvolver estabilidade de tronco, coordenação intermuscular, densidade óssea e criar cultura de treino saudável respeitando maturação biológica. PROGRESSÃO: S1-S2 foco 100% técnico com cargas muito leves (RPE 5-6, 2-3 séries de 12-15 reps); S3-S4 acréscimo de 1 série e ajuste de carga para RPE 6-7 mantendo repetições altas; S5-S6 introdução de progressão dupla (subir carga quando atingir topo da faixa em todas as séries) chegando a RPE 7-8; S7-S8 consolidação técnica com possibilidade de testar cargas máximas seguras em movimentos de máquina. SINAIS DE SOBRECARGA: queda de rendimento escolar, dores articulares persistentes (especialmente joelho, punho, coluna), perda de sono, irritabilidade, dor lombar após sessão — nestes casos reduzir volume em 30-40% e reforçar técnica. CONTRAINDICAÇÕES/ADAPTAÇÕES: evitar cargas máximas e movimentos de alto impacto axial (agachamento livre pesado, levantamento terra pesado) até maturação esquelética avançada — priorizar máquinas guiadas, halteres leves e peso corporal; supervisão adulta obrigatória; jamais treinar dor. SINERGIA: aliar a alimentação equilibrada rica em proteína (1,4-1,8g/kg), hidratação adequada, sono de 8-10h/noite e prática esportiva recreativa complementar (natação, futebol, vôlei) 1-2x/semana para desenvolvimento atlético amplo. REAVALIAÇÃO: a cada 4 semanas revisar técnica em vídeo, cargas utilizadas, aderência, sintomas osteomioarticulares e antropometria; ao final das 8 semanas migrar para programa intermediário de hipertrofia se técnica estiver consolidada em todos os padrões básicos.",
+    "id": "tpl_base_motora_adolescente_iniciante_full_body_3x_semana"
+  },
+  {
+    "nome": "Pos-Parto Iniciante Reconquista do Core 3x Semana",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_pos_parto_diastase_core",
+      "tm_full_body_reabilitacao_leve",
+      "tm_reab_lombar_estabilizacao"
+    ],
+    "observacao": "Programa de retorno seguro ao treino apos o parto (idealmente com liberacao medica/obstetra >= 6 semanas para parto normal e >= 8-12 semanas para cesarea), com foco em reconstrucao do core profundo, reativacao do assoalho pelvico, correcao de diastase abdominal e fortalecimento gluteo-lombar. Frequencia: 3x/semana em dias alternados (seg/qua/sex), permitindo 48h de recuperacao entre sessoes. Rotacao ABC: Segunda tm_pos_parto_diastase_core (foco em transverso, respiracao diafragmatica 360, ponte gluteo, dead bug adaptado); Quarta tm_full_body_reabilitacao_leve (padroes basicos de agachamento, remada, empurrada em amplitude controlada); Sexta tm_reab_lombar_estabilizacao (bird dog, prancha modificada nos joelhos, pallof press leve, estabilizacao segmentar). Objetivo funcional: retomar controle motor do CORE, reduzir gap de diastase (medir com dois dedos acima/abaixo do umbigo a cada 4 semanas), aliviar dor lombar comum no pos-parto por hiperlordose compensatoria, e reconstruir base para retornar a treinos convencionais. Progressao: Semanas 1-2 apenas peso corporal com foco em respiracao coordenada e ativacao (2-3 series x 10-12 reps, pausas longas); Semanas 3-4 adicionar mini-band, faixas leves e tempo sob tensao (3x12-15); Semanas 5-6 introduzir halteres leves 2-4kg e progressao para prancha sobre antebracos; Semanas 7-8 avancar para pontes unilaterais, agachamento com halter e caminhada de fazendeiro leve. Sinais de sobrecarga (REDUZIR IMEDIATAMENTE): abaulamento (doming) da linha alba durante exercicios, sensacao de peso ou pressao vaginal, escape urinario, sangramento vermelho vivo apos ja ter cessado, dor pubica ou lombar aguda, fadiga extrema, queda na producao de leite. Nesses casos regredir a fase anterior e reavaliar com fisioterapeuta pelvica. CONTRAINDICACOES ABSOLUTAS nesta fase: abdominais tradicionais (crunch, sit-up), pranchas prolongadas em apoio total sem controle, impacto (corrida, saltos), agachamento profundo com carga, exercicios em decubito ventral se amamentando (desconforto mamario), Valsalva. Sinergia: combinar com acompanhamento de fisioterapeuta pelvica (obrigatorio se houver diastase >2,5cm, incontinencia ou prolapso), caminhada leve 20-30min nos dias off, hidratacao reforcada se amamentando (35ml/kg + 750ml extras), suporte nutricional com proteina 1,6-1,8g/kg para reparo tecidual, sono fracionado respeitado (nao treinar em privacao severa <4h). Reavaliacao a cada 4 semanas: medicao da diastase, teste funcional de core (bird dog e dead bug sem compensacao), auto-relato de continencia e dor lombar. Ao final das 8 semanas, se diastase <2cm e core estavel, progredir para tm_full_body_feminino_gluteo_core em fase de hipertrofia inicial.",
+    "id": "tpl_pos_parto_iniciante_reconquista_do_core_3x_semana"
+  },
+  {
+    "nome": "Gestante 1o e 2o Trimestre Manutencao Segura Full Body 3x",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 12,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_gestante_baixo_impacto",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_cardio_liss_baixa_intensidade"
+    ],
+    "observacao": "Programa de manutencao segura para gestantes no 1o e 2o trimestre, com liberacao obstetrica obrigatoria antes do inicio. Frequencia semanal de 3 sessoes distribuidas em segunda, quarta e sexta, sendo 2 dias de treino resistido de baixo impacto (Full Body Gestante) e 1 dia de mobilidade articular geral. Em 2 dos dias de treino resistido, adicionar 20-30 minutos de cardio LISS (esteira em inclinacao leve, bike horizontal ou eliptico) mantendo FC em zona 2 (60-70% FCmax) e escala de Borg entre 12-14 (moderado, ainda consegue conversar). Objetivo funcional: preservar forca de membros inferiores e core (transverso e obliquos, evitando abdominais em flexao a partir da 12a semana), manter mobilidade de quadril e coluna toracica, reduzir risco de lombalgia gestacional, edema e ganho excessivo de peso, e preparar tecido muscular para o trabalho de parto e pos-parto. Progressao conservadora: nas primeiras 2 semanas, priorizar tecnica e respiracao diafragmatica (evitar Valsalva); da semana 3 a 6, aumentar volume de 2 para 3 series mantendo cargas moderadas (RPE 5-6, sempre com 3-4 repeticoes de reserva); da semana 7 a 12, manter volume e ajustar carga apenas se a percepcao de esforco cair para RPE 4. Nunca buscar falha muscular e nao progredir cargas em picos hormonais (relaxina aumenta laxidez ligamentar). Sinais de sobrecarga e interrupcao imediata: sangramento vaginal, contracoes uterinas ritmadas, dor pelvica, tontura, dispneia desproporcional, cefaleia, palpitacoes, reducao dos movimentos fetais apos a 20a semana, edema subito de mao ou face. Contraindicacoes absolutas ao treino: pre-eclampsia, placenta previa apos 26 semanas, incompetencia istmocervical, sangramento persistente, ruptura prematura de membranas, doenca cardiaca ou pulmonar restritiva. Adaptacoes obrigatorias: a partir do 2o trimestre eliminar exercicios em decubito dorsal prolongado (compressao da veia cava), substituir por decubito lateral esquerdo ou inclinado 30 graus; evitar torcoes de tronco, saltos, impacto e exercicios em pronacao no solo com barriga apoiada; nao usar cinto de forca; hidratacao constante e ambiente termo-neutro (evitar temperatura acima de 24 graus). Sinergia: integrar com acompanhamento nutricional para ganho de peso dentro da curva IOM (7-11,5kg para IMC eutrofico), suplementacao de acido folico e ferro conforme prescricao medica, fisioterapia pelvica preventiva e caminhadas leves diarias de 20-30 minutos nos dias off. Priorizar sono lateral esquerdo e 7-9h por noite. Reavaliacao obstetrica a cada 4 semanas: revisar PA, glicemia, ganho ponderal, altura uterina e disponibilidade para manter, reduzir ou substituir por protocolo especifico de 3o trimestre (que exigira mais mobilidade, respiracao e menos carga axial).",
+    "id": "tpl_gestante_1o_e_2o_trimestre_manutencao_segura_full_body_3x"
+  },
+  {
+    "nome": "Reabilitacao Cardiaca Zona 2 e Forca 3x Semana Iniciante",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_cardiaco_resistencia_leve",
+      "tm_full_body_reabilitacao_leve",
+      "tm_cardio_liss_baixa_intensidade",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "Programa de reabilitacao cardiaca fase II/III (pos-evento coronariano estavel, pos-revascularizacao com no minimo 6 semanas ou ICC compensada NYHA I-II) com liberacao formal do cardiologista e teste ergometrico recente definindo FC de treino. Estrutura semanal em 6 dias: segunda, quarta e sexta sessao combinada de forca full body de baixa carga (tm_full_body_reabilitacao_leve ou tm_cardiaco_resistencia_leve, 2 series de 12-15 repeticoes, RPE 4-5/10, cargas 30-40% 1RM estimado, respiracao continua SEM Valsalva, intervalos longos de 90-120s); terca, quinta e sabado cardio Zona 2 (tm_cardio_liss_baixa_intensidade) em esteira, bike ou eliptico por 20 min na semana 1 progredindo 5 min a cada 2 semanas ate 40-45 min na semana 8, mantendo FC entre 60-70% FCmax ou zona prescrita pelo cardiologista, conversacao possivel (teste da fala). Domingo descanso ativo com tm_mobilidade_flexibilidade_geral. Objetivo funcional: elevar VO2 pico, melhorar funcao endotelial, reduzir PA de repouso, restaurar confianca no esforco e recuperar massa magra perdida na hospitalizacao. Progressao conservadora: semanas 1-2 familiarizacao (1 serie por exercicio, cardio 20 min), semanas 3-4 introduzir 2 series e +5 min cardio, semanas 5-6 aumentar carga 5-10% se PSE permanecer <=5 e sem sintomas, semanas 7-8 consolidacao com 2-3 series e cardio pleno. Sinais de alarme para interromper imediatamente e contatar equipe: dor toracica, dispneia desproporcional, tontura, sincope, palpitacoes, FC de repouso >100 bpm ou aumento >20 bpm sobre basal, edema novo, ganho de peso >2 kg em 3 dias (descompensacao ICC), PA sistolica >180 ou queda >10 mmHg no esforco. Contraindicacoes absolutas para carga: angina instavel, arritmia nao controlada, estenose aortica grave, HAS nao controlada (>180/110), TVP aguda. Adaptacoes: sempre monitorar FC (frequencimetro obrigatorio), aferir PA antes e apos, evitar exercicios isometricos prolongados, decubito ventral e manobras com apneia. Sinergia com dieta cardioprotetora (padrao mediterraneo, sodio <2g/dia), adesao a medicacao (betabloqueador altera FC alvo — usar PSE de Borg como referencia complementar), sono 7-8h e cessacao do tabagismo. Reavaliacao a cada 4 semanas com cardiologista/fisiologista: FC repouso, PA, teste de caminhada de 6 minutos, forca de preensao manual e PSE media das sessoes; ao final das 8 semanas reteste ergometrico para transicao a fase III/manutencao com progressao para tm_full_body_idoso_funcional ou tm_full_body_iniciante_a.",
+    "id": "tpl_reabilitacao_cardiaca_zona_2_e_forca_3x_semana_iniciante"
+  },
+  {
+    "nome": "Preparacao para Volta ao Esporte Base 3x Iniciante",
+    "objetivo": "condicionamento",
+    "fase": "adaptacao",
+    "duracao_semanas": 6,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_iniciante_a",
+      "tm_full_body_iniciante_b",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_cardio_liss_baixa_intensidade"
+    ],
+    "observacao": "Programa de 6 semanas voltado ao praticante que ficou afastado da modalidade esportiva (recreacional ou amadora) por 2 a 12 meses e precisa reconstruir base neuromuscular, cardiorrespiratoria e articular antes de retomar treinos especificos do esporte. FREQUENCIA: 3x/semana em dias alternados (segunda, quarta e sexta), com rotacao A/B (semana 1: A-B-A; semana 2: B-A-B) usando Full Body Iniciante A e Full Body Iniciante B (maquinas), garantindo 48h de recuperacao entre sessoes. Terca e quinta reservadas para mobilidade e flexibilidade geral (20-30min) e/ou cardio LISS de baixa intensidade (30-45min em 60-70% FCmax), essenciais para restaurar condicionamento aerobico basico. OBJETIVO FUNCIONAL: reativar padroes motores fundamentais (agachar, empurrar, puxar, dobradica de quadril), reconstruir forca de base sem sobrecarga articular, ampliar amplitude de movimento em quadris/ombros/tornozelos e elevar VO2 submaximo. PROGRESSAO: semanas 1-2 focadas em tecnica com cargas leves (RPE 5-6, 2-3 series de 10-15 reps), semanas 3-4 progredir carga em 5-10% mantendo tecnica limpa (RPE 6-7, 3 series), semanas 5-6 introduzir variacao de tempo sob tensao e leve trabalho pliometrico de baixo impacto se o esporte exigir. SINAIS DE SOBRECARGA: dor articular persistente >48h, DOMS incapacitante, queda de FC em repouso, sono ruim ou irritabilidade - reduzir volume em 30% ou trocar sessao pesada por mobilidade. CONTRAINDICACOES: lesoes agudas nao liberadas por medico/fisioterapeuta; se houve cirurgia previa, iniciar apenas com liberacao. SINERGIA: combina bem com nutricao normocalorica levemente hiperproteica (1,4-1,6g/kg), hidratacao adequada e higiene do sono (7-9h); evitar HIIT intenso na mesma semana ate a fase 5. REAVALIACAO: a cada 3 semanas checar tecnica dos padroes basicos, dor, FC de recuperacao e prontidao para transicao a fase esporte-especifica; ao final da semana 6 planejar bloco de transicao com gestos do esporte alvo.",
+    "id": "tpl_preparacao_para_volta_ao_esporte_base_3x_iniciante"
+  },
+  {
+    "nome": "Volta ao Treino Pos-Doenca Reintroducao Progressiva 3x Semana",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 6,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_reabilitacao_leve",
+      "tm_full_body_iniciante_a",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_cardio_liss_baixa_intensidade"
+    ],
+    "observacao": "PROGRAMA DE REINTRODUCAO AO TREINO POS-DOENCA (gripe forte, COVID leve/moderada, virose, pos-cirurgia leve, pos-internacao curta ou periodo prolongado de repouso). Frequencia: 3x/semana em dias alternados (segunda, quarta, sexta) permitindo 48h de recuperacao entre sessoes, essencial para restauracao imune e neuromuscular.\n\nOBJETIVO FUNCIONAL: restabelecer condicionamento cardiorrespiratorio basal, retomar padroes motores fundamentais (agachar, empurrar, puxar, hinge), reativar propriocepcao e core, evitar recaidas por overtraining e reconstruir tolerancia a carga sem gerar fadiga sistemica excessiva. NAO e um programa de hipertrofia nem forca, e um programa de RECONDICIONAMENTO.\n\nROTACAO SEMANAL:\n- Segunda: Full Body Reabilitacao Leve (foco em ativacao e mobilidade)\n- Quarta: Full Body Iniciante A (padroes motores basicos com carga leve)\n- Sexta: Mobilidade + LISS 20-30min (recuperacao ativa cardiovascular)\n\nPROGRESSAO POR SEMANA:\n- Semanas 1-2: 50-60% da carga habitual pre-doenca, 2 series por exercicio, RPE maximo 5-6, foco em tecnica e respiracao.\n- Semanas 3-4: aumentar para 65-75% da carga, 2-3 series, RPE 6-7, introduzir progressao de repeticoes (12-15).\n- Semanas 5-6: 75-85% da carga anterior, 3 series, RPE 7-8, avaliar retorno ao programa regular.\n\nSINAIS DE SOBRECARGA (reduzir volume 30-50% ou pausar): FC de repouso 10+ bpm acima do basal por 2 dias, sono ruim, dispneia desproporcional, tosse, tontura, dor toracica, febre baixa recorrente, dor muscular tardia intensa alem de 72h, queda de disposicao. Em qualquer desses sinais, retornar ao volume da semana anterior.\n\nCONTRAINDICACOES/ADAPTACOES: pos-COVID com sintomas persistentes (fadiga cronica, taquicardia postural) exige liberacao medica e cardiologica antes de iniciar; suspender aerobio de alta intensidade nas primeiras 4 semanas pos-COVID moderada; hidratacao reforcada; evitar treino em jejum prolongado; monitorar oximetria se historico respiratorio.\n\nSINERGIA: combinar com alimentacao anti-inflamatoria rica em proteina (1.4-1.6g/kg), reposicao de vitamina D, zinco, magnesio; priorizar sono 7-9h; incluir caminhadas leves 20-30min em dias off; evitar HIIT, cargas maximas e exercicios olimpicos ate final da reintroducao.\n\nREAVALIACAO: ao final da semana 3 revisar tolerancia a carga, FC de recuperacao e disposicao subjetiva (escala 0-10). Ao final da semana 6 reavaliar composicao corporal, forca em movimentos-chave e decidir transicao para programa regular de iniciante/intermediario conforme historico previo do aluno.",
+    "id": "tpl_volta_ao_treino_pos_doenca_reintroducao_progressiva_3x_seman"
+  },
+  {
+    "nome": "Hipertrofia Intermediario Upper Lower 4x Semana",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_upper_intermediario_a",
+      "tm_lower_intermediario_a",
+      "tm_upper_intermediario_b",
+      "tm_lower_intermediario_b"
+    ],
+    "observacao": "Programa de hipertrofia clássica para o aluno intermediário (6-24 meses de treino consistente) que já domina os padrões básicos de agachamento, terra, supino e remada e busca ganho de massa magra global com equilíbrio entre membros superiores e inferiores. Estrutura semanal: 4 sessões distribuídas em segunda (Upper A composto), terça (Lower A agachamento), quinta (Upper B isolador) e sexta (Lower B terra e glúteo), com quarta, sábado e domingo reservados para descanso ativo, mobilidade leve ou cardio LISS de 30-40 min a 60-70% FCmáx (opcional, sem prejudicar recuperação). Cada sessão dura 55-75 min incluindo aquecimento articular específico (5-8 min) e mobilidade final (5 min). Volume-alvo por grupo muscular: 12-20 séries efetivas por semana, dentro da zona MEV-MAV para intermediários. Progressão em três blocos: Semanas 1-2 (acumulação) trabalhando com RIR 3-4, focando técnica e conexão mente-músculo; Semanas 3-6 (intensificação) progredindo para RIR 1-2 nas séries de aproximação e mantendo double progression (subir 2,5-5% na carga quando bater o topo da faixa de repetições em todas as séries prescritas); Semanas 7-9 (sobrecarga) com aumento de 1-2 séries nos compostos principais e uso de técnicas avançadas (rest-pause, drop-set na última série de isoladores); Semana 10 (deload) reduzir volume em 40-50% mantendo intensidade para reavaliar. Sinais de sobrecarga que exigem redução imediata: queda de performance em 2 sessões consecutivas no mesmo movimento, dor articular persistente >48h, insônia, FC de repouso >8 bpm acima do basal, perda de motivação e libido. Nesses casos, aplicar deload antecipado e reduzir 1 sessão semanal por 7-10 dias. Contraindicações e adaptações: em caso de lombalgia mecânica, substituir terra convencional por variação apoiada (rack pull ou trap bar); em impingimento de ombro, substituir desenvolvimento com barra por halter em pegada neutra e reduzir amplitude no supino inclinado. Sinergia nutricional: superávit calórico moderado de 200-350 kcal/dia com proteína em 1,6-2,2 g/kg de peso corporal, carboidrato em 4-6 g/kg priorizando peri-treino, e hidratação de 35-40 ml/kg. Sono mínimo de 7-9 horas por noite é inegociável para síntese proteica e recuperação neural. Creatina monohidratada 3-5 g/dia pode ser adicionada. Reavaliação clínica e antropométrica (perimetria, bioimpedância, foto padronizada e teste de força em 5RM nos compostos) a cada 4 semanas para ajuste de exercícios, volume e periodização do próximo mesociclo, sempre respeitando o princípio da individualidade biológica.",
+    "id": "tpl_hipertrofia_intermediario_upper_lower_4x_semana"
+  },
+  {
+    "nome": "Hipertrofia Intermediario PPL 6x Semana Volume Progressivo",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "PPL",
+    "treinosModeloIds": [
+      "tm_push_intermediario",
+      "tm_pull_intermediario",
+      "tm_legs_ppl_intermediario"
+    ],
+    "observacao": "Programa de hipertrofia estruturado em Push/Pull/Legs executado 6 vezes por semana (seg-ter-qua-qui-sex-sab, com domingo de descanso completo), rodando cada estimulo 2x na semana para maximizar frequencia de sinalizacao anabolica sem comprometer recuperacao. Objetivo funcional: aumento de massa muscular global com enfase equilibrada em membros superiores e inferiores, priorizando ganho de secao transversa via volume progressivo (10-20 series semanais por grupo muscular grande). Cargas na faixa de 65-80% 1RM, RIR 1-3, com repeticoes entre 8-12 nos compostos e 10-15 nos isoladores. Progressao: nas semanas 1-2 fixar tecnica e RIR 3; semanas 3-6 adicionar 1 serie por exercicio principal ou aumentar 2,5-5% na carga quando conseguir bater teto de repeticoes com RIR 2; semanas 7-9 intensificacao com drop-sets ou rest-pause nos ultimos exercicios; semana 10 deload (reduzir 40% volume e 20% carga). Sinais de sobrecarga: queda de performance por 2 sessoes consecutivas, sono ruim, FC de repouso elevada 5+ bpm, dor articular persistente, perda de apetite ou libido - reduzir volume 30% imediatamente. Contraindicacoes: lesoes agudas de ombro, cotovelo ou lombar exigem substituicao de exercicios (ex: trocar desenvolvimento militar por Landmine press; agachamento livre por hack machine). Sinergia: superavit calorico moderado de 200-400 kcal com 1,8-2,2g proteina/kg, creatina 3-5g/dia, sono minimo de 7h. Cardio leve LISS 2x/semana opcional em dias off para saude cardiovascular sem prejudicar recuperacao. Reavaliar composicao corporal, forca nos principais lifts e fotos a cada 4 semanas; renovar template ou trocar exercicios se estagnar por 2 semanas consecutivas.",
+    "id": "tpl_hipertrofia_intermediario_ppl_6x_semana_volume_progressivo"
+  },
+  {
+    "nome": "Hipertrofia Intermediario ABC 3x - Volume Progressivo",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "ABC",
+    "treinosModeloIds": [
+      "tm_push_intermediario",
+      "tm_pull_intermediario",
+      "tm_legs_ppl_intermediario"
+    ],
+    "observacao": "Programa de hipertrofia para praticante intermediario com 6-24 meses de treino consistente, dividido em split ABC (Push / Pull / Legs) com frequencia semanal de 3x - executado idealmente em segunda (A - Push: peito, ombros, triceps), quarta (B - Pull: costas e biceps) e sexta (C - Legs: quadriceps, posteriores, gluteos e panturrilha), permitindo 48h de recuperacao entre sessoes e finais de semana livres para recuperacao completa. Objetivo funcional: maximizar hipertrofia miofibrilar e sarcoplasmatica atraves de volume progressivo (10-20 series semanais por grupo muscular), estimulo mecanico com cargas de 65-75% 1RM em 8-12 repeticoes e intervalos de 60-90s entre series para manter densidade metabolica. Progressao: nas semanas 1-2 estabelecer tecnica e RIR 3-4 (deixando 3-4 reps na reserva); semanas 3-5 aumentar carga 2,5-5% mantendo repeticoes ou adicionar 1-2 reps; semanas 6-8 progredir para RIR 1-2 introduzindo drop-sets nas ultimas series dos isoladores; semana 9 pico de intensidade com RIR 0-1; semana 10 deload com 50-60% do volume para supercompensacao. Sinais de sobrecarga que indicam necessidade de reduzir volume ou antecipar deload: queda de forca em 2 sessoes consecutivas, sono fragmentado, FC de repouso elevada 5-10 bpm acima do basal, perda de apetite, irritabilidade ou dores articulares persistentes (ombro, punho, joelho). Contraindicacoes/adaptacoes: em caso de lesao no manguito rotador substituir supino reto por supino inclinado com halteres 30 graus; para dor lombar preferir remada apoiada no banco e leg press ao inves de agachamento livre; hipertensos evitar apneia (manobra de Valsalva). Sinergia nutricional: superavit calorico moderado de 200-400 kcal/dia com proteina de 1,8-2,2 g/kg de peso corporal, carboidratos 4-6 g/kg priorizando pre e pos-treino, hidratacao 35-40 ml/kg; suplementacao opcional com creatina 5g/dia e whey pos-treino. Compativel com 1-2 sessoes semanais de cardio LISS de 20-30 min em dias off para saude cardiovascular sem prejudicar recuperacao. Sono minimo de 7-9h/noite e-se possivel-cochilo de 20-30 min. Reavaliacao a cada 4 semanas: medir circunferencias (braco, peito, coxa, cintura), peso corporal, forca nos exercicios compostos principais (supino, remada, agachamento) e fotos padronizadas para validar progresso e ajustar volume/intensidade no proximo mesociclo.",
+    "id": "tpl_hipertrofia_intermediario_abc_3x_volume_progressivo"
+  },
+  {
+    "nome": "Forca 5x5 Intermediario Full Body 3x Semana",
+    "objetivo": "forca",
+    "fase": "forca",
+    "duracao_semanas": 8,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_intermediario_a",
+      "tm_full_body_intermediario_b"
+    ],
+    "observacao": "Programa classico de forca no estilo 5x5 para alunos intermediarios que ja dominam padroes basicos (agachamento, terra, supino, remada, desenvolvimento) e buscam ganho de forca maxima em levantamentos compostos multiarticulares. Frequencia semanal fixa em 3 sessoes nao consecutivas (seg / qua / sex) alternando A-B-A na semana 1 e B-A-B na semana 2, garantindo 48h de recuperacao neural entre sessoes pesadas e estimulo equilibrado nos padroes de empurrar, puxar e agachar. Progressao linear: iniciar em ~75% 1RM nos compostos com 5 series de 5 reps, adicionando 2,5kg em superiores e 5kg em inferiores a cada sessao bem sucedida. Se falhar em completar 5x5 em duas sessoes consecutivas, aplicar deload de 10% e retomar progressao. A partir da semana 5 migrar para 3x5 nos compostos principais mantendo intensidade em 85-90% 1RM (fase de pico de forca). Sinais de sobrecarga a monitorar: queda de performance em 2+ sessoes seguidas, insonia, dor articular persistente (joelho / ombro / lombar), FC de repouso elevada, irritabilidade e perda de apetite — nesses casos, reduzir volume em 30% por 1 semana (semana de descarga). Contraindicacoes: patologias de coluna lombar nao liberadas, hernias discais agudas, lesoes de manguito rotador ativas ou hipertensao descontrolada — nesses casos, substituir agachamento livre por leg press e terra por stiff em maquina. Sinergia nutricional: superavit calorico leve (200-300 kcal/dia) com 1,8-2,2g proteina/kg, creatina 5g/dia continua e sono de 7-9h. Nao combinar com HIIT intenso no mesmo dia — se necessario cardio, priorizar LISS 2x/semana em dias off. Reavaliar 1RM e tecnica dos 3 grandes (agachamento, supino, terra) a cada 4 semanas via teste indireto (RPE 8-9) ou direto no final do bloco de 8 semanas, ajustando novas cargas de trabalho para o proximo ciclo de hipertrofia ou nova onda de forca.",
+    "id": "tpl_forca_5x5_intermediario_full_body_3x_semana"
+  },
+  {
+    "nome": "Emagrecimento Intermediario Upper Lower com HIIT 5x Semana",
+    "objetivo": "emagrecimento",
+    "fase": "definicao",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_upper_intermediario_a",
+      "tm_lower_intermediario_a",
+      "tm_upper_intermediario_b",
+      "tm_lower_intermediario_b",
+      "tm_hiit_full_body_cardiometabolico",
+      "tm_cardio_hiit_intervalado",
+      "tm_full_body_emagrecimento_circuito"
+    ],
+    "observacao": "Programa de emagrecimento para praticante intermediario com 10 semanas de duracao e frequencia de 5x/semana. Distribuicao semanal sugerida: SEG Upper A composto (foco puxada e empurrada horizontal), TER Lower A com enfase em agachamento, QUA HIIT Full Body cardiometabolico (20-25 min em blocos AMRAP), QUI Upper B isolador (volume metabolico com pausas curtas de 30-45s), SEX Lower B com terra romeno e gluteo, SAB opcional cardio HIIT intervalado curto (15-20 min) ou LISS 40-50 min, DOM descanso ativo com mobilidade. Objetivo funcional: maximizar deficit calorico preservando massa magra e melhorando condicionamento cardiorrespiratorio, aumentando gasto energetico total (NEAT+EPOC) via combinacao de resistido em densidade elevada com HIIT. Progressao: semanas 1-3 adaptacao ao volume (3 series por exercicio, RPE 7, descanso 60s), semanas 4-7 progressao de densidade (4 series, RPE 8, reduzir descanso para 45s, adicionar drop-set no ultimo exercicio de cada grupamento), semanas 8-10 pico de definicao com superseries antagonistas e finisher metabolico em bike/esteira 10 min pos-treino. Sinais de sobrecarga que exigem deload (reduzir volume 40% por 5-7 dias): FC repouso elevada em 8+ bpm por 3 dias, queda de performance em 2 sessoes consecutivas, sono fragmentado, irritabilidade, dor articular persistente, plato ou perda de forca por mais de 10 dias. Contraindicacoes/adaptacoes: em caso de lesao articular substituir agachamento livre por leg press 45; hipertensos monitorar PA pre e pos HIIT; iniciantes na modalidade HIIT comecar com relacao 1:3 (30s esforco / 90s pausa) antes de progredir para 1:1. Sinergia: acoplar a plano nutricional com deficit calorico moderado de 300-500 kcal/dia, priorizar 1.8-2.2 g proteina/kg/dia para preservacao muscular, hidratacao minima 35 ml/kg, higiene do sono com 7-9h. Suplementacao opcional: cafeina 3-6 mg/kg pre-treino nos dias HIIT, creatina 3-5 g/dia. Reavaliacao a cada 4 semanas: bioimpedancia ou dobras cutaneas, perimetria de cintura e quadril, testes de forca (RM ou RPE em exercicios chave), teste cardiorrespiratorio submaximo (Cooper adaptado ou FC de recuperacao 1 min pos-esforco) e ajuste da carga de treino conforme evolucao antropometrica e performance.",
+    "id": "tpl_emagrecimento_intermediario_upper_lower_com_hiit_5x_semana"
+  },
+  {
+    "nome": "Condicionamento Full Body + Cardio 4x Intermediario",
+    "objetivo": "condicionamento",
+    "fase": "manutencao",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_intermediario_a",
+      "tm_full_body_intermediario_b",
+      "tm_hiit_full_body_cardiometabolico",
+      "tm_cardio_hiit_intervalado",
+      "tm_funcional_atletico_multiplano"
+    ],
+    "observacao": "Programa de condicionamento fisico geral com 4 sessoes semanais (seg/ter/qui/sex), alternando 2 dias de forca full body (Intermediario A com barra e Intermediario B com halteres) e 2 dias de estimulo cardiometabolico (HIIT Full Body e Cardio HIIT intervalado), com sessao complementar de Funcional Multiplano opcional aos sabados para quem tolerar volume adicional. Objetivo funcional: elevar VO2max, melhorar composicao corporal, ganhar resistencia muscular localizada e forca geral submaxima sem hipertrofia agressiva. Progressao linear ondulatoria: semanas 1-2 adaptacao (2-3 series por exercicio, RPE 6-7, HIIT 6 rounds de 20s ON/40s OFF); semanas 3-6 progressao (3-4 series, RPE 7-8, HIIT 8-10 rounds 30s ON/30s OFF, adicionar 2-5% de carga a cada microciclo); semanas 7-9 pico (4 series compostas + 3 isoladas, RPE 8-9, HIIT 10-12 rounds Tabata style); semana 10 deload ativo (reduzir 40% do volume). Sinais de sobrecarga: FC de repouso elevada por 3 dias consecutivos (>+8bpm da linha de base), sono fragmentado, PSE de treino subindo sem aumento de carga, queda de rendimento aerobico ou dores articulares persistentes — nesses casos, cortar 1 sessao HIIT e reduzir cargas em 15%. Contraindicacoes: cardiopatia descompensada, hipertensao nao controlada (>160/100) e lesoes agudas de coluna ou joelho exigem liberacao medica; adaptar impacto para bike/eliptico se necessario. Sinergia: casa muito bem com deficit calorico moderado (300-500 kcal), ingestao proteica 1.6-2.0 g/kg/dia, hidratacao 35 ml/kg e 7-9h de sono; suplementacao opcional com creatina 3-5g e cafeina pre-HIIT. Reavaliacao a cada 4 semanas: aferir peso, perimetria (cintura/quadril), teste de 1 milha ou Cooper 12min, forca em agachamento e supino, alem de bem-estar subjetivo — ajustar volume, cardio e cargas conforme evolucao objetiva.",
+    "id": "tpl_condicionamento_full_body_cardio_4x_intermediario"
+  },
+  {
+    "nome": "Performance Corrida 5-10k Base Aerobica e Intervalado Intermediario",
+    "objetivo": "performance",
+    "fase": "potencia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_cardio_liss_baixa_intensidade",
+      "tm_cardio_hiit_intervalado",
+      "tm_corrida_tecnica_sprint",
+      "tm_full_body_intermediario_a",
+      "tm_core_avancado_estabilidade"
+    ],
+    "observacao": "Programa de 10 semanas voltado ao corredor recreacional intermediario que busca melhorar tempo em provas de 5k e 10k, combinando base aerobica, intervalado de alta intensidade, drills tecnicos de corrida e forca funcional de suporte. Distribuicao semanal sugerida: SEG - forca full body (tm_full_body_intermediario_a) para preservar massa magra e potencia neuromuscular; TER - cardio LISS 45-60min em Z2 (tm_cardio_liss_baixa_intensidade) para base mitocondrial; QUA - drills tecnicos e sprints curtos (tm_corrida_tecnica_sprint) focando cadencia, postura e mecanica; QUI - core e estabilidade (tm_core_avancado_estabilidade) 30-40min para reduzir gasto energetico e prevenir lesao; SEX - HIIT intervalado tipo 6x800m ou 10x400m em ritmo de 3-5k (tm_cardio_hiit_intervalado); SAB - long run progressivo (60-90min Z2 evoluindo para 100-120min); DOM - repouso ativo ou mobilidade leve. PROGRESSAO: nas semanas 1-3 acumula volume aerobico (+10% por semana no long run), 4-6 introduz intensidade progressiva no intervalado (aumenta numero de tiros ou reduz recuperacao), 7-8 pico especifico com simulacoes de prova, 9-10 polimento (taper) reduzindo volume 30-40% mas mantendo intensidade. SINAIS DE SOBRECARGA: FC de repouso >7bpm acima do basal por 3 dias, HRV em queda persistente, dores tibiais/joelho, sono ruim, ritmo em Z2 exigindo esforco maior - reduzir 30-50% do volume por 5-7 dias e reavaliar. CONTRAINDICACOES: fasceite plantar aguda, canelite, tendinopatia patelar em fase inflamatoria - substituir corrida por bike/eliptico ate estabilizar. SINERGIA: nutricao com 5-7g/kg de carboidrato nos dias de intervalado e long run, hidratacao com eletrolitos em treinos >60min, sono >7h e periodizacao com deload a cada 4 semanas. REAVALIACAO a cada 4 semanas: teste de 3km ou 5km controlado, FC media em pace alvo, ritmo em Z2 e percepcao de esforco - ajustar zonas se necessario.",
+    "id": "tpl_performance_corrida_5_10k_base_aerobica_e_intervalado_interm"
+  },
+  {
+    "nome": "Performance Ciclismo Intermediario Endurance e Forca 5x",
+    "objetivo": "performance",
+    "fase": "forca",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_lower_intermediario_a",
+      "tm_lower_intermediario_b",
+      "tm_upper_intermediario_a",
+      "tm_core_avancado_estabilidade",
+      "tm_cardio_hiit_intervalado"
+    ],
+    "observacao": "Programa de 10 semanas voltado a ciclistas intermediarios de estrada/MTB que buscam ganho de forca especifica de pedal, resistencia muscular localizada e transferencia para potencia no pedivela, integrado a treinos aerobicos ja realizados na bike. Distribuicao semanal sugerida (5x/semana em terra) sincronizada com o calendario de pedal: SEG Lower A (agachamento/quadriceps dominante - base de forca), TER Upper A composto (equilibrio muscular tronco/postura na bike, prevencao de dor cervical e lombar), QUA HIIT intervalado curto (VO2max e limiar - pode ser feito na bike/rolo em substituicao), QUI Lower B (terra/posterior/gluteo - potencia de pedalada e prevencao de lesao IT band/joelho), SEX Core avancado + finalizacao com panturrilha e mobilidade (estabilidade do tronco para gerar torque). Sabado e Domingo reservados para pedal longo (Z2) e/ou pedal de intensidade - a musculacao NAO deve competir com o dia rei da semana ciclistica. Progressao em 3 blocos: semanas 1-3 acumulacao (3x8-10, RIR 2-3, foco em tecnica de agachamento e stiff), semanas 4-7 intensificacao (4x5-6 a 80-85% 1RM nos multiarticulares, mantendo acessorios 3x10), semanas 8-10 transmutacao (agachamento 3x3 pesado + saltos verticais/box jumps 5x3 e sprints em subida na bike para converter forca em potencia). Sinais de sobrecarga: queda de FTP em teste de 20min, FC de repouso elevada +7bpm por 3 dias, sensacao de perna pesada em pedal Z2, sono ruim - reduzir volume de musculacao em 40% na semana. Contraindicacoes: dor patelofemoral aguda substituir agachamento livre por leg press com amplitude parcial e reforcar VMO; ciclistas com historico de lombalgia devem substituir terra convencional por hip thrust e RDL com halter. Sinergia: casa muito bem com dieta com 5-7g/kg de carboidrato em dias de treino duplo, creatina 5g/dia, e periodizacao ciclistica em blocos (base-build-peak). Nao empilhar HIIT da academia com intervalado na bike no mesmo dia. Reavaliar a cada 4 semanas: teste de forca (RM estimado no agachamento e terra), teste de FTP na bike, teste de salto vertical (CMJ) e questionario de recuperacao subjetiva - ajustar cargas conforme evolucao do FTP/kg e conforto na posicao aero.",
+    "id": "tpl_performance_ciclismo_intermediario_endurance_e_forca_5x"
+  },
+  {
+    "nome": "Performance Natacao Complementar 4x Full Body Intermediario",
+    "objetivo": "performance",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_intermediario_a",
+      "tm_full_body_intermediario_b",
+      "tm_pull_intermediario",
+      "tm_core_avancado_estabilidade",
+      "tm_reab_ombro_manguito_rotador",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "Programa de forca complementar para nadador intermediario (piscina 3-5x/semana), com 4 sessoes de musculacao distribuidas em seg/ter/qui/sex, sempre em contraturno ao treino aquatico principal (idealmente pelo menos 4-6h de intervalo, priorizando piscina pela manha e forca a tarde). Objetivo funcional: aumentar potencia de puxada e propulsao, estabilizar cintura escapular, blindar manguito rotador, fortalecer core anti-rotacional (transferencia direta para streamline e giros) e melhorar drive de quadril (saidas e viradas). Rotacao semanal: SEG Full Body A (barra, foco em terra romeno, remada curvada, supino), TER Pull + manguito (dobradinha de costas/biceps + preventivo de ombro em cargas leves), QUI Full Body B (halteres, ipsilateral, corrigindo assimetrias tipicas do crawl), SEX Core avancado + mobilidade global (pallof, dead bug, prancha lateral com elevacao, cadeia posterior). Progressao: sem 1-2 aprendizado motor com 60% 1RM e RIR 3-4; sem 3-6 subir para 65-72% 1RM em 3-4x8-12 mantendo RIR 2; sem 7-9 pico de intensidade 72-80% 1RM em 4x6-10 com RIR 1-2 nos compostos; sem 10 deload (-40% volume, -10% carga) coincidindo com semana de polimento/taper na piscina. Sinais de sobrecarga (reduzir imediatamente volume 30% ou trocar por mobilidade): dor anterior de ombro em nados de crawl/borboleta, queda de tempo em series de 100m, FC de repouso 8+ bpm acima do basal por 3 dias, sono ruim, perda de forca no supino/remada >10%. Contraindicacoes/adaptacoes: em semanas de competicao ou trials, reduzir para 2 sessoes leves (Core + mobilidade + manguito) na segunda e quarta; se houver dor no manguito, suspender supino reto e substituir por landmine press e remada neutra; nadadores de peito precisam de mais adutor e menos abducao explosiva. Sinergia: casa com plano hipercalorico leve (+300 a +500 kcal em dias de forca) e proteina 1,8-2,2 g/kg; suplementacao de creatina 5 g/dia melhora sprints e saidas; evitar HIIT terrestre extra alem da piscina para nao esgotar SNC. Reavaliacao a cada 4 semanas: testar 5RM em remada curvada e terra romeno, tempo em 50m e 200m nado principal, ADM de flexao/rotacao interna e externa de ombro (goniometria), e teste de estabilidade escapular em prancha; se dois marcadores estagnarem, reordenar exercicios ou mudar variacoes.",
+    "id": "tpl_performance_natacao_complementar_4x_full_body_intermediario"
+  },
+  {
+    "nome": "Performance CrossFit Intermediario Metcon e Forca 5x Semana",
+    "objetivo": "performance",
+    "fase": "potencia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_intermediario_a",
+      "tm_olympic_arranco_arremesso",
+      "tm_crossfit_wod_metcon",
+      "tm_kettlebell_complexo_metcon",
+      "tm_funcional_atletico_multiplano",
+      "tm_hiit_full_body_cardiometabolico"
+    ],
+    "observacao": "Programa de 10 semanas voltado a performance geral no CrossFit para atleta intermediario com base tecnica minima em agachamento, terra e press. Frequencia: 5 sessoes semanais em split full body rotacionado (seg forca base barra, ter tecnica olimpica arranco/arremesso, qua WOD metcon condicionamento, qui kettlebell complexo, sex funcional multiplano ou HIIT curto), com sabado ativo (mobilidade/skill) e domingo repouso total. Objetivo funcional: elevar capacidade de trabalho (Work Capacity Across Broad Time and Modal Domains), melhorar economia de movimento sob fadiga e ganhar forca absoluta nos tres levantamentos (SBD) e nos olimpicos. Progressao: semanas 1-3 acumulacao (forca 4x5 a 70-75% 1RM, metcons de 8-12 min AMRAP/EMOM), semanas 4-6 intensificacao (forca 5x3 a 80-85%, metcons chippers longos 15-20 min), semanas 7-9 pico (forca 3x2 a 87-92%, metcons curtos alta intensidade 5-10 min tipo Fran/Grace), semana 10 deload com volume 50% e teste de benchmark (Fran, CrossFit Total, Helen). Sinais de sobrecarga: FC repouso >8 bpm acima do basal por 3 dias, queda de desempenho >10% em WOD conhecido, dor articular persistente em ombro/joelho/lombar, sono ruim ou perda de apetite — reduzir volume 40% por 5-7 dias e priorizar mobilidade. Contraindicacoes: lesao ativa de coluna, tendinopatia nao controlada, hipertensao descompensada — nesses casos substituir olimpicos por variacoes com kettlebell e reduzir intensidade dos metcons. Sinergia: dieta com 1.8-2.2 g/kg de proteina e superavit calorico leve (200-300 kcal), creatina 5g/dia, 7-9h de sono, mobilidade diaria de 10 min (t-spine, quadril, tornozelo) e reposicao adequada de eletrolitos. Reavaliacao: a cada 4 semanas testar 1RM em back squat/deadlift/press e reaplicar benchmark de metcon para calibrar cargas e ajustar prescricao.",
+    "id": "tpl_performance_crossfit_intermediario_metcon_e_forca_5x_semana"
+  },
+  {
+    "nome": "Especialização Glúteo ABCD 4x Intermediário Hipertrofia",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "ABCD",
+    "treinosModeloIds": [
+      "tm_lower_gluteo_focus_feminino",
+      "tm_upper_intermediario_a",
+      "tm_gluteo_hipertrofia_avancado",
+      "tm_upper_intermediario_b"
+    ],
+    "observacao": "Programa de especialização em glúteos com split ABCD executado em 4 dias por semana (segunda: A - Lower Glúteo Focus; terça: B - Upper Composto; quinta: C - Glúteo Hipertrofia com maior volume; sexta: D - Upper Isolador). Quarta, sábado e domingo são de recuperação ativa (mobilidade, caminhada leve). Objetivo funcional: aumentar hipertrofia do glúteo máximo, médio e mínimo, com equilíbrio de posteriores de coxa e desenvolvimento proporcional do trem superior, corrigindo assimetrias glúteo-lombar comuns em mulheres com anteversão pélvica. Progressão: nas semanas 1-2 fixar técnica com RIR 3-4 (60-65% 1RM, 10-12 reps); semanas 3-6 aumentar volume adicionando 1 série nos compostos de quadril (hip thrust, agachamento búlgaro) e progredindo carga 2,5-5% por semana quando completar todas as reps; semanas 7-9 intensificar com técnicas de tensão (pausa de 2s na contração pico do hip thrust, drop-set final no glute kickback); semana 10 é deload com 60% do volume. Sinais de sobrecarga que exigem regressão: dor lombar persistente por mais de 48h, perda de 10%+ no desempenho por 2 sessões seguidas, sono ruim, fadiga acumulada, redução de libido — nesses casos cortar 1 série de cada composto e diminuir carga em 10%. Contraindicações: hérnia de disco lombar ativa, sacroileíte, gestação avançada — nesses casos migrar hip thrust para glute bridge no solo e evitar agachamento com barra. Sinergia: combina bem com dieta em leve superávit calórico (200-300 kcal/dia) rica em proteína (1,8-2,2 g/kg), 2 sessões de cardio LISS de 30min pós-treino de membros superiores para não competir com recuperação do glúteo, e 7-9h de sono. Reavaliar a cada 4 semanas: circunferência de quadril, força no hip thrust e agachamento búlgaro, e fotos padronizadas de perfil e posterior — ajustar seleção de exercícios se ganhos estagnarem.",
+    "id": "tpl_especializa_o_gl_teo_abcd_4x_intermedi_rio_hipertrofia"
+  },
+  {
+    "nome": "Especializacao Costas ABCD 4x Intermediario Hipertrofia",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "ABCD",
+    "treinosModeloIds": [
+      "tm_abcd_costas_intermediario",
+      "tm_abcd_peito_intermediario",
+      "tm_abcd_perna_intermediario",
+      "tm_abcd_ombro_braco_intermediario",
+      "tm_pull_intermediario"
+    ],
+    "observacao": "Programa de especializacao em costas com split ABCD executado em 4 dias por semana, distribuidos preferencialmente em segunda (A - Costas), terca (B - Peito), quinta (C - Perna) e sexta (D - Ombro e Braco), permitindo 48-72h de recuperacao entre estimulos e reservando quarta e fim de semana para descanso ativo, mobilidade e cardio leve. O objetivo funcional e priorizar o desenvolvimento da musculatura dorsal (latissimo, redondos, romboides, trapezio e eretores), aumentando espessura e largura via manipulacao de volume e variacao de pegadas. O dia A recebe prioridade estrategica com o treino ABCD Costas Intermediario, e o Pull Intermediario e utilizado como bloco adicional de 20-25 minutos no final do treino D a cada 10-14 dias (ou como sessao curta opcional no sabado quando houver disponibilidade e recuperacao adequada), garantindo volume dorsal semanal entre 16-22 series efetivas. Progressao em blocos: semanas 1-2 acomodacao tecnica com RIR 3-4 e cargas conservadoras; semanas 3-6 progressao dupla (adicionar 1-2 reps por semana ate teto, depois aumentar 2,5-5% de carga e voltar ao piso de reps) mantendo RIR 1-2; semanas 7-9 intensificacao com uma serie top-set + backoff sets ou rest-pause no primeiro exercicio composto de cada sessao; semana 10 deload com 60% do volume e RIR 4. Sinais de sobrecarga que exigem reducao imediata: queda de forca por 2 sessoes consecutivas, dor lombar apos remadas, insonia, queda de libido, FC repouso elevada em 8+ bpm, ou tendinopatia em cotovelo/ombro - nesses casos reduzir series em 30-40% por 5-7 dias e revisar tecnica das remadas. Contraindicacoes e adaptacoes: em caso de hernia lombar ativa substituir levantamento terra por hiperextensao 45 graus e barra por remadas apoiadas no peito; se houver impacto no ombro priorizar puxadas com pegada neutra e evitar puxada por tras da nuca. Sinergia nutricional recomendada com superavit calorico leve (200-300 kcal), proteina de 1,8-2,2 g/kg, carboidratos concentrados peri-treino (0,8-1,2 g/kg) e sono minimo de 7-8h para maximizar hipertrofia. Sinergia com creatina monohidratada 3-5 g/dia. Reavaliacao a cada 4 semanas com fotos padronizadas, perimetro de dorso relaxado e contraido, teste de forca em remada curvada e barra fixa, alem de checagem subjetiva de recuperacao e ajuste de cargas conforme progressao. Ao final das 10 semanas considerar transicao para bloco de forca dorsal ou rotacao para especializacao de outro grupo defasado.",
+    "id": "tpl_especializacao_costas_abcd_4x_intermediario_hipertrofia"
+  },
+  {
+    "nome": "Especializacao Bracos ABCD 4x Intermediario Hipertrofia",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "ABCD",
+    "treinosModeloIds": [
+      "tm_abcd_peito_intermediario",
+      "tm_abcd_costas_intermediario",
+      "tm_abcd_perna_intermediario",
+      "tm_bracos_biceps_triceps_combinado"
+    ],
+    "observacao": "Programa ABCD de 4 dias/semana (seg: Peito + triceps indireto | ter: Costas + biceps indireto | qui: Pernas completo | sex: Bracos dedicados biceps e triceps), desenhado para praticantes intermediarios que buscam ganho visivel de circunferencia de braco (biceps + triceps + braquial) sem prejudicar o desenvolvimento global do tronco e membros inferiores. Objetivo funcional: aumentar volume semanal de bracos para 14-20 series diretas somando estimulo indireto do push (triceps) e pull (biceps), respeitando janela de recuperacao de 48-72h entre estimulos diretos ao mesmo grupo. Progressao em blocos de 2 semanas: sem 1-2 acumulo (RIR 3, 3-4 series de 10-12 reps), sem 3-4 intensificacao (RIR 2, 3-4 series de 8-10 reps), sem 5-6 pico de volume (add 1 serie por exercicio isolador de braco), sem 7-8 intensidade (RIR 1, drop-sets no ultimo exercicio de biceps e triceps), sem 9 deload (-40% volume, cargas moderadas), sem 10 teste (repetir cargas iniciais e checar reps a mais). Sinais de sobrecarga que exigem reducao imediata de volume: dor persistente em cotovelo (tendinopatia do biceps distal ou epicondilite), queda de forca > 10% em 2 sessoes consecutivas, sono ruim por mais de 5 dias, perda de apetite e HR de repouso elevada > 8bpm. Contraindicacoes: epicondilite ativa, bursite de cotovelo, cirurgia recente de ombro/cotovelo (< 6 meses) ou lesao de manguito rotador nao reabilitada; nesses casos priorizar amplitude parcial, cabos e maquinas antes de barras livres. Sinergia nutricional: superavit calorico de 200-350 kcal/dia com 1.8-2.2 g/kg de proteina, creatina 3-5g/dia e distribuicao proteica em 4-5 refeicoes; evitar cardio HIIT no mesmo dia dos bracos para nao competir por recuperacao neural, preferindo LISS 30-40 min em dias off. Sono minimo de 7h. Reavaliacao a cada 4 semanas: fotos padronizadas, perimetria de braco relaxado e contraido (bilateral), cargas dos exercicios chave (rosca direta, tricep testa, supino, remada, agachamento) e avaliar dor articular na escala 0-10. Ao final das 10 semanas rodar deload de 1 semana e migrar para bloco de forca ou upper/lower para variar estimulo.",
+    "id": "tpl_especializacao_bracos_abcd_4x_intermediario_hipertrofia"
+  },
+  {
+    "nome": "Recomposicao Corporal Upper Lower 4x Deficit Calorico",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_upper_intermediario_a",
+      "tm_lower_intermediario_a",
+      "tm_upper_intermediario_b",
+      "tm_lower_intermediario_b"
+    ],
+    "observacao": "Programa de recomposicao corporal para intermediarios que buscam preservar (e ganhar) massa magra enquanto reduzem gordura sob deficit calorico moderado (10-20% abaixo da manutencao). Frequencia: 4x/semana em split upper/lower (segunda Upper A composto, terca Lower A agachamento, quinta Upper B isolador, sexta Lower B terra/gluteo), com quarta e sabado dedicados a cardio LISS (30-45min) e domingo de descanso ativo (caminhada/mobilidade). Objetivo funcional: manter tensao mecanica alta com cargas 65-80% 1RM em 6-12 reps nos compostos (Upper A e Lower A) e 10-15 reps com foco em conexao mente-musculo nos isoladores (Upper B e Lower B), preservando forca sob deficit. Progressao: semanas 1-2 acomodacao (RIR 3-4), semanas 3-6 sobrecarga progressiva com +2,5kg ou +1 rep por sessao mantendo RIR 2, semanas 7-8 pico de volume (adicionar 1 serie extra no primeiro composto de cada sessao), semanas 9-10 deload leve na semana 9 (-30% volume) e teste de recordes pessoais em reps na semana 10. Sinais de sobrecarga que exigem reducao: queda >10% na performance por 2 sessoes seguidas, insonia persistente, FC repouso elevada, fome extrema, irritabilidade ou queda libidinal — nesses casos aumentar calorias em 10-15% por 3-5 dias (refeed) e reduzir 1 serie por exercicio na semana. Contraindicacoes: hipertensao descompensada, lesoes agudas de ombro/lombar (adaptar Upper B trocando desenvolvimento por elevacoes e Lower B trocando terra por stiff com halteres); mulheres em fase lutea podem sentir queda de performance — priorizar sono. Sinergia: dieta hiperproteica (1,8-2,2g/kg/dia), carboidratos periodizados ao redor dos treinos, creatina 5g/dia, sono >7h e gerenciamento de estresse; associar a cardio LISS 2x na semana em jejum e evitar HIIT para nao competir com recuperacao muscular. Reavaliacao: bioimpedancia ou dobras cutaneas + fotos + circunferencias a cada 4 semanas — meta realista de 0,3-0,5kg de gordura por semana com manutencao ou leve ganho de forca; se perda de forca >5% em 2 semanas consecutivas, revisar deficit e proteina antes de ajustar treino.",
+    "id": "tpl_recomposicao_corporal_upper_lower_4x_deficit_calorico"
+  },
+  {
+    "nome": "Hipertrofia Avancada ABCD 5x Volume e Densidade",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 12,
+    "nivel": "avancado",
+    "split": "ABCD",
+    "treinosModeloIds": [
+      "tm_peito_volume_hipertrofia",
+      "tm_costas_espessura_largura",
+      "tm_lower_avancado_hipertrofia",
+      "tm_ombro_tres_porcoes_deltoide",
+      "tm_bracos_biceps_triceps_combinado"
+    ],
+    "observacao": "Programa avancado de hipertrofia estruturado em split ABCD executado 5x na semana (segunda, terca, quarta, quinta e sexta), com sabado dedicado a cardio LISS opcional de 30-40 minutos e domingo de repouso completo para recuperacao neural e articular. A divisao contempla A) Peito com foco em volume e angulos multiplos, B) Costas priorizando espessura e largura, C) Membros inferiores completos com enfase em quadriceps, posteriores e gluteos, D) Ombros nas tres porcoes do deltoide, e sessao extra dedicada a bracos (biceps e triceps combinados) para maximizar hipertrofia dos grupos menores frequentemente subestimulados no split ABCD tradicional. Objetivo funcional: aumento de massa muscular magra, hipertrofia sarcoplasmatica e miofibrilar, com melhora da simetria e definicao ao longo do ciclo. Progressao em ondas: semanas 1-4 acumulacao (RIR 2-3, cargas em 65-75% 1RM, 8-12 reps, 3-4 series), semanas 5-8 intensificacao (RIR 1-2, cargas em 70-80% 1RM, 6-10 reps, 4 series), semanas 9-11 realizacao (RIR 0-1, drop-sets e rest-pause em series finais, cargas 75-85% 1RM), semana 12 deload (reduzir volume em 40% e intensidade em 20%). Aumentar peso quando o topo da faixa de repeticoes for atingido em todas as series com tecnica preservada. Sinais de sobrecarga: queda de performance por 2 sessoes consecutivas, dor articular persistente, insonia, irritabilidade, PA de repouso elevada ou frequencia cardiaca matinal 10+ bpm acima do normal indicam necessidade de deload antecipado. Contraindicacoes relativas: lesoes articulares ativas em ombro, cotovelo, joelho ou lombar exigem substituicao por variacoes menos estressantes (guiadas em maquinas). Sinergia nutricional: superavit calorico de 200-400 kcal, ingestao proteica de 1.8-2.2 g/kg/dia distribuida em 4-5 refeicoes, carboidratos periworkout e sono minimo de 7-8 horas sao essenciais para responder ao volume elevado. Suplementacao sugerida: creatina 5g/dia, whey pos-treino e cafeina pre-treino conforme tolerancia. Reavaliacao a cada 4 semanas: aferir circunferencias, bioimpedancia (opcional), fotos padronizadas, cargas em exercicios-chave (supino, remada, agachamento, desenvolvimento) e sensacao subjetiva de recuperacao para calibrar volume da proxima fase.",
+    "id": "tpl_hipertrofia_avancada_abcd_5x_volume_e_densidade"
+  },
+  {
+    "nome": "Hipertrofia Avancado ABCDE 5x Semana Volume e Especializacao",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "avancado",
+    "split": "ABCDE",
+    "treinosModeloIds": [
+      "tm_peito_volume_hipertrofia",
+      "tm_costas_espessura_largura",
+      "tm_lower_avancado_hipertrofia",
+      "tm_ombro_tres_porcoes_deltoide",
+      "tm_bracos_biceps_triceps_combinado"
+    ],
+    "observacao": "PROGRAMA ABCDE HIPERTROFIA AVANCADO — 5 sessoes/semana, ideal para alunos com 2+ anos consistentes de treino, boa tecnica em compostos e capacidade de recuperacao elevada.\n\nDIAS DA SEMANA: Segunda A (Peito), Terca B (Costas), Quarta C (Pernas quadriceps/posteriores/gluteo), Quinta D (Ombros), Sexta E (Bracos biceps/triceps). Sabado e domingo descanso ativo (caminhada leve, mobilidade). Alternativa 6x: inserir sessao dedicada de panturrilha/core/posteriores no sabado se houver ponto fraco identificado.\n\nOBJETIVO FUNCIONAL: maximizar volume semanal por grupo muscular (14-22 series/semana por grupo grande, 10-16 por grupo pequeno), aproveitando alta frequencia indireta e especializacao por dia. Foco em espessura muscular, definicao setorial e correcao de assimetrias — nao adequado para quem busca condicionamento cardiovascular primario.\n\nPROGRESSAO: Semanas 1-2 acumulacao (RIR 3-4, cargas 65-70% 1RM, familiarizacao com volume). Semanas 3-5 intensificacao (RIR 1-2, adicionar 2,5-5 kg/semana nos compostos e 1-2 reps nos isoladores). Semanas 6-7 pico (RIR 0-1, tecnicas avancadas: drop set na ultima serie, rest-pause em isoladores, 1-2 exercicios por sessao). Semana 8 deload (reduzir 40% do volume mantendo intensidade). Semanas 9-10 novo pico com variacao de exercicios (troca de angulos: inclinado por declinado, pegada supinada por neutra).\n\nSINAIS DE SOBRECARGA: queda de forca >10% em 2 sessoes consecutivas, insonia, FC repouso elevada >8 bpm da media, apetite reduzido, dor articular persistente, irritabilidade — reduzir 30-50% do volume por 1 semana e reavaliar sono/nutricao. Persistindo, aplicar deload completo.\n\nCONTRAINDICACOES: nao indicado para lesao lombar ativa, ombro em fase aguda, hipertensao nao controlada. Adaptacoes: substituir agachamento livre por hack machine em problemas lombares, remo curvado por remo apoiado no banco em desconforto lombar, desenvolvimento militar por press sentado com apoio.\n\nSINERGIA NUTRICIONAL: superavit calorico moderado 200-400 kcal/dia, proteina 1,8-2,2 g/kg, creatina 5g/dia, hidratacao 40 ml/kg. Cardio LISS 2-3x/semana de 20-30 min em jejum ou pos-treino para saude cardiovascular sem comprometer recuperacao — evitar HIIT no mesmo dia de perna. Sono minimo 7-8h.\n\nREAVALIACAO: a cada 4 semanas medir circunferencias (braco, coxa, peito), forca em 3 lifts principais (supino, agachamento, remo), fotos padronizadas e bioimpedancia se disponivel. Ajustar volume conforme resposta individual — grupos que crescem mais lento recebem 1 exercicio extra ou 2 series adicionais no ciclo seguinte.",
+    "id": "tpl_hipertrofia_avancado_abcde_5x_semana_volume_e_especializacao"
+  },
+  {
+    "nome": "Powerlifting Avancado SBD 4x - Bloco de Forca Maxima",
+    "objetivo": "forca",
+    "fase": "forca",
+    "duracao_semanas": 8,
+    "nivel": "avancado",
+    "split": "ABCD",
+    "treinosModeloIds": [
+      "tm_powerlifting_forca_maxima",
+      "tm_upper_forca_powerlifting",
+      "tm_lower_avancado_hipertrofia",
+      "tm_upper_avancado_hipertrofia",
+      "tm_core_avancado_estabilidade"
+    ],
+    "observacao": "Programa de 8 semanas para atleta avancado de powerlifting com foco em ganho de forca maxima nos tres levantamentos basicos (Squat, Bench, Deadlift). Frequencia: 4 dias/semana (seg/ter/qui/sex), com quarta e fim de semana para recuperacao ativa e mobilidade. Divisao ABCD: A) Squat pesado + acessorios de posterior e core (tm_powerlifting_forca_maxima), B) Bench pesado + triceps e costas alta (tm_upper_forca_powerlifting), C) Deadlift pesado + hipertrofia de posterior e gluteo (tm_lower_avancado_hipertrofia), D) Bench acessorio com volume para hipertrofia de peito/ombro/costas (tm_upper_avancado_hipertrofia). Complemento de core avancado (tm_core_avancado_estabilidade) intercalado 2x/semana ao final dos treinos B e D para reforco lombopelvico critico ao SBD. PROGRESSAO: bloco linear em ondas — semanas 1-3 acumulacao (75-82% 1RM, 4-6 reps, 4-5 series), semanas 4-6 intensificacao (82-90% 1RM, 2-4 reps, 4-6 series), semana 7 pico (90-95% 1RM, 1-3 reps, 3-5 series), semana 8 deload (60-70% 1RM, 3 reps, 3 series). SINAIS DE SOBRECARGA: queda de velocidade de barra maior que 20%, RPE subjetivo acima de 9 em serie programada como 7-8, dor articular persistente (ombro, joelho, lombar), insonia ou irritabilidade, queda de peso corporal maior que 1kg/semana sem intencao — reduzir volume em 30% ou antecipar deload. CONTRAINDICACOES: historico recente de hernia lombar sem liberacao medica, tendinopatia patelar/quadril em fase aguda, disturbios pressoricos nao controlados. SINERGIA: superavit calorico leve (+200 a +400 kcal), proteina 1,8-2,2 g/kg, creatina 5g/dia, sono minimo 8h. Evitar HIIT nas 48h que antecedem treino de agachamento ou terra. REAVALIACAO: teste de 1RM ou estimativa via AMRAP a cada 4 semanas, ajuste de porcentagens conforme novo maximo, revisao tecnica em video a cada 2 semanas.",
+    "id": "tpl_powerlifting_avancado_sbd_4x_bloco_de_forca_maxima"
+  },
+  {
+    "nome": "Olympic Lifting Avancado - Tecnica e Forca Maxima 4x Semana ABCD",
+    "objetivo": "forca",
+    "fase": "forca",
+    "duracao_semanas": 8,
+    "nivel": "avancado",
+    "split": "ABCD",
+    "treinosModeloIds": [
+      "tm_olympic_arranco_arremesso",
+      "tm_powerlifting_forca_maxima",
+      "tm_full_body_avancado",
+      "tm_core_avancado_estabilidade"
+    ],
+    "observacao": "PROGRAMA AVANCADO DE LEVANTAMENTO OLIMPICO focado em desenvolvimento tecnico do Snatch (arranco) e Clean & Jerk (arremesso) integrado a base de forca maxima nos padroes primarios (agachamento, levantamento terra, supino, remada). ESTRUTURA SEMANAL: 4 sessoes distribuidas em seg (A - Tecnica Olimpica: arranco + variacoes), ter (B - Forca Maxima SBD: agacho + supino + terra), qui (C - Tecnica Olimpica: arremesso + variacoes derivadas) e sex (D - Auxiliares Full Body + Core avancado para estabilidade e transferencia). Recomenda-se 48h entre sessoes de mesma qualidade e 1 dia obrigatorio de descanso passivo entre B e C. OBJETIVO FUNCIONAL: aumentar total olimpico (snatch + C&J) em 8-15%, melhorar posicoes de recepcao (overhead squat e front squat), refinar timing de tripla extensao e desenvolver rigidez de core sob carga axial elevada. PROGRESSAO: semanas 1-2 tecnica com 60-70% do 1RM olimpico e forca com 75-80% 1RM basicos; semanas 3-4 subir para 75-85% olimpico e 80-85% forca com singles pesados nas sessoes B; semanas 5-6 pico de intensidade com 85-92% olimpico e 87-92% forca (RPE 8-9); semana 7 deload ativo (60% cargas, 50% volume); semana 8 teste de 1RM em snatch, C&J, agacho, supino e terra. SINAIS DE SOBRECARGA: queda tecnica em tripla extensao, dor lombar persistente ou em punhos/joelhos, FC de repouso 8bpm acima da media por 3 dias, sono <6h por 4 noites, HRV em queda superior a 15% — nestes casos reduzir carga em 10-15% ou antecipar deload. CONTRAINDICACOES: nao iniciar sem dominio previo dos padroes de front squat e overhead squat, mobilidade de tornozelo/quadril/ombro adequada e experiencia minima de 2 anos em treino resistido estruturado. Suspender temporariamente em caso de tendinopatia patelar aguda, lesao de manguito rotador ou hernia discal ativa. SINERGIA NUTRICIONAL: superavit calorico moderado (+250 a +400 kcal/dia) com 1.8-2.2g proteina/kg, 5-7g carboidrato/kg em dias de treino, creatina 5g/dia e hidratacao minima 40ml/kg. Priorizar refeicao rica em carboidrato 90min pre-treino olimpico. REAVALIACAO: a cada 4 semanas checar video-analise das tecnicas olimpicas, testes de mobilidade especifica (OHS, dorsiflexao), RPE medio da semana, PRs em cargas submaximas (85% x 3 como preditor) e marcadores subjetivos (Wellness Questionnaire). Ajustar volume e selecao de acessorios conforme pontos fracos identificados.",
+    "id": "tpl_olympic_lifting_avancado_tecnica_e_forca_maxima_4x_semana_ab"
+  },
+  {
+    "nome": "Cutting Avançado ABCD + HIIT 5-6x Semana Definição Máxima",
+    "objetivo": "emagrecimento",
+    "fase": "definicao",
+    "duracao_semanas": 10,
+    "nivel": "avancado",
+    "split": "ABCD",
+    "treinosModeloIds": [
+      "tm_push_avancado_volume",
+      "tm_pull_avancado_espessura",
+      "tm_lower_avancado_hipertrofia",
+      "tm_posteriores_coxa_hipertrofia",
+      "tm_cardio_hiit_intervalado",
+      "tm_core_avancado_estabilidade"
+    ],
+    "observacao": "Programa de cutting avançado com split ABCD (Push / Pull / Perna Quadríceps / Perna Posterior-Glúteo) distribuído em segunda, terça, quinta e sexta, com HIIT integrado em quarta e sábado (5-6 sessões cardiometabólicas por semana) e domingo de descanso ativo com mobilidade leve. OBJETIVO FUNCIONAL: preservar massa magra durante déficit calórico agressivo (-500 a -750 kcal/dia), maximizar EPOC, aumentar densidade de treino e sensibilidade insulínica, entregando definição muscular visível e redução de percentual de gordura estimada em 3-5% no ciclo. ESTRUTURA POR SESSÃO: manter cargas de 70-80% 1RM nos compostos principais para sinalizar retenção proteica; adotar superséries agonista-antagonista, drop-sets no último exercício de cada grupo e descansos curtos (45-75s em isoladores, 90-120s em compostos) para gerar estresse metabólico. PROGRESSÃO: semanas 1-2 adaptação ao déficit mantendo cargas anteriores; semanas 3-5 microciclos de aumento de densidade (reduzir 15s de descanso a cada microciclo); semanas 6-8 introduzir técnicas de intensidade (rest-pause, tempo excêntrico 3-4s, séries mecânicas descendentes); semanas 9-10 pico com peak week e possível refeed estratégico 48h antes de reavaliação. HIIT: alternar protocolos 30s on/30s off, Tabata 20/10 e sprints 40s/80s em bike, esteira ou remo, mantendo FC 85-95% FCmax em blocos de 15-25 min. SINAIS DE SOBRECARGA: queda de força superior a 10% em dois treinos consecutivos, insônia, irritabilidade, FCrepouso elevada em 8+ bpm, HRV em queda sustentada, libido reduzida — nesses casos aplicar deload de 4-5 dias (-40% volume, manter intensidade) e revisar déficit calórico. CONTRAINDICAÇÕES: histórico de transtorno alimentar, ciclo menstrual desregulado, atletas em pré-competição sem acompanhamento médico, cardiopatas sem liberação, lesões articulares em fase aguda — nesses casos priorizar tm_cardio_liss_baixa_intensidade ao invés de HIIT. SINERGIA: exige plano nutricional com proteína 2.2-2.6g/kg, ciclagem de carboidratos (alto nos dias de perna, moderado em push/pull, baixo em HIIT isolado), creatina 5g/dia, cafeína pré-treino, sono 7-9h e manejo de estresse. Suplementação com eletrólitos essencial durante HIIT. REAVALIAÇÃO: bioimpedância, dobras cutâneas, fotos padronizadas, medidas de cintura e desempenho nos compostos a cada 4 semanas; ajustar déficit calórico e volume conforme resposta. Após as 10 semanas, transicionar para fase de manutenção ou reverse diet de 4-6 semanas antes de novo ciclo.",
+    "id": "tpl_cutting_avan_ado_abcd_hiit_5_6x_semana_defini_o_m_xima"
+  },
+  {
+    "nome": "Bulking Limpo Avançado ABCD 5x Hipertrofia Máxima",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 12,
+    "nivel": "avancado",
+    "split": "ABCD",
+    "treinosModeloIds": [
+      "tm_push_avancado_volume",
+      "tm_pull_avancado_espessura",
+      "tm_lower_avancado_hipertrofia",
+      "tm_posteriores_coxa_hipertrofia"
+    ],
+    "observacao": "Programa de bulking limpo para atletas avançados com foco em hipertrofia máxima via ABCD rodando 5x/semana (seg-ter-qui-sex-sáb ou seg-ter-qua-sex-sáb com quarta de descarga ativa). Rotação: A=Push (peito, ombro, tríceps), B=Pull (costas, bíceps), C=Lower dominante quadríceps, D=Posterior chain (posteriores e glúteos). Na semana 1 completa o ciclo ABCD e repete A no 5º dia; na semana 2 inicia por B para equilibrar frequência de estímulo (frequência 1,25x por grupo). Objetivo funcional: maximizar síntese proteica e ganho de massa magra em superávit calórico controlado de 250-400 kcal/dia, priorizando qualidade da fibra sobre volume estético. Progressão em blocos de 4 semanas: semanas 1-4 acumulação (RIR 2-3, 8-12 reps, foco tempo sob tensão 2-0-2), semanas 5-8 intensificação (RIR 1-2, 6-10 reps, adicionar drop-sets no último exercício de cada grupo), semanas 9-11 pico (RIR 0-1, incluir rest-pause e cluster sets), semana 12 deload (redução 40% do volume, manter 70% carga). Aumentar carga 2,5-5% quando conseguir 2 reps acima do teto do intervalo em duas sessões consecutivas (double progression). Sinais de sobrecarga que exigem redução imediata: queda de força >10% em movimentos principais, insônia recorrente, elevação da FC de repouso >8 bpm, dor articular persistente >72h, perda de apetite ou libido. Nesses casos aplicar deload antecipado de 5-7 dias com 50% do volume. Contraindicações relativas: hipertensão descontrolada, lesão aguda em manguito rotador, lombalgia em fase inflamatória (substituir agachamento livre por hack machine e stiff por bom-dia com kettlebell). Sinergia nutricional: consumo mínimo de 1,8-2,2g proteína/kg, 4-6g carbo/kg em dias de treino, creatina monohidratada 5g/dia, sono 7-9h obrigatório. Cardio LISS opcional 2x/semana 30min em jejum apenas para saúde cardiovascular sem prejuízo do superávit. Reavaliação a cada 4 semanas: pesagem, medidas de circunferência (braço, coxa, cintura), fotos padronizadas e reteste de cargas em supino, agachamento, remada e desenvolvimento. Se ganho >0,5kg/semana com aumento desproporcional de cintura, reduzir superávit calórico em 150 kcal.",
+    "id": "tpl_bulking_limpo_avan_ado_abcd_5x_hipertrofia_m_xima"
+  },
+  {
+    "nome": "Pre-Competicao Bodybuilding ABCDE 6x Definicao Avancado",
+    "objetivo": "hipertrofia",
+    "fase": "definicao",
+    "duracao_semanas": 12,
+    "nivel": "avancado",
+    "split": "ABCDE",
+    "treinosModeloIds": [
+      "tm_peito_volume_hipertrofia",
+      "tm_costas_espessura_largura",
+      "tm_lower_avancado_hipertrofia",
+      "tm_ombro_tres_porcoes_deltoide",
+      "tm_bracos_biceps_triceps_combinado",
+      "tm_posteriores_coxa_hipertrofia"
+    ],
+    "observacao": "PROGRAMA PRE-COMPETICAO BODYBUILDING - FASE DE DEFINICAO/CUTTING (12 semanas)\n\n1) DIAS DA SEMANA (6x/semana - ABCDE + reforco posterior/gluteo): Seg=A Peito | Ter=B Costas | Qua=C Quadriceps/Gluteo Dominante | Qui=D Ombros | Sex=E Bracos (Biceps+Triceps) | Sab=F Posterior de Coxa e Gluteo (segunda passada de pernas com enfase em cadeia posterior para simetria de palco). Domingo=descanso ativo (caminhada 30-45min zona 1). Cardio LISS matinal jejum 30-45min em 4-5 sessoes/semana progredindo ao longo do cutting; HIIT 2x/semana pos-treino a partir da semana 5.\n\n2) OBJETIVO FUNCIONAL ESPECIFICO: preservar o maximo de massa magra durante deficit calorico progressivo (300-500 kcal iniciais, evoluindo ate 700-800 kcal nas ultimas 4 semanas), refinar detalhamento muscular, corrigir pontos fracos (posterior, deltoide medio/posterior, panturrilha) e chegar ao palco entre 4-6% de gordura corporal com plenitude muscular preservada.\n\n3) PROGRESSAO: Semanas 1-4 (adaptacao ao deficit) - manter cargas de off-season, RIR 2-3, volume de referencia. Semanas 5-8 (intensificacao) - introduzir tecnicas de alta intensidade em ultima serie de isoladores (drop-sets, rest-pause, myo-reps), RIR 1-2, cardio +10min/semana. Semanas 9-12 (peak week approach) - reduzir volume total em 15-20% mantendo intensidade, focar em conexao mente-musculo, poses obrigatorias 15min/dia. Nao aumentar cargas absolutas alem da semana 6 - foco em qualidade contratil e mind-muscle connection.\n\n4) SINAIS DE SOBRECARGA/OVERREACHING: queda de forca >10% em compostos por 2 sessoes seguidas, insonia persistente, libido zerada, FC repouso +8bpm, apatia, perda de fome muscular na eumia, queda de peso corporal >1% por semana apos semana 6. Ao identificar: refeed 24-48h (carbo 5-7g/kg), reduzir cardio 50% por 3 dias, RIR obrigatorio 2-3 na semana seguinte, considerar diet break de 5-7 dias em manutencao calorica.\n\n5) CONTRAINDICACOES/ADAPTACOES: exclusivo para atletas avancados com >3 anos de treino consistente, sem lesoes articulares agudas, acompanhamento medico e nutricional obrigatorio (avaliar TSH, T3 livre, cortisol, testosterona total/livre, LH, FSH a cada 4 semanas). Contraindicado para naturais em primeiro cutting extremo sem supervisao, historico de TCA, uso off-label sem prescricao. Adaptar volume caso sintomas de overtraining central.\n\n6) SINERGIA: dieta hiperproteica 2,4-2,8g/kg de proteina, carboidrato ciclico (dias de treino de perna/costas 3-4g/kg, dias upper 2-2,5g/kg, off 1-1,5g/kg), gorduras 0,8-1g/kg. Creatina 5g/dia mantida ate 10 dias pre-show. Sono minimo 8h + soneca 30min. Massagem/liberacao miofascial 2x/semana. Peak week: manipulacao de agua e sodio nos ultimos 5 dias sob supervisao.\n\n7) REAVALIACAO: fotos padronizadas (frente, costas, lateral, poses obrigatorias) e bioimpedancia/dobras cutaneas SEMANAIS. Reavaliacao completa de estrategia a cada 3 semanas (semanas 3, 6, 9). Ajuste de macros a cada 7-10 dias conforme velocidade de perda (alvo: 0,5-0,8% peso corporal/semana ate semana 8, 0,3-0,5%/semana depois). Se estagnar 10 dias: reduzir 100-150 kcal OU adicionar 10-15min LISS diarios. Prova de roupa/pose 4 semanas antes do evento com coach de posing.",
+    "id": "tpl_pre_competicao_bodybuilding_abcde_6x_definicao_avancado"
+  },
+  {
+    "nome": "Strongman Avancado ABCD - Eventos Explosivos e Assistencia de Forca Maxima em 8 Semanas",
+    "objetivo": "forca",
+    "fase": "forca",
+    "duracao_semanas": 8,
+    "nivel": "avancado",
+    "split": "ABCD",
+    "treinosModeloIds": [
+      "tm_olympic_arranco_arremesso",
+      "tm_powerlifting_forca_maxima",
+      "tm_upper_forca_powerlifting",
+      "tm_costas_espessura_largura"
+    ],
+    "observacao": "Programa dedicado ao atleta de Strongman em fase de forca maxima, com estrutura ABCD distribuida em 4 sessoes semanais: segunda (A - Eventos Olimpicos/Explosivos com arranco, arremesso e clean pulls simulando log clean & press, viper press e stones), terca (B - Base SBD para lower body pesado com agachamento, terra convencional/sumo e assistencia unilateral para replicar yoke walk e frame carry), quinta (C - Overhead Press estilo powerlifting com log press, push press e supino militar para axle press e circus dumbbell) e sexta (D - Costas de espessura e largura para farmer walk, deadlift grip work, remadas pesadas e sandbag over bar). Progressao em ondas de 3 semanas: semanas 1-3 acumulacao (85-87.5% 1RM, 4-6x3-5), semanas 4-6 intensificacao (90-92.5% 1RM, 5x2-3 + AMRAP na ultima), semana 7 realizacao (singles a 95-100% simulando dia de competicao com implementos), semana 8 deload obrigatorio (60% volume, 70% intensidade). Sinais de sobrecarga que exigem redução imediata: queda >10% na velocidade da barra medida com Vitruve/Enode, sono <6h por 3 noites seguidas, HRV abaixo da baseline por 4 dias, dor articular persistente em cotovelo/joelho/lombar, ou perda de peso rapida involuntaria (>2% em 7 dias). Contraindicacoes: hernia de disco ativa, tendinopatia calcificada de manguito rotador, epicondilite aguda ou lesao meniscal recente exigem substituicao de eventos por variacoes de baixa carga axial (trap bar no lugar de terra convencional, machine press no lugar de log). Sinergia nutricional: superavit calorico de 300-500 kcal, 2.0-2.4g proteina/kg, 5-7g carboidrato/kg em dias de eventos, creatina 5g/dia continua, e obrigatorio pre-treino solido 90min antes das sessoes B e C. Cardio zone 2 (30-40min) apenas 2x/semana em dias off para manter capacidade sem interferir na forca. Mobilidade de quadril, ombro e tornozelo diaria (10-15min) e trabalho de grip especifico (fat bar hold, plate pinch) 2x/semana ao final das sessoes B e D. Reavaliar a cada 4 semanas: testar 3RM em agachamento, terra e log press; medir circunferencias de coxa, braco e antebraco; reavaliar tecnica em video dos eventos principais; ajustar cargas e progressao baseado no readiness questionnaire. Ao final das 8 semanas, deload de 1 semana antes de iniciar bloco de eventos especificos ou pico competitivo.",
+    "id": "tpl_strongman_avancado_abcd_eventos_explosivos_e_assistencia_de_"
+  },
+  {
+    "nome": "Kettlebell Avançado Complexos 4x - Condicionamento Metabólico e Potência",
+    "objetivo": "condicionamento",
+    "fase": "potencia",
+    "duracao_semanas": 8,
+    "nivel": "avancado",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_kettlebell_complexo_metcon",
+      "tm_crossfit_wod_metcon",
+      "tm_olympic_arranco_arremesso",
+      "tm_funcional_atletico_multiplano",
+      "tm_hiit_full_body_cardiometabolico"
+    ],
+    "observacao": "Programa avançado de 8 semanas focado em complexos de kettlebell 4x/semana (segunda, terça, quinta e sexta), com finais de semana livres para recuperação ativa (caminhada leve, mobilidade e alongamento). O objetivo funcional é desenvolver simultaneamente potência aeróbia, resistência de força, condicionamento metabólico (VO2 máx e limiar de lactato) e transferência atlética multiplanar via padrões balísticos (swing, clean, snatch, jerk) e grinds (squat, press, TGU). Estrutura semanal rotacionada: Seg - Complexo Kettlebell Metcon (EMOM/AMRAP com clean+press+squat+swing); Ter - Funcional Atlético Multiplano (transferência de força para gestos esportivos); Qui - Olímpico Arranco/Arremesso (potência máxima com barra ou kettlebell pesado); Sex - CrossFit WOD Metcon ou HIIT Cardiometabólico alternados (densidade metabólica). Progressão em blocos de 2 semanas: Semanas 1-2 introduzir carga do complexo (16-20kg homens, 12-16kg mulheres) com 4 rounds e descanso 90s; Semanas 3-4 aumentar para 5 rounds mantendo carga e reduzir descanso para 60s; Semanas 5-6 subir carga (24kg/16kg) mantendo 5 rounds e 60s; Semanas 7-8 pico de densidade com 6 rounds e 45s de descanso. Sinais de sobrecarga que exigem deload de 1 semana com volume 50%: FC repouso elevada 10+ bpm por 3 dias seguidos, queda de performance no complexo padronizado, HRV abaixo da média basal por 5 dias, dores articulares persistentes (ombro, punho, lombar) ou sono fragmentado. Contraindicações relativas: hérnia discal aguda, tendinopatia de manguito rotador não estabilizada, epicondilite ativa, gestação e hipertensão descompensada; adaptar substituindo balísticos por grinds em quem tem restrição lombar. Sinergia obrigatória com nutrição de manutenção calórica ou pequeno superávit (300-500 kcal) e proteína 1.8-2.2g/kg, hidratação 40ml/kg/dia com reposição de eletrólitos (sódio 2-3g extras nos dias de treino), suplementação de creatina 5g/dia e beta-alanina 3-5g/dia para tamponamento; combina bem com 1 sessão de mobilidade dedicada no fim de semana e sono de 7-9h. Reavaliação a cada 4 semanas: retestar complexo padronizado (5 rounds cronometrados com carga base), medir FC de recuperação em 60s pós-esforço e revisar RPE médio por sessão; se ganhos platôs, alternar para bloco de força pura (5x5 com kettlebell duplo) por 4 semanas antes de retomar o metcon.",
+    "id": "tpl_kettlebell_avan_ado_complexos_4x_condicionamento_metab_lico_"
+  },
+  {
+    "nome": "Calistenia Avançada Skills e Força PPL 5x Semana",
+    "objetivo": "forca",
+    "fase": "forca",
+    "duracao_semanas": 12,
+    "nivel": "avancado",
+    "split": "PPL",
+    "treinosModeloIds": [
+      "tm_calistenia_intermediario",
+      "tm_push_avancado_volume",
+      "tm_pull_avancado_espessura",
+      "tm_legs_ppl_avancado",
+      "tm_core_avancado_estabilidade",
+      "tm_upper_forca_powerlifting"
+    ],
+    "observacao": "Programa avançado de calistenia focado em skills (planche, front lever, muscle-up, handstand push-up, human flag) integrado a força máxima no padrão empurrar/puxar/pernas (PPL). ESTRUTURA SEMANAL (5 dias): segunda Push força + skill planche/HSPU, terça Pull força + skill front lever/muscle-up, quarta Legs pesado (agachamento, terra, unilaterais), quinta Push volume/hipertrofia com progressões calistênicas, sexta Pull volume + core avançado para linha de força das skills; sábado mobilidade ativa e domingo repouso total. OBJETIVO FUNCIONAL: aumentar carga máxima relativa ao peso corporal (pull-up +BW, dip +BW, agachamento 1.5x BW) enquanto consolida ao menos 2 skills novas em 12 semanas, mantendo relação força/peso otimizada. PROGRESSÃO: semanas 1-4 acumulação (RPE 7-8, 4x5-8 nas skills, densidade média), semanas 5-8 intensificação (RPE 8-9, 4x3-5 nos padrões força, tempo sob tensão nas isometrias sobe de 8s para 15-20s), semanas 9-11 pico com singles/doubles nas skills e trabalho de máxima força (85-92% 1RM), semana 12 deload (-40% volume, -10% intensidade) e retestes. SINAIS DE SOBRECARGA: queda >10% no reteste de skill, dor articular persistente em punhos/cotovelos/ombros >72h, insônia recorrente, FC repouso +8bpm por 3 dias — nesses casos reduzir 30% volume e trocar 1 sessão por mobilidade. CONTRAINDICAÇÕES: tendinopatias ativas de bíceps distal, cotovelo ou punho; instabilidade glenoumeral não tratada; hérnia lombar sintomática — substituir isometrias por progressões regressivas assistidas com elástico. SINERGIA: casa muito bem com dieta em manutenção ou leve superávit (+150 kcal/dia) para preservar força relativa, priorizando proteína 2.0g/kg; evitar HIIT extra nos dias de skill (fadiga do SNC); sono 8h obrigatório em dias de força máxima. REAVALIAÇÃO: a cada 4 semanas retestar máximo de pull-up estrito, dip lastreado, tempo de isometria de skill alvo e ROM ativa de ombros/punhos — se dois indicadores regredirem, reciclar bloco anterior antes de progredir.",
+    "id": "tpl_calistenia_avan_ada_skills_e_for_a_ppl_5x_semana"
+  },
+  {
+    "nome": "Maratona Avancado - Base de Volume, Long Run e Suporte de Forca 16 Semanas",
+    "objetivo": "performance",
+    "fase": "manutencao",
+    "duracao_semanas": 16,
+    "nivel": "avancado",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_cardio_liss_baixa_intensidade",
+      "tm_cardio_hiit_intervalado",
+      "tm_corrida_tecnica_sprint",
+      "tm_full_body_avancado",
+      "tm_core_avancado_estabilidade",
+      "tm_posteriores_coxa_hipertrofia",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "Programa de 16 semanas para maratonista avancado em fase de base de volume com enfase no long run, distribuido em 6 sessoes/semana: SEG long run progressivo LISS (iniciar em 18km, progredir 10% a cada 3 semanas ate 32-34km na semana 13, com deload de 30% na semana 14 pre-taper); TER musculacao full body avancado (foco em forca de manutencao 4x4-6 em agachamento, terra romeno e supino, priorizando padroes multi-articulares sem gerar fadiga que comprometa a corrida); QUA intervalado HIIT VO2max (6-8x800m em ritmo 5km com recuperacao 1:1, progredindo para 5x1000m e 4x1200m); QUI core avancado + mobilidade (essenciais para eficiencia biomecanica e prevencao de lesoes lombares e de IT band); SEX corrida regenerativa leve (Z1-Z2, 40-60min); SAB tempo run ou fartlek + tecnica de corrida com drills (skipping, dribles, coordenacao); DOM descanso ativo ou mobilidade global. Progressao de volume semanal: +10% por 3 semanas, deload -30% na 4a semana (ciclo 3:1). Objetivo funcional: elevar VO2max, melhorar economia de corrida, aumentar limiar anaerobio e blindar cadeia posterior/gluteo/panturrilha contra lesoes de sobreuso (canelite, fascite, tendinopatia de aquiles e patelar). Trabalho de posteriores de coxa 1-2x/semana e mobilidade obrigatoria pos long run. Sinais de sobrecarga: FC repouso >5bpm por 3 dias consecutivos, HRV em queda sustentada, dor persistente em canelas/tendao de aquiles/joelhos, sono fragmentado, perda de peso involuntaria, queda de performance em ritmos ja consolidados ou irritabilidade - nesses casos reduzir volume em 30-40% por 5-7 dias e priorizar sono e nutricao. Contraindicacoes: nao iniciar com lesao ativa em membros inferiores, dor lombar aguda ou anemia nao tratada; se historico de fratura por estresse, monitorar densidade ossea e vitamina D. Sinergia nutricional: 6-9g/kg de carboidratos em dias de long run e intervalado, 1.6-2g/kg de proteina, hidratacao 35-40ml/kg + eletrolitos em treinos >90min, gel a cada 30-45min nos long runs >90min para treinar o intestino. Dormir 8-9h e evitar deficit calorico durante o bloco de volume. Reavaliar a cada 4 semanas: teste de 5km/10km ou tempo run de 20min para estimar limiar, medir FC de recuperacao, avaliar mobilidade de tornozelo/quadril e integridade articular. Se atleta com alvo de tempo especifico, ajustar zonas de treino pelo teste realizado no fim de cada mesociclo. Taper obrigatorio nas 2 ultimas semanas com reducao gradual de volume mantendo intensidade.",
+    "id": "tpl_maratona_avancado_base_de_volume_long_run_e_suporte_de_forca"
+  },
+  {
+    "nome": "Triatlo Performance Multimodal 6x Avancado Periodizado",
+    "objetivo": "performance",
+    "fase": "potencia",
+    "duracao_semanas": 12,
+    "nivel": "avancado",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_avancado",
+      "tm_olympic_arranco_arremesso",
+      "tm_core_avancado_estabilidade",
+      "tm_funcional_atletico_multiplano",
+      "tm_corrida_tecnica_sprint",
+      "tm_cardio_hiit_intervalado",
+      "tm_kettlebell_complexo_metcon",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "PROGRAMA DE TRIATLO MULTIMODAL 6X/SEMANA – ATLETA AVANCADO EM FASE DE POTENCIA/PERFORMANCE. Estrutura semanal: segunda (Full Body Avancado – forca de base), terca (Corrida Tecnica Sprint + Core Avancado), quarta (Olimpico Arranco Arremesso – potencia neuromuscular), quinta (Funcional Atletico Multiplano + Mobilidade), sexta (Kettlebell Complexo Metcon – condicionamento metabolico), sabado (Cardio HIIT Intervalado – VO2max), domingo repouso ativo com mobilidade leve. OBJETIVO FUNCIONAL: melhorar economia de movimento nas 3 modalidades (natacao, ciclismo, corrida), aumentar potencia aerobica (VO2max), fortalecer cadeia posterior e core para reducao de lesoes por overuse, e desenvolver forca reativa transferivel para a corrida final. PROGRESSAO: microciclos de 4 semanas (3 progressivas + 1 descarga a 60% do volume); semana 1 foca em tecnica e volume moderado (RPE 6-7), semana 2 aumenta carga em 5-10% (RPE 7-8), semana 3 pico de intensidade (RPE 8-9), semana 4 deload obrigatorio; a cada bloco progredir densidade dos metcons e reduzir intervalo dos HIITs. SINAIS DE SOBRECARGA: FC repouso >7bpm acima da media 3 dias seguidos, HRV em queda persistente, queda de performance em testes de limiar, insonia, dor articular persistente >72h – nestes casos reduzir volume em 40% por 5-7 dias. CONTRAINDICACOES/ADAPTACOES: em semana de prova retirar Olimpico e HIIT 5 dias antes; se historico de tendinopatia patelar substituir sprints por corrida em subida moderada; atletas com lombalgia priorizar Core Avancado e reduzir cargas do Full Body Avancado em 20%. SINERGIA: combinar com dieta periodizada em carboidratos (150-200g pos-treino intenso), suplementacao de creatina 5g/dia e beta-alanina, sono minimo 8h, banhos frios 10min pos-treinos de alta intensidade; sessoes especificas de natacao/bike/corrida devem ser encaixadas nos mesmos dias das sessoes de baixa intensidade da academia (nao no dia do Olimpico). REAVALIACAO: a cada 4 semanas aplicar testes de 1RM em agachamento e levantamento terra, teste de Cooper ou 5km cronometrado, medida de VO2max estimado e composicao corporal; ajustar cargas conforme evolucao e proximidade da prova alvo.",
+    "id": "tpl_triatlo_performance_multimodal_6x_avancado_periodizado"
+  },
+  {
+    "nome": "Reabilitação Lombar - Estabilização e Controle Motor 3x Semana",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_reab_lombar_estabilizacao",
+      "tm_full_body_reabilitacao_leve",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "PROGRAMA DE REABILITAÇÃO LOMBAR - 8 semanas com foco em estabilização segmentar, controle motor do core profundo (transverso abdominal, multífidos, assoalho pélvico e diafragma) e reeducação do padrão de movimento lombopélvico. FREQUÊNCIA: 3x por semana em dias alternados (seg/qua/sex), respeitando 48h de recuperação entre sessões para permitir adaptação neuromuscular do complexo lombopélvico. Rotação sugerida: Semana par - Sessão A (Reab Lombar Estabilização) + Sessão B (Full Body Reab Leve) + Sessão C (Mobilidade); Semana ímpar mantém a mesma sequência com progressão de carga. OBJETIVO FUNCIONAL: reduzir dor lombar crônica ou pós-aguda, restaurar co-contração do core, melhorar resistência isométrica dos estabilizadores (meta: prancha frontal 60s, prancha lateral 45s cada lado, bird-dog 10 reps controladas por lado ao final da semana 8), e devolver o paciente ao treinamento resistido convencional com padrões motores seguros. PROGRESSÃO: Semanas 1-2 (familiarização) - foco em respiração diafragmática, ativação do transverso em decúbito, dead bug e bird-dog isométricos 3x20s, prancha modificada de joelhos 3x15s; Semanas 3-4 - aumentar tempo de sustentação isométrica para 30-40s, incluir progressões dinâmicas do dead bug com contralateral, ponte de glúteo 3x12; Semanas 5-6 - adicionar carga leve (halter 2-4kg) em padrões anti-rotação (Pallof press), pranchas completas 3x30-45s, agachamentos assistidos com barra TRX/suspensão para reeducar padrão de dobradiça de quadril; Semanas 7-8 - transição para movimentos funcionais integrados (hip hinge com kettlebell leve 6-10kg, goblet squat parcial, remada baixa em pé), preparando retorno ao treinamento regular. SINAIS DE SOBRECARGA / QUANDO REDUZIR: dor lombar aumentando durante ou após sessão (EVA acima de 4/10), irradiação para membros inferiores, parestesia, rigidez matinal prolongada acima de 45min, incapacidade de manter neutralidade da coluna nas execuções - nesses casos regredir para o mesocilo anterior e reavaliar com o profissional responsável (fisioterapeuta). CONTRAINDICAÇÕES / ADAPTAÇÕES: evitar flexão de tronco carregada, hiperextensão forçada, torções combinadas com carga axial, agachamento profundo com barra livre e levantamento terra convencional durante todo o programa. Em casos de hérnia discal em fase aguda, aguardar liberação médica. Em espondilolistese, evitar hiperextensão. SINERGIA: combinar com fisioterapia manual/pilates clínico 1-2x semana, caminhada leve 30min diários (LISS) para nutrição discal, hidratação 35ml/kg, dieta anti-inflamatória (redução de ultraprocessados, aumento de ômega-3), higiene do sono 7-8h. Suplementação de vitamina D e magnésio conforme prescrição médica pode auxiliar recuperação neuromuscular. REAVALIAÇÃO: a cada 4 semanas reavaliar dor (EVA), Oswestry Disability Index, teste de resistência de McGill (prancha frontal/lateral e Sorensen), qualidade do padrão de hip hinge e capacidade de manter neutralidade lombar sob carga. Ao final das 8 semanas, se paciente assintomático e com core resistente, migrar para o template Reabilitação Lombar Progressão Avançada (tm_reab_lombar_avancado).",
+    "id": "tpl_reabilita_o_lombar_estabiliza_o_e_controle_motor_3x_semana"
+  },
+  {
+    "nome": "Reabilitacao Pos-LCA de Joelho Fase 2-3 Fortalecimento Progressivo",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_reab_joelho_pos_lca",
+      "tm_full_body_reabilitacao_leve",
+      "tm_reab_lombar_estabilizacao",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_cardio_liss_baixa_intensidade"
+    ],
+    "observacao": "Programa de 8 semanas para reabilitacao pos-reconstrucao de LCA em fase 2-3 (aproximadamente 6-16 semanas pos-operatorio), com foco em restauracao de forca do quadriceps, controle neuromuscular e retomada gradual de padroes funcionais. Frequencia semanal: seg-qua-sex para treino resistido especifico de joelho (Reab Joelho Pos LCA como sessao principal), ter-qui para full body leve funcional + core (estabilizacao lombar) e sab para mobilidade e cardio LISS de baixo impacto (bicicleta estacionaria sem carga excessiva ou eliptico). Objetivo funcional: eliminar deficit de forca do quadriceps operado (meta LSI >85%), recuperar amplitude completa de movimento, restabelecer controle proprioceptivo e preparar transicao para fase 4 (return to run). Progressao: semanas 1-2 focar em ativacao isometrica de quadriceps, mini-agachamento 0-45 graus, elevacao de pelve bilateral, cadeia cinetica fechada leve; semanas 3-4 progredir amplitude ate 60-70 graus, adicionar avanco estatico e leg press unilateral leve, iniciar equilibrio em superficie instavel; semanas 5-6 introduzir cadeia cinetica aberta cautelosa (extensor 90-45 graus apenas), agachamento bulgaro assistido, step-ups baixos; semanas 7-8 progressao para carga externa moderada, agachamento unilateral controlado e inicio de saltos bilaterais baixos se LSI adequado. Aumento de carga: max 5-10% semanal, sempre priorizando execucao perfeita sobre carga. Sinais de sobrecarga que exigem reducao imediata: derrame articular pos-treino, dor >3/10 na EVA, sensacao de instabilidade, aumento de temperatura local, perda de amplitude conquistada, claudicacao residual apos 24h. Nesses casos, regredir uma semana no programa e reavaliar com fisioterapeuta responsavel. Contraindicacoes absolutas: saltos unilaterais, corrida, pivot/cutting, agachamento profundo com carga, extensor de joelho em amplitude 45-0 graus com carga alta (risco de estresse no enxerto). Adaptacoes: se enxerto de tendao patelar, evitar sobrecarga direta no tendao patelar nas primeiras 4 semanas; se enxerto de isquiotibiais, atencao redobrada com flexao resistida nos primeiros 2 meses. Sinergia: acompanhamento obrigatorio com fisioterapeuta 2-3x/semana, nutricao com aporte proteico de 1.6-2.0 g/kg/dia para preservacao de massa magra, colageno hidrolisado 15g pre-treino com vitamina C, sono minimo 8h para regeneracao tecidual, crioterapia 15-20min pos-sessao se necessario, gelo e elevacao em caso de edema. Evitar HIIT, corrida e esportes coletivos ate liberacao medica formal na fase 4. Reavaliacao a cada 4 semanas: teste de forca isocinetica ou dinamometria manual do quadriceps (LSI), medida de circunferencia da coxa (comparativo bilateral), goniometria de flexao e extensao, teste de equilibrio unipodal (Y-Balance ou Star Excursion), avaliacao subjetiva (KOOS, IKDC) e liberacao progressiva pelo cirurgiao ortopedico.",
+    "id": "tpl_reabilitacao_pos_lca_de_joelho_fase_2_3_fortalecimento_progr"
+  },
+  {
+    "nome": "Reabilitacao Ombro Manguito Rotador 3x Semana Progressiva",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_reab_ombro_manguito_rotador",
+      "tm_full_body_reabilitacao_leve",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "Programa de reabilitacao do ombro com foco no manguito rotador (supraespinhal, infraespinhal, redondo menor e subescapular), organizado em 3 sessoes semanais (seg/qua/sex) com pelo menos 48h entre estimulos para permitir cicatrizacao tecidual e adaptacao neuromuscular. Estrutura: Seg = Reabilitacao Ombro Manguito Rotador (nucleo do protocolo, exercicios isometricos e isotonicos com theraband/halteres leves 1-3kg, series de 15-20 reps, foco em rotacao externa/interna, elevacao escapular controlada, dor ate 3/10 na EVA); Qua = Mobilidade e Flexibilidade Geral (mobilidade escapulotoracica, cadeia posterior, pendular Codman, decompressao articular); Sex = Full Body Reabilitacao Leve Funcional (integracao global sem sobrecarga do ombro, priorizando membros inferiores e core). Objetivo funcional: restaurar amplitude de movimento (ADM) livre de dor, reforcar estabilizadores dinamicos da glenoumeral, corrigir discinesia escapular e reconstruir controle motor para atividades de vida diaria (pentear cabelo, alcancar prateleira, dirigir). Progressao: semanas 1-2 apenas peso corporal e faixas leves (amarelo/vermelho), tempo sob tensao 3-0-3; semanas 3-4 aumentar amplitude e introduzir halteres 1-2kg; semanas 5-6 progredir para faixas azuis/pretas e halteres 2-3kg com series de 12-15; semanas 7-8 adicionar exercicios em cadeia cinetica fechada (prancha adaptada, apoio na parede) e preparar transicao para fase de fortalecimento. Sinais de sobrecarga (REDUZIR IMEDIATAMENTE): dor noturna, dor irradiada para braco, crepitacao dolorosa, perda de ADM entre sessoes, edema local, dor >4/10 durante exercicio — nesses casos voltar a carga anterior ou pausar 3-5 dias. Contraindicacoes: fase aguda pos-cirurgica sem liberacao medica, ruptura completa nao operada, capsulite adesiva em fase inflamatoria (respeitar protocolo especifico), luxacao recente <6 semanas. Sinergia: acompanhamento fisioterapeutico obrigatorio, aplicacao de gelo pos-treino 15min se necessario, sono minimo 7h (reparo tecidual), ingestao proteica 1.2-1.6g/kg, considerar colageno tipo I 10g/dia e vitamina C. Evitar exercicios provocativos (supino, desenvolvimento acima da cabeca, elevacao lateral acima de 90 graus) ate liberacao. Reavaliacao: a cada 4 semanas com teste de Neer, Hawkins, Jobe (empty can), goniometria ativa/passiva, escala DASH ou SPADI e teste de forca com dinamometro — se progressao satisfatoria, transicionar para tm_upper_intermediario_b adaptado; se estagnacao, revisar diagnostico com imagem.",
+    "id": "tpl_reabilitacao_ombro_manguito_rotador_3x_semana_progressiva"
+  },
+  {
+    "nome": "Reabilitacao de Tornozelo com Foco em Propriocepcao 3x Semana",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 6,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_reabilitacao_leve",
+      "tm_reab_joelho_pos_lca",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "Programa de reabilitacao para tornozelo (pos-entorse grau I/II, instabilidade cronica ou pos-imobilizacao) com enfase em restauracao da propriocepcao, reeducacao neuromuscular, mobilidade de dorsiflexao e reforco da musculatura estabilizadora do complexo tornozelo-pe-quadril. FREQUENCIA: 3x/semana em dias alternados (seg/qua/sex), respeitando 48h de recuperacao tecidual para permitir remodelamento do tecido conjuntivo sem sobrecarga inflamatoria. OBJETIVO FUNCIONAL: restaurar equilibrio unipodal por 30s ou mais com olhos fechados, dorsiflexao ativa maior ou igual a 35 graus, forca de eversores e inversores simetrica ao lado contralateral e retorno seguro a atividades de impacto ao final do ciclo. ESTRUTURA SEMANAL: Dia 1 (Full Body Reabilitacao Leve) - ativacao global de baixo impacto, cadeia cinetica fechada e integracao de core; Dia 2 (Reabilitacao Joelho pos-LCA adaptado ao tornozelo) - reforco de gluteos, isquiotibiais e quadriceps para proteger a cadeia inferior e reduzir compensacoes valgas que sobrecarregam o tornozelo; Dia 3 (Mobilidade e Flexibilidade Geral) - trabalho articular de dorsiflexao, alongamento de gastrocnemio e soleo e liberacao da fascia plantar. Antes de cada sessao dedicar 8-10 min a exercicios especificos de propriocepcao: apoio unipodal em superficie estavel (progredir para bosu, disco proprioceptivo e almofada), transferencia de peso multiplanar, escrita do alfabeto com halux e caminhada na ponta dos pes e nos calcanhares. PROGRESSAO: semanas 1-2 exercicios em cadeia fechada, apoio bipodal, olhos abertos e superficie estavel (2x10-12 reps, RPE 4-5); semanas 3-4 apoio unipodal, olhos abertos, superficie instavel (2-3x30-45s); semanas 5-6 apoio unipodal com perturbacao externa, olhos fechados, gestos esportivos leves e saltos de baixa amplitude bilateral. SINAIS DE SOBRECARGA: dor superior a 3/10 durante ou apos a sessao, edema perimaleolar persistente por mais de 24h, sensacao de instabilidade aumentada ou claudicacao - nestes casos reduzir volume em 30-50% e retornar ao estagio anterior. CONTRAINDICACOES: fase aguda inflamatoria (primeiras 72h), fratura nao consolidada, ruptura ligamentar completa sem avaliacao medica, sinais de sindrome complexa de dor regional. Adaptar amplitudes conforme tolerancia individual e sempre respeitar a regra da dor. SINERGIA: combinar com fisioterapia manual (mobilizacao talocrural), crioterapia pos-treino se necessario, calcado com bom suporte lateral e trabalho aerobico de baixo impacto (bicicleta ergometrica ou natacao) nos dias intercalados para preservar condicionamento cardiovascular. Nutricao anti-inflamatoria com omega-3, colageno hidrolisado (10g/dia) e vitamina C auxiliam no reparo tecidual. REAVALIACAO: a cada 2 semanas aplicar Star Excursion Balance Test, teste de apoio unipodal com olhos fechados e escala visual analogica de dor; ao final das 6 semanas reavaliar transicao para programa funcional esportivo ou manutencao preventiva com continuidade dos exercicios proprioceptivos 2x/semana.",
+    "id": "tpl_reabilitacao_de_tornozelo_com_foco_em_propriocepcao_3x_seman"
+  },
+  {
+    "nome": "Reabilitacao Punho e Cotovelo - Tendinopatia 3x Semana",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_reabilitacao_leve",
+      "tm_full_body_iniciante_a",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "PROTOCOLO CLINICO - Tendinopatia de punho e/ou cotovelo (epicondilite lateral/medial, tendinite de flexores/extensores do carpo, epitrocleite): programa de 8 semanas, 3x/semana em dias alternados (seg/qua/sex), respeitando 48h de recuperacao entre sessoes de forca. OBJETIVO FUNCIONAL: reduzir dor, restaurar amplitude de movimento indolor, melhorar tolerancia a carga do tendao via protocolo isometrico (semanas 1-2) evoluindo para excentrico lento (Alfredson-like, semanas 3-6) e concentrico/pliometrico leve (semanas 7-8), preservando forca global de MMII e core. PROGRESSAO: S1-S2 rotacionar Reabilitacao Leve + Mobilidade Geral, cargas 30-50% percebidas, isometrias de punho/cotovelo 5x45s com dor tolerada ate NRS 3/10; S3-S4 adicionar Full Body Iniciante A com preensao neutra (halteres com pegada grossa/toalha), excentricos 3x15 a 3s de descida; S5-S6 aumentar carga em 5-10% se dor matinal <=2/10 apos 24h; S7-S8 introduzir movimentos concentricos rapidos e trabalho especifico esportivo/laboral. SINAIS DE SOBRECARGA (reduzir carga 20-30% ou voltar fase anterior): dor >5/10 durante execucao, dor noturna, edema visivel, rigidez matinal >30min, perda de forca de preensao >15%. CONTRAINDICACOES/ADAPTACOES: evitar supino livre com barra reta, roscas diretas com barra reta, flexoes de solo em fase aguda; substituir por maquinas com pegada neutra, cabos com manoplas ergonomicas, uso de straps/ganchos para poupar preensao em puxadas. SINERGIA: combinar com fisioterapia (crioterapia pos-treino 10min, liberacao miofascial de flexores/extensores), suplementacao com colageno hidrolisado 15g + vitamina C 1h pre-treino (protocolo Shaw), sono >=7h e controle de cargas ocupacionais/esportivas (mouse, raquete, ferramentas). Cardio LISS pode ser adicionado 2x/semana (esteira/bike) sem apoio de MMSS. REAVALIACAO: a cada 4 semanas aplicar VISA-A adaptado, teste de preensao com dinamometro, teste de Cozen/Mill (epicondilite lateral) e Golfer (medial) - progredir de fase apenas com melhora funcional objetiva e dor <=2/10 nos testes provocativos.",
+    "id": "tpl_reabilitacao_punho_e_cotovelo_tendinopatia_3x_semana"
+  },
+  {
+    "nome": "Retorno Pos Cirurgico Geral Full Body 3x Semana Reabilitacao Progressiva",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_reabilitacao_leve",
+      "tm_full_body_iniciante_a",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "Programa de 8 semanas para retorno pos-cirurgico geral (ortopedico eletivo ja liberado pelo cirurgiao/fisioterapeuta, sem restricoes absolutas de carga axial ou movimento). Frequencia: 3x/semana em dias alternados (seg/qua/sex), rotacionando entre Reabilitacao Leve Funcional (A), Iniciante A com maquinas guiadas (B) e Mobilidade/Flexibilidade Geral (C) no formato A-B-C semanalmente. Objetivo funcional: reintroduzir padroes de movimento basicos (agachar, empurrar, puxar, transferir peso), recuperar amplitude articular, reativar musculatura estabilizadora e restaurar confianca motora sem gerar processo inflamatorio secundario. PROGRESSAO: semanas 1-2 apenas peso corporal e cargas simbolicas em maquinas (RPE 4-5, 2 series de 12-15 reps, foco em controle excentrico 3-4s); semanas 3-4 introduzir carga externa leve (RPE 5-6, 3 series de 10-12); semanas 5-6 aumentar volume para 3 series de 12-15 mantendo cargas moderadas (RPE 6-7); semanas 7-8 preparar transicao para programa de adaptacao geral (RPE 7, 3-4 series). SINAIS DE SOBRECARGA (reduzir imediatamente): dor no local operado acima de EVA 3/10, edema pos-treino que persiste >24h, perda de amplitude ganha, sensacao de instabilidade, febre baixa ou fadiga desproporcional — nesses casos voltar 1 semana no plano ou pausar 48-72h. CONTRAINDICACOES/ADAPTACOES: nenhum exercicio com carga axial pesada, sem valsalva prolongado, evitar amplitudes finais dolorosas, sem impacto (nada de saltos, corrida, aterrissagens); pos-cirurgia abdominal aguardar liberacao para exercicios de core; pos-cirurgia de membro inferior priorizar cadeia cinetica fechada com apoio bilateral antes de unilateral. SINERGIA: manter fisioterapia especifica em paralelo (o programa NAO substitui), alimentacao hiperproteica (1,6-2,0g/kg/dia para reparo tecidual), hidratacao 35ml/kg, sono minimo 7-8h, sem HIIT ou cardio intenso — apenas caminhada leve 20-30min nos dias off. REAVALIACAO: a cada 4 semanas revisar amplitude articular, dor residual, forca comparativa com lado contralateral e liberacao progressiva do medico assistente — ao final das 8 semanas migrar para programa Full Body Iniciante padrao se todos os marcadores estiverem estaveis.",
+    "id": "tpl_retorno_pos_cirurgico_geral_full_body_3x_semana_reabilitacao"
+  },
+  {
+    "nome": "Fibromialgia Baixo Impacto Full Body 3-4x Semana",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_baixo_impacto_fibromialgia",
+      "tm_full_body_reabilitacao_leve",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_cardio_liss_baixa_intensidade"
+    ],
+    "observacao": "Programa de reabilitacao ativa para pessoas com fibromialgia, com foco em reducao da dor cronica generalizada, melhora da capacidade funcional, do sono e da qualidade de vida. FREQUENCIA: 3 a 4 sessoes semanais em dias nao consecutivos (ex: seg / qua / sex, com opcao de sabado leve para mobilidade), respeitando janelas de descanso de pelo menos 48h entre sessoes de forca. Rotacao sugerida: sessao A = tm_baixo_impacto_fibromialgia (fortalecimento global de baixa intensidade), sessao B = tm_full_body_reabilitacao_leve (padroes funcionais controlados), sessao C = tm_mobilidade_flexibilidade_geral (mobilidade articular, alongamento ativo e liberacao miofascial leve) e, se tolerado, uma sessao D de tm_cardio_liss_baixa_intensidade (caminhada, bike ou piscina 20 a 30 min em zona 1 a 2 / RPE 3 a 4). OBJETIVO FUNCIONAL: iniciar dessensibilizacao central via exposicao gradual ao movimento, aumentar forca de MMII e core, melhorar postura, reduzir fadiga percebida e restaurar autoconfianca cinesiofobica. INTENSIDADE: RPE 3 a 5 (escala 0 a 10), nunca chegando na falha; cargas leves, 2 a 3 series de 10 a 15 repeticoes, com pausas de 60 a 90 seg. PROGRESSAO: semanas 1 e 2 apenas familiarizacao com amplitude parcial e cargas minimas; semanas 3 e 4 aumentar amplitude e adicionar 1 serie; semanas 5 e 6 progredir carga em 5 a 10% ou adicionar 2 a 3 reps; semanas 7 e 8 introduzir variacoes unilaterais e leve aumento de tempo sob tensao. Nunca aumentar mais de 1 variavel por semana. SINAIS DE SOBRECARGA: aumento da dor difusa > 2 pontos na EVA por mais de 24h pos treino, piora do sono, fadiga extrema, sintomas gripais, dor de cabeca ou crise de flare-up - nesses casos reduzir volume em 30 a 50%, trocar sessao por mobilidade / respiracao ou pausar por 2 a 3 dias. CONTRAINDICACOES E ADAPTACOES: evitar exercicios de alto impacto (corrida, saltos, pliometria), cargas maximas, treinos ate a falha e ambientes muito quentes ou frios; adaptar exercicios em pe para sentado quando houver tontura ou fadiga; preferir maquinas e apoio para reduzir demanda proprioceptiva; incluir respiracao diafragmatica no aquecimento (5 min). SINERGIA: alinhar com higiene do sono (7 a 9h), hidratacao, alimentacao anti-inflamatoria (padrao mediterraneo), manejo do estresse (mindfulness / TCC) e acompanhamento medico / reumatologico. Cardio aquatico (hidroginastica) e altamente indicado como sessao extra. REAVALIACAO: a cada 4 semanas reavaliar EVA de dor, questionario FIQ (Fibromyalgia Impact Questionnaire), Timed Up and Go, forca de preensao e percepcao subjetiva de recuperacao antes de progredir para fase de hipertrofia leve.",
+    "id": "tpl_fibromialgia_baixo_impacto_full_body_3_4x_semana"
+  },
+  {
+    "nome": "Preservacao Articular Artrose Joelho Quadril 3x Semana",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_baixo_impacto_fibromialgia",
+      "tm_full_body_reabilitacao_leve",
+      "tm_idoso_mobilidade_articular"
+    ],
+    "observacao": "Programa de preservacao articular voltado para alunos com artrose de joelho e/ou quadril (graus leve a moderado, Kellgren-Lawrence 1-3), sem indicacao cirurgica imediata. Frequencia: 3x/semana em dias alternados (seg/qua/sex), rotacionando Treino A (Baixo Impacto Fibromialgia/Artrose) - Treino B (Full Body Reabilitacao Leve) - Treino C (Mobilidade Articular), o que garante 48h de recuperacao e reduz pico inflamatorio articular. Objetivo funcional: preservar cartilagem, fortalecer musculatura periarticular (quadriceps VMO, gluteo medio/maximo, isquiotibiais, core) para descarregar forca compressiva do joelho e quadril, melhorar amplitude de movimento indolor, reeducar padrao de marcha e agachar/levantar da cadeira com autonomia. Progressao: semanas 1-2 foco em amplitude parcial indolor, 2 series de 12-15 reps com carga muito leve ou peso corporal, RPE 5-6; semanas 3-4 aumentar para 3 series mantendo reps altas e adicionar resistencia elastica; semanas 5-6 introduzir cargas externas leves (2-5kg) nos padroes bilaterais; semanas 7-8 progredir para exercicios unilaterais controlados (afundo parcial, step-up baixo). Priorizar cadeia cinetica fechada em amplitude sub-maxima e cadeia aberta com carga leve para nao gerar cisalhamento. Sinais de sobrecarga (reduzir volume/carga imediatamente): dor articular >4/10 durante ou apos treino, edema visivel no joelho, crepitacao dolorosa nova, rigidez matinal >30 minutos no dia seguinte, claudicacao. Contraindicacoes/adaptacoes: EVITAR agachamento profundo abaixo de 90 graus, leg press com flexao profunda, impacto (corrida, saltos, pliometria), extensora com amplitude total sob carga, agachamento com peso na barra em amplitude completa. Substituir por cadeira extensora com amplitude parcial (0-60 graus), agachamento na parede ate 60 graus, prensa horizontal com stop, exercicios em piscina se disponivel. Sinergia: combinar com controle de peso corporal (deficit calorico moderado se IMC>27, cada kg perdido reduz 4kg de carga no joelho), suplementacao de colageno tipo II (40mg/dia) e omega-3 (2g EPA+DHA/dia), fisioterapia paralela para tecnicas manuais e eletroterapia se dor aguda, hidroterapia 1-2x/semana como treino complementar de baixo impacto. Reavaliacao a cada 4 semanas: teste TUG (Timed Up and Go), sentar-levantar 30s, WOMAC (dor/rigidez/funcao), amplitude de flexao/extensao de joelho e quadril, EVA de dor. Se evolucao positiva apos 8 semanas, progredir para programa de fortalecimento intermediario adaptado; se dor persistir ou piorar, encaminhar ao ortopedista para reavaliacao imagenologica.",
+    "id": "tpl_preservacao_articular_artrose_joelho_quadril_3x_semana"
+  },
+  {
+    "nome": "Osteoporose Impacto Controlado Forca 3x Semana",
+    "objetivo": "saude",
+    "fase": "adaptacao",
+    "duracao_semanas": 12,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_idoso_funcional",
+      "tm_idoso_forca_equilibrio",
+      "tm_reab_lombar_estabilizacao",
+      "tm_full_body_iniciante_a"
+    ],
+    "observacao": "Programa de 12 semanas focado em osteoporose (T-score entre -2,5 e -1,0) com objetivo de estimular osteogenese por meio de sobrecarga mecanica progressiva, impacto controlado e treino de forca 3x semana. Distribuicao: segunda (Treino A - Full Body Idoso Funcional), quarta (Treino B - Forca e Equilibrio) e sexta (Treino C - Estabilizacao Lombar + Iniciante A alternados quinzenalmente). Objetivo funcional: aumentar densidade mineral ossea em coluna e quadril, melhorar equilibrio para prevencao de quedas (teste TUG < 12s), fortalecer musculatura paravertebral e gluteos, e reeducar postura. Progressao: semanas 1-4 aprendizado motor com cargas leves (RPE 5-6) e 2 series de 10-12 reps; semanas 5-8 aumentar para 3 series com RPE 6-7 e adicionar impacto leve (marcha vigorosa, mini-saltos com 2 pes, subir/descer step 15cm); semanas 9-12 progredir cargas em 5-10% quinzenalmente e introduzir agachamento com halteres (0,5-2kg cada), remada elastica e prancha isometrica 20-30s. Sinais de sobrecarga: dor lombar aguda, tontura, aumento de cifose apos sessao, fadiga que ultrapassa 24h - reduzir volume em 30% e reavaliar. Contraindicacoes/adaptacoes ABSOLUTAS: PROIBIDO flexao anterior de tronco com carga, torcao vertebral resistida, abdominal tradicional em decubito, agachamento profundo abaixo da paralela, saltos unipodais, exercicios em superficie instavel sem apoio. Priorizar cadeia posterior (remadas, hip thrust adaptado, extensao lombar suave em Roman chair 0-20 graus). Sinergia: casar com ingestao de 1200mg calcio/dia + 800-2000 UI vitamina D3 (checar 25(OH)D serico), proteina 1,2-1,5g/kg, caminhada 30min em dias off e treino de equilibrio diario 5min. Reavaliacao: a cada 4 semanas medir forca de preensao manual (dinamometro), TUG, sentar-levantar 30s e escala de dor; a cada 12 meses solicitar nova densitometria ossea (DEXA). Encaminhamento a fisioterapeuta caso surja dor persistente > 3 dias ou historico de fratura vertebral atipica.",
+    "id": "tpl_osteoporose_impacto_controlado_forca_3x_semana"
+  },
+  {
+    "nome": "Postural Escoliose Estabilizacao 3x Semana",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_postural_escoliose",
+      "tm_reab_lombar_estabilizacao",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "Programa de reabilitacao postural voltado para portadores de escoliose idiopatica leve a moderada, com objetivo funcional de melhorar a consciencia corporal, fortalecer a musculatura estabilizadora profunda (multifidos, transverso do abdome, obliquos, paravertebrais e escapulares) e reduzir dores associadas ao desequilibrio muscular assimetrico. Frequencia: 3x/semana em segunda, quarta e sexta, alternando os treinos na sequencia Postural Escoliose (foco em alongamento assimetrico e fortalecimento do lado convexo) na segunda, Reabilitacao Lombar Estabilizacao (core profundo, dead bug, bird dog, prancha) na quarta e Mobilidade e Flexibilidade Geral (cadeias musculares, quadril e coluna toracica) na sexta. Progressao: nas semanas 1-2 focar em aprendizado motor com carga corporal, respiracao diafragmatica e tempo sob tensao de 3-5 segundos em cada isometria; semanas 3-4 aumentar volume para 3 series e tempo de isometria para 20-30s; semanas 5-6 incluir cargas leves (halteres 1-3kg, elasticos) e exercicios unilaterais para corrigir assimetria; semanas 7-8 progredir para superficies instaveis (bosu, disco proprioceptivo) mantendo controle postural. Sinais de sobrecarga: dor lombar aguda, formigamento em membros inferiores, aumento da assimetria visivel, cefaleia tensional ou piora da fadiga postural apos 24h reduzir volume em 30-40% e reavaliar tecnica. Contraindicacoes: escoliose acima de 40 graus sem liberacao medica, uso de colete Milwaukee sem orientacao ortopedica, dor radicular ativa, hernias discais em fase aguda e osteoporose severa. Adaptacoes: evitar hiperextensoes lombares, rotacoes de tronco com carga axial e agachamentos com barra nas costas. Sinergia: combinar com Pilates clinico ou RPG 1-2x/semana, hidroterapia opcional, alongamento diario da cadeia posterior e nutricao anti-inflamatoria rica em omega 3 e vitamina D para suporte oseo. Reavaliacao: a cada 4 semanas reavaliar fotos posturais, angulo de Cobb funcional, dor por EVA, teste de Adams e flexibilidade lateral do tronco, ajustando cargas e complexidade dos exercicios unilaterais conforme evolucao clinica.",
+    "id": "tpl_postural_escoliose_estabilizacao_3x_semana"
+  },
+  {
+    "nome": "Longevidade 80+ Prevencao de Quedas e Autonomia Funcional",
+    "objetivo": "saude",
+    "fase": "adaptacao",
+    "duracao_semanas": 12,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_idoso_funcional",
+      "tm_idoso_forca_equilibrio",
+      "tm_idoso_mobilidade_articular"
+    ],
+    "observacao": "Programa de longevidade para idoso 80+ com foco primario em PREVENCAO DE QUEDAS, manutencao da autonomia funcional (levantar da cadeira, subir escadas, carregar sacolas) e preservacao de massa muscular (combate a sarcopenia). FREQUENCIA: 2-3x/semana, preferencialmente seg/qua/sex com no minimo 48h de intervalo entre sessoes para recuperacao completa (idosos avancados apresentam janela de sintese proteica prolongada). ESTRUTURA SEMANAL: rotacao entre Full Body Idoso Funcional (dia A - forca funcional), Idoso Forca e Equilibrio (dia B - treino unipodal, marcha, propriocepcao) e Mobilidade Articular (dia C - amplitude de movimento e liberacao). Se aluno tolerar apenas 2x/semana, priorizar A e B; C pode ser feito em casa diariamente como aquecimento. OBJETIVO FUNCIONAL: aumentar velocidade de marcha (>0,8 m/s), reduzir tempo do teste Timed Up and Go (<12s), melhorar Sit-to-Stand (5 repeticoes <15s) e equilibrio unipodal (>10s por perna). PROGRESSAO SUAVE: semanas 1-2 apenas peso corporal e aprendizado motor, 2 series de 8-10 reps, RPE 5-6; semanas 3-6 introduzir carga leve (halteres 1-3kg, faixas elasticas leves), 2-3 series de 10-12 reps, RPE 6-7; semanas 7-10 progredir carga (halteres 3-5kg) e adicionar desafios de equilibrio (olhos fechados, superficie instavel supervisionada), 3 series 10-12 reps; semanas 11-12 consolidar padroes funcionais mais complexos (dual-task cognitivo-motor, escada com carga leve). Aumentar carga em 5-10% apenas quando as ultimas 2 reps sairem com RPE <=7 e forma perfeita. SINAIS DE ALARME PARA REDUZIR/PARAR: tontura, palpitacao, dor toracica, dispneia desproporcional (interromper imediatamente e encaminhar ao medico), dor articular >4/10 por >24h, quedas recentes, alteracao de PA (>180/100 pre-treino), fadiga extrema no dia seguinte ou piora do sono. CONTRAINDICACOES E ADAPTACOES: sempre com supervisao presencial, banco/cadeira/barra de apoio ao alcance em TODOS os exercicios de pe, calcado firme antiderrapante, hidratacao a cada 10min, evitar Valsalva (nao prender respiracao), evitar decubito dorsal prolongado (retorno venoso), respeitar limitacoes de artrose (amplitude confortavel), osteoporose severa (evitar flexao de tronco carregada e rotacoes bruscas), hipertensao (monitorar PA), uso de anticoagulantes (evitar impactos), diabetes (glicemia pre-treino 100-250mg/dL). Se prótese de quadril, evitar adução + flexão + rotação medial combinadas. SINERGIA: combinar com aporte proteico >=1,2-1,6g/kg/dia distribuido em 4 refeicoes (leucina 2,5-3g por refeicao para estimular sintese proteica), suplementacao de vitamina D (verificar dosagem serica), calcio, creatina 3-5g/dia (evidencia robusta para forca e cognicao em idosos), caminhada leve 20-30min nos dias sem treino, exposicao solar, sono >=7h, revisao anual de medicamentos (polifarmacia aumenta risco de quedas), avaliacao oftalmologica e otorrinolaringologica anual. REAVALIACAO a cada 4 semanas: repetir Timed Up and Go, Sit-to-Stand 5x, Berg Balance Scale abreviada, forca de preensao palmar (dinamometro), historico de quedas/quase-quedas, dor articular, adesao e prazer no treino. Ajustar carga e volume conforme evolucao; se estagnacao por 2 avaliacoes consecutivas, revisar nutricao, sono e considerar avaliacao geriatrica ampla.",
+    "id": "tpl_longevidade_80_prevencao_de_quedas_e_autonomia_funcional"
+  },
+  {
+    "nome": "Longevidade Ativa 65+ Forca Funcional e Equilibrio 3x Semana",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 16,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_idoso_funcional",
+      "tm_idoso_forca_equilibrio",
+      "tm_idoso_mobilidade_articular"
+    ],
+    "observacao": "Programa de manutencao funcional para idosos ativos entre 65 e 80 anos, treinando 3x por semana em dias alternados (seg/qua/sex), com pelo menos 48h de recuperacao entre sessoes para respeitar a sintese proteica mais lenta e a recuperacao articular do idoso. Objetivo funcional: preservar massa muscular (combate a sarcopenia), forca de membros inferiores para levantar da cadeira e subir escadas, equilibrio dinamico para prevencao de quedas, mobilidade de ombro/quadril/tornozelo e densidade ossea. Rotacao semanal: Sessao 1 (segunda) = Full Body Idoso Funcional Adaptado focando padroes basicos de movimento com carga leve a moderada; Sessao 2 (quarta) = Idoso Forca e Equilibrio Funcional priorizando estabilidade unipodal, transferencia de peso e forca de core; Sessao 3 (sexta) = Idoso Mobilidade Articular Geral com trabalho amplo de amplitude, alongamento ativo e ativacao neuromuscular. Progressao: semanas 1-4 adaptacao com cargas leves (RPE 5-6), foco em tecnica, respiracao e amplitude segura; semanas 5-8 aumentar 5-10% na carga dos exercicios de forca (leg press, remada, supino sentado) mantendo 10-15 repeticoes; semanas 9-12 adicionar uma serie extra nos exercicios de MMII e progredir para 12-15 repeticoes com RPE 7; semanas 13-16 introduzir variacoes com apoio reduzido em exercicios de equilibrio (olho fechado, superficie instavel supervisionada) e manter cargas. Sinais de sobrecarga: dor articular persistente >48h, tontura, aumento de PA em repouso, insonia, fadiga acumulada, edema em MMII ou perda de apetite indicam necessidade de deload de 1 semana com 50% do volume. Contraindicacoes/adaptacoes: em caso de osteoartrose severa de joelho substituir agachamento livre por agachamento no TRX ou levantar da cadeira; hipertensos evitar apneia (Valsalva) e exercicios acima da cabeca com carga elevada; portadores de osteoporose evitar flexao anterior de coluna com carga; cardiopatas exigem liberacao medica e monitoramento de FC (manter em 60-70% FCmax). Sinergia: combinar com caminhada aerobica 30min 2-3x/semana em dias off, ingestao proteica de 1.2-1.6g/kg/dia distribuida em 4 refeicoes, suplementacao de vitamina D e calcio conforme orientacao medica, hidratacao minima de 30ml/kg/dia e sono de 7-8h. Reavaliacao: a cada 4 semanas aplicar Timed Up and Go, Sit to Stand 30s, forca de preensao manual e escala de Borg para ajustar cargas; a cada 12 semanas rever composicao corporal (bioimpedancia) e exames laboratoriais (glicemia, perfil lipidico, 25-OH-vitamina D).",
+    "id": "tpl_longevidade_ativa_65_forca_funcional_e_equilibrio_3x_semana"
+  },
+  {
+    "nome": "Sarcopenia Forca e Hipertrofia Upper Lower 4x com Alto Volume Proteico",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 12,
+    "nivel": "intermediario",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_upper_intermediario_a",
+      "tm_lower_intermediario_a",
+      "tm_upper_intermediario_b",
+      "tm_lower_intermediario_b"
+    ],
+    "observacao": "Programa desenhado para populacao com sarcopenia (perda de massa e forca muscular relacionada a idade ou inatividade prolongada), com foco em reversao do quadro por meio de treino resistido estruturado 4x/semana em split upper/lower. FREQUENCIA: segunda (Upper A composto), terca (Lower A agachamento), quinta (Upper B isolador) e sexta (Lower B terra/gluteo), com quarta, sabado e domingo como descanso ativo (caminhada leve 20-30 min ou mobilidade). OBJETIVO FUNCIONAL: aumentar area de secao transversa muscular, especialmente em fibras tipo II (mais afetadas na sarcopenia), recuperar forca de preensao, capacidade de levantar do solo/cadeira, subir escadas e transportar carga, alem de melhorar densidade mineral ossea e perfil metabolico. PROGRESSAO: semanas 1-2 adaptacao neuromuscular com 60-65% 1RM e 10-12 reps priorizando execucao perfeita e amplitude; semanas 3-6 progressao para 65-72% 1RM com 8-10 reps e adicao de 1 serie por exercicio composto; semanas 7-10 intensificacao para 70-78% 1RM em 6-10 reps com carga progredindo 2,5-5% quando o RIR (repeticoes em reserva) chegar a 3+ na ultima serie; semanas 11-12 pico com priorizacao de compostos multiarticulares e reducao de isoladores. SINAIS DE SOBRECARGA: dor articular persistente >48h, fadiga sistemica desproporcional, queda de forca >10% em duas sessoes consecutivas, sono ruim ou perda de apetite — reduzir volume em 30-40% por 5-7 dias (deload). CONTRAINDICACOES E ADAPTACOES: em presenca de osteoartrose avancada, substituir agachamento livre por leg press ou hack; se historico cardiovascular, evitar Valsalva prolongado e monitorar PA; iniciar terra romeno com halteres antes de barra. SINERGIA NUTRICIONAL: essencial ingestao proteica de 1,6-2,2 g/kg/dia distribuida em 4 refeicoes com 30-40g de proteina cada (alto volume proteico), priorizando leucina (2,5-3g por refeicao) via whey, ovos, carnes magras, laticinios e leguminosas; suplementacao de creatina 3-5g/dia demonstra sinergia forte com treino resistido em idosos e sarcopenicos; vitamina D em nivel serico >30 ng/mL; caminhada em jejum ou apos treino como cardio LISS 2-3x/semana sem prejudicar recuperacao. REAVALIACAO: a cada 4 semanas revisar cargas, composicao corporal (bioimpedancia ou DEXA se disponivel), forca de preensao (dinamometro), teste de sentar e levantar (5-times sit-to-stand) e escala de fadiga percebida; ao final das 12 semanas migrar para bloco de forca (4-6 reps, 80-85% 1RM) ou manter em hipertrofia com nova progressao.",
+    "id": "tpl_sarcopenia_forca_e_hipertrofia_upper_lower_4x_com_alto_volum"
+  },
+  {
+    "nome": "Gestante 3º Trimestre — Full Body Adaptado 3x/semana",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 12,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_gestante_baixo_impacto",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_cardio_liss_baixa_intensidade"
+    ],
+    "observacao": "Programa de manutenção da saúde e preparo neuromuscular para gestantes no 3º trimestre (28-40 semanas), com frequência de 3x/semana em dias não consecutivos (ex.: segunda, quarta e sexta), permitindo pelo menos 48h de recuperação entre sessões. Estrutura semanal: seg — Full Body Gestante Baixo Impacto (foco em força funcional de MMII, tração e core estabilizador); qua — Mobilidade e Flexibilidade Geral + Cardio LISS 20-30 min a 50-65% FCmáx (bike ergométrica reclinada ou caminhada em esteira sem inclinação); sex — Full Body Gestante repetido com variação de amplitude e cargas leves. Objetivo funcional: preservar massa magra, manter mobilidade coxofemoral e escapular, fortalecer assoalho pélvico e musculatura postural (multífidos, transverso do abdome, glúteo médio) para reduzir lombalgia gestacional, preparar o corpo para o trabalho de parto e facilitar a recuperação pós-parto. Progressão: nas semanas 1-4, foco em aprendizado do padrão respiratório diafragmático e controle motor com cargas subjetivas 4-5/10 na PSE de Borg CR-10; semanas 5-8, aumentar volume em 1 série por exercício mantendo carga; semanas 9-12, reduzir amplitude de movimentos que comprimam o abdome (agachamento parcial, sem decúbito dorsal prolongado após 20 semanas), priorizar posições em pé, sentada ou em quatro apoios. Sinais de sobrecarga (INTERROMPER IMEDIATAMENTE e procurar obstetra): sangramento vaginal, perda de líquido amniótico, contrações uterinas regulares, tontura, dispneia desproporcional, dor torácica, cefaleia intensa, edema súbito de MMII, diminuição de movimentos fetais, dor na panturrilha. Reduzir intensidade se PSE > 6/10, incapacidade de manter conversa (teste da fala), FC materna > 140 bpm sustentada ou hipoglicemia. Contraindicações absolutas: pré-eclâmpsia, placenta prévia após 26 semanas, colo incompetente/cerclagem, ruptura de membranas, trabalho de parto prematuro, sangramento persistente no 2º/3º trimestre, doença cardíaca hemodinamicamente significativa. Adaptações obrigatórias no 3º trimestre: evitar decúbito dorsal prolongado (compressão da veia cava — usar cunha 15-30° ou decúbito lateral esquerdo), evitar Valsalva (expiração ativa na fase concêntrica), sem impacto/saltos, sem exercícios em prono, sem alongamentos balísticos (relaxina aumenta laxidão ligamentar — risco de sínfise púbica dolorosa e diástase). Priorizar exercícios unilaterais em apoio para trabalhar equilíbrio deslocado pelo crescimento uterino. Sinergia: combinar com hidroginástica 1x/semana quando disponível, hidratação de 35 ml/kg/dia + 300 kcal extras no 3º trimestre conforme nutricionista, suplementação de ferro/folato/DHA sob prescrição obstétrica, exercícios de Kegel diários (3x10 contrações) integrados ao aquecimento. Reavaliação a cada 3 semanas junto ao obstetra: aferir PA pré/pós-sessão, ganho ponderal, altura uterina, sintomas de incontinência, dor lombar (EVA), qualidade do sono e nível de fadiga. Após 36 semanas, transicionar para protocolo pré-parto com foco em respiração, mobilidade pélvica (agachamento profundo apoiado, gato-camelo, círculos pélvicos na bola suíça) e relaxamento — reduzir carga e volume em 30-40%.",
+    "id": "tpl_gestante_3_trimestre_full_body_adaptado_3x_semana"
+  },
+  {
+    "nome": "Reabilitacao Pos-Parto Imediato com Diastase Abdominal 3 Dedos",
+    "objetivo": "reabilitacao",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_pos_parto_diastase_core",
+      "tm_full_body_reabilitacao_leve",
+      "tm_reab_lombar_estabilizacao",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "PROGRAMA CLINICO PARA PUERPERIO com diastase do reto abdominal (DRA) de 3 dedos (aprox. 3-4 cm), iniciado apos LIBERACAO MEDICA/OBSTETRICA (minimo 6 semanas pos-parto normal ou 8-10 semanas pos-cesarea, com cicatrizacao completa e sem loquios). Estrutura semanal: 3x/semana em dias alternados (SEG/QUA/SEX), rotacionando tm_pos_parto_diastase_core (dia principal de core/assoalho pelvico), tm_reab_lombar_estabilizacao (transverso do abdome e estabilizacao lombopelvica) e tm_full_body_reabilitacao_leve (forca global de baixa intensidade); mobilidade (tm_mobilidade_flexibilidade_geral) em dia extra (SAB) ou como aquecimento. OBJETIVO FUNCIONAL: reaproximar as bordas do reto abdominal, restaurar tensao da linha alba, reeducar o transverso do abdome e assoalho pelvico (conexao core-diafragma-perineo), corrigir postura lordotica/anteversao pelvica, reativar gluteos hipotonicos e recuperar capacidade funcional para o cuidado do bebe (pegar/abaixar/carregar). PROGRESSAO: Semanas 1-2 respiracao diafragmatica 360 e hipopressivos leves, ativacao isometrica do transverso em decubito dorsal, ponte de gluteo com bloco entre joelhos, 2 series de 8-10 reps com foco em conexao mente-musculo; Semanas 3-4 introduzir dead-bug modificado (sem descolar lombar), bird-dog contralateral, agachamento com apoio, aumentar para 3 series 10-12 reps; Semanas 5-6 progressao para prancha de joelhos, agachamento livre com carga leve (halter 2-4 kg), remada sentada com elastico; Semanas 7-8 reavaliar diastase - se <2 dedos avancar para prancha completa curta, elevacao pelvica com barra leve e transicao para tm_full_body_iniciante_a. SINAIS DE SOBRECARGA/REDUCAO IMEDIATA: abaulamento (doming/coning) da linha media durante o exercicio, perda urinaria, dor lombar, sensacao de peso vaginal, sangramento anormal, dor na cicatriz de cesarea, exaustao alem do cansaco fisiologico da amamentacao - suspender e reavaliar com fisioterapeuta pelvica. CONTRAINDICACOES ABSOLUTAS nesta fase: abdominais tradicionais (crunch, sit-up, canivete), pranchas longas plenas, valsalva, cargas maximas, exercicios de alto impacto (corrida/salto), rotacoes de tronco intensas e agachamento profundo com carga. SINERGIA OBRIGATORIA: acompanhamento com fisioterapeuta pelvica (idealmente 1x/semana), nutricao com adequacao proteica (1,6-2,0 g/kg) e hidratacao para lactantes, sono priorizado dentro do possivel, respiracao integrada a todo esforco (expira na fase concentrica ativando o transverso). REAVALIACAO a cada 4 semanas: mensurar distancia inter-retos com fita ou US, avaliar continencia urinaria, dor lombar (EVA), foto postural e fotografia funcional (agachamento e ponte); se ao fim de 8 semanas a diastase permanecer >=3 dedos ou houver hernia associada, encaminhar para avaliacao cirurgica antes de progredir carga.",
+    "id": "tpl_reabilitacao_pos_parto_imediato_com_diastase_abdominal_3_ded"
+  },
+  {
+    "nome": "Menopausa Forca e Prevencao Osteoporose Upper Lower 4x",
+    "objetivo": "saude",
+    "fase": "forca",
+    "duracao_semanas": 12,
+    "nivel": "intermediario",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_upper_intermediario_a",
+      "tm_lower_intermediario_b",
+      "tm_upper_intermediario_b",
+      "tm_lower_intermediario_a"
+    ],
+    "observacao": "PROGRAMA DE 12 SEMANAS - MENOPAUSA COM FOCO EM FORCA E PREVENCAO DE OSTEOPOROSE. Distribuicao semanal: SEGUNDA (Upper A composto - supino, remada, desenvolvimento), TERCA (Lower B - levantamento terra romeno e gluteos), QUINTA (Upper B isolador - refinamento e ombro/braco), SEXTA (Lower A - agachamento e quadriceps). Objetivo funcional: mulheres na peri ou pos-menopausa perdem 1-2% de massa ossea ao ano por queda estrogenica; o estimulo mecanico de cargas altas (75-85% 1RM) na coluna, quadril e punho e o principal contra-estimulo nao farmacologico validado (LIFTMOR, protocolo Watson 2018). Priorizamos padrao de agachamento, terra e desenvolvimento por gerarem carga axial no femur proximal e vertebras lombares, sitios criticos para fratura. Progressao: semanas 1-2 aprendizado tecnico com 65-70% 1RM e 3x8-10; semanas 3-6 acumulo com 70-75% 1RM e 4x6-8 subindo 2,5-5% de carga por semana quando a ultima serie fica com 2 RIR; semanas 7-10 intensificacao com 80-85% 1RM e 4-5x4-6 nos compostos principais mantendo isoladores em 3x8-12; semanas 11-12 pico com singles/triples a 87-90% seguido de descarga leve. Sinais de sobrecarga que exigem reducao de 20% de volume por 5-7 dias: dor articular persistente >72h, insonia atipica, fogachos que pioram apos treino, PCR clinica elevada, queda de FC de repouso invertida (aumento). Contraindicacoes/adaptacoes: se DMO ja diagnosticada como osteoporose (T-score <-2,5) evitar flexao lombar carregada e rotacao axial resistida, substituir terra convencional por terra sumo ou trap-bar, agachamento livre por agachamento em rack de seguranca; verificar pressao arterial antes de sessoes de alta carga em hipertensas. Sinergia: combinar com ingesta proteica de 1,6-2,0 g/kg dia (essencial para MPS reduzida pela menopausa), vitamina D3 2000UI, calcio 1200mg dia, 7-9h sono, terapia hormonal se prescrita pelo ginecologista, impacto adicional 2x semana (saltos submaximos ou trote leve) para estimulo osteogenico complementar. Reavaliacao a cada 4 semanas: teste de 5RM em agachamento e supino, medida de circunferencia de quadril e coxa, questionario de fogachos/sintomas vasomotores, escala de fadiga; a cada 12 meses solicitar densitometria ossea (DEXA) e comparar T-score de coluna e femur com linha de base.",
+    "id": "tpl_menopausa_forca_e_prevencao_osteoporose_upper_lower_4x"
+  },
+  {
+    "nome": "Andropausa Manutencao Testosterona Upper Lower 4x",
+    "objetivo": "hipertrofia",
+    "fase": "hipertrofia",
+    "duracao_semanas": 12,
+    "nivel": "intermediario",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_upper_intermediario_a",
+      "tm_lower_intermediario_a",
+      "tm_upper_intermediario_b",
+      "tm_lower_intermediario_b"
+    ],
+    "observacao": "Programa desenhado para homens em andropausa (queda fisiologica de testosterona apos os 40-50 anos), com foco em preservar massa magra, densidade ossea e resposta hormonal endogena. DIAS: segunda (Upper A composto), terca (Lower A agachamento), quinta (Upper B isolador) e sexta (Lower B terra/gluteo), mantendo quarta, sabado e domingo para recuperacao ativa (caminhada, mobilidade). OBJETIVO FUNCIONAL: estimular sintese proteica muscular via exercicios multiarticulares pesados (agachamento, terra, supino, remada) que sao os principais indutores agudos de testosterona e GH endogenos, preservando forca funcional, libido, disposicao e composicao corporal. PROGRESSAO: semanas 1-2 adaptacao (RIR 3-4, 3 series por exercicio), semanas 3-6 acumulacao (RIR 2, 4 series, +2,5 a 5% de carga a cada microciclo), semanas 7-9 intensificacao (RIR 1, cargas proximas ao pico), semana 10 deload (-40% volume, -10% carga), semanas 11-12 retomada com nova PR. SINAIS DE SOBRECARGA: queda de libido persistente, insonia, irritabilidade, dor articular cronica, perda de forca por 2 sessoes consecutivas ou FC de repouso >7 bpm acima do basal - reduzir volume em 30% e priorizar sono. CONTRAINDICACOES: cardiopatia descompensada, hipertensao nao controlada (>160/100), hernia discal aguda, uso de anticoagulantes sem liberacao medica; nesses casos substituir terra livre por stiff em maquina e agachamento livre por leg press 45. SINERGIA: alimentacao com 1,6-2,2 g/kg de proteina, zinco 15-30 mg/dia, vitamina D 2000-4000 UI se defice, magnesio glicinato 300 mg noite; sono minimo 7h; evitar alcool nas 48h pos treino de perna. Cardio LISS 2x/sem 30-40 min para saude cardiovascular sem prejudicar recuperacao. REAVALIACAO: a cada 4 semanas rever testosterona total/livre, SHBG, estradiol, hemograma, perfil lipidico, PCR ultrassensivel, forca em compostos (supino, agachamento, terra) e composicao corporal por bioimpedancia ou DEXA.",
+    "id": "tpl_andropausa_manutencao_testosterona_upper_lower_4x"
+  },
+  {
+    "nome": "SOP Aerobico Resistencia Sensibilizacao Insulinica 5x Semana",
+    "objetivo": "emagrecimento",
+    "fase": "definicao",
+    "duracao_semanas": 12,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_feminino_gluteo_core",
+      "tm_full_body_emagrecimento_circuito",
+      "tm_hiit_full_body_cardiometabolico",
+      "tm_cardio_liss_baixa_intensidade",
+      "tm_full_body_intermediario_a"
+    ],
+    "observacao": "PROGRAMA CLINICO PARA SOP (SINDROME DOS OVARIOS POLICISTICOS) com foco em sensibilizacao insulinica, reducao de androgenos e composicao corporal.\n\nDIAS DA SEMANA (5x): Segunda - Full Body Feminino Gluteo/Core (forca metabolica); Terca - Cardio LISS 40-50min (Zona 2, 60-70% FCmax, esteira/bike/eliptico); Quarta - Full Body Emagrecimento em Circuito (densidade metabolica, pausa curta 30-45s); Quinta - HIIT Full Body Cardiometabolico (20-25min, intervalos 30/30 ou 40/20); Sexta - Full Body Intermediario A (forca base composto, cargas moderadas-altas). Sabado e Domingo descanso ativo (caminhada leve 20-30min, mobilidade).\n\nOBJETIVO FUNCIONAL: A combinacao AEROBIO + RESISTIDO e o padrao-ouro para SOP porque aumenta GLUT-4 muscular, reduz HOMA-IR, melhora perfil androgenico (SHBG sobe, testosterona livre cai) e restaura ciclicidade menstrual em muitos casos. Alvo de gasto semanal: 150-300min de aerobio moderado + 3 sessoes de forca.\n\nPROGRESSAO (12 semanas em 3 blocos):\n- Semanas 1-4 (ACOMODACAO METABOLICA): 3 series x 12-15 reps, cargas moderadas, HIIT com razao 1:2 (30s on/60s off), LISS 30-40min. Foco em consistencia e adesao.\n- Semanas 5-8 (INTENSIFICACAO): subir para 3-4 series x 10-12 reps, HIIT 1:1 (30/30), LISS 40-50min. Adicionar 1 set em compostos.\n- Semanas 9-12 (DENSIDADE): 4 series x 8-12 com pausa reduzida (45s), HIIT 2:1 (40/20), LISS 50min. Progressao dupla (repeticoes ate teto, entao aumenta carga 2,5-5%).\n\nSINAIS DE SOBRECARGA (REDUZIR VOLUME): fadiga adrenal (cansaco matinal, cortisol alto), irregularidade menstrual piora, insonia, queda de libido, PSE cronico >8/10, elevacao de PCR/ferritina. Se ocorrer, cortar HIIT por 1-2 semanas e manter apenas LISS + forca.\n\nCONTRAINDICACOES / ADAPTACOES: em SOP com sobrepeso importante e articulacoes sensiveis, priorizar cardio de baixo impacto (bike, eliptico, natacao) no lugar de corrida. Se hipertensao associada, evitar Valsalva excessivo em cargas maximas. Em fase lutea com sintomas TPM/enxaqueca, permitir deload autoregulado.\n\nSINERGIA: potencializa uso de metformina/inositol (mio + D-chiro 40:1) e dieta com controle glicemico (baixo indice glicemico ou low-carb estruturada, deficit 300-500kcal). Priorizar proteina 1,6-2,0g/kg, sono 7-9h (SOP e piorada por privacao de sono) e manejo de estresse (yoga/meditacao 2x/sem reduz cortisol).\n\nREAVALIACAO a cada 4 semanas: bioimpedancia (BF% e massa magra), circunferencia abdominal (marcador de resistencia insulinica), regularidade menstrual, PSE global, humor e libido. Reavaliacao laboratorial a cada 12 semanas: glicemia jejum, insulina, HOMA-IR, HbA1c, SHBG, testosterona total/livre, LH/FSH, perfil lipidico. Ajustar volume conforme resposta clinica e ginecologica.",
+    "id": "tpl_sop_aerobico_resistencia_sensibilizacao_insulinica_5x_semana"
+  },
+  {
+    "nome": "Diabetico Tipo 2 - Aerobico + Forca 5x Semana Controle Glicemico",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 12,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_intermediario_a",
+      "tm_full_body_intermediario_b",
+      "tm_cardio_liss_baixa_intensidade",
+      "tm_hiit_full_body_cardiometabolico",
+      "tm_cardiaco_resistencia_leve"
+    ],
+    "observacao": "PROGRAMA CONCORRENTE PARA DIABETES TIPO 2 - 5 SESSOES SEMANAIS combinando forca e aerobico, seguindo diretrizes ADA/SBD/ACSM (>=150 min/semana aerobico moderado + 2-3 sessoes de forca). DIVISAO SEMANAL: SEG - Full Body A (forca composta, base do controle glicemico via aumento de massa muscular e GLUT-4); TER - LISS 30-45min (caminhada rapida/bike ergometrica 60-70% FCmax, melhora sensibilidade insulinica ate 24-48h pos-esforco); QUA - Full Body B (variacao com halteres/isoladores, estimulo metabolico distinto); QUI - HIIT cardiometabolico 20-25min (intervalos 30s alta / 60s ativa, potente reducao de HbA1c e ganho de VO2); SEX - Cardiaco Resistencia Leve em circuito (aerobico de baixo impacto integrando membros, recuperacao ativa). SAB/DOM descanso com caminhada leve opcional. OBJETIVO FUNCIONAL: reducao de HbA1c em 0,5-1,0 ponto percentual em 12 semanas, ganho de massa magra, reducao de gordura visceral e circunferencia abdominal, melhora de perfil lipidico e pressao arterial, reducao da necessidade farmacologica sob acompanhamento medico. PROGRESSAO: Semanas 1-2 adaptacao (RPE 6-7, 2 series na forca, LISS 25min, HIIT 15min relacao 1:2); Semanas 3-6 progressao linear (adicionar 1 serie ou 2-3kg quando executar +2 reps da meta, LISS 35-40min); Semanas 7-10 consolidacao (3-4 series full, HIIT relacao 1:1, RPE 7-8); Semanas 11-12 pico com reavaliacao clinica. SINAIS DE SOBRECARGA E CRITERIOS DE PARADA IMEDIATA: hipoglicemia (tremor, sudorese fria, tontura, confusao - interromper e ingerir 15g CHO de rapida absorcao), glicemia capilar pre-treino <100mg/dL (lanchar antes) ou >250mg/dL com cetonuria positiva (adiar sessao), PA de repouso >180/110, dor toracica, dispneia desproporcional, claudicacao, visao borrada, parestesias novas em MMII. Reduzir volume/carga em 20-30% se: fadiga persistente >72h, glicemia matinal em elevacao progressiva por 5 dias, sono <6h por 3 noites consecutivas ou sintomas de neuropatia autonomica. CONTRAINDICACOES E ADAPTACOES: retinopatia proliferativa contraindica Valsalva e cargas maximas (usar RPE ate 7, respiracao continua); neuropatia periferica exige calcado adequado e preferencia por bike/eliptico ao inves de corrida; nefropatia contraindica HIIT extremo (manter RPE <=8); doenca cardiovascular estabelecida exige liberacao cardiologica com teste ergometrico previo e monitorizacao de FC. SINERGIA COM OUTROS PILARES: aderencia a plano nutricional low-carb ou mediterraneo, controle rigoroso de sono (>=7h), monitoramento glicemico capilar pre e pos-treino nas 4 primeiras semanas, hidratacao 35ml/kg/dia, adequacao de horario de metformina/insulina com o educador fisico junto ao medico assistente (nao pular refeicoes proximas ao treino). Suplementacao com creatina 3-5g/dia auxilia captacao de glicose e forca. REAVALIACAO A CADA 4 SEMANAS: perimetria abdominal, peso, PA, RPE medio das sessoes, cargas atingidas, aderencia. REAVALIACAO CLINICA COMPLETA a cada 12 semanas com HbA1c, glicemia jejum, perfil lipidico, funcao renal e exame de fundo de olho antes de intensificar programa.",
+    "id": "tpl_diabetico_tipo_2_aerobico_forca_5x_semana_controle_glicemico"
+  },
+  {
+    "nome": "Cardiopata Compensado Zona 2 Forca Leve 4x Semanais",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 12,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_cardiaco_resistencia_leve",
+      "tm_cardio_liss_baixa_intensidade",
+      "tm_full_body_reabilitacao_leve",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "Programa de 12 semanas para cardiopata compensado (HAS controlada, pós-IAM estável, ICC NYHA I-II, DAC revascularizada estável) com liberação medica formal (teste ergométrico ou ergoespirométrico recente, ECO com FE preservada ou levemente reduzida, sem isquemia induzida em zona de treino). Distribuição semanal em 4 sessões: segunda (força leve full body reabilitação + 20min Zona 2), terça (Zona 2 LISS 40-50min contínuo em bike/esteira/elíptico), quinta (força leve full body reabilitação + 20min Zona 2), sábado (Zona 2 LISS 45-60min + mobilidade 10min). Objetivo funcional: aumentar VO2 pico e reserva cronotrópica, melhorar variabilidade da frequência cardíaca (VFC), preservar massa magra, otimizar perfil lipídico e glicêmico, reduzir PA de repouso 5-10mmHg e ampliar independência funcional para AVDs. Zona 2 delimitada por FC entre 60-70% da FCmáx do teste ou 1º limiar ventilatório (LV1) — Borg 11-13, capaz de conversar em frases completas ('talk test'). Força com Borg 12-14, 2 séries de 12-15 repetições, RIR 3-4, sem manobra de Valsalva, respiração ritmada (expira na fase concêntrica), descansos de 90-120s. Progressão: semanas 1-4 adaptação (cargas mínimas, foco em técnica e tolerância), semanas 5-8 acrescer 5-10% de carga OU +1 série mantendo Borg, ampliar Zona 2 para 50-60min, semanas 9-12 introduzir 1-2 blocos curtos de 3-5min em Zona 2 alta (limiar inferior a LV2) intercalados. Sinais de sobrecarga e critérios de parada IMEDIATA: dor/opressão torácica, dispneia desproporcional, palpitações, tontura, síncope, PA sistólica >220 ou queda >10mmHg durante esforço, FC não decresce >12bpm no 1º minuto pós-exercício, ganho de peso >2kg em 3 dias (descompensação de IC), edema novo — encaminhar para cardiologista antes de retomar. Contraindicações absolutas: angina instável, arritmia não controlada, estenose aórtica grave, IC descompensada, IAM <4 semanas sem liberação. Adaptações: monitorar PA pré e pós-sessão, uso de frequencímetro obrigatório, hidratação fracionada, evitar exercícios isométricos prolongados e decúbito com carga sobre tórax. Sinergia com dieta cardioprotetora (DASH/Mediterrânea), sono 7-9h, cessação de tabagismo, adesão farmacológica (betabloqueador atenua FC — usar Borg como referência primária) e acompanhamento cardiológico trimestral. Reavaliação a cada 4 semanas: PA repouso, FC repouso, peso, Borg médio, teste de caminhada 6min ou sit-to-stand 30s; a cada 12 semanas, retorno ao cardiologista com laudo de evolução, revisão do teste ergométrico e ajuste de zonas.",
+    "id": "tpl_cardiopata_compensado_zona_2_forca_leve_4x_semanais"
+  },
+  {
+    "nome": "HIIT Metabolico Standalone 3x Semana Intermediario",
+    "objetivo": "emagrecimento",
+    "fase": "definicao",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_hiit_full_body_cardiometabolico",
+      "tm_cardio_hiit_intervalado",
+      "tm_kettlebell_complexo_metcon",
+      "tm_full_body_emagrecimento_circuito"
+    ],
+    "observacao": "Programa de HIIT metabolico standalone estruturado em 3 sessoes semanais (segunda, quarta e sexta), com pelo menos 48h entre sessoes para permitir recuperacao do sistema nervoso central e do EPOC (excess post-exercise oxygen consumption). Objetivo funcional: maximizar oxidacao de gordura, elevar VO2max, melhorar sensibilidade insulinica e preservar massa magra durante deficit calorico. Rotacao semanal sugerida: Seg = HIIT Full Body Cardiometabolico (resistencia + cardio integrado, blocos 30/30 ou 40/20), Qua = Cardio HIIT Intervalado (intervalos puros 4x4 ou Tabata em esteira/bike/remo) e Sex = Kettlebell Complexo Metcon (densidade e potencia). O Circuito Emagrecimento entra como coringa em semanas de deload ou substituindo uma sessao quando o aluno precisar de variabilidade. Progressao em blocos de 3+1 semanas: nas 3 primeiras aumenta densidade (reduzir descanso 5-10s por semana) e/ou volume total (adicionar 1 rodada), na 4a semana faz deload de 40% do volume. Nas semanas 5-7 progride para intervalos mais intensos (razao trabalho:descanso de 1:1 para 2:1), semana 8 deload, semanas 9-10 pico com formatos AMRAP/EMOM curtos. Sinais de sobrecarga: FC de repouso elevada por 3+ dias (>7bpm acima do basal), queda de performance em intervalo padrao, sono ruim, irritabilidade, dor articular persistente — reduzir intensidade em 20% ou trocar sessao por LISS. Contraindicacoes: hipertensao nao controlada, cardiopatia sem liberacao medica, lesoes agudas de tornozelo/joelho/lombar; adaptar para modalidades de baixo impacto (bike, remo, elipico) se houver historico articular. Sinergia: combina muito bem com deficit calorico moderado (300-500kcal), dieta com 1.8-2.2g proteina/kg para preservar massa magra, e 1-2 sessoes semanais de LISS caminhada 45-60min como recuperacao ativa. Nao substitui treino resistido tradicional para hipertrofia — se o objetivo secundario for ganho muscular, adicionar 2 sessoes de forca fora dos dias de HIIT. Hidratacao rigorosa (35ml/kg) e eletrolitos em treinos acima de 30min. Reavaliar a cada 4 semanas: peso, dobras cutaneas, medidas de cintura/quadril, FC de recuperacao no minuto 1 pos-esforco e teste de VO2max estimado (Cooper 12min ou Yo-Yo). Se plato por 2 semanas consecutivas, revisar deficit calorico antes de aumentar volume de treino.",
+    "id": "tpl_hiit_metabolico_standalone_3x_semana_intermediario"
+  },
+  {
+    "nome": "LISS Cardio Continuo Baixo Impacto 4-5x Semana Iniciante",
+    "objetivo": "condicionamento",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_cardio_liss_baixa_intensidade",
+      "tm_cardiaco_resistencia_leve",
+      "tm_full_body_iniciante_a",
+      "tm_mobilidade_flexibilidade_geral"
+    ],
+    "observacao": "PROGRAMA LISS (Low Intensity Steady State) de baixo impacto, focado em condicionamento cardiovascular aerobico de base para iniciantes, sedentarios em retomada, obesos, pos-operatorios liberados, cardiopatas compensados, idosos e pessoas com dores articulares que nao toleram HIIT ou corrida. OBJETIVO FUNCIONAL: elevar VO2 base, melhorar economia cardiaca (reduzir FC repouso), aumentar densidade mitocondrial, otimizar oxidacao de gordura como substrato energetico principal e criar base aerobica solida sem estresse ortopedico. DIAS DA SEMANA: 4-5x por semana em modalidades de baixo impacto (caminhada rapida, bicicleta ergometrica, eliptico, natacao, hidroginastica), distribuidos preferencialmente seg/ter/qui/sex ou seg/qua/qui/sab/dom, com pelo menos 1 dia de descanso ativo (mobilidade/alongamento). Sugestao semanal: 3x LISS puro (40-60min) + 1x cardio leve full body (tm_cardiaco_resistencia_leve) + 1x forca full body iniciante (tm_full_body_iniciante_a) para preservar massa magra e capilarizar musculos posturais. INTENSIDADE ALVO: Zona 2 = 60-70% FCmax OU escala de percepcao subjetiva 4-6/10 (deve conseguir conversar frases completas). Use formula Karvonen: FCalvo = FCrepouso + 0.60 a 0.70 x (FCmax - FCrepouso). PROGRESSAO SEMANAL (regra 10%): Semanas 1-2: 25-30min por sessao, 4x/sem, FC 60% FCmax; Semanas 3-4: 35-40min, 4-5x/sem, FC 65% FCmax; Semanas 5-6: 45-50min, 5x/sem, FC 65-70% FCmax; Semanas 7-8: 50-60min, 5x/sem mantendo Zona 2 estavel, incluir 1 sessao mais longa (60-75min) no fim de semana. Nunca aumentar duracao E frequencia na mesma semana. SINAIS DE SOBRECARGA (reduzir volume 20-30% e reavaliar): FC repouso matinal 5-7bpm acima do basal por 3 dias seguidos, sono fragmentado, irritabilidade, dor articular persistente, sensacao de peso nas pernas em Zona 2, HRV em queda contigua, perda de apetite. CONTRAINDICACOES / ADAPTACOES: hipertensao nao controlada (liberacao medica), arritmias sintomaticas (teste ergometrico previo), gestantes (evitar decubito dorsal apos 20sem e priorizar bike/piscina), obesidade grau II-III (comecar com bike/eliptico/hidro para poupar joelho e coluna), diabeticos tipo 1 (monitorar glicemia pre/pos), lesao osteoarticular ativa (substituir por piscina). SINERGIA: excelente com deficit calorico moderado (300-500kcal) para emagrecimento sustentavel, com plano nutricional rico em fibras e hidratacao (35ml/kg), com sono 7-9h (o LISS potencializa qualidade do sono profundo) e com trabalho de forca 2x/sem para preservar massa magra. Combina bem com pos-treino de forca em dias separados; evitar LISS longo (>60min) no mesmo dia de sessao de forca intensa em membros inferiores. REAVALIACAO A CADA 4 SEMANAS: medir FC repouso matinal, FC de recuperacao 1min pos-esforco, distancia percorrida em teste de 12min (Cooper adaptado a caminhada), percepcao de esforco na mesma velocidade/carga, circunferencias e composicao corporal. Se FC recuperacao melhorar >12bpm em 1min e FC repouso reduzir 3-5bpm, progredir para Zona 2 alta (70-75% FCmax) ou introduzir tempo runs curtos. Ao fim das 8 semanas, considerar transicao para mesociclo misto LISS + Zona 3 tempo (80% FCmax) ou introducao de HIIT 1x/sem, mantendo base aerobica como pilar do condicionamento.",
+    "id": "tpl_liss_cardio_continuo_baixo_impacto_4_5x_semana_iniciante"
+  },
+  {
+    "nome": "Funcional Core-Focus Multiplanar 3-4x Intermediario",
+    "objetivo": "condicionamento",
+    "fase": "hipertrofia",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_funcional_atletico_multiplano",
+      "tm_kettlebell_complexo_metcon",
+      "tm_core_avancado_estabilidade",
+      "tm_full_body_intermediario_b"
+    ],
+    "observacao": "PROGRAMA FUNCIONAL CORE-FOCUS 3-4x/SEMANA — Distribuicao semanal: opcao 3x (seg/qua/sex) rotacionando A-Funcional Multiplano, B-Kettlebell Metcon e C-Full Body Halteres, com o bloco de Core Estabilidade adicionado como finisher de 10-15min ao final de cada sessao; opcao 4x (seg/ter/qui/sex) inserindo o treino de Core Avancado como sessao independente e mais densa no dia 3. OBJETIVO FUNCIONAL: melhorar condicionamento cardiometabolico, estabilidade central (anti-extensao, anti-rotacao, anti-flexao lateral), transferencia de forca para atividades diarias e esportivas, coordenacao intermuscular multiplanar e resistencia de forca. PROGRESSAO EM 10 SEMANAS: Semanas 1-2 aprendizado motor e ajuste de cargas (RIR 3-4, cargas 60-65% do trabalho); Semanas 3-5 aumento progressivo de volume (+1 serie por padrao de movimento) e reducao para RIR 2; Semanas 6-8 pico de intensidade com clusters, complexos de kettlebell mais longos e densidade elevada (menor descanso entre estacoes, 45-60s); Semanas 9-10 deload ativo na semana 9 (-40% volume) e teste de reavaliacao na 10. SINAIS DE SOBRECARGA que exigem reduzir carga/volume: FC de repouso elevada em +7bpm por 3 dias, dor lombar persistente apos abdominais dinamicos, queda de performance em movimentos como swing/carry por 2 sessoes seguidas, sono ruim e irritabilidade, dor articular localizada em joelho ou ombro. CONTRAINDICACOES/ADAPTACOES: hernia de disco ativa substitui rotacoes com carga por anti-rotacoes isometricas (pallof press); disfuncao de manguito rotador evita snatch e press overhead com carga alta; gestantes ou pos-parto recente redirecionar para template especifico. SINERGIA: excelente combinacao com dieta normo-hipercalorica leve (superavit 150-250kcal) para recomposicao, 1 sessao de LISS de 30-40min em dia off para recuperacao ativa, mobilidade 10min diarios (quadril e toracica) e sono minimo de 7h. REAVALIACAO a cada 4 semanas: reteste de plank (>90s), farmer carry 2min com 50% do peso corporal, VO2 estimado via Cooper ou Yo-Yo IR1, e progressao de carga nos padroes-chave (agachamento, remada, press, swing). Se estagnado por 2 reavaliacoes seguidas, migrar para bloco de forca ou variar estimulo com fase de potencia.",
+    "id": "tpl_funcional_core_focus_multiplanar_3_4x_intermediario"
+  },
+  {
+    "nome": "Mobilidade Avancada Diaria - Amplitude Articular e Controle Motor",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 12,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_idoso_mobilidade_articular",
+      "tm_postural_escoliose",
+      "tm_funcional_atletico_multiplano",
+      "tm_core_avancado_estabilidade",
+      "tm_calistenia_intermediario",
+      "tm_reab_lombar_estabilizacao"
+    ],
+    "observacao": "PROGRAMA DIARIO (7x/semana) de mobilidade avancada, com rotacao inteligente entre sessoes de baixa e media demanda para permitir estimulo diario sem overtraining. ESTRUTURA SEMANAL: Segunda - Mobilidade Geral (tm_mobilidade_flexibilidade_geral, 30-40min); Terca - Funcional Multiplano (tm_funcional_atletico_multiplano, 40-50min); Quarta - Mobilidade Articular focada em ombro/quadril/tornozelo (tm_idoso_mobilidade_articular adaptado com maior amplitude, 25-35min); Quinta - Core e Estabilidade Avancada (tm_core_avancado_estabilidade, 35-45min); Sexta - Calistenia com controle excentrico (tm_calistenia_intermediario, 40-50min); Sabado - Postural e alongamento profundo (tm_postural_escoliose, 30-40min); Domingo - Regenerativo lombar (tm_reab_lombar_estabilizacao em modo respiracao diafragmatica, 20-30min). OBJETIVO FUNCIONAL: aumentar amplitude ativa (nao apenas passiva) de ombros, quadris, coluna toracica e tornozelos; desenvolver controle motor em posicoes de fim de amplitude (End Range of Motion); prevenir lesoes e melhorar performance em outras modalidades. PROGRESSAO: semanas 1-4 dominar padroes basicos com respiracao 4-4-8; semanas 5-8 introduzir CARs (Controlled Articular Rotations) com carga leve (1-3kg) e isometrias de 30-45s em ERM; semanas 9-12 combinar mobilidade dinamica com forca (loaded stretching, PAILs/RAILs 2min por posicao) e transferir ganhos para movimentos complexos como cossaco squat profundo, jefferson curl e hanging shoulder CARs. SINAIS DE SOBRECARGA: rigidez matinal persistente, dor articular localizada (nao muscular), reducao de amplitude em vez de aumento, fadiga sistemica, sono ruim - nestes casos reduzir para 4-5 dias/semana e substituir sessoes intensas por regenerativo. CONTRAINDICACOES: hipermobilidade generalizada (Ehlers-Danlos, sindromes) requer foco em ESTABILIDADE e nao amplitude; hernia de disco aguda evitar flexao lombar carregada; lesao ligamentar recente respeitar fase inflamatoria. SINERGIA: excelente complemento para praticantes de musculacao (destrava plateaus por melhor ADM em agachamento e supino), corrida (previne encurtamento de quadril), esportes coletivos (reduz risco de estiramento) e trabalhadores sedentarios (compensa horas sentado). Combina bem com nutricao anti-inflamatoria (omega-3, colageno com vit C 30min antes da sessao), hidratacao 35ml/kg/dia e sono 7-9h. Yoga e Pilates podem substituir 1-2 sessoes semanais. REAVALIACAO: a cada 4 semanas fotografar/filmar testes-chave (agachamento profundo, ponte, cossaco, apley scratch test, sit and reach, dorsiflexao knee-to-wall em cm) e comparar ganhos objetivos. Se estagnacao apos 4 semanas, aumentar tempo em ERM ou incluir tecnica PNF (contract-relax) 2x/semana.",
+    "id": "tpl_mobilidade_avancada_diaria_amplitude_articular_e_controle_mo"
+  },
+  {
+    "nome": "Yoga Funcional para Forca 3-4x Semana Intermediario",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 12,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_calistenia_intermediario",
+      "tm_funcional_atletico_multiplano",
+      "tm_core_avancado_estabilidade",
+      "tm_full_body_home_sem_equipamento"
+    ],
+    "observacao": "PROGRAMA: Yoga Funcional para Forca fusiona posturas de yoga (asanas isometricas, transicoes vinyasa, respiracao diafragmatica) com padroes de forca em peso corporal, priorizando controle motor, mobilidade ativa, resistencia postural e forca de base. IDEAL para praticantes que buscam saude integral, longevidade articular, alivio de dores cronicas posturais e ganho de forca sem hipertrofia extrema. DIAS DA SEMANA: 3 a 4 sessoes por semana, distribuidas em seg/qua/sex (3x) ou seg/ter/qui/sab (4x), com pelo menos 24h entre sessoes de maior demanda. Sugestao: iniciar com 3x/semana nas semanas 1-4 e progredir para 4x/semana nas semanas 5-12. ESTRUTURA DA SESSAO (60-75min): 10min mobilidade e respiracao (Sun Salutation A/B como aquecimento), 30-40min bloco de forca funcional (calistenia + funcional multiplano), 10-15min core estabilidade e isometria (planks, side plank, hollow body, boat pose sustentada), 5-10min desaquecimento com yin yoga e alongamento passivo. OBJETIVO FUNCIONAL: aumentar forca relativa (razao forca/peso corporal), melhorar amplitude ativa de quadril, ombro e coluna toracica, desenvolver equilibrio unipodal, integrar respiracao com esforco e reduzir compensacoes posturais. PROGRESSAO: Semanas 1-4 (adaptacao neuromuscular) — 2-3 series de 8-12 reps, retencoes isometricas de 20-30s, foco tecnico; Semanas 5-8 (consolidacao) — 3-4 series de 10-15 reps, isometricas de 30-45s, introducao de variacoes unilaterais (crow pose, warrior 3, pistol assistido); Semanas 9-12 (progressao avancada) — 4 series, isometricas de 45-60s, transicoes vinyasa fluidas, tentativa de posturas invertidas (headstand, handstand com parede). Aumentar volume antes de aumentar dificuldade tecnica. SINAIS DE SOBRECARGA: dor articular persistente >48h, perda de amplitude ativa, sono nao restaurador, FC repouso >8bpm acima da linha basal, sensacao de queimacao nas insercoes tendineas — reduzir volume 30% por 5-7 dias e priorizar mobilidade e respiracao. CONTRAINDICACOES: hernias discais em fase aguda (evitar flexao profunda tipo forward fold), hipertensao nao controlada (evitar invertidas prolongadas), gravidez (adaptar posturas de decubito ventral e torcoes profundas), lesoes de manguito rotador (evitar chaturanga sem progressao). Ofertar sempre versao regressiva (joelhos apoiados, blocos, cinta) e progressiva (unilateral, isometrica prolongada). SINERGIA: combina muito bem com alimentacao anti-inflamatoria (mediterranea ou plant-based moderada), pratica de meditacao mindfulness diaria de 10min, sono de 7-9h e caminhadas de LISS 2-3x/semana em dias off. Evitar HIIT no mesmo dia — se necessario, separar por 6h. REAVALIACAO: a cada 4 semanas revisar amplitude ativa (sit and reach, mobilidade de ombro overhead), forca relativa (numero de flexoes maximas, tempo de plank), qualidade da respiracao (contagem por minuto em repouso), FC repouso matinal, percepcao subjetiva de bem-estar (escala 0-10) e ajustar volume, intensidade e complexidade das posturas. Ao final das 12 semanas, reavaliar objetivos e decidir entre novo ciclo com maior componente de forca (transicionar para calistenia avancada ou barbell strength) ou manutencao contemplativa com yoga puro.",
+    "id": "tpl_yoga_funcional_para_forca_3_4x_semana_intermediario"
+  },
+  {
+    "nome": "Pilates Solo Postural e Core 3x Semana Iniciante",
+    "objetivo": "saude",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_postural_escoliose",
+      "tm_reab_lombar_estabilizacao",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_full_body_home_sem_equipamento"
+    ],
+    "observacao": "PROGRAMA DE PILATES SOLO POSTURAL COM FOCO EM CORE - 3 sessoes semanais (seg/qua/sex), duracao de 45-55 minutos por sessao, rotacionando os treinos-modelo A (Postural Escoliose), B (Reabilitacao Lombar Estabilizacao) e C (Mobilidade e Flexibilidade Geral), com o treino Full Body Home Sem Equipamento inserido a partir da semana 4 como progressao funcional adicional em uma das sessoes semanais. OBJETIVO FUNCIONAL: melhorar controle postural, ativacao do transverso abdominal e assoalho pelvico (powerhouse), reeducacao respiratoria diafragmatica, ganho de mobilidade toracica e reducao de dores lombares e cervicais decorrentes de ma postura, sedentarismo ou trabalho prolongado sentado. PROGRESSAO SEMANAL: Semanas 1-2 aprendizagem motora com foco em respiracao lateral costal e ativacao neutra do core (2-3 series de 6-10 repeticoes lentas, cadencia 3-1-3); Semanas 3-4 aumento gradual do tempo de sustentacao isometrica (pranchas 20-40s) e amplitude de movimento; Semanas 5-6 introducao de variacoes unilaterais e desequilibrios controlados; Semanas 7-8 integracao com padroes funcionais globais e maior exigencia proprioceptiva. SINAIS DE SOBRECARGA: dor lombar em pontada, cervicalgia irradiada, tontura ao levantar, incapacidade de manter respiracao fluida durante o exercicio, dor articular no dia seguinte superior a 24h - nesses casos reduzir volume em 30% e reforcar mobilidade. CONTRAINDICACOES E ADAPTACOES: hernia de disco aguda (evitar flexoes de tronco), gestantes segundo trimestre em diante (nao realizar decubito dorsal prolongado), osteoporose severa (evitar flexao lombar carregada) - adaptar decubitos com bola suica ou cunha. SINERGIA: excelente combinacao com caminhada leve 20-30min em dias alternados, alongamento passivo diario 10min ao acordar, hidratacao 35ml/kg/dia e higiene do sono minima de 7h; contra-indicado combinar com HIIT no mesmo dia nas primeiras 4 semanas. REAVALIACAO: a cada 4 semanas checar teste de prancha frontal (meta minima de 45s ao final), teste de flexibilidade sentar-e-alcancar, escala visual de dor lombar (EVA) e avaliacao postural fotografica; se progresso satisfatorio evoluir para programa intermediario com carga leve (caneleiras 1-2kg e faixas elasticas).",
+    "id": "tpl_pilates_solo_postural_e_core_3x_semana_iniciante"
+  },
+  {
+    "nome": "Home Workout Sem Equipamento 4x - Condicionamento Iniciante",
+    "objetivo": "condicionamento",
+    "fase": "adaptacao",
+    "duracao_semanas": 8,
+    "nivel": "iniciante",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_home_sem_equipamento",
+      "tm_full_body_iniciante_a",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_cardio_liss_baixa_intensidade"
+    ],
+    "observacao": "Programa domiciliar de 8 semanas para iniciantes que desejam melhorar condicionamento geral, resistencia muscular localizada e capacidade cardiorrespiratoria sem depender de academia ou equipamentos. Distribuicao semanal em 4 sessoes: segunda (Full Body Home A - forca de resistencia), terca (Cardio LISS de 30-40 min - base aerobica), quinta (Full Body Iniciante B - variacao de estimulo com padroes de agachamento, empurrar e puxar), sabado (Mobilidade e Flexibilidade Geral - recuperacao ativa e amplitude articular). Objetivo funcional: sair do sedentarismo, criar aderencia ao habito de treino, elevar VO2 submaximo, estabilizar core e melhorar controle neuromotor. Progressao por microciclos: semanas 1-2 aprender padroes (2-3 series, RPE 6, repeticoes na base sugerida); semanas 3-4 aumentar 1 serie por exercicio principal e reduzir descanso de 90s para 60s; semanas 5-6 elevar volume (adicionar 2-4 reps) e progredir para variacoes mais desafiadoras (flexao de joelho para flexao completa, agachamento simples para bulgaro); semanas 7-8 introduzir tempo sob tensao (excentrica 3s) e circuitos com transicoes curtas para bonus cardiometabolico. Sinais de sobrecarga que exigem deload: dor articular persistente por mais de 48h, queda de performance em 2 sessoes consecutivas, FC de repouso elevada mais de 10 bpm, sono ruim ou irritabilidade - nesse caso reduzir volume em 40 por cento por 5-7 dias. Contraindicacoes: hipertensao nao controlada (evitar isometria prolongada e valsalva), lombalgia aguda (substituir hip hinge por ponte de gluteo), problemas em joelho (reduzir amplitude do agachamento). Sinergia: combina bem com deficit calorico leve (300-500 kcal), hidratacao 35 ml/kg, sono minimo de 7h e 10 mil passos diarios para potencializar recomposicao corporal. Reavaliar a cada 4 semanas: aplicar teste de resistencia (maximo de flexoes em 60s, prancha isometrica, agachamento em 60s) e ajustar dificuldade; ao fim das 8 semanas migrar para programa Full Body Iniciante em academia ou progressao Calistenia Intermediario.",
+    "id": "tpl_home_workout_sem_equipamento_4x_condicionamento_iniciante"
+  },
+  {
+    "nome": "Tatico Militar Forca e Resistencia 5x Semana Avancado",
+    "objetivo": "performance",
+    "fase": "potencia",
+    "duracao_semanas": 12,
+    "nivel": "avancado",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_avancado",
+      "tm_powerlifting_forca_maxima",
+      "tm_olympic_arranco_arremesso",
+      "tm_crossfit_wod_metcon",
+      "tm_funcional_atletico_multiplano",
+      "tm_core_avancado_estabilidade"
+    ],
+    "observacao": "PROGRAMA TATICO/MILITAR 5X SEMANA - PERFORMANCE HIBRIDA (FORCA + RESISTENCIA).\n\n1) DIAS DA SEMANA: segunda a sexta, com sabado/domingo de descanso ativo (caminhada leve, mobilidade, ruck marcha 40-60min opcional). Rotacao semanal fixa: SEG - Forca Maxima SBD (agachamento/supino/terra 3-5RM); TER - Metcon CrossFit WOD (condicionamento glicolitico); QUA - Full Body Avancado Forca-Hipertrofia (base estrutural 6-10 reps); QUI - Olimpico Arranco/Arremesso + Potencia (power output, RPE 7); SEX - Funcional Atletico Multiplano + Core Estabilidade (transferencia, prevencao). Ideal para operacionais militares, bombeiros, PM, TFM e candidatos a testes fisicos (TAF).\n\n2) OBJETIVO FUNCIONAL: elevar simultaneamente a forca maxima (1RM SBD), a potencia explosiva (olimpicos), a capacidade aerobia-anaerobia (VO2 e limiar) e a resistencia muscular localizada exigidas em rotinas taticas - carregar carga, escalar, correr sob peso, sprints repetidos e sustentacao de esforco prolongado (patrulhas, ruck de 12-20km).\n\n3) PROGRESSAO (12 semanas em 3 blocos): SEM 1-4 - acumulacao (volume 20-24 series semanais por padrao de movimento, cargas 70-80% 1RM, WOD 12-15min); SEM 5-8 - intensificacao (reduzir volume para 16-20 series, subir cargas para 82-90% 1RM na forca, WOD mais curtos e intensos 8-12min); SEM 9-11 - pico (forca 90-95% 1RM em singles/doubles, olimpicos com foco em velocidade da barra >0,8m/s, teste TAF simulado); SEM 12 - deload (60% volume, cargas 60% 1RM, reavaliacao). Autoregular via RPE (7-9) e velocidade de barra quando possivel.\n\n4) SINAIS DE SOBRECARGA / OVERREACHING: FC repouso +8 bpm por 3+ dias, queda de sono <6h consistente, dor articular persistente (joelho, ombro, lombar), queda >10% na performance nos WODs ou nas cargas, irritabilidade e libido baixa. Ao aparecer 2+ sinais: reduzir volume 40% por 5-7 dias, cortar HIIT, priorizar sono 8h+ e recuperacao (frio/sauna/massagem).\n\n5) CONTRAINDICACOES E ADAPTACOES: lesao lombar aguda -> substituir terra convencional por trap bar/rack pull; ombro em reabilitacao -> trocar arranco por swing kettlebell e clean pull; joelho -> reduzir amplitude de agachamento e aumentar posterior. Nao indicado para iniciantes (<12 meses de treino consistente), gestantes ou individuos com HAS descompensada sem liberacao medica.\n\n6) SINERGIA: pareado com nutricao normocalorica a hipercalorica leve (+200-400 kcal), 1,8-2,2g/kg de proteina, 4-6g/kg de carboidrato nos dias intensos; hidratacao 40ml/kg + eletrolitos; suplementacao util - creatina 5g/dia, cafeina pre-sessao, whey pos. Combinar com trabalho aerobico Z2 (60-70% FCmax) 30-45min em 2 dos dias de forca ou no sabado para base cardiovascular. Sono minimo 7-8h. Ruck marcha semanal com carga progressiva (10-25kg).\n\n7) REAVALIACAO: a cada 4 semanas revisar 1RM estimado (agacho/supino/terra), tempo em WOD benchmark (Fran, Cindy, 5km com colete), FC recuperacao 1min pos-esforco, dobras cutaneas e RPE medio da semana. Ajustar cargas e volume conforme evolucao objetiva.",
+    "id": "tpl_tatico_militar_forca_e_resistencia_5x_semana_avancado"
+  },
+  {
+    "nome": "Emagrecimento Agressivo com Jejum Intermitente 16/8 - Upper Lower 5x",
+    "objetivo": "emagrecimento",
+    "fase": "definicao",
+    "duracao_semanas": 10,
+    "nivel": "intermediario",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_upper_intermediario_a",
+      "tm_lower_intermediario_a",
+      "tm_upper_intermediario_b",
+      "tm_lower_intermediario_b",
+      "tm_hiit_full_body_cardiometabolico",
+      "tm_full_body_emagrecimento_circuito",
+      "tm_cardio_hiit_intervalado"
+    ],
+    "observacao": "PROGRAMA DE EMAGRECIMENTO AGRESSIVO COM JEJUM INTERMITENTE 16/8 - 5x/SEMANA UPPER LOWER + METABOLICO.\n\n1) DIAS DA SEMANA: Segunda (Upper A composto), Terca (Lower A agachamento dominante), Quarta (HIIT Full Body Cardiometabolico como dia metabolico intercalado), Quinta (Upper B isolador com densidade), Sexta (Lower B terra e gluteo). Sabado opcional: Circuito Emagrecimento OU Cardio HIIT Intervalado (20-25 min) para deficit calorico extra em fases de plato. Domingo repouso ativo (caminhada 30-45 min em jejum, ideal para oxidacao lipidica).\n\n2) OBJETIVO FUNCIONAL: preservar massa magra durante deficit calorico severo (-500 a -750 kcal/dia), maximizar EPOC (afterburn) via densidade e HIIT, sustentar performance mesmo treinando em jejum (janela de treino ideal: ultima hora do jejum ou primeira hora pos-quebra).\n\n3) PROGRESSAO: Semanas 1-2 - adaptacao ao volume 5x e ao treino em jejum, cargas 70% do usual, foco em conexao mente-musculo. Semanas 3-5 - progressao dupla: adicionar 1 rep por semana ate o topo da faixa (12), depois aumentar carga 2,5-5% e voltar ao piso (8 reps). Semanas 6-8 - introduzir tecnicas de intensidade (rest-pause, drop-set) em 1 exercicio isolador por sessao para elevar densidade. Semanas 9-10 - polir e testar novo peso corporal + composicao.\n\n4) SINAIS DE SOBRECARGA: FC repouso +8 bpm sustentada por 3 dias, queda de forca >10% em 2 sessoes seguidas, tontura ou hipoglicemia durante treino em jejum, insonia, irritabilidade, ciclo menstrual atrasado em mulheres. Nestes casos reduzir para 4x/semana, remover HIIT do sabado, aumentar carboidratos na quebra do jejum e realimentar por 3-5 dias.\n\n5) CONTRAINDICACOES/ADAPTACOES: nao indicado para gestantes, lactantes, historico de transtorno alimentar, diabetes tipo 1, adolescentes ou idosos frageis. Hipoglicemicos devem quebrar jejum ANTES do treino. Em uso de medicacao para tireoide ou pressao, ajustar horario com medico.\n\n6) SINERGIA: casa perfeitamente com dieta low-carb ou cetogenica ciclica (100-150g carbo nos dias de treino de perna, 50g nos demais), 1,8-2,2g proteina/kg para preservar massa magra, creatina 5g/dia (mesmo em jejum), cafeina 200mg pre-treino, eletrolitos (sodio, potassio, magnesio) durante jejum. Cardio LISS em jejum matinal 3-4x/semana opcional para acelerar deficit sem prejudicar recuperacao.\n\n7) REAVALIACAO: a cada 3 semanas verificar peso, medidas (cintura, quadril, braco, coxa), bioimpedancia ou dobras, forca nos 4 principais (agachamento, terra, supino, remada) e fotos padronizadas. Se perda semanal <0,4% do peso corporal por 2 semanas, aumentar deficit em 150 kcal OU adicionar 1 sessao de HIIT. Se >1,2% por 2 semanas com queda de forca, reduzir deficit imediatamente para preservar massa magra.",
+    "id": "tpl_emagrecimento_agressivo_com_jejum_intermitente_16_8_upper_lo"
+  },
+  {
+    "nome": "Manutenção Full Body 2x Semana Rotina Apertada",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 12,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_intermediario_a",
+      "tm_full_body_intermediario_b"
+    ],
+    "observacao": "PROGRAMA DE MANUTENÇÃO FULL BODY 2x/SEMANA para alunos intermediários com rotina apertada (executivos, pais/mães de família, profissionais liberais em jornada dupla). Frequência semanal: 2 sessões, preferencialmente terça e sexta (ou segunda e quinta), com 72h entre estímulos para garantir recuperação neuromuscular completa em quem tem sono e nutrição imperfeitos. Duração-alvo por sessão: 45-55 min incluindo aquecimento articular (5min) e desaquecimento/mobilidade (5min), com densidade elevada via pausas de 60-90s em compostos e 45-60s em isoladores.\n\nOBJETIVO FUNCIONAL: preservar massa magra, força de base e capacidade cardiometabólica em janela mínima de treino, evitando destreino em fases de alta demanda de vida sem gerar fadiga acumulada que comprometa desempenho profissional. Rotação obrigatória entre Treino A (barra, ênfase em padrões compostos: agachamento, supino, remada) e Treino B (halteres, ênfase em unilaterais, ombro e core) — nunca repetir o mesmo treino na mesma semana.\n\nPROGRESSÃO: semanas 1-2 recalibragem (RIR 3-4, 2-3 séries por exercício); semanas 3-6 progressão dupla — quando atingir topo da faixa de reps em todas as séries com técnica limpa, subir carga 2,5-5% na próxima sessão (RIR 2-3); semanas 7-9 microciclo de acúmulo leve (adicionar 1 série ao exercício composto principal, RIR 2); semanas 10-12 consolidação (voltar ao volume base, refinar técnica, testar carga máxima para 5 reps no agachamento e no supino).\n\nSINAIS DE SOBRECARGA (reduzir volume 30-40% ou fazer semana de descarga): queda de força >10% em 2 sessões consecutivas, sono <6h por 3+ noites, FC repouso matinal +8bpm acima da média, dor articular persistente, irritabilidade e queda de libido. Nesses casos, permanecer apenas em 1 série top até normalização.\n\nCONTRAINDICAÇÕES / ADAPTAÇÕES: se lombalgia mecânica, substituir agachamento livre por agachamento goblet ou hack; se dor de ombro, trocar supino reto por supino inclinado com halteres em amplitude reduzida; hipertensos controlados devem evitar apneia (Valsalva prolongado) e monitorar PA pré-treino.\n\nSINERGIA: combina com dieta normocalórica ou levemente hipercalórica (+5%), 1,6-2,0 g/kg de proteína, 7-8h de sono, 8-10k passos/dia como cardio de base. Opcional: 1 sessão de 20-30 min de cardio Zona 2 (bike/caminhada inclinada) no fim de semana para saúde cardiovascular sem interferir na recuperação.\n\nREAVALIAÇÃO: a cada 4 semanas revisar composição corporal (bioimpedância ou circunferências), cargas de trabalho (log de treino), percepção de energia (escala 0-10) e adesão. A cada 12 semanas rodar bloco de força ou hipertrofia dedicado se a agenda permitir 3x/semana; se rotina seguir apertada, reciclar este template com novos padrões de movimento (ex: substituir por full body avançado ou por HIIT full body em fase de definição).",
+    "id": "tpl_manuten_o_full_body_2x_semana_rotina_apertada"
+  },
+  {
+    "nome": "Deload Recovery Ativo - Semana de Regeneracao Neuromuscular",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 2,
+    "nivel": "intermediario",
+    "split": "full_body",
+    "treinosModeloIds": [
+      "tm_full_body_reabilitacao_leve",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_cardio_liss_baixa_intensidade",
+      "tm_reab_lombar_estabilizacao"
+    ],
+    "observacao": "PROGRAMA DE DELOAD / RECOVERY ATIVO - 2 semanas (idealmente 1 semana de deload puro + 1 semana de retomada progressiva), 4-5 sessoes por semana em dias alternados (ex: seg=full body leve, ter=mobilidade+LISS, qui=core estabilizacao lombar, sex=full body leve, sab=LISS ou mobilidade). OBJETIVO FUNCIONAL: reduzir fadiga acumulada do SNC, restaurar amplitude articular, permitir reparo tecidual (tendoes/ligamentos) e manter padroes motores sem gerar novo estresse hipertrofico. Indicado apos 8-12 semanas de treino intenso, quando surgem sinais de overreaching: queda de forca >10% nos exercicios base, sono fragmentado, RPE elevado em cargas habituais, irritabilidade, dor articular difusa, plato de progressao. PROGRESSAO INVERSA: semana 1 use 40-50% da carga habitual, 2 series por exercicio, RIR 4-5, sem falha, cadencia lenta (2-0-2); semana 2 retome para 60-70% da carga, 2-3 series, RIR 3, reintroduzindo padroes compostos. Volume total ~50-60% do bloco anterior. SINAIS DE SOBRECARGA MESMO EM DELOAD (interromper e alongar para descanso passivo): FC repouso >8bpm acima do basal por 3 dias, dor localizada persistente, HRV em queda continua, insonia. CONTRAINDICACOES: nao use este template como 'treino leve permanente' - deload sem retorno ao estimulo perde ganhos em 2-3 semanas. Adapte cargas se houver lesao ativa - nesses casos migrar para template de reabilitacao especifico. SINERGIA: manter ingesta proteica normal (1.6-2.2g/kg), nao criar deficit calorico agressivo, priorizar sono 8h+, hidratacao 35ml/kg, sauna/banho quente e liberacao miofascial 3x/semana potencializam a recuperacao. Zero HIIT e zero esporte competitivo neste bloco. REAVALIACAO ao final da semana 2: se testes de forca voltarem ao basal (+/-5%), sono normalizou e motivacao retornou, esta pronto para novo mesociclo de hipertrofia ou forca; se sintomas persistirem, estender deload por mais 1 semana e investigar causas sistemicas (tireoide, ferritina, vitamina D, estresse psicossocial) com medico do esporte.",
+    "id": "tpl_deload_recovery_ativo_semana_de_regeneracao_neuromuscular"
+  },
+  {
+    "nome": "Longevidade Ativa Multimodal Healthspan 5x Upper Lower Intermediario",
+    "objetivo": "saude",
+    "fase": "manutencao",
+    "duracao_semanas": 16,
+    "nivel": "intermediario",
+    "split": "upper_lower",
+    "treinosModeloIds": [
+      "tm_upper_intermediario_a",
+      "tm_lower_intermediario_a",
+      "tm_upper_intermediario_b",
+      "tm_lower_intermediario_b",
+      "tm_mobilidade_flexibilidade_geral",
+      "tm_cardio_liss_baixa_intensidade",
+      "tm_core_avancado_estabilidade"
+    ],
+    "observacao": "Programa Longevidade Ativa Multimodal Healthspan 5x semanais, estruturado em split upper_lower com dias complementares de mobilidade, cardio zona 2 e core estabilizador. Distribuicao sugerida: SEG Upper A composto (empurrar/puxar horizontal e vertical, foco em forca funcional 4x6-10 reps, RIR 2-3), TER Lower A padrao agachamento (agachamento, leg press, extensora, panturrilha, 3-4x8-12), QUA Mobilidade e Flexibilidade Geral (30-40min ADM ativa quadril, ombro, tornozelo, coluna toracica) alem de 30-45min Cardio LISS zona 2 (60-70% FCmax) para densidade mitocondrial e saude cardiovascular, QUI Upper B isolador (volume acessorio para deltoides, biceps, triceps, manguito rotador, 3x10-15), SEX Lower B terra e gluteo (stiff, hip thrust, cadeira flexora, foco cadeia posterior), SAB Core Avancado (prancha, dead bug, pallof press, anti-rotacao 3x30-45s) + LISS 30min ou caminhada em jejum, DOM descanso ativo. Objetivo funcional: preservar massa magra, densidade ossea, capacidade cardiorrespiratoria (VO2max), mobilidade articular e neuromotricidade para healthspan prolongado apos os 40-50 anos. Progressao dupla: nas primeiras 4 semanas priorizar tecnica e amplitude completa com RIR 3-4, depois microcarregar 2-2,5% a cada 2 semanas nos compostos e adicionar 1 serie/semana nos isoladores ate 5-6 semanas, entrar em deload leve na 7a semana (-40% volume) e reiniciar novo mesociclo. Sinais de sobrecarga que exigem reducao: fadiga persistente >72h, PSE >8 em cargas habituais, HRV em queda por 3 dias consecutivos, sono <6h, dor articular local; nesse caso substituir por LISS + mobilidade e reduzir series em 30%. Contraindicacoes/adaptacoes: hipertensos evitar Valsalva e priorizar respiracao continua; osteoartrose de joelho substituir agachamento livre por leg press 90 graus e cadeira extensora com ADM parcial; discopatia lombar trocar terra convencional por hip thrust e stiff com halteres proximos ao corpo; ombro doloroso migrar desenvolvimento livre para landmine press. Sinergia: dieta hiperproteica (1,6-2,0g/kg proteina), 7-9h sono, suplementacao de creatina 3-5g/dia, vitamina D3, omega-3 e monitoramento anual de composicao corporal (DEXA/bioimpedancia), forca de preensao palmar (>30kg mulheres, >40kg homens) e VO2max (esteira ou Cooper). Integrar 1 sessao semanal de treino de potencia leve (saltos submaximos, medicine ball) apos a 8a semana para preservar fibras tipo II. Reavaliacao a cada 8 semanas: revisar cargas dos 5 compostos principais, testar sit-to-stand 30s, TUG (timed up and go), flexibilidade sit-and-reach e ajustar volume conforme adesao, marcadores laboratoriais (glicemia, HDL, PCR, ferritina) e feedback subjetivo de disposicao.",
+    "id": "tpl_longevidade_ativa_multimodal_healthspan_5x_upper_lower_inter"
+  }
+]

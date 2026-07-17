@@ -1,0 +1,2866 @@
+[
+  {
+    "id": "tm_full_body_iniciante_a",
+    "nome": "Full Body Iniciante A",
+    "nivel": "iniciante",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Bodyweight_Squat",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Pushups",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Two-Dumbbell_Row",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Dumbbell_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_iniciante_b",
+    "nome": "Full Body Iniciante B Maquinas",
+    "nivel": "iniciante",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Leg_Press",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Machine_Bench_Press",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Wide-Grip_Lat_Pulldown",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Dumbbell_Press",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Crunches",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_intermediario_a",
+    "nome": "Full Body Intermediario A Barra",
+    "nivel": "intermediario",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Shoulder_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Barbell_Curl",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Triceps_Pushdown",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 3,
+        "reps": "45s",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_intermediario_b",
+    "nome": "Full Body Intermediario B Halteres",
+    "nivel": "intermediario",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Incline_Dumbbell_Press",
+        "series": 4,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 4,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Dumbbell_Shoulder_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Leg_Extensions",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Lying_Leg_Curls",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Cable_Crunch",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_avancado",
+    "nome": "Full Body Avancado Forca Hipertrofia",
+    "nivel": "avancado",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 5,
+        "reps": "5",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Barbell_Deadlift",
+        "series": 4,
+        "reps": "5",
+        "descanso": 150
+      },
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 4,
+        "reps": "6",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 4,
+        "reps": "6",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Standing_Military_Press",
+        "series": 3,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Curl",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Close-Grip_Barbell_Bench_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_feminino_gluteo_core",
+    "nome": "Full Body Feminino Gluteo e Core",
+    "nivel": "intermediario",
+    "grupos": [
+      "gluteos",
+      "quadriceps",
+      "posteriores",
+      "core"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Hip_Thrust",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Dumbbell_Squat",
+        "series": 4,
+        "reps": "12",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 3,
+        "reps": "12",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Glute_Kickback",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Hip_Extension_with_Bands",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 3,
+        "reps": "45s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Russian_Twist",
+        "series": 3,
+        "reps": "20",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_home_sem_equipamento",
+    "nome": "Full Body Home Sem Equipamento",
+    "nivel": "iniciante",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Bodyweight_Squat",
+        "series": 4,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Pushups",
+        "series": 4,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Butt_Lift_Bridge",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Bodyweight_Walking_Lunge",
+        "series": 3,
+        "reps": "20",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 3,
+        "reps": "45s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Crunches",
+        "series": 3,
+        "reps": "20",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Mountain_Climbers",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_idoso_funcional",
+    "nome": "Full Body Idoso Funcional Adaptado",
+    "nivel": "iniciante",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Chair_Squat",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Dumbbell_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Leg_Extensions",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Balance_Board",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_gestante_baixo_impacto",
+    "nome": "Full Body Gestante Baixo Impacto",
+    "nivel": "iniciante",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Dumbbell_Squat",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Dumbbell_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Cat_Stretch",
+        "series": 3,
+        "reps": "10",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Standing_Hip_Circles",
+        "series": 3,
+        "reps": "10",
+        "descanso": 30
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_reabilitacao_leve",
+    "nome": "Full Body Reabilitacao Leve Funcional",
+    "nivel": "iniciante",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Chair_Squat",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Incline_Push-Up",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Dumbbell_Press",
+        "series": 2,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 2,
+        "reps": "20s",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_hiit_full_body_cardiometabolico",
+    "nome": "HIIT Full Body Cardiometabolico",
+    "nivel": "intermediario",
+    "grupos": [
+      "corpo_inteiro",
+      "cardio"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Mountain_Climbers",
+        "series": 5,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Butt-Ups",
+        "series": 5,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Freehand_Jump_Squat",
+        "series": 5,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Pushups",
+        "series": 5,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Rope_Jumping",
+        "series": 5,
+        "reps": "1min",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_full_body_emagrecimento_circuito",
+    "nome": "Full Body Emagrecimento Circuito",
+    "nivel": "intermediario",
+    "grupos": [
+      "corpo_inteiro",
+      "cardio"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Goblet_Squat",
+        "series": 4,
+        "reps": "15",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Kettlebell_Thruster",
+        "series": 4,
+        "reps": "12",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_One-Arm_Kettlebell_Swings",
+        "series": 4,
+        "reps": "15",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Pushups",
+        "series": 4,
+        "reps": "12",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Two-Dumbbell_Row",
+        "series": 4,
+        "reps": "12",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Mountain_Climbers",
+        "series": 4,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 4,
+        "reps": "45s",
+        "descanso": 30
+      }
+    ]
+  },
+  {
+    "id": "tm_upper_intermediario_a",
+    "nome": "Upper Intermediario A Composto",
+    "nivel": "intermediario",
+    "grupos": [
+      "peito",
+      "costas",
+      "ombros",
+      "biceps",
+      "triceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Standing_Military_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Wide-Grip_Lat_Pulldown",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Barbell_Curl",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Triceps_Pushdown",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_upper_intermediario_b",
+    "nome": "Upper Intermediario B Isolador",
+    "nivel": "intermediario",
+    "grupos": [
+      "peito",
+      "costas",
+      "ombros",
+      "biceps",
+      "triceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Incline_Dumbbell_Press",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Dumbbell_Shoulder_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Face_Pull",
+        "series": 3,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Hammer_Curls",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_EZ-Bar_Skullcrusher",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_lower_intermediario_a",
+    "nome": "Lower Intermediario A Agachamento",
+    "nivel": "intermediario",
+    "grupos": [
+      "quadriceps",
+      "posteriores",
+      "gluteos",
+      "panturrilha"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Leg_Press",
+        "series": 3,
+        "reps": "12",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Lying_Leg_Curls",
+        "series": 3,
+        "reps": "12",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 4,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Crunches",
+        "series": 3,
+        "reps": "20",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_lower_intermediario_b",
+    "nome": "Lower Intermediario B Terra Gluteo",
+    "nivel": "intermediario",
+    "grupos": [
+      "quadriceps",
+      "posteriores",
+      "gluteos",
+      "panturrilha"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Deadlift",
+        "series": 4,
+        "reps": "8",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Front_Barbell_Squat",
+        "series": 3,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Hip_Thrust",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Leg_Extensions",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Leg_Curl",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Calf_Raise",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_upper_avancado_hipertrofia",
+    "nome": "Upper Avancado Hipertrofia Volume",
+    "nivel": "avancado",
+    "grupos": [
+      "peito",
+      "costas",
+      "ombros",
+      "biceps",
+      "triceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 5,
+        "reps": "5",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 5,
+        "reps": "5",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Barbell_Incline_Bench_Press_-_Medium_Grip",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Wide-Grip_Rear_Pull-Up",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Standing_Military_Press",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Curl",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Close-Grip_Barbell_Bench_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Cable_Rope_Overhead_Triceps_Extension",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_lower_avancado_hipertrofia",
+    "nome": "Lower Avancado Hipertrofia Volume",
+    "nivel": "avancado",
+    "grupos": [
+      "quadriceps",
+      "posteriores",
+      "gluteos",
+      "panturrilha"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 5,
+        "reps": "5",
+        "descanso": 150
+      },
+      {
+        "exercicioId": "freedb_Barbell_Deadlift",
+        "series": 4,
+        "reps": "5",
+        "descanso": 180
+      },
+      {
+        "exercicioId": "freedb_Front_Barbell_Squat",
+        "series": 4,
+        "reps": "8",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Hip_Thrust",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Lying_Leg_Curls",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 4,
+        "reps": "15",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_lower_gluteo_focus_feminino",
+    "nome": "Lower Gluteo Focus Feminino",
+    "nivel": "intermediario",
+    "grupos": [
+      "gluteos",
+      "posteriores",
+      "quadriceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Hip_Thrust",
+        "series": 5,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Walking_Lunge",
+        "series": 3,
+        "reps": "12",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Cable_Hip_Adduction",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Glute_Kickback",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_upper_forca_powerlifting",
+    "nome": "Upper Forca Estilo Powerlifting",
+    "nivel": "avancado",
+    "grupos": [
+      "peito",
+      "costas",
+      "ombros",
+      "triceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 5,
+        "reps": "3",
+        "descanso": 180
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 5,
+        "reps": "5",
+        "descanso": 150
+      },
+      {
+        "exercicioId": "freedb_Standing_Military_Press",
+        "series": 5,
+        "reps": "5",
+        "descanso": 150
+      },
+      {
+        "exercicioId": "freedb_Weighted_Pull_Ups",
+        "series": 4,
+        "reps": "5",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Close-Grip_Barbell_Bench_Press",
+        "series": 4,
+        "reps": "6",
+        "descanso": 120
+      }
+    ]
+  },
+  {
+    "id": "tm_push_intermediario",
+    "nome": "Push Peito Ombro Triceps Intermediario",
+    "nivel": "intermediario",
+    "grupos": [
+      "peito",
+      "ombros",
+      "triceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Incline_Dumbbell_Press",
+        "series": 4,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Dumbbell_Shoulder_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Side_Lateral_Raise",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Triceps_Pushdown",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_EZ-Bar_Skullcrusher",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_push_avancado_volume",
+    "nome": "Push Avancado Volume Hipertrofia",
+    "nivel": "avancado",
+    "grupos": [
+      "peito",
+      "ombros",
+      "triceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 5,
+        "reps": "5",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Barbell_Incline_Bench_Press_-_Medium_Grip",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Standing_Military_Press",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Cable_Crossover",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Side_Lateral_Raise",
+        "series": 4,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Close-Grip_Barbell_Bench_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Cable_Rope_Overhead_Triceps_Extension",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_pull_intermediario",
+    "nome": "Pull Costas Biceps Intermediario",
+    "nivel": "intermediario",
+    "grupos": [
+      "costas",
+      "biceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Wide-Grip_Lat_Pulldown",
+        "series": 4,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Face_Pull",
+        "series": 3,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Barbell_Curl",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Hammer_Curls",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_pull_avancado_espessura",
+    "nome": "Pull Avancado Espessura e Largura",
+    "nivel": "avancado",
+    "grupos": [
+      "costas",
+      "biceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Deadlift",
+        "series": 4,
+        "reps": "5",
+        "descanso": 180
+      },
+      {
+        "exercicioId": "freedb_Wide-Grip_Rear_Pull-Up",
+        "series": 5,
+        "reps": "6-8",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_One-Arm_Dumbbell_Row",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Face_Pull",
+        "series": 4,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Barbell_Curl",
+        "series": 4,
+        "reps": "8",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Incline_Dumbbell_Curl",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_legs_ppl_intermediario",
+    "nome": "Legs PPL Pernas Intermediario",
+    "nivel": "intermediario",
+    "grupos": [
+      "quadriceps",
+      "posteriores",
+      "gluteos",
+      "panturrilha"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Leg_Press",
+        "series": 3,
+        "reps": "12",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 3,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Leg_Extensions",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Lying_Leg_Curls",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 4,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_legs_ppl_avancado",
+    "nome": "Legs PPL Pernas Avancado",
+    "nivel": "avancado",
+    "grupos": [
+      "quadriceps",
+      "posteriores",
+      "gluteos",
+      "panturrilha"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 5,
+        "reps": "5",
+        "descanso": 150
+      },
+      {
+        "exercicioId": "freedb_Front_Barbell_Squat",
+        "series": 4,
+        "reps": "8",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Walking_Lunge",
+        "series": 3,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Lying_Leg_Curls",
+        "series": 4,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Leg_Extensions",
+        "series": 4,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 5,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_abcd_peito_intermediario",
+    "nome": "ABCD Peito Intermediario",
+    "nivel": "intermediario",
+    "grupos": [
+      "peito"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Incline_Dumbbell_Press",
+        "series": 4,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Decline_Dumbbell_Bench_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Dumbbell_Flyes",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Cable_Crossover",
+        "series": 3,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Pushups",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_abcd_costas_intermediario",
+    "nome": "ABCD Costas Intermediario",
+    "nivel": "intermediario",
+    "grupos": [
+      "costas"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Wide-Grip_Rear_Pull-Up",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_One-Arm_Dumbbell_Row",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Straight-Arm_Pulldown",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Face_Pull",
+        "series": 3,
+        "reps": "15",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_abcd_perna_intermediario",
+    "nome": "ABCD Perna Intermediario",
+    "nivel": "intermediario",
+    "grupos": [
+      "quadriceps",
+      "posteriores",
+      "gluteos",
+      "panturrilha"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Leg_Press",
+        "series": 4,
+        "reps": "12",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 3,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Walking_Lunge",
+        "series": 3,
+        "reps": "12",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Leg_Extensions",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Lying_Leg_Curls",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 4,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_abcd_ombro_braco_intermediario",
+    "nome": "ABCD Ombro e Braco Intermediario",
+    "nivel": "intermediario",
+    "grupos": [
+      "ombros",
+      "biceps",
+      "triceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Standing_Military_Press",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Side_Lateral_Raise",
+        "series": 4,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Reverse_Machine_Flyes",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Barbell_Curl",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Hammer_Curls",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Triceps_Pushdown",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_EZ-Bar_Skullcrusher",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_gluteo_hipertrofia_avancado",
+    "nome": "Gluteo Hipertrofia Avancado",
+    "nivel": "avancado",
+    "grupos": [
+      "gluteos",
+      "posteriores"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Hip_Thrust",
+        "series": 5,
+        "reps": "8",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Barbell_Walking_Lunge",
+        "series": 3,
+        "reps": "12",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Cable_Hip_Adduction",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Glute_Kickback",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Single_Leg_Glute_Bridge",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_One-Legged_Cable_Kickback",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_costas_espessura_largura",
+    "nome": "Costas Espessura e Largura Completo",
+    "nivel": "avancado",
+    "grupos": [
+      "costas"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Deadlift",
+        "series": 4,
+        "reps": "6",
+        "descanso": 150
+      },
+      {
+        "exercicioId": "freedb_Wide-Grip_Rear_Pull-Up",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Wide-Grip_Lat_Pulldown",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_One-Arm_Dumbbell_Row",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Straight-Arm_Pulldown",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_bracos_biceps_triceps_combinado",
+    "nome": "Bracos Biceps e Triceps Combinado",
+    "nivel": "intermediario",
+    "grupos": [
+      "biceps",
+      "triceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Curl",
+        "series": 4,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Incline_Dumbbell_Curl",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Preacher_Curl",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Hammer_Curls",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Close-Grip_Barbell_Bench_Press",
+        "series": 4,
+        "reps": "8",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_EZ-Bar_Skullcrusher",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Triceps_Pushdown",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Bench_Dips",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_peito_volume_hipertrofia",
+    "nome": "Peito Volume Hipertrofia",
+    "nivel": "avancado",
+    "grupos": [
+      "peito"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 5,
+        "reps": "8",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Incline_Dumbbell_Press",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Decline_Barbell_Bench_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Dumbbell_Flyes",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Incline_Cable_Flye",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Cable_Crossover",
+        "series": 3,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Pushups",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_ombro_tres_porcoes_deltoide",
+    "nome": "Ombro Tres Porcoes Deltoide Completo",
+    "nivel": "intermediario",
+    "grupos": [
+      "ombros"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Standing_Military_Press",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Dumbbell_Shoulder_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Side_Lateral_Raise",
+        "series": 4,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Front_Dumbbell_Raise",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Reverse_Machine_Flyes",
+        "series": 4,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Face_Pull",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Barbell_Shrug",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_core_avancado_estabilidade",
+    "nome": "Core Avancado Estabilidade e Forca",
+    "nivel": "avancado",
+    "grupos": [
+      "core"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Hanging_Leg_Raise",
+        "series": 4,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Cable_Crunch",
+        "series": 4,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 4,
+        "reps": "60s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Side_Bridge",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Russian_Twist",
+        "series": 3,
+        "reps": "20",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Ab_Roller",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Pallof_Press",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_panturrilha_completo",
+    "nome": "Panturrilha Completo Gastro Soleo",
+    "nivel": "intermediario",
+    "grupos": [
+      "panturrilha"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Standing_Barbell_Calf_Raise",
+        "series": 5,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Calf_Raise",
+        "series": 4,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Calf_Press_On_The_Leg_Press_Machine",
+        "series": 4,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Standing_Dumbbell_Calf_Raise",
+        "series": 3,
+        "reps": "20",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Smith_Machine_Reverse_Calf_Raises",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_posteriores_coxa_hipertrofia",
+    "nome": "Posteriores de Coxa Hipertrofia",
+    "nivel": "avancado",
+    "grupos": [
+      "posteriores",
+      "gluteos"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Romanian_Deadlift",
+        "series": 4,
+        "reps": "8",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Stiff-Legged_Barbell_Deadlift",
+        "series": 4,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Lying_Leg_Curls",
+        "series": 4,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Leg_Curl",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Good_Morning",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Glute_Ham_Raise",
+        "series": 3,
+        "reps": "10",
+        "descanso": 90
+      }
+    ]
+  },
+  {
+    "id": "tm_reab_lombar_estabilizacao",
+    "nome": "Reabilitacao Lombar Estabilizacao",
+    "nivel": "iniciante",
+    "grupos": [
+      "core"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Superman",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Side_Bridge",
+        "series": 3,
+        "reps": "20s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Dead_Bug",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Cat_Stretch",
+        "series": 3,
+        "reps": "10",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Pelvic_Tilt_Into_Bridge",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_reab_joelho_pos_lca",
+    "nome": "Reabilitacao Joelho Pos LCA",
+    "nivel": "iniciante",
+    "grupos": [
+      "quadriceps",
+      "posteriores"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Chair_Squat",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Leg_Press",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Leg_Extensions",
+        "series": 3,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Leg_Curl",
+        "series": 3,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Butt_Lift_Bridge",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Balance_Board",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_reab_ombro_manguito_rotador",
+    "nome": "Reabilitacao Ombro Manguito Rotador",
+    "nivel": "iniciante",
+    "grupos": [
+      "ombros"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_External_Rotation_with_Band",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Internal_Rotation_with_Band",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Face_Pull",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Band_Pull_Apart",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Reverse_Flyes",
+        "series": 3,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Scapular_Pull-Up",
+        "series": 3,
+        "reps": "10",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_postural_escoliose",
+    "nome": "Treino Postural para Escoliose",
+    "nivel": "iniciante",
+    "grupos": [
+      "costas",
+      "core",
+      "mobilidade"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Superman",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Band_Pull_Apart",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Face_Pull",
+        "series": 3,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Cat_Stretch",
+        "series": 3,
+        "reps": "10",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Childs_Pose",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Chin_To_Chest_Stretch",
+        "series": 3,
+        "reps": "20s",
+        "descanso": 30
+      }
+    ]
+  },
+  {
+    "id": "tm_baixo_impacto_fibromialgia",
+    "nome": "Baixo Impacto Fibromialgia Artrose",
+    "nivel": "iniciante",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Chair_Squat",
+        "series": 2,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 2,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Dumbbell_Press",
+        "series": 2,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Leg_Extensions",
+        "series": 2,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 2,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Cat_Stretch",
+        "series": 2,
+        "reps": "10",
+        "descanso": 30
+      }
+    ]
+  },
+  {
+    "id": "tm_idoso_forca_equilibrio",
+    "nome": "Idoso Forca e Equilibrio Funcional",
+    "nivel": "iniciante",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Chair_Squat",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Dumbbell_Squat",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Dumbbell_Press",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Balance_Board",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Butt_Lift_Bridge",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_pos_parto_diastase_core",
+    "nome": "Pos Parto Diastase Core Gluteo",
+    "nivel": "iniciante",
+    "grupos": [
+      "core",
+      "gluteos"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Dead_Bug",
+        "series": 3,
+        "reps": "10",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Pelvic_Tilt_Into_Bridge",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Cat_Stretch",
+        "series": 3,
+        "reps": "10",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Butt_Lift_Bridge",
+        "series": 3,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Superman",
+        "series": 3,
+        "reps": "10",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 3,
+        "reps": "20s",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_cardiaco_resistencia_leve",
+    "nome": "Cardiaco Resistencia Leve Aerobico",
+    "nivel": "iniciante",
+    "grupos": [
+      "cardio",
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Walking_Treadmill",
+        "series": 1,
+        "reps": "30min",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Recumbent_Bike",
+        "series": 1,
+        "reps": "20min",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Chair_Squat",
+        "series": 2,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Seated_Cable_Rows",
+        "series": 2,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Standing_Calf_Raises",
+        "series": 2,
+        "reps": "12",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_reab_lombar_avancado",
+    "nome": "Reabilitacao Lombar Progressao Avancada",
+    "nivel": "intermediario",
+    "grupos": [
+      "core",
+      "posteriores",
+      "gluteos"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Superman",
+        "series": 4,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 4,
+        "reps": "45s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Side_Bridge",
+        "series": 4,
+        "reps": "30s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Dead_Bug",
+        "series": 4,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Pallof_Press",
+        "series": 4,
+        "reps": "12",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Barbell_Glute_Bridge",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Good_Morning",
+        "series": 3,
+        "reps": "10",
+        "descanso": 75
+      }
+    ]
+  },
+  {
+    "id": "tm_idoso_mobilidade_articular",
+    "nome": "Idoso Mobilidade Articular Geral",
+    "nivel": "iniciante",
+    "grupos": [
+      "mobilidade"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Cat_Stretch",
+        "series": 3,
+        "reps": "10",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Childs_Pose",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Shoulder_Circles",
+        "series": 3,
+        "reps": "10",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Ankle_Circles",
+        "series": 3,
+        "reps": "10",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Standing_Hamstring_and_Calf_Stretch",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Standing_Elevated_Quad_Stretch",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 30
+      }
+    ]
+  },
+  {
+    "id": "tm_powerlifting_forca_maxima",
+    "nome": "Powerlifting Forca Maxima SBD",
+    "nivel": "avancado",
+    "grupos": [
+      "quadriceps",
+      "posteriores",
+      "peito",
+      "costas"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Barbell_Squat",
+        "series": 5,
+        "reps": "3",
+        "descanso": 180
+      },
+      {
+        "exercicioId": "freedb_Barbell_Deadlift",
+        "series": 5,
+        "reps": "3",
+        "descanso": 240
+      },
+      {
+        "exercicioId": "freedb_Barbell_Bench_Press_-_Medium_Grip",
+        "series": 5,
+        "reps": "3",
+        "descanso": 180
+      },
+      {
+        "exercicioId": "freedb_Close-Grip_Barbell_Bench_Press",
+        "series": 4,
+        "reps": "6",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Bent_Over_Barbell_Row",
+        "series": 4,
+        "reps": "6",
+        "descanso": 120
+      },
+      {
+        "exercicioId": "freedb_Good_Morning",
+        "series": 3,
+        "reps": "8",
+        "descanso": 120
+      }
+    ]
+  },
+  {
+    "id": "tm_olympic_arranco_arremesso",
+    "nome": "Olimpico Arranco e Arremesso",
+    "nivel": "avancado",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Power_Snatch",
+        "series": 5,
+        "reps": "3",
+        "descanso": 180
+      },
+      {
+        "exercicioId": "freedb_Power_Clean",
+        "series": 5,
+        "reps": "3",
+        "descanso": 180
+      },
+      {
+        "exercicioId": "freedb_Clean_and_Jerk",
+        "series": 4,
+        "reps": "2",
+        "descanso": 180
+      },
+      {
+        "exercicioId": "freedb_Front_Barbell_Squat",
+        "series": 4,
+        "reps": "5",
+        "descanso": 150
+      },
+      {
+        "exercicioId": "freedb_Overhead_Squat",
+        "series": 3,
+        "reps": "5",
+        "descanso": 120
+      }
+    ]
+  },
+  {
+    "id": "tm_kettlebell_complexo_metcon",
+    "nome": "Kettlebell Complexo Metcon",
+    "nivel": "intermediario",
+    "grupos": [
+      "corpo_inteiro",
+      "cardio"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_One-Arm_Kettlebell_Swings",
+        "series": 4,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Goblet_Squat",
+        "series": 4,
+        "reps": "12",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Kettlebell_Thruster",
+        "series": 4,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Two-Arm_Kettlebell_Row",
+        "series": 4,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Kettlebell_Turkish_Get-Up_Squat_style",
+        "series": 3,
+        "reps": "5",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Kettlebell_Hang_Clean",
+        "series": 4,
+        "reps": "8",
+        "descanso": 75
+      }
+    ]
+  },
+  {
+    "id": "tm_calistenia_intermediario",
+    "nome": "Calistenia Intermediario Peso Corporal",
+    "nivel": "intermediario",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Pullups",
+        "series": 4,
+        "reps": "8-10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Pushups",
+        "series": 4,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Parallel_Bar_Dip",
+        "series": 4,
+        "reps": "10",
+        "descanso": 75
+      },
+      {
+        "exercicioId": "freedb_Bodyweight_Squat",
+        "series": 4,
+        "reps": "20",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Hanging_Leg_Raise",
+        "series": 3,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Chin-Up",
+        "series": 4,
+        "reps": "8",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Plank",
+        "series": 3,
+        "reps": "60s",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_mobilidade_flexibilidade_geral",
+    "nome": "Mobilidade e Flexibilidade Geral",
+    "nivel": "iniciante",
+    "grupos": [
+      "mobilidade"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Worlds_Greatest_Stretch",
+        "series": 3,
+        "reps": "8",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Cat_Stretch",
+        "series": 3,
+        "reps": "10",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Childs_Pose",
+        "series": 3,
+        "reps": "45s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Standing_Hamstring_and_Calf_Stretch",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Kneeling_Hip_Flexor",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Shoulder_Stretch",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Groin_and_Back_Stretch",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 30
+      }
+    ]
+  },
+  {
+    "id": "tm_cardio_liss_baixa_intensidade",
+    "nome": "Cardio LISS Baixa Intensidade Longa",
+    "nivel": "iniciante",
+    "grupos": [
+      "cardio"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Walking_Treadmill",
+        "series": 1,
+        "reps": "30min",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Recumbent_Bike",
+        "series": 1,
+        "reps": "20min",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Elliptical_Trainer",
+        "series": 1,
+        "reps": "15min",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Stairmaster",
+        "series": 1,
+        "reps": "15min",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_cardio_hiit_intervalado",
+    "nome": "Cardio HIIT Intervalado Alta Intensidade",
+    "nivel": "intermediario",
+    "grupos": [
+      "cardio"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Prowler_Sprint",
+        "series": 8,
+        "reps": "30s",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Wind_Sprints",
+        "series": 8,
+        "reps": "20s",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Rope_Jumping",
+        "series": 6,
+        "reps": "1min",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Mountain_Climbers",
+        "series": 6,
+        "reps": "30s",
+        "descanso": 30
+      },
+      {
+        "exercicioId": "freedb_Butt-Ups",
+        "series": 6,
+        "reps": "20s",
+        "descanso": 30
+      }
+    ]
+  },
+  {
+    "id": "tm_corrida_tecnica_sprint",
+    "nome": "Corrida Tecnica Sprint e Drills",
+    "nivel": "intermediario",
+    "grupos": [
+      "cardio",
+      "quadriceps"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Running_Treadmill",
+        "series": 1,
+        "reps": "30min",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Wind_Sprints",
+        "series": 6,
+        "reps": "30s",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Single-Cone_Sprint_Drill",
+        "series": 5,
+        "reps": "20s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Linear_3-Part_Start_Technique",
+        "series": 4,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Kneeling_Arm_Drill",
+        "series": 3,
+        "reps": "30s",
+        "descanso": 45
+      }
+    ]
+  },
+  {
+    "id": "tm_crossfit_wod_metcon",
+    "nome": "CrossFit WOD Metcon Condicionamento",
+    "nivel": "avancado",
+    "grupos": [
+      "corpo_inteiro",
+      "cardio"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Kettlebell_Thruster",
+        "series": 5,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Wide-Grip_Rear_Pull-Up",
+        "series": 5,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Push_Press",
+        "series": 5,
+        "reps": "10",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Barbell_Deadlift",
+        "series": 5,
+        "reps": "10",
+        "descanso": 90
+      },
+      {
+        "exercicioId": "freedb_Freehand_Jump_Squat",
+        "series": 5,
+        "reps": "20",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Rope_Climb",
+        "series": 4,
+        "reps": "1",
+        "descanso": 60
+      }
+    ]
+  },
+  {
+    "id": "tm_funcional_atletico_multiplano",
+    "nome": "Funcional Atletico Multiplano",
+    "nivel": "intermediario",
+    "grupos": [
+      "corpo_inteiro"
+    ],
+    "itens": [
+      {
+        "exercicioId": "freedb_Farmers_Walk",
+        "series": 4,
+        "reps": "30s",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Goblet_Squat",
+        "series": 4,
+        "reps": "15",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_One-Arm_Kettlebell_Swings",
+        "series": 4,
+        "reps": "15",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Bear_Crawl_Sled_Drags",
+        "series": 4,
+        "reps": "20s",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Sled_Push",
+        "series": 4,
+        "reps": "20s",
+        "descanso": 60
+      },
+      {
+        "exercicioId": "freedb_Battling_Ropes",
+        "series": 4,
+        "reps": "30s",
+        "descanso": 45
+      },
+      {
+        "exercicioId": "freedb_Kettlebell_Turkish_Get-Up_Squat_style",
+        "series": 3,
+        "reps": "5",
+        "descanso": 90
+      }
+    ]
+  }
+]

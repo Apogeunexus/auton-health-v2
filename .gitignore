@@ -1,0 +1,28 @@
+# === Backups manuais (snapshots pessoais, não fazem parte do produto) ===
+# Cobre backups em qualquer subdiretório: *.bak_*, *.bak-*
+**/*.bak_*
+**/*.bak-*
+
+# === SQLite journals (transientes) ===
+**/*.db-shm
+**/*.db-wal
+**/*.db-journal
+
+# === Sistema ===
+.DS_Store
+Thumbs.db
+
+# === Vercel ===
+.vercel
+
+# === Node (caso alguém rode ferramenta local) ===
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# === Editor ===
+.vscode/
+.idea/
+*.swp
+*.swo
